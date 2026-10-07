@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Major Project Report — AI Skin Intelligence</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap');
+
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --primary-light: #f0fdfa;
+      --secondary: #0d9488;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #f8fafc;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .report-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 50px 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .print-btn-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .print-btn {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(15, 118, 110, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--secondary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    h1.report-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #134e4a;
+      margin: 0 0 10px 0;
+      line-height: 1.25;
+    }
+
+    p.report-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin: 0 0 24px 0;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: #14b8a6;
+      margin: 20px 0 28px 0;
+    }
+
+    .meta-box {
+      background: var(--primary-light);
+      border: 1px solid #99f6e4;
+      border-radius: 8px;
+      padding: 18px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .abstract-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--secondary);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin-bottom: 36px;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    h2.section-heading {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+
+    h3.sub-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 0.95rem;
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 0.9rem;
+    }
+
+    table.data-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+
+    table.data-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+    }
+
+    table.data-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    pre code {
+      display: block;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+
+    .screen-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--secondary);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
+
+    .screen-card strong {
+      color: var(--primary-dark);
+      font-size: 0.98rem;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .report-container { max-width: 100%; box-shadow: none; border: none; padding: 0; }
+      .print-btn-bar { display: none; }
+      .section-heading { page-break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="print-btn" onclick="window.print()">🖨️ Save as PDF / Print Report</button>
+  </div>
+
+  <div class="report-container">
+    <div class="cover-badge">MAJOR PROJECT REPORT</div>
+    <h1 class="report-title">AI Skin Intelligence & Personalized Skincare Planner</h1>
+    <p class="report-subtitle">AI-Driven Skin Diagnostics, Computer Vision Face Scanner, Chemical Ingredient Conflict Engine & Personalized Skincare Platform</p>
+    <hr>
+
+    <div class="meta-box">
+      <div><strong>Submitted By:</strong> Marla Deepika (Candidate)</div>
+      <div><strong>Submitted To:</strong> Project Coordinator / Faculty Guide</div>
+      <div><strong>Department:</strong> Dept. of Computer Science & Engineering</div>
+      <div><strong>Institution:</strong> Aditya University / Engineering Institution</div>
+      <div><strong>Academic Year:</strong> 2025 – 2026</div>
+      <div><strong>Project Status:</strong> Full Platform Complete (Milestones 1–4)</div>
+    </div>
+
+    <div class="abstract-box">
+      <strong>Executive Abstract:</strong> This project presents <strong>AI Skin Intelligence</strong>, an end-to-end healthcare and cosmetic wellness platform combining real-time <strong>Computer Vision facial diagnostics</strong> (RGB/Erythema/Gaussian contrast segmentation), a calibrated <strong>5-Factor Weighted Clinical Health Scoring Model</strong> (Skin Condition 35%, Lifestyle 20%, Sleep 15%, Consistency 20%, Hydration 10%), an active <strong>Chemical Conflict & Synergy Matrix</strong> for cosmetic formulations, dynamic 4-phase routine generators (Morning, Night, Weekly, Seasonal), and a <strong>Tele-Dermatology Portal</strong> for clinical charting and direct prescription management. Built with React 19, FastAPI, PostgreSQL, and Docker.
+    </div>
+
+    <h2 class="section-heading">TABLE OF CONTENTS</h2>
+    <ul>
+      <li>1. Introduction (Overview, Objectives, Scope)</li>
+      <li>2. Literature Review & Comparative Analysis</li>
+      <li>3. System Analysis & Feasibility Study</li>
+      <li>4. System Architecture, DFD & Relational Database Schema</li>
+      <li>5. Technology Stack (Frontend, Backend, AI/Vision, Database)</li>
+      <li>6. Module Description (All 12 Core Subsystems)</li>
+      <li>7. Implementation Details & Core Algorithmic Code</li>
+      <li>8. Testing, Quality Assurance & UAT</li>
+      <li>9. Output Screens & Feature Demonstrations</li>
+      <li>10. Conclusion & Future Enhancements</li>
+      <li>11. References</li>
+    </ul>
+
+    <h2 class="section-heading">1. INTRODUCTION</h2>
+    <h3 class="sub-heading">1.1 Overview</h3>
+    <p>In modern dermatology and consumer wellness, skincare routines often fail due to generic marketing, lack of chemical ingredient compatibility awareness, and the absence of objective skin monitoring. <strong>AI Skin Intelligence</strong> is a comprehensive digital platform that combines computer vision facial scanning, clinical weighted health scoring, chemical conflict detection, and personalized routine planning into a single accessible web ecosystem.</p>
+
+    <h3 class="sub-heading">1.2 Objectives</h3>
+    <ul>
+      <li><strong>Automated Visual Diagnostics:</strong> Implement camera-driven Computer Vision to detect dark spots, active blemishes/erythema, fine line edge density, and sebum reflectivity in real-time.</li>
+      <li><strong>5-Factor Weighted Health Scoring:</strong> Objectively evaluate overall skin health combining condition rating (35%), lifestyle (20%), sleep (15%), consistency (20%), and hydration (10%).</li>
+      <li><strong>Chemical Incompatibility Detection:</strong> Prevent skin barrier damage by automatically analyzing formulations for conflicting active pairs (e.g. Retinol with Vitamin C or AHAs/BHAs).</li>
+      <li><strong>Adaptive Routine Planning:</strong> Dynamically generate Morning, Evening, Weekly, and Seasonal regimens tailored to skin type, climate, UV index, and allergies.</li>
+      <li><strong>Tele-Dermatology & Prescriptions:</strong> Connect consumers with certified clinical dermatologists for remote charting, treatment plans, and follow-up management.</li>
+    </ul>
+
+    <h3 class="sub-heading">1.3 Scope of the Project</h3>
+    <p>Designed for Skincare Consumers, Dermatology Clinics, Wellness Consultants, and Healthcare Administrators, covering end-to-end skin diagnostic scanning, ingredient education, daily compliance tracking, and medical reports.</p>
+
+    <h2 class="section-heading">2. LITERATURE REVIEW</h2>
+    <p>Traditionally, individuals rely on manual self-assessment, beauty influencer advice, or static cosmetic questionnaires. Key limitations include:</p>
+    <ul>
+      <li><strong>High Risk of Barrier Damage:</strong> Uninformed layering of conflicting active ingredients leads to chemical irritation and contact dermatitis.</li>
+      <li><strong>Static & Non-Adaptive Plans:</strong> Existing apps fail to account for daily biological shifts (sleep debt, hydration levels) or environmental factors (UV index, regional climate).</li>
+      <li><strong>Absence of Objective Visual Diagnostics:</strong> Lack of real-time computer vision to localize problem zones.</li>
+      <li><strong>Disconnected Clinical Care:</strong> No integration exists between personal routine trackers and practicing dermatologists.</li>
+    </ul>
+
+    <h2 class="section-heading">3. SYSTEM ANALYSIS & FEASIBILITY</h2>
+    <ul>
+      <li><strong>Technical Feasibility:</strong> Built using React 19, Python FastAPI, SQLAlchemy, PostgreSQL, and NumPy/Pillow, ensuring sub-second response latencies.</li>
+      <li><strong>Economic Feasibility:</strong> Utilizes 100% open-source software and self-contained algorithms, requiring zero recurring per-call third-party API costs.</li>
+      <li><strong>Operational Feasibility:</strong> Responsive interface, real-time camera alignment guides, and automated daily reminders ensure an intuitive user experience.</li>
+    </ul>
+
+    <h2 class="section-heading">4. SYSTEM ARCHITECTURE & DATABASE SCHEMA</h2>
+    <p>Follows a modern Single Page Application (SPA) architecture communicating with an asynchronous RESTful FastAPI backend.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Layer</th><th>Components & Technologies</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Client Layer</td><td>React 19, Vite 7, HTML5 WebRTC MediaDevices & Canvas, Custom Design System</td></tr>
+        <tr><td>API Gateway</td><td>Python FastAPI, Uvicorn ASGI Server, CORS Middleware, Pydantic v2 Serialization</td></tr>
+        <tr><td>AI & Logic Engines</td><td>Computer Vision Scanner (PIL/NumPy), 5-Factor Scoring Engine, Ingredient Conflict Engine</td></tr>
+        <tr><td>Data Storage</td><td>PostgreSQL 16 Relational Database, SQLAlchemy ORM (13 Tables, Connection Pooling)</td></tr>
+        <tr><td>DevOps & Container</td><td>Docker Multi-Stage Build, Docker Compose, Nginx Reverse Proxy</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>13 Relational Database Models:</strong> <code>users</code>, <code>skin_profiles</code>, <code>sleep_logs</code>, <code>hydration_logs</code>, <code>lifestyle_logs</code>, <code>skin_assessments</code>, <code>skincare_routines</code>, <code>routine_checklist_logs</code>, <code>ingredients</code>, <code>products</code>, <code>progress_logs</code>, <code>notifications</code>, and <code>dermatologist_reports</code>.</p>
+
+    <h2 class="section-heading">5. IMPLEMENTATION DETAILS & CORE ALGORITHMS</h2>
+    <h3 class="sub-heading">5.1 5-Factor Weighted Assessment Scoring Equation</h3>
+    <pre><code>Overall Score = 0.35 * S_condition + 0.20 * S_lifestyle + 0.15 * S_sleep + 0.20 * S_consistency + 0.10 * S_hydration</code></pre>
+
+    <h3 class="sub-heading">5.2 Computer Vision Feature Extraction Engine</h3>
+    <pre><code># Computer Vision Feature Extraction (Snippet)
+def analyze_facial_skin(image: Image.Image) -> dict:
+    img = image.copy()
+    img.thumbnail((600, 600), Image.Resampling.LANCZOS)
+    rgb = np.array(img, dtype=np.float32)
+    r, g, b = rgb[:, :, 0], rgb[:, :, 1], rgb[:, :, 2]
+    
+    # Skin Segmentation Mask
+    skin_mask = (r > 50) & (g > 30) & (b > 15) & (r > g) & (g > b)
+    total_skin = max(1, np.sum(skin_mask))
+
+    # Dark Spot Localization (Gaussian Contrast Drop)
+    gray = np.array(img.convert("L"), dtype=np.float32)
+    blurred = np.array(img.convert("L").filter(ImageFilter.GaussianBlur(15)), dtype=np.float32)
+    dark_spots = skin_mask & ((blurred - gray) > 18) & (gray < 170)
+    dark_spot_sev = min(95.0, (np.sum(dark_spots) / total_skin) * 550.0)
+
+    # Acne & Erythema Index (R - (G+B)/2)
+    erythema = r - (g + b) / 2.0
+    acne_mask = skin_mask & (erythema > 24.0) & (r > 100)
+    acne_sev = min(95.0, (np.sum(acne_mask) / total_skin) * 600.0)
+
+    overall_score = max(38.0, min(96.0, 100.0 - (dark_spot_sev * 0.28 + acne_sev * 0.32) * 0.65))
+    return {"overall_skin_score": round(overall_score, 1), "dark_spots_sev": round(dark_spot_sev, 1), "acne_sev": round(acne_sev, 1)}</code></pre>
+
+    <h2 class="section-heading">6. OUTPUT SCREENS (PROJECT DEMONSTRATION)</h2>
+    <div class="screen-card">
+      <strong>Fig 1: User Registration Portal</strong><br>
+      Secure onboarding capturing Full Name, Email, Phone Number, Age, Gender, and Role Selection.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 2: Central Dashboard Hub</strong><br>
+      Main command center displaying the weighted health score banner (e.g. 78/100), quick actions, and daily checklist.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 3: AI Camera Face Scanner</strong><br>
+      Live webcam feed with oval face alignment guide, green scanning laser HUD, and instant Computer Vision diagnostic report with spot markers.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 4: 5-Factor Clinical Assessment</strong><br>
+      Detailed category score cards (Condition, Lifestyle, Sleep, Consistency, Hydration) with risk factor analyses.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 5: Personalized Routine Planner</strong><br>
+      Step-by-step Morning, Evening, Weekly, and Seasonal regimens paired with an interactive daily adherence checklist.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 6: Ingredient Conflict Analyzer</strong><br>
+      Active ingredient library with automated conflict detector preventing adverse chemical combinations (e.g. Retinol + Vitamin C).
+    </div>
+    <div class="screen-card">
+      <strong>Fig 7: Clinical Dermatologist Portal</strong><br>
+      Clinical workspace allowing dermatologists to review patient charts, prescribe active ingredients, and schedule review dates.
+    </div>
+    <div class="screen-card">
+      <strong>Fig 8: Reports & Export Portal</strong><br>
+      Visual skin health report with one-click CSV dataset download and formatted Print-to-PDF export.
+    </div>
+
+    <h2 class="section-heading">7. CONCLUSION & FUTURE ENHANCEMENTS</h2>
+    <p><strong>Conclusion:</strong> The AI Skin Intelligence Platform delivers an end-to-end digital solution for cosmetic dermatology. By uniting Computer Vision diagnostics, multi-factor clinical scoring, chemical conflict detection, and tele-dermatology workflows, the platform eliminates guesswork in skincare, prevents barrier damage, and promotes data-driven skin wellness.</p>
+    <p><strong>Future Enhancements:</strong></p>
+    <ul>
+      <li><strong>Deep Learning Segmentation:</strong> Integrate lightweight ONNX MobileNet U-Net models for sub-millimeter pore and acne lesion boundary segmentation.</li>
+      <li><strong>Product Label OCR Scanner:</strong> Implement OCR to scan physical cosmetic packaging and match ingredient lists against allergy profiles.</li>
+      <li><strong>IoT Weather & UV Index Integration:</strong> Ingest live local meteorological data to dynamically adjust morning sunscreen recommendations.</li>
+      <li><strong>Mobile Native App:</strong> Port React 19 SPA to React Native for hardware camera acceleration on iOS and Android devices.</li>
+    </ul>
+
+    <h2 class="section-heading">8. REFERENCES</h2>
+    <ul>
+      <li>FastAPI Documentation — https://fastapi.tiangolo.com/</li>
+      <li>React 19 Official Documentation — https://react.dev/</li>
+      <li>Pillow (PIL) Imaging Library — https://pillow.readthedocs.io/</li>
+      <li>SQLAlchemy 2.0 ORM Documentation — https://www.sqlalchemy.org/</li>
+      <li>Journal of Investigative Dermatology: Erythema Indexing and Skin Barrier Homeostasis.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
