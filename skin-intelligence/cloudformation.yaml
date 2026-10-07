@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template for Skin Intelligence Application on ECS Fargate'
+
+Resources:
+  VPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: '10.0.0.0/16'
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: SkinIntelligenceVPC
+
+  ECSCluster:
+    Type: 'AWS::ECS::Cluster'
+    Properties:
+      ClusterName: 'skin-intelligence-cluster'
+
+  PostgresDB:
+    Type: 'AWS::RDS::DBInstance'
+    Properties:
+      Engine: 'postgres'
+      DBInstanceClass: 'db.t3.micro'
+      AllocatedStorage: 20
+      DBName: 'skindb'
+      MasterUsername: 'skinuser'
+      MasterUserPassword: 'skinpassword' # Note: use SecretsManager in prod!
+      PubliclyAccessible: false
+
+  # Application Load Balancer
+  AppLoadBalancer:
+    Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+    Properties:
+      Scheme: 'internet-facing'
+      Type: 'application'
+
+  # ECS Service for Backend
+  BackendService:
+    Type: 'AWS::ECS::Service'
+    Properties:
+      Cluster: !Ref ECSCluster
+      DesiredCount: 1
+      LaunchType: FARGATE
+      # Assume task definitions and network configurations are setup
+      # TaskDefinition: !Ref BackendTaskDef
+
+Outputs:
+  ClusterName:
+    Value: !Ref ECSCluster

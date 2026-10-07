@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: skin_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: skinuser
+      POSTGRES_PASSWORD: skinpassword
+      POSTGRES_DB: skindb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: skin_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://skinuser:skinpassword@postgres:5432/skindb
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: skin_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

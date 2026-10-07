@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Reset default margins */
+body {
+  margin: 0;
+  background-color: #F9F7F8;
+}
