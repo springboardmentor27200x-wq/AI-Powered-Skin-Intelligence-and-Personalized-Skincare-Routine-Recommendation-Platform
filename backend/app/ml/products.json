@@ -1,0 +1,5030 @@
+[
+  {
+    "product_id": "P001",
+    "name": "Cosrx Vitamin C Toner",
+    "brand": "Cosrx",
+    "category": "Toner",
+    "subcategory": "Hydrating Toner",
+    "price": 1179.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "sensitive"
+    ],
+    "concerns": [
+      "brightening"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "tranexamic_acid",
+      "licorice_root",
+      "alpha_arbutin",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "toner",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel toner formulated with vitamin c, tranexamic acid, licorice root to target brightening. Suitable for sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 2358
+  },
+  {
+    "product_id": "P002",
+    "name": "Beauty of Joseon Alpha Arbutin Foaming Cleanser",
+    "brand": "Beauty of Joseon",
+    "category": "Cleanser",
+    "subcategory": "Cream Cleanser",
+    "price": 1272.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination"
+    ],
+    "concerns": [
+      "dark_spots",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "retinol"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel cleanser formulated with alpha arbutin, retinol to target dark spots, blackheads. Suitable for combination skin.",
+    "rating": 3.9,
+    "num_reviews": 2481
+  },
+  {
+    "product_id": "P003",
+    "name": "CeraVe Overnight Recovery Mask",
+    "brand": "CeraVe",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 1923.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "dullness",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "salicylic_acid",
+      "vitamin_c",
+      "glycolic_acid",
+      "zinc_pca"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream mask formulated with salicylic acid, vitamin c, glycolic acid to target oil control, dullness, blackheads. Suitable for combination, oily skin.",
+    "rating": 4.3,
+    "num_reviews": 2291
+  },
+  {
+    "product_id": "P004",
+    "name": "Some By Mi Intensive Hydrating Cream",
+    "brand": "Some By Mi",
+    "category": "Moisturizer",
+    "subcategory": "Lotion",
+    "price": 895.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "alpha_arbutin",
+      "vitamin_c"
+    ],
+    "texture": "gel-cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel-cream moisturizer formulated with retinol, alpha arbutin, vitamin c to target dark spots. Suitable for normal, oily skin.",
+    "rating": 4.1,
+    "num_reviews": 2100
+  },
+  {
+    "product_id": "P005",
+    "name": "The Face Shop Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "The Face Shop",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 1791.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "dullness",
+      "whiteheads",
+      "barrier_repair"
+    ],
+    "key_ingredients": [
+      "aha",
+      "squalane"
+    ],
+    "texture": "lotion",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A lotion sunscreen formulated with aha, squalane to target dullness, whiteheads, barrier repair. Suitable for dry, normal, sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 4414
+  },
+  {
+    "product_id": "P006",
+    "name": "SkinCeuticals Mineral Sunscreen SPF 50",
+    "brand": "SkinCeuticals",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 6582.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "brightening"
+    ],
+    "key_ingredients": [
+      "titanium_dioxide",
+      "niacinamide",
+      "licorice_root",
+      "vitamin_c"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with titanium dioxide, niacinamide, licorice root to target brightening. Suitable for normal, oily skin.",
+    "rating": 4.8,
+    "num_reviews": 4238
+  },
+  {
+    "product_id": "P007",
+    "name": "Dot & Key Barrier Repair Cream",
+    "brand": "Dot & Key",
+    "category": "Moisturizer",
+    "subcategory": "Cream Moisturizer",
+    "price": 523.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal"
+    ],
+    "concerns": [
+      "texture"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "mandelic_acid"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream moisturizer formulated with retinol, mandelic acid to target texture. Suitable for combination, normal skin.",
+    "rating": 3.9,
+    "num_reviews": 5279
+  },
+  {
+    "product_id": "P008",
+    "name": "Himalaya Exfoliating Squalane Toner",
+    "brand": "Himalaya",
+    "category": "Toner",
+    "subcategory": "Exfoliating Toner",
+    "price": 767.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "barrier_repair"
+    ],
+    "key_ingredients": [
+      "squalane",
+      "fatty_acids",
+      "panthenol"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum toner formulated with squalane, fatty acids, panthenol to target uneven tone, barrier repair. Suitable for combination, dry, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 327
+  },
+  {
+    "product_id": "P009",
+    "name": "Derma Co Intensive Hydrating Cream",
+    "brand": "Derma Co",
+    "category": "Moisturizer",
+    "subcategory": "Cream Moisturizer",
+    "price": 578.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "pores"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "clay",
+      "salicylic_acid",
+      "niacinamide",
+      "kaolin"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel moisturizer formulated with green tea, clay, salicylic acid to target oil control, pores. Suitable for dry, normal, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 4694
+  },
+  {
+    "product_id": "P010",
+    "name": "Wishcare Purifying Mask",
+    "brand": "Wishcare",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 636.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "pores"
+    ],
+    "key_ingredients": [
+      "witch_hazel",
+      "clay",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel mask formulated with witch hazel, clay, niacinamide to target pores. Suitable for normal, oily skin.",
+    "rating": 4.6,
+    "num_reviews": 1146
+  },
+  {
+    "product_id": "P011",
+    "name": "La Roche-Posay Hyaluronic Acid Foaming Cleanser",
+    "brand": "La Roche-Posay",
+    "category": "Cleanser",
+    "subcategory": "Oil Cleanser",
+    "price": 2374.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry"
+    ],
+    "concerns": [
+      "dryness",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "glycerin",
+      "retinol",
+      "ceramides",
+      "vitamin_c"
+    ],
+    "texture": "milk",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A milk cleanser formulated with hyaluronic acid, glycerin, retinol to target dryness, anti aging. Suitable for combination, dry skin.",
+    "rating": 4.5,
+    "num_reviews": 4066
+  },
+  {
+    "product_id": "P012",
+    "name": "Minimalist Retinol Serum",
+    "brand": "Minimalist",
+    "category": "Serum",
+    "subcategory": "Hydrating Serum",
+    "price": 547.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal"
+    ],
+    "concerns": [
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide",
+      "vitamin_c",
+      "alpha_arbutin",
+      "tranexamic_acid"
+    ],
+    "texture": "fluid",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A fluid serum formulated with retinol, niacinamide, vitamin c to target dark spots. Suitable for normal skin.",
+    "rating": 3.9,
+    "num_reviews": 2724
+  },
+  {
+    "product_id": "P013",
+    "name": "Foxtale Panthenol Gel Cleanser",
+    "brand": "Foxtale",
+    "category": "Cleanser",
+    "subcategory": "Oil Cleanser",
+    "price": 549.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "dehydration",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "beta_glucan",
+      "alpha_arbutin",
+      "retinol",
+      "hyaluronic_acid"
+    ],
+    "texture": "milk",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A milk cleanser formulated with panthenol, beta glucan, alpha arbutin to target uneven tone, dehydration, dark spots. Suitable for oily skin.",
+    "rating": 3.9,
+    "num_reviews": 2373
+  },
+  {
+    "product_id": "P014",
+    "name": "Drunk Elephant UV Defense SPF 50",
+    "brand": "Drunk Elephant",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 7776.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "hyperpigmentation",
+      "dryness",
+      "redness"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "kojic_acid",
+      "glycerin",
+      "avobenzone"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with tranexamic acid, kojic acid, glycerin to target hyperpigmentation, dryness, redness. Suitable for dry, normal, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 2242
+  },
+  {
+    "product_id": "P015",
+    "name": "SkinCeuticals AHA 30% + BHA 2% Peeling Solution",
+    "brand": "SkinCeuticals",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 3054.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "pores",
+      "acne",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "tea_tree",
+      "niacinamide",
+      "salicylic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A serum treatment formulated with alpha arbutin, tea tree, niacinamide to target uneven tone, pores, acne. Suitable for oily skin.",
+    "rating": 4.1,
+    "num_reviews": 2605
+  },
+  {
+    "product_id": "P016",
+    "name": "Good Molecules Hydrating Sheet Mask",
+    "brand": "Good Molecules",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 6592.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal"
+    ],
+    "concerns": [
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "peptides",
+      "vitamin_c",
+      "retinol"
+    ],
+    "texture": "clay",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A clay mask formulated with peptides, vitamin c, retinol to target fine lines. Suitable for combination, dry, normal skin.",
+    "rating": 4.3,
+    "num_reviews": 965
+  },
+  {
+    "product_id": "P017",
+    "name": "Good Molecules Brightening Eye Gel",
+    "brand": "Good Molecules",
+    "category": "Eye Care",
+    "subcategory": "Eye Cream",
+    "price": 3697.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "dry"
+    ],
+    "concerns": [
+      "fine_lines",
+      "hyperpigmentation",
+      "dullness",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "tranexamic_acid",
+      "bakuchiol",
+      "licorice_root",
+      "vitamin_c"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum eye care formulated with retinol, tranexamic acid, bakuchiol to target fine lines, hyperpigmentation, dullness. Suitable for dry skin.",
+    "rating": 4.3,
+    "num_reviews": 306
+  },
+  {
+    "product_id": "P018",
+    "name": "Simple Tranexamic Acid Toner",
+    "brand": "Simple",
+    "category": "Toner",
+    "subcategory": "Balancing Toner",
+    "price": 222.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry"
+    ],
+    "concerns": [
+      "fine_lines",
+      "dark_spots",
+      "anti_aging",
+      "barrier_repair"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "peptides",
+      "vitamin_c"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel toner formulated with tranexamic acid, peptides, vitamin c to target fine lines, dark spots, anti aging. Suitable for combination, dry skin.",
+    "rating": 4.2,
+    "num_reviews": 3619
+  },
+  {
+    "product_id": "P019",
+    "name": "Isntree Retinol Clay Mask",
+    "brand": "Isntree",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 1662.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination"
+    ],
+    "concerns": [
+      "dark_spots",
+      "wrinkles",
+      "hyperpigmentation",
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide",
+      "kojic_acid",
+      "peptides"
+    ],
+    "texture": "clay",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A clay mask formulated with retinol, niacinamide, kojic acid to target dark spots, wrinkles, hyperpigmentation. Suitable for combination skin.",
+    "rating": 4.4,
+    "num_reviews": 2719
+  },
+  {
+    "product_id": "P020",
+    "name": "Plum Retinol Spot Treatment",
+    "brand": "Plum",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 506.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "kaolin",
+      "green_tea"
+    ],
+    "texture": "serum",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with retinol, kaolin, green tea to target oil control, hyperpigmentation. Suitable for combination, normal, oily, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 878
+  },
+  {
+    "product_id": "P021",
+    "name": "Estée Lauder AHA 30% + BHA 2% Peeling Solution",
+    "brand": "Estée Lauder",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 3667.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "wrinkles",
+      "dullness",
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "squalane",
+      "niacinamide",
+      "vitamin_c"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel treatment formulated with squalane, niacinamide, vitamin c to target sensitivity, wrinkles, dullness. Suitable for dry, normal, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 3886
+  },
+  {
+    "product_id": "P022",
+    "name": "Axis-Y Overnight Recovery Mask",
+    "brand": "Axis-Y",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 2316.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "brightening",
+      "redness",
+      "dryness",
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "shea_butter",
+      "oat",
+      "madecassoside"
+    ],
+    "texture": "sheet",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A sheet mask formulated with panthenol, shea butter, oat to target brightening, redness, dryness. Suitable for dry, oily, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 740
+  },
+  {
+    "product_id": "P023",
+    "name": "Derma Co Niacinamide Serum",
+    "brand": "Derma Co",
+    "category": "Serum",
+    "subcategory": "Hydrating Serum",
+    "price": 291.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "green_tea",
+      "peptides",
+      "vitamin_c",
+      "bakuchiol"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "serum",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A fluid serum formulated with niacinamide, green tea, peptides to target oil control, anti aging. Suitable for combination, oily skin.",
+    "rating": 4.6,
+    "num_reviews": 4565
+  },
+  {
+    "product_id": "P024",
+    "name": "Neutrogena Glycerin Moisturizer",
+    "brand": "Neutrogena",
+    "category": "Moisturizer",
+    "subcategory": "Gel-Cream",
+    "price": 490.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "dark_spots",
+      "wrinkles",
+      "dryness",
+      "redness"
+    ],
+    "key_ingredients": [
+      "glycerin",
+      "madecassoside"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream moisturizer formulated with glycerin, madecassoside to target dark spots, wrinkles, dryness. Suitable for dry, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 4140
+  },
+  {
+    "product_id": "P025",
+    "name": "Beauty of Joseon Bha Clay Mask",
+    "brand": "Beauty of Joseon",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 2093.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "anti_aging",
+      "texture",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "bha",
+      "bakuchiol",
+      "niacinamide",
+      "lactic_acid"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream mask formulated with bha, bakuchiol, niacinamide to target uneven tone, anti aging, texture. Suitable for combination, normal, oily, sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 3959
+  },
+  {
+    "product_id": "P026",
+    "name": "Isntree Exfoliating Lactic Acid Toner",
+    "brand": "Isntree",
+    "category": "Toner",
+    "subcategory": "Exfoliating Toner",
+    "price": 2103.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "texture",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "lactic_acid",
+      "aha"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel toner formulated with lactic acid, aha to target texture, blackheads. Suitable for oily skin.",
+    "rating": 3.9,
+    "num_reviews": 2069
+  },
+  {
+    "product_id": "P027",
+    "name": "Estée Lauder Calming Toner",
+    "brand": "Estée Lauder",
+    "category": "Toner",
+    "subcategory": "Balancing Toner",
+    "price": 7333.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "vitamin_c",
+      "peptides",
+      "hyaluronic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum toner formulated with retinol, vitamin c, peptides to target fine lines. Suitable for combination, normal, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 4354
+  },
+  {
+    "product_id": "P028",
+    "name": "Round Lab Mineral Sunscreen SPF 50",
+    "brand": "Round Lab",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 2116.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal"
+    ],
+    "concerns": [
+      "anti_aging",
+      "hydration",
+      "uneven_tone",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "glycerin",
+      "avobenzone",
+      "vitamin_c"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with alpha arbutin, glycerin, avobenzone to target anti aging, hydration, uneven tone. Suitable for normal skin.",
+    "rating": 4.0,
+    "num_reviews": 2196
+  },
+  {
+    "product_id": "P029",
+    "name": "Sunday Riley Aha Clay Mask",
+    "brand": "Sunday Riley",
+    "category": "Mask",
+    "subcategory": "Overnight Mask",
+    "price": 5835.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control",
+      "dullness"
+    ],
+    "key_ingredients": [
+      "aha",
+      "licorice_root",
+      "glycolic_acid"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A cream mask formulated with aha, licorice root, glycolic acid to target oil control, dullness. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 3103
+  },
+  {
+    "product_id": "P030",
+    "name": "Anua Vitamin C Spot Treatment",
+    "brand": "Anua",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 2493.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "fine_lines",
+      "redness",
+      "uneven_tone"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "centella"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream treatment formulated with vitamin c, centella to target fine lines, redness, uneven tone. Suitable for dry, oily, sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 4046
+  },
+  {
+    "product_id": "P031",
+    "name": "Some By Mi Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Some By Mi",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 1691.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "blackheads",
+      "dehydration",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "beta_glucan",
+      "hyaluronic_acid",
+      "zinc_oxide"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel sunscreen formulated with beta glucan, hyaluronic acid, zinc oxide to target blackheads, dehydration, hyperpigmentation. Suitable for oily skin.",
+    "rating": 4.5,
+    "num_reviews": 1114
+  },
+  {
+    "product_id": "P032",
+    "name": "Estée Lauder Ceramides Spot Treatment",
+    "brand": "Estée Lauder",
+    "category": "Treatment",
+    "subcategory": "Spot Treatment",
+    "price": 4206.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "dark_spots",
+      "dryness",
+      "pores"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "shea_butter"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A cream treatment formulated with ceramides, shea butter to target redness, dark spots, dryness. Suitable for combination, dry, normal, oily, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 2113
+  },
+  {
+    "product_id": "P033",
+    "name": "Some By Mi Hydrating Essence Toner",
+    "brand": "Some By Mi",
+    "category": "Toner",
+    "subcategory": "Essence",
+    "price": 1851.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "texture",
+      "hyperpigmentation",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "aha",
+      "bakuchiol"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A serum toner formulated with aha, bakuchiol to target redness, texture, hyperpigmentation. Suitable for normal, sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 3426
+  },
+  {
+    "product_id": "P034",
+    "name": "Isntree Zinc Pca Spot Treatment",
+    "brand": "Isntree",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 855.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "hyperpigmentation",
+      "redness",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "zinc_pca",
+      "tranexamic_acid",
+      "madecassoside"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream treatment formulated with zinc pca, tranexamic acid, madecassoside to target hyperpigmentation, redness, oil control. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 2599
+  },
+  {
+    "product_id": "P035",
+    "name": "Derma Co UV Defense SPF 50",
+    "brand": "Derma Co",
+    "category": "Sunscreen",
+    "subcategory": "Mineral Sunscreen",
+    "price": 381.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "barrier_repair",
+      "brightening",
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "alpha_arbutin",
+      "ceramides",
+      "fatty_acids",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel sunscreen formulated with tranexamic acid, alpha arbutin, ceramides to target uneven tone, barrier repair, brightening. Suitable for dry, normal, sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 4812
+  },
+  {
+    "product_id": "P036",
+    "name": "Laneige Hybrid Sunscreen SPF 50+",
+    "brand": "Laneige",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 6309.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control",
+      "sensitivity",
+      "fine_lines",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "zinc_oxide",
+      "hyaluronic_acid",
+      "allantoin"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with bakuchiol, zinc oxide, hyaluronic acid to target oil control, sensitivity, fine lines. Suitable for combination, normal, oily, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 3391
+  },
+  {
+    "product_id": "P037",
+    "name": "CeraVe Hydrating Cream Cleanser",
+    "brand": "CeraVe",
+    "category": "Cleanser",
+    "subcategory": "Oil Cleanser",
+    "price": 1119.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "texture",
+      "sensitivity",
+      "redness"
+    ],
+    "key_ingredients": [
+      "ceramide",
+      "lactic_acid",
+      "oat",
+      "panthenol"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel cleanser formulated with ceramide, lactic acid, oat to target texture, sensitivity, redness. Suitable for dry, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 192
+  },
+  {
+    "product_id": "P038",
+    "name": "Wishcare Eye Cream",
+    "brand": "Wishcare",
+    "category": "Eye Care",
+    "subcategory": "Eye Cream",
+    "price": 747.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "blackheads",
+      "whiteheads",
+      "sensitivity",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "oat",
+      "niacinamide",
+      "alpha_arbutin",
+      "ceramides",
+      "vitamin_c"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A serum eye care formulated with oat, niacinamide, alpha arbutin to target blackheads, whiteheads, sensitivity. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 4522
+  },
+  {
+    "product_id": "P039",
+    "name": "Isntree Purifying Mask",
+    "brand": "Isntree",
+    "category": "Mask",
+    "subcategory": "Overnight Mask",
+    "price": 2034.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "whiteheads",
+      "redness",
+      "brightening",
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "vitamin_c",
+      "centella",
+      "green_tea",
+      "licorice_root"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel mask formulated with tranexamic acid, vitamin c, centella to target whiteheads, redness, brightening. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 3203
+  },
+  {
+    "product_id": "P040",
+    "name": "Purito Brightening Eye Gel",
+    "brand": "Purito",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 2466.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "pores",
+      "whiteheads",
+      "barrier_repair",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "niacinamide"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream eye care formulated with tranexamic acid, niacinamide to target pores, whiteheads, barrier repair. Suitable for combination, dry, oily skin.",
+    "rating": 4.3,
+    "num_reviews": 2251
+  },
+  {
+    "product_id": "P041",
+    "name": "Innisfree Ceramides Clay Mask",
+    "brand": "Innisfree",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 1358.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dark_spots",
+      "sensitivity",
+      "brightening",
+      "pores"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "alpha_arbutin",
+      "tranexamic_acid"
+    ],
+    "texture": "sheet",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A sheet mask formulated with ceramides, alpha arbutin, tranexamic acid to target dark spots, sensitivity, brightening. Suitable for combination, dry, normal, oily, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 539
+  },
+  {
+    "product_id": "P042",
+    "name": "Dot & Key Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Dot & Key",
+    "category": "Sunscreen",
+    "subcategory": "Mineral Sunscreen",
+    "price": 346.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "hydration",
+      "dryness",
+      "texture",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "licorice_root",
+      "ceramides",
+      "vitamin_c"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with niacinamide, licorice root, ceramides to target hydration, dryness, texture. Suitable for dry, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 5058
+  },
+  {
+    "product_id": "P043",
+    "name": "La Roche-Posay Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "La Roche-Posay",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 1550.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "hydration",
+      "hyperpigmentation",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "vitamin_c",
+      "beta_glucan"
+    ],
+    "texture": "lotion",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A lotion sunscreen formulated with retinol, vitamin c, beta glucan to target hydration, hyperpigmentation, anti aging. Suitable for combination, dry, oily skin.",
+    "rating": 3.8,
+    "num_reviews": 3322
+  },
+  {
+    "product_id": "P044",
+    "name": "Purito Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Purito",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 2122.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "texture"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "avobenzone",
+      "lactic_acid",
+      "retinol"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with niacinamide, avobenzone, lactic acid to target texture. Suitable for combination, normal, oily skin.",
+    "rating": 4.6,
+    "num_reviews": 353
+  },
+  {
+    "product_id": "P045",
+    "name": "Simple Overnight Recovery Mask",
+    "brand": "Simple",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 395.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dryness",
+      "dehydration",
+      "whiteheads",
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "peptides",
+      "shea_butter",
+      "retinol"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream mask formulated with hyaluronic acid, peptides, shea butter to target dryness, dehydration, whiteheads. Suitable for dry, normal, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 4335
+  },
+  {
+    "product_id": "P046",
+    "name": "CeraVe Overnight Recovery Mask",
+    "brand": "CeraVe",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 1249.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness"
+    ],
+    "key_ingredients": [
+      "centella",
+      "panthenol",
+      "green_tea",
+      "ceramide"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel mask formulated with centella, panthenol, green tea to target redness. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 1035
+  },
+  {
+    "product_id": "P047",
+    "name": "Sunday Riley Advanced Hyaluronic Acid Serum",
+    "brand": "Sunday Riley",
+    "category": "Serum",
+    "subcategory": "Treatment Serum",
+    "price": 8476.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "sensitive"
+    ],
+    "concerns": [
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "panthenol",
+      "niacinamide"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid serum formulated with hyaluronic acid, panthenol, niacinamide to target blackheads. Suitable for sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 3423
+  },
+  {
+    "product_id": "P048",
+    "name": "Cosrx Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Cosrx",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 1553.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "fine_lines",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "peptides",
+      "retinol",
+      "vitamin_c",
+      "zinc_oxide"
+    ],
+    "texture": "fluid",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with hyaluronic acid, peptides, retinol to target fine lines, blackheads. Suitable for normal, oily, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 1761
+  },
+  {
+    "product_id": "P049",
+    "name": "Innisfree Niacinamide Toner",
+    "brand": "Innisfree",
+    "category": "Toner",
+    "subcategory": "Exfoliating Toner",
+    "price": 2278.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "whiteheads",
+      "acne",
+      "uneven_tone"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "azelaic_acid",
+      "salicylic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "toner",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A serum toner formulated with niacinamide, azelaic acid, salicylic acid to target whiteheads, acne, uneven tone. Suitable for combination, dry, oily skin.",
+    "rating": 4.0,
+    "num_reviews": 509
+  },
+  {
+    "product_id": "P050",
+    "name": "Axis-Y Advanced Green Tea Serum",
+    "brand": "Axis-Y",
+    "category": "Serum",
+    "subcategory": "Anti-Aging Serum",
+    "price": 908.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "fine_lines",
+      "barrier_repair",
+      "blackheads",
+      "redness"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "retinol",
+      "allantoin",
+      "fatty_acids"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel serum formulated with green tea, retinol, allantoin to target fine lines, barrier repair, blackheads. Suitable for dry, normal, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 741
+  },
+  {
+    "product_id": "P051",
+    "name": "Simple Purifying Mask",
+    "brand": "Simple",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 574.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "wrinkles",
+      "barrier_repair",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "cholesterol"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A sheet mask formulated with ceramides, cholesterol to target wrinkles, barrier repair, hyperpigmentation. Suitable for combination, dry, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 1115
+  },
+  {
+    "product_id": "P052",
+    "name": "Simple Squalane Clay Mask",
+    "brand": "Simple",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 424.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "squalane",
+      "ceramides"
+    ],
+    "texture": "clay",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A clay mask formulated with squalane, ceramides to target sensitivity, oil control. Suitable for normal, oily, sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 3430
+  },
+  {
+    "product_id": "P053",
+    "name": "Cosrx Alpha Arbutin Clay Mask",
+    "brand": "Cosrx",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 1063.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "dullness",
+      "blackheads",
+      "fine_lines",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "peptides",
+      "vitamin_c"
+    ],
+    "texture": "clay",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A clay mask formulated with alpha arbutin, peptides, vitamin c to target dullness, blackheads, fine lines. Suitable for oily skin.",
+    "rating": 4.2,
+    "num_reviews": 1566
+  },
+  {
+    "product_id": "P054",
+    "name": "La Roche-Posay Pure Green Tea Treatment",
+    "brand": "La Roche-Posay",
+    "category": "Serum",
+    "subcategory": "Niacinamide Serum",
+    "price": 1041.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "salicylic_acid",
+      "niacinamide",
+      "zinc_pca",
+      "kaolin"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A fluid serum formulated with green tea, salicylic acid, niacinamide to target oil control. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 487
+  },
+  {
+    "product_id": "P055",
+    "name": "Neutrogena Calming Toner",
+    "brand": "Neutrogena",
+    "category": "Toner",
+    "subcategory": "Balancing Toner",
+    "price": 490.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "anti_aging",
+      "uneven_tone",
+      "dehydration",
+      "barrier_repair"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "aloe",
+      "beta_glucan",
+      "panthenol",
+      "centella"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "toner",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel toner formulated with vitamin c, aloe, beta glucan to target anti aging, uneven tone, dehydration. Suitable for dry, oily skin.",
+    "rating": 3.8,
+    "num_reviews": 3313
+  },
+  {
+    "product_id": "P056",
+    "name": "Isntree Allantoin Moisturizer",
+    "brand": "Isntree",
+    "category": "Moisturizer",
+    "subcategory": "Cream Moisturizer",
+    "price": 1357.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "allantoin",
+      "panthenol",
+      "ceramides",
+      "centella",
+      "squalane"
+    ],
+    "texture": "gel-cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel-cream moisturizer formulated with allantoin, panthenol, ceramides to target sensitivity. Suitable for combination, dry, normal, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 3501
+  },
+  {
+    "product_id": "P057",
+    "name": "Cetaphil Mineral Sunscreen SPF 50",
+    "brand": "Cetaphil",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 302.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily"
+    ],
+    "concerns": [
+      "fine_lines",
+      "oil_control",
+      "anti_aging",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "zinc_oxide",
+      "bakuchiol",
+      "kaolin",
+      "peptides"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 4,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with zinc oxide, bakuchiol, kaolin to target fine lines, oil control, anti aging. Suitable for combination, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 5753
+  },
+  {
+    "product_id": "P058",
+    "name": "Wishcare Niacinamide Moisturizer",
+    "brand": "Wishcare",
+    "category": "Moisturizer",
+    "subcategory": "Lotion",
+    "price": 586.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "dullness",
+      "blackheads"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "licorice_root",
+      "aha"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel moisturizer formulated with niacinamide, licorice root, aha to target dullness, blackheads. Suitable for oily skin.",
+    "rating": 4.5,
+    "num_reviews": 3545
+  },
+  {
+    "product_id": "P059",
+    "name": "Himalaya Hyaluronic Acid Clay Mask",
+    "brand": "Himalaya",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 464.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "hydration",
+      "pores"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "witch_hazel",
+      "aloe",
+      "squalane",
+      "clay"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A sheet mask formulated with hyaluronic acid, witch hazel, aloe to target uneven tone, hydration, pores. Suitable for normal, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 2108
+  },
+  {
+    "product_id": "P060",
+    "name": "CeraVe Purifying Mask",
+    "brand": "CeraVe",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 1565.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "barrier_repair",
+      "dryness"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "ceramides",
+      "shea_butter",
+      "squalane",
+      "kaolin"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A sheet mask formulated with panthenol, ceramides, shea butter to target oil control, barrier repair, dryness. Suitable for combination, dry, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 854
+  },
+  {
+    "product_id": "P061",
+    "name": "Wishcare Brightening Eye Gel",
+    "brand": "Wishcare",
+    "category": "Eye Care",
+    "subcategory": "Eye Serum",
+    "price": 593.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dark_spots",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "niacinamide",
+      "retinol",
+      "salicylic_acid",
+      "tranexamic_acid"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel eye care formulated with alpha arbutin, niacinamide, retinol to target dark spots, oil control. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 4612
+  },
+  {
+    "product_id": "P062",
+    "name": "Dot & Key Aloe Clay Mask",
+    "brand": "Dot & Key",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 770.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "dehydration",
+      "dullness"
+    ],
+    "key_ingredients": [
+      "aloe",
+      "aha"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream mask formulated with aloe, aha to target sensitivity, dehydration, dullness. Suitable for dry, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 1745
+  },
+  {
+    "product_id": "P063",
+    "name": "Some By Mi Pure Salicylic Acid Treatment",
+    "brand": "Some By Mi",
+    "category": "Serum",
+    "subcategory": "Hydrating Serum",
+    "price": 1861.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "pores"
+    ],
+    "key_ingredients": [
+      "salicylic_acid",
+      "green_tea",
+      "retinol",
+      "clay"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel serum formulated with salicylic acid, green tea, retinol to target redness, pores. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 2388
+  },
+  {
+    "product_id": "P064",
+    "name": "Paula's Choice Caffeine Eye Serum",
+    "brand": "Paula's Choice",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 2188.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "pores"
+    ],
+    "key_ingredients": [
+      "witch_hazel",
+      "niacinamide"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream eye care formulated with witch hazel, niacinamide to target uneven tone, pores. Suitable for combination, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 1898
+  },
+  {
+    "product_id": "P065",
+    "name": "Laneige AHA 30% + BHA 2% Peeling Solution",
+    "brand": "Laneige",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 2820.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dullness",
+      "wrinkles",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "zinc_pca"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel treatment formulated with green tea, zinc pca to target dullness, wrinkles, oil control. Suitable for dry, normal, oily skin.",
+    "rating": 4.7,
+    "num_reviews": 1216
+  },
+  {
+    "product_id": "P066",
+    "name": "The Face Shop Aloe Spot Treatment",
+    "brand": "The Face Shop",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 935.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "dehydration",
+      "whiteheads",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "aloe",
+      "beta_glucan",
+      "glycerin",
+      "hyaluronic_acid"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel treatment formulated with aloe, beta glucan, glycerin to target dehydration, whiteheads, brightening. Suitable for combination, normal, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 4174
+  },
+  {
+    "product_id": "P067",
+    "name": "Axis-Y Hydrating Cream Cleanser",
+    "brand": "Axis-Y",
+    "category": "Cleanser",
+    "subcategory": "Oil Cleanser",
+    "price": 1044.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "acne",
+      "fine_lines",
+      "dullness",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "zinc_pca",
+      "retinol",
+      "peptides",
+      "niacinamide"
+    ],
+    "texture": "milk",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A milk cleanser formulated with zinc pca, retinol, peptides to target acne, fine lines, dullness. Suitable for combination, normal, oily skin.",
+    "rating": 4.1,
+    "num_reviews": 213
+  },
+  {
+    "product_id": "P068",
+    "name": "Derma Co Purifying Mask",
+    "brand": "Derma Co",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 593.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "hydration"
+    ],
+    "key_ingredients": [
+      "squalane",
+      "panthenol",
+      "glycerin",
+      "aloe"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A sheet mask formulated with squalane, panthenol, glycerin to target hydration. Suitable for dry, normal, oily skin.",
+    "rating": 3.8,
+    "num_reviews": 2250
+  },
+  {
+    "product_id": "P069",
+    "name": "Tatcha Squalane Gel Cleanser",
+    "brand": "Tatcha",
+    "category": "Cleanser",
+    "subcategory": "Cream Cleanser",
+    "price": 8100.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "brightening",
+      "sensitivity",
+      "uneven_tone",
+      "pores"
+    ],
+    "key_ingredients": [
+      "squalane",
+      "tranexamic_acid"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream cleanser formulated with squalane, tranexamic acid to target brightening, sensitivity, uneven tone. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 1610
+  },
+  {
+    "product_id": "P070",
+    "name": "The Face Shop Retinol 0.3% Treatment",
+    "brand": "The Face Shop",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 2155.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control",
+      "anti_aging",
+      "texture"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "salicylic_acid",
+      "retinol",
+      "ceramides"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel treatment formulated with green tea, salicylic acid, retinol to target oil control, anti aging, texture. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 2959
+  },
+  {
+    "product_id": "P071",
+    "name": "The Face Shop Retinol 0.3% Treatment",
+    "brand": "The Face Shop",
+    "category": "Treatment",
+    "subcategory": "Spot Treatment",
+    "price": 1399.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "pores",
+      "oil_control",
+      "wrinkles"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "kaolin",
+      "retinol"
+    ],
+    "texture": "serum",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with ceramides, kaolin, retinol to target uneven tone, pores, oil control. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 345
+  },
+  {
+    "product_id": "P072",
+    "name": "Tatcha Beta Glucan Serum",
+    "brand": "Tatcha",
+    "category": "Serum",
+    "subcategory": "Anti-Aging Serum",
+    "price": 5164.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "sensitive"
+    ],
+    "concerns": [
+      "hydration"
+    ],
+    "key_ingredients": [
+      "beta_glucan",
+      "panthenol",
+      "squalane",
+      "hyaluronic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A serum serum formulated with beta glucan, panthenol, squalane to target hydration. Suitable for sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 2212
+  },
+  {
+    "product_id": "P073",
+    "name": "Sunday Riley AHA 30% + BHA 2% Peeling Solution",
+    "brand": "Sunday Riley",
+    "category": "Treatment",
+    "subcategory": "Spot Treatment",
+    "price": 6664.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "dehydration",
+      "blackheads",
+      "whiteheads",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "kaolin"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with niacinamide, kaolin to target dehydration, blackheads, whiteheads. Suitable for combination, dry, oily skin.",
+    "rating": 4.7,
+    "num_reviews": 1506
+  },
+  {
+    "product_id": "P074",
+    "name": "Plum Overnight Recovery Mask",
+    "brand": "Plum",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 674.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "acne"
+    ],
+    "key_ingredients": [
+      "tea_tree",
+      "panthenol",
+      "benzoyl_peroxide"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A sheet mask formulated with tea tree, panthenol, benzoyl peroxide to target sensitivity, acne. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 889
+  },
+  {
+    "product_id": "P075",
+    "name": "Skin1004 Niacinamide + Squalane Serum",
+    "brand": "Skin1004",
+    "category": "Serum",
+    "subcategory": "Brightening Serum",
+    "price": 1591.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry"
+    ],
+    "concerns": [
+      "whiteheads",
+      "brightening",
+      "dryness"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "squalane"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "serum",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel serum formulated with niacinamide, squalane to target whiteheads, brightening, dryness. Suitable for combination, dry skin.",
+    "rating": 4.7,
+    "num_reviews": 4330
+  },
+  {
+    "product_id": "P076",
+    "name": "Foxtale Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Foxtale",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 773.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "sensitive"
+    ],
+    "concerns": [
+      "whiteheads",
+      "hyperpigmentation",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "licorice_root",
+      "avobenzone",
+      "alpha_arbutin"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel sunscreen formulated with licorice root, avobenzone, alpha arbutin to target whiteheads, hyperpigmentation, brightening. Suitable for sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 2922
+  },
+  {
+    "product_id": "P077",
+    "name": "CeraVe Intensive Hydrating Cream",
+    "brand": "CeraVe",
+    "category": "Moisturizer",
+    "subcategory": "Gel-Cream",
+    "price": 1646.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "hyperpigmentation",
+      "sensitivity",
+      "dullness"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "retinol"
+    ],
+    "texture": "gel-cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 4,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel-cream moisturizer formulated with niacinamide, retinol to target hyperpigmentation, sensitivity, dullness. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 2695
+  },
+  {
+    "product_id": "P078",
+    "name": "Cetaphil Hydrating Sheet Mask",
+    "brand": "Cetaphil",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 508.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination"
+    ],
+    "concerns": [
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "alpha_arbutin",
+      "tranexamic_acid"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel mask formulated with alpha arbutin, tranexamic acid to target dark spots. Suitable for combination skin.",
+    "rating": 4.0,
+    "num_reviews": 1804
+  },
+  {
+    "product_id": "P079",
+    "name": "Dot & Key Niacinamide Clay Mask",
+    "brand": "Dot & Key",
+    "category": "Mask",
+    "subcategory": "Overnight Mask",
+    "price": 498.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "hyperpigmentation",
+      "texture",
+      "acne"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "vitamin_c",
+      "retinol",
+      "panthenol"
+    ],
+    "texture": "clay",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A clay mask formulated with niacinamide, vitamin c, retinol to target sensitivity, hyperpigmentation, texture. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 189
+  },
+  {
+    "product_id": "P080",
+    "name": "Simple Exfoliating Bakuchiol Toner",
+    "brand": "Simple",
+    "category": "Toner",
+    "subcategory": "Essence",
+    "price": 636.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "fine_lines",
+      "pores",
+      "wrinkles",
+      "hydration"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "glycerin",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "toner",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel toner formulated with bakuchiol, glycerin, niacinamide to target fine lines, pores, wrinkles. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 3714
+  },
+  {
+    "product_id": "P081",
+    "name": "Biotique Overnight Recovery Mask",
+    "brand": "Biotique",
+    "category": "Mask",
+    "subcategory": "Sheet Mask",
+    "price": 440.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "pores"
+    ],
+    "key_ingredients": [
+      "witch_hazel",
+      "clay",
+      "niacinamide",
+      "retinol",
+      "salicylic_acid"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel mask formulated with witch hazel, clay, niacinamide to target pores. Suitable for combination, dry, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 5505
+  },
+  {
+    "product_id": "P082",
+    "name": "Skin1004 Retinol 0.3% Treatment",
+    "brand": "Skin1004",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 2186.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dark_spots",
+      "blackheads",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide",
+      "tranexamic_acid",
+      "vitamin_c",
+      "ceramides"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with retinol, niacinamide, tranexamic acid to target dark spots, blackheads, anti aging. Suitable for normal, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 2064
+  },
+  {
+    "product_id": "P083",
+    "name": "Drunk Elephant Niacinamide Foaming Cleanser",
+    "brand": "Drunk Elephant",
+    "category": "Cleanser",
+    "subcategory": "Oil Cleanser",
+    "price": 3645.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "dark_spots",
+      "anti_aging",
+      "whiteheads",
+      "hydration"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "retinol",
+      "vitamin_c",
+      "tranexamic_acid",
+      "beta_glucan"
+    ],
+    "texture": "milk",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A milk cleanser formulated with niacinamide, retinol, vitamin c to target dark spots, anti aging, whiteheads. Suitable for combination, dry, oily skin.",
+    "rating": 4.5,
+    "num_reviews": 4447
+  },
+  {
+    "product_id": "P084",
+    "name": "Innisfree Hydrating Sheet Mask",
+    "brand": "Innisfree",
+    "category": "Mask",
+    "subcategory": "Overnight Mask",
+    "price": 2025.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "texture",
+      "sensitivity",
+      "dehydration"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "oat",
+      "hyaluronic_acid",
+      "lactic_acid"
+    ],
+    "texture": "sheet",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A sheet mask formulated with panthenol, oat, hyaluronic acid to target texture, sensitivity, dehydration. Suitable for oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 3190
+  },
+  {
+    "product_id": "P085",
+    "name": "The Inkey List Brightening Eye Gel",
+    "brand": "The Inkey List",
+    "category": "Eye Care",
+    "subcategory": "Eye Serum",
+    "price": 4243.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control",
+      "fine_lines",
+      "redness"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "allantoin",
+      "ceramide"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel eye care formulated with vitamin c, allantoin, ceramide to target oil control, fine lines, redness. Suitable for combination, normal, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 4430
+  },
+  {
+    "product_id": "P086",
+    "name": "Neutrogena Benzoyl Peroxide Moisturizer",
+    "brand": "Neutrogena",
+    "category": "Moisturizer",
+    "subcategory": "Cream Moisturizer",
+    "price": 397.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "blackheads",
+      "whiteheads",
+      "acne",
+      "dryness"
+    ],
+    "key_ingredients": [
+      "benzoyl_peroxide",
+      "azelaic_acid",
+      "panthenol"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream moisturizer formulated with benzoyl peroxide, azelaic acid, panthenol to target blackheads, whiteheads, acne. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 1976
+  },
+  {
+    "product_id": "P087",
+    "name": "Paula's Choice Witch Hazel Gel Cleanser",
+    "brand": "Paula's Choice",
+    "category": "Cleanser",
+    "subcategory": "Micellar Water",
+    "price": 2391.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "pores",
+      "acne",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "witch_hazel",
+      "tranexamic_acid",
+      "retinol",
+      "clay",
+      "niacinamide"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream cleanser formulated with witch hazel, tranexamic acid, retinol to target pores, acne, hyperpigmentation. Suitable for dry, normal, oily, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 195
+  },
+  {
+    "product_id": "P088",
+    "name": "Some By Mi Hydrating Sheet Mask",
+    "brand": "Some By Mi",
+    "category": "Mask",
+    "subcategory": "Overnight Mask",
+    "price": 1128.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "anti_aging",
+      "barrier_repair",
+      "dark_spots",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "centella",
+      "cholesterol",
+      "retinol",
+      "fatty_acids",
+      "vitamin_c"
+    ],
+    "texture": "sheet",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A sheet mask formulated with centella, cholesterol, retinol to target anti aging, barrier repair, dark spots. Suitable for combination, dry, normal, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 173
+  },
+  {
+    "product_id": "P089",
+    "name": "Plum Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Plum",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 236.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "allantoin",
+      "madecassoside",
+      "titanium_dioxide"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with panthenol, allantoin, madecassoside to target redness. Suitable for combination, dry, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 4082
+  },
+  {
+    "product_id": "P090",
+    "name": "Skin1004 Brightening Eye Gel",
+    "brand": "Skin1004",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 2087.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dullness",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "green_tea"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 2,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream eye care formulated with vitamin c, green tea to target dullness, oil control. Suitable for combination, normal, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 1762
+  },
+  {
+    "product_id": "P091",
+    "name": "Sulwhasoo Ceramides Spot Treatment",
+    "brand": "Sulwhasoo",
+    "category": "Treatment",
+    "subcategory": "Spot Treatment",
+    "price": 7352.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "whiteheads",
+      "barrier_repair",
+      "anti_aging",
+      "redness"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "centella",
+      "bakuchiol",
+      "panthenol"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A cream treatment formulated with ceramides, centella, bakuchiol to target whiteheads, barrier repair, anti aging. Suitable for combination, dry, normal, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 573
+  },
+  {
+    "product_id": "P092",
+    "name": "Neutrogena Hydrating Essence Toner",
+    "brand": "Neutrogena",
+    "category": "Toner",
+    "subcategory": "Essence",
+    "price": 307.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "sensitive"
+    ],
+    "concerns": [
+      "anti_aging",
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "peptides",
+      "bakuchiol",
+      "ceramides",
+      "retinol"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel toner formulated with peptides, bakuchiol, ceramides to target anti aging, fine lines. Suitable for combination, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 345
+  },
+  {
+    "product_id": "P093",
+    "name": "Round Lab UV Defense SPF 50",
+    "brand": "Round Lab",
+    "category": "Sunscreen",
+    "subcategory": "Mineral Sunscreen",
+    "price": 1521.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dullness",
+      "texture",
+      "redness",
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "titanium_dioxide",
+      "avobenzone",
+      "glycolic_acid"
+    ],
+    "texture": "lotion",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A lotion sunscreen formulated with titanium dioxide, avobenzone, glycolic acid to target dullness, texture, redness. Suitable for oily, sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 631
+  },
+  {
+    "product_id": "P094",
+    "name": "Foxtale Hydrating Essence Toner",
+    "brand": "Foxtale",
+    "category": "Toner",
+    "subcategory": "Hydrating Toner",
+    "price": 621.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal"
+    ],
+    "concerns": [
+      "dullness"
+    ],
+    "key_ingredients": [
+      "licorice_root",
+      "niacinamide",
+      "vitamin_c"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 4,
+    "routine_step": "toner",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel toner formulated with licorice root, niacinamide, vitamin c to target dullness. Suitable for combination, dry, normal skin.",
+    "rating": 4.4,
+    "num_reviews": 3517
+  },
+  {
+    "product_id": "P095",
+    "name": "Clinique Oil-Free Gel Cream",
+    "brand": "Clinique",
+    "category": "Moisturizer",
+    "subcategory": "Lotion",
+    "price": 3826.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "uneven_tone",
+      "pores",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "vitamin_c",
+      "alpha_arbutin",
+      "witch_hazel"
+    ],
+    "texture": "gel-cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel-cream moisturizer formulated with niacinamide, vitamin c, alpha arbutin to target uneven tone, pores, brightening. Suitable for combination, dry, oily skin.",
+    "rating": 4.2,
+    "num_reviews": 1926
+  },
+  {
+    "product_id": "P096",
+    "name": "Himalaya Mineral Sunscreen SPF 50",
+    "brand": "Himalaya",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 748.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "anti_aging",
+      "brightening",
+      "barrier_repair",
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "tranexamic_acid",
+      "bakuchiol",
+      "panthenol"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with tranexamic acid, bakuchiol, panthenol to target anti aging, brightening, barrier repair. Suitable for dry, oily skin.",
+    "rating": 4.1,
+    "num_reviews": 523
+  },
+  {
+    "product_id": "P097",
+    "name": "Klairs Hydrating Essence Toner",
+    "brand": "Klairs",
+    "category": "Toner",
+    "subcategory": "Exfoliating Toner",
+    "price": 2031.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "dehydration"
+    ],
+    "key_ingredients": [
+      "oat",
+      "panthenol",
+      "glycerin"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel toner formulated with oat, panthenol, glycerin to target sensitivity, dehydration. Suitable for normal, oily, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 3198
+  },
+  {
+    "product_id": "P098",
+    "name": "Isntree Niacinamide Spot Treatment",
+    "brand": "Isntree",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 1244.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "blackheads",
+      "sensitivity",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "panthenol",
+      "oat",
+      "retinol"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream treatment formulated with niacinamide, panthenol, oat to target redness, blackheads, sensitivity. Suitable for oily, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 3500
+  },
+  {
+    "product_id": "P099",
+    "name": "Plum Lightweight Sunscreen SPF 50 PA++++",
+    "brand": "Plum",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 427.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "brightening"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "ceramides",
+      "zinc_oxide",
+      "squalane",
+      "titanium_dioxide"
+    ],
+    "texture": "lotion",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A lotion sunscreen formulated with niacinamide, ceramides, zinc oxide to target sensitivity, brightening. Suitable for dry, oily, sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 894
+  },
+  {
+    "product_id": "P100",
+    "name": "Wishcare Hydrating Cream Cleanser",
+    "brand": "Wishcare",
+    "category": "Cleanser",
+    "subcategory": "Gel Cleanser",
+    "price": 577.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry"
+    ],
+    "concerns": [
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "niacinamide",
+      "panthenol"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel cleanser formulated with hyaluronic acid, niacinamide, panthenol to target whiteheads. Suitable for dry skin.",
+    "rating": 4.3,
+    "num_reviews": 3029
+  },
+  {
+    "product_id": "P101",
+    "name": "Axis-Y UV Defense SPF 50",
+    "brand": "Axis-Y",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 1945.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "blackheads",
+      "texture"
+    ],
+    "key_ingredients": [
+      "mandelic_acid",
+      "lactic_acid",
+      "zinc_oxide",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel sunscreen formulated with mandelic acid, lactic acid, zinc oxide to target blackheads, texture. Suitable for dry, normal, sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 1930
+  },
+  {
+    "product_id": "P102",
+    "name": "La Roche-Posay Hybrid Sunscreen SPF 50+",
+    "brand": "La Roche-Posay",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 1911.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "zinc_oxide",
+      "avobenzone",
+      "zinc_pca",
+      "titanium_dioxide"
+    ],
+    "texture": "lotion",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A lotion sunscreen formulated with niacinamide, zinc oxide, avobenzone to target oil control. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 428
+  },
+  {
+    "product_id": "P103",
+    "name": "Estée Lauder Intensive Hydrating Cream",
+    "brand": "Estée Lauder",
+    "category": "Moisturizer",
+    "subcategory": "Cream Moisturizer",
+    "price": 5353.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "zinc_pca",
+      "salicylic_acid",
+      "kaolin"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream moisturizer formulated with niacinamide, zinc pca, salicylic acid to target oil control. Suitable for combination, normal, oily skin.",
+    "rating": 4.7,
+    "num_reviews": 2797
+  },
+  {
+    "product_id": "P104",
+    "name": "Derma Co Eye Cream",
+    "brand": "Derma Co",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 633.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "pores",
+      "blackheads",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide",
+      "witch_hazel",
+      "bakuchiol",
+      "clay"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel eye care formulated with retinol, niacinamide, witch hazel to target pores, blackheads, anti aging. Suitable for normal, oily skin.",
+    "rating": 4.5,
+    "num_reviews": 4150
+  },
+  {
+    "product_id": "P105",
+    "name": "Axis-Y Exfoliating Peptides Toner",
+    "brand": "Axis-Y",
+    "category": "Toner",
+    "subcategory": "Balancing Toner",
+    "price": 925.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "whiteheads",
+      "wrinkles",
+      "texture"
+    ],
+    "key_ingredients": [
+      "peptides",
+      "retinol"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum toner formulated with peptides, retinol to target whiteheads, wrinkles, texture. Suitable for combination, dry, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 3610
+  },
+  {
+    "product_id": "P106",
+    "name": "Anua Retinol 0.3% Treatment",
+    "brand": "Anua",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 975.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "vitamin_c"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with bakuchiol, vitamin c to target fine lines. Suitable for dry, normal, oily skin.",
+    "rating": 4.5,
+    "num_reviews": 1468
+  },
+  {
+    "product_id": "P107",
+    "name": "Himalaya Bakuchiol + Ceramides Serum",
+    "brand": "Himalaya",
+    "category": "Serum",
+    "subcategory": "Brightening Serum",
+    "price": 287.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily"
+    ],
+    "concerns": [
+      "anti_aging",
+      "uneven_tone"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "ceramides"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "serum",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A fluid serum formulated with bakuchiol, ceramides to target anti aging, uneven tone. Suitable for combination, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 3347
+  },
+  {
+    "product_id": "P108",
+    "name": "Mamaearth Hydrating Cream Cleanser",
+    "brand": "Mamaearth",
+    "category": "Cleanser",
+    "subcategory": "Micellar Water",
+    "price": 427.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "dark_spots",
+      "anti_aging"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "niacinamide",
+      "ceramide",
+      "madecassoside"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream cleanser formulated with vitamin c, niacinamide, ceramide to target redness, dark spots, anti aging. Suitable for combination, dry, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 3088
+  },
+  {
+    "product_id": "P109",
+    "name": "Mamaearth Brightening Eye Gel",
+    "brand": "Mamaearth",
+    "category": "Eye Care",
+    "subcategory": "Eye Serum",
+    "price": 319.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "brightening",
+      "acne"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "salicylic_acid",
+      "zinc_pca",
+      "alpha_arbutin"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel eye care formulated with niacinamide, salicylic acid, zinc pca to target brightening, acne. Suitable for combination, dry, oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 5206
+  },
+  {
+    "product_id": "P110",
+    "name": "The Face Shop Caffeine Eye Serum",
+    "brand": "The Face Shop",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 2278.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "brightening",
+      "pores",
+      "fine_lines",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "bakuchiol",
+      "retinol"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream eye care formulated with niacinamide, bakuchiol, retinol to target brightening, pores, fine lines. Suitable for combination, dry, oily skin.",
+    "rating": 4.2,
+    "num_reviews": 3284
+  },
+  {
+    "product_id": "P111",
+    "name": "Round Lab Retinol 0.3% Treatment",
+    "brand": "Round Lab",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 1056.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "centella",
+      "squalane",
+      "panthenol",
+      "oat",
+      "ceramides"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A gel treatment formulated with centella, squalane, panthenol to target sensitivity. Suitable for oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 3786
+  },
+  {
+    "product_id": "P112",
+    "name": "The Derma Co Hydrating Sheet Mask",
+    "brand": "The Derma Co",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 625.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide",
+      "alpha_arbutin"
+    ],
+    "texture": "clay",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A clay mask formulated with retinol, niacinamide, alpha arbutin to target dark spots. Suitable for dry, normal, oily skin.",
+    "rating": 4.6,
+    "num_reviews": 2068
+  },
+  {
+    "product_id": "P113",
+    "name": "Derma Co Green Tea Serum",
+    "brand": "Derma Co",
+    "category": "Serum",
+    "subcategory": "Anti-Aging Serum",
+    "price": 567.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "hydration"
+    ],
+    "key_ingredients": [
+      "green_tea",
+      "allantoin",
+      "panthenol"
+    ],
+    "texture": "fluid",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 3,
+    "routine_step": "serum",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid serum formulated with green tea, allantoin, panthenol to target redness, hydration. Suitable for combination, normal, sensitive skin.",
+    "rating": 4.1,
+    "num_reviews": 5315
+  },
+  {
+    "product_id": "P114",
+    "name": "Klairs Overnight Recovery Mask",
+    "brand": "Klairs",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 994.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness",
+      "dryness",
+      "hyperpigmentation"
+    ],
+    "key_ingredients": [
+      "shea_butter",
+      "green_tea",
+      "ceramides"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream mask formulated with shea butter, green tea, ceramides to target redness, dryness, hyperpigmentation. Suitable for dry, normal, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 1209
+  },
+  {
+    "product_id": "P115",
+    "name": "Foxtale Caffeine Eye Serum",
+    "brand": "Foxtale",
+    "category": "Eye Care",
+    "subcategory": "Eye Serum",
+    "price": 521.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "brightening",
+      "dryness"
+    ],
+    "key_ingredients": [
+      "hyaluronic_acid",
+      "glycerin",
+      "vitamin_c"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 3,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A cream eye care formulated with hyaluronic acid, glycerin, vitamin c to target brightening, dryness. Suitable for dry, oily skin.",
+    "rating": 4.2,
+    "num_reviews": 5340
+  },
+  {
+    "product_id": "P116",
+    "name": "Skin1004 Caffeine Eye Serum",
+    "brand": "Skin1004",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 1084.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dullness"
+    ],
+    "key_ingredients": [
+      "licorice_root",
+      "aha",
+      "vitamin_c"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A serum eye care formulated with licorice root, aha, vitamin c to target dullness. Suitable for normal, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 2274
+  },
+  {
+    "product_id": "P117",
+    "name": "Skin1004 Clay Clay Mask",
+    "brand": "Skin1004",
+    "category": "Mask",
+    "subcategory": "Clay Mask",
+    "price": 1728.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "blackheads",
+      "dullness",
+      "hyperpigmentation",
+      "pores"
+    ],
+    "key_ingredients": [
+      "clay",
+      "retinol"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "mask",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel mask formulated with clay, retinol to target blackheads, dullness, hyperpigmentation. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.7,
+    "num_reviews": 3587
+  },
+  {
+    "product_id": "P118",
+    "name": "Plum Pure Panthenol Treatment",
+    "brand": "Plum",
+    "category": "Serum",
+    "subcategory": "Niacinamide Serum",
+    "price": 687.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "hydration"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "aloe",
+      "squalane"
+    ],
+    "texture": "fluid",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A fluid serum formulated with panthenol, aloe, squalane to target hydration. Suitable for oily, sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 4486
+  },
+  {
+    "product_id": "P119",
+    "name": "The Inkey List Hydrating Cream Cleanser",
+    "brand": "The Inkey List",
+    "category": "Cleanser",
+    "subcategory": "Foam Cleanser",
+    "price": 6709.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dullness",
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "glycolic_acid",
+      "niacinamide",
+      "aha",
+      "licorice_root",
+      "vitamin_c"
+    ],
+    "texture": "milk",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A milk cleanser formulated with glycolic acid, niacinamide, aha to target dullness, whiteheads. Suitable for dry, oily, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 2359
+  },
+  {
+    "product_id": "P120",
+    "name": "Tatcha Overnight Recovery Mask",
+    "brand": "Tatcha",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 5992.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "redness"
+    ],
+    "key_ingredients": [
+      "panthenol",
+      "green_tea",
+      "ceramide",
+      "allantoin",
+      "madecassoside"
+    ],
+    "texture": "clay",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A clay mask formulated with panthenol, green tea, ceramide to target redness. Suitable for normal, oily, sensitive skin.",
+    "rating": 4.8,
+    "num_reviews": 476
+  },
+  {
+    "product_id": "P121",
+    "name": "Innisfree Ceramides Gel Cleanser",
+    "brand": "Innisfree",
+    "category": "Cleanser",
+    "subcategory": "Gel Cleanser",
+    "price": 1581.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal"
+    ],
+    "concerns": [
+      "dryness"
+    ],
+    "key_ingredients": [
+      "ceramides",
+      "panthenol",
+      "glycerin",
+      "hyaluronic_acid",
+      "shea_butter"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream cleanser formulated with ceramides, panthenol, glycerin to target dryness. Suitable for combination, dry, normal skin.",
+    "rating": 4.2,
+    "num_reviews": 2582
+  },
+  {
+    "product_id": "P122",
+    "name": "Axis-Y Intensive Hydrating Cream",
+    "brand": "Axis-Y",
+    "category": "Moisturizer",
+    "subcategory": "Gel-Cream",
+    "price": 962.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "centella",
+      "kaolin",
+      "squalane",
+      "panthenol",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel moisturizer formulated with centella, kaolin, squalane to target sensitivity, oil control. Suitable for oily, sensitive skin.",
+    "rating": 3.9,
+    "num_reviews": 3091
+  },
+  {
+    "product_id": "P123",
+    "name": "Wishcare Hybrid Sunscreen SPF 50+",
+    "brand": "Wishcare",
+    "category": "Sunscreen",
+    "subcategory": "Chemical Sunscreen",
+    "price": 651.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "whiteheads",
+      "oil_control"
+    ],
+    "key_ingredients": [
+      "zinc_oxide",
+      "avobenzone",
+      "zinc_pca",
+      "titanium_dioxide",
+      "green_tea"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with zinc oxide, avobenzone, zinc pca to target whiteheads, oil control. Suitable for combination, normal, oily, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 4192
+  },
+  {
+    "product_id": "P124",
+    "name": "Dot & Key Hydrating Sheet Mask",
+    "brand": "Dot & Key",
+    "category": "Mask",
+    "subcategory": "Exfoliating Mask",
+    "price": 348.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "dullness"
+    ],
+    "key_ingredients": [
+      "aha",
+      "niacinamide"
+    ],
+    "texture": "sheet",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 1,
+    "routine_step": "mask",
+    "time_of_use": [
+      "AM",
+      "PM"
+    ],
+    "description": "A sheet mask formulated with aha, niacinamide to target dullness. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.2,
+    "num_reviews": 2670
+  },
+  {
+    "product_id": "P125",
+    "name": "Round Lab AHA 30% + BHA 2% Peeling Solution",
+    "brand": "Round Lab",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 2310.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry"
+    ],
+    "concerns": [
+      "fine_lines"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "peptides",
+      "vitamin_c",
+      "retinol",
+      "hyaluronic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 0,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum treatment formulated with bakuchiol, peptides, vitamin c to target fine lines. Suitable for combination, dry skin.",
+    "rating": 4.7,
+    "num_reviews": 3340
+  },
+  {
+    "product_id": "P126",
+    "name": "Some By Mi Hybrid Sunscreen SPF 50+",
+    "brand": "Some By Mi",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 1506.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "brightening",
+      "hydration",
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "kaolin",
+      "titanium_dioxide",
+      "hyaluronic_acid"
+    ],
+    "texture": "fluid",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A fluid sunscreen formulated with kaolin, titanium dioxide, hyaluronic acid to target oil control, brightening, hydration. Suitable for normal, oily skin.",
+    "rating": 3.9,
+    "num_reviews": 786
+  },
+  {
+    "product_id": "P127",
+    "name": "Klairs Eye Cream",
+    "brand": "Klairs",
+    "category": "Eye Care",
+    "subcategory": "Eye Cream",
+    "price": 893.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "blackheads",
+      "acne"
+    ],
+    "key_ingredients": [
+      "zinc_pca",
+      "benzoyl_peroxide",
+      "azelaic_acid",
+      "niacinamide",
+      "salicylic_acid"
+    ],
+    "texture": "serum",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A serum eye care formulated with zinc pca, benzoyl peroxide, azelaic acid to target blackheads, acne. Suitable for combination, dry, normal, oily skin.",
+    "rating": 4.1,
+    "num_reviews": 3597
+  },
+  {
+    "product_id": "P128",
+    "name": "Derma Co Mineral Sunscreen SPF 50",
+    "brand": "Derma Co",
+    "category": "Sunscreen",
+    "subcategory": "Hybrid Sunscreen",
+    "price": 784.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "titanium_dioxide",
+      "ceramides"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": false,
+    "comedogenic_rating": 4,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with titanium dioxide, ceramides to target sensitivity. Suitable for oily, sensitive skin.",
+    "rating": 4.5,
+    "num_reviews": 1331
+  },
+  {
+    "product_id": "P129",
+    "name": "Wishcare Barrier Repair Cream",
+    "brand": "Wishcare",
+    "category": "Moisturizer",
+    "subcategory": "Gel Moisturizer",
+    "price": 206.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "dry",
+      "sensitive"
+    ],
+    "concerns": [
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "centella",
+      "allantoin",
+      "oat"
+    ],
+    "texture": "lotion",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A lotion moisturizer formulated with centella, allantoin, oat to target sensitivity. Suitable for combination, dry, sensitive skin.",
+    "rating": 4.6,
+    "num_reviews": 4074
+  },
+  {
+    "product_id": "P130",
+    "name": "The Derma Co Bakuchiol Toner",
+    "brand": "The Derma Co",
+    "category": "Toner",
+    "subcategory": "Hydrating Toner",
+    "price": 508.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination"
+    ],
+    "concerns": [
+      "wrinkles"
+    ],
+    "key_ingredients": [
+      "bakuchiol",
+      "niacinamide",
+      "retinol",
+      "peptides"
+    ],
+    "texture": "serum",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "toner",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A serum toner formulated with bakuchiol, niacinamide, retinol to target wrinkles. Suitable for combination skin.",
+    "rating": 4.5,
+    "num_reviews": 2687
+  },
+  {
+    "product_id": "P131",
+    "name": "Skin1004 Vitamin C Spot Treatment",
+    "brand": "Skin1004",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 2495.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal"
+    ],
+    "concerns": [
+      "brightening",
+      "dullness"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "licorice_root",
+      "aha",
+      "niacinamide"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A gel treatment formulated with vitamin c, licorice root, aha to target brightening, dullness. Suitable for normal skin.",
+    "rating": 4.0,
+    "num_reviews": 2031
+  },
+  {
+    "product_id": "P132",
+    "name": "The Inkey List Brightening Eye Gel",
+    "brand": "The Inkey List",
+    "category": "Eye Care",
+    "subcategory": "Eye Serum",
+    "price": 6770.0,
+    "price_tier": "premium",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "oily",
+      "sensitive"
+    ],
+    "concerns": [
+      "pores"
+    ],
+    "key_ingredients": [
+      "clay",
+      "niacinamide",
+      "retinol",
+      "witch_hazel"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream eye care formulated with clay, niacinamide, retinol to target pores. Suitable for combination, oily, sensitive skin.",
+    "rating": 4.4,
+    "num_reviews": 1150
+  },
+  {
+    "product_id": "P133",
+    "name": "Cetaphil Retinol Moisturizer",
+    "brand": "Cetaphil",
+    "category": "Moisturizer",
+    "subcategory": "Lotion",
+    "price": 755.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "normal",
+      "sensitive"
+    ],
+    "concerns": [
+      "dark_spots",
+      "texture",
+      "redness",
+      "uneven_tone"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "tranexamic_acid",
+      "alpha_arbutin"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "moisturizer",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A gel moisturizer formulated with retinol, tranexamic acid, alpha arbutin to target dark spots, texture, redness. Suitable for normal, sensitive skin.",
+    "rating": 4.3,
+    "num_reviews": 2314
+  },
+  {
+    "product_id": "P134",
+    "name": "Innisfree Retinol Spot Treatment",
+    "brand": "Innisfree",
+    "category": "Treatment",
+    "subcategory": "Retinol Treatment",
+    "price": 1004.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "oily"
+    ],
+    "concerns": [
+      "hyperpigmentation",
+      "pores"
+    ],
+    "key_ingredients": [
+      "retinol",
+      "niacinamide"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A cream treatment formulated with retinol, niacinamide to target hyperpigmentation, pores. Suitable for oily skin.",
+    "rating": 3.8,
+    "num_reviews": 3392
+  },
+  {
+    "product_id": "P135",
+    "name": "Cosrx Niacinamide Spot Treatment",
+    "brand": "Cosrx",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 961.0,
+    "price_tier": "mid",
+    "currency": "INR",
+    "skin_types": [
+      "normal"
+    ],
+    "concerns": [
+      "whiteheads"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "panthenol"
+    ],
+    "texture": "gel",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 0,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel treatment formulated with niacinamide, panthenol to target whiteheads. Suitable for normal skin.",
+    "rating": 4.7,
+    "num_reviews": 694
+  },
+  {
+    "product_id": "P136",
+    "name": "Foxtale Hydrating Cream Cleanser",
+    "brand": "Foxtale",
+    "category": "Cleanser",
+    "subcategory": "Gel Cleanser",
+    "price": 465.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "oil_control",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "salicylic_acid",
+      "niacinamide"
+    ],
+    "texture": "milk",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 1,
+    "routine_step": "cleanser",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A milk cleanser formulated with salicylic acid, niacinamide to target oil control, dark spots. Suitable for combination, normal, oily skin.",
+    "rating": 4.0,
+    "num_reviews": 2096
+  },
+  {
+    "product_id": "P137",
+    "name": "Dot & Key Hybrid Sunscreen SPF 50+",
+    "brand": "Dot & Key",
+    "category": "Sunscreen",
+    "subcategory": "Mineral Sunscreen",
+    "price": 220.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "sensitive"
+    ],
+    "concerns": [
+      "hyperpigmentation",
+      "sensitivity"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "kojic_acid"
+    ],
+    "texture": "cream",
+    "fragrance_free": true,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "sunscreen",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream sunscreen formulated with niacinamide, kojic acid to target hyperpigmentation, sensitivity. Suitable for combination, sensitive skin.",
+    "rating": 4.0,
+    "num_reviews": 310
+  },
+  {
+    "product_id": "P138",
+    "name": "Biotique Eye Cream",
+    "brand": "Biotique",
+    "category": "Eye Care",
+    "subcategory": "Eye Gel",
+    "price": 668.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "oily"
+    ],
+    "concerns": [
+      "hydration",
+      "barrier_repair",
+      "dark_spots"
+    ],
+    "key_ingredients": [
+      "centella",
+      "cholesterol"
+    ],
+    "texture": "gel",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "eye_care",
+    "time_of_use": [
+      "Both"
+    ],
+    "description": "A gel eye care formulated with centella, cholesterol to target hydration, barrier repair, dark spots. Suitable for dry, oily skin.",
+    "rating": 4.6,
+    "num_reviews": 2581
+  },
+  {
+    "product_id": "P139",
+    "name": "Plum Pure Niacinamide Treatment",
+    "brand": "Plum",
+    "category": "Serum",
+    "subcategory": "Treatment Serum",
+    "price": 359.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "combination",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dullness"
+    ],
+    "key_ingredients": [
+      "niacinamide",
+      "aha",
+      "glycolic_acid"
+    ],
+    "texture": "fluid",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 4,
+    "routine_step": "serum",
+    "time_of_use": [
+      "PM"
+    ],
+    "description": "A fluid serum formulated with niacinamide, aha, glycolic acid to target dullness. Suitable for combination, normal, oily skin.",
+    "rating": 4.4,
+    "num_reviews": 2108
+  },
+  {
+    "product_id": "P140",
+    "name": "Himalaya Retinol 0.3% Treatment",
+    "brand": "Himalaya",
+    "category": "Treatment",
+    "subcategory": "AHA/BHA Treatment",
+    "price": 222.0,
+    "price_tier": "budget",
+    "currency": "INR",
+    "skin_types": [
+      "dry",
+      "normal",
+      "oily"
+    ],
+    "concerns": [
+      "dullness"
+    ],
+    "key_ingredients": [
+      "vitamin_c",
+      "aha",
+      "glycolic_acid",
+      "licorice_root",
+      "niacinamide"
+    ],
+    "texture": "cream",
+    "fragrance_free": false,
+    "alcohol_free": true,
+    "comedogenic_rating": 2,
+    "routine_step": "treatment",
+    "time_of_use": [
+      "AM"
+    ],
+    "description": "A cream treatment formulated with vitamin c, aha, glycolic acid to target dullness. Suitable for dry, normal, oily skin.",
+    "rating": 3.8,
+    "num_reviews": 1612
+  }
+]
