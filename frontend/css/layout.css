@@ -1,0 +1,704 @@
+/* Layout & Shell Styles - White & Gold Luxury */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar Navigation */
+.app-sidebar {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.94);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 2px 0 16px rgba(184, 134, 11, 0.04);
+  transition: transform var(--transition-normal);
+}
+
+.brand-header {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 246, 240, 0.7) 100%);
+  position: relative;
+}
+
+.brand-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 22px;
+  width: 36px;
+  height: 2px;
+  background: var(--gradient-gold);
+}
+
+.brand-text h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brand-text h1 span.brand-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gold);
+}
+
+.brand-text p {
+  font-size: 0.70rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Navigation Links */
+.nav-menu {
+  flex: 1;
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.nav-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 14px 10px 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(184, 134, 11, 0.15);
+}
+
+.nav-item.active {
+  color: #ffffff;
+  background: var(--gradient-gold);
+  font-weight: 600;
+  box-shadow: var(--shadow-gold);
+  border-color: transparent;
+}
+
+.nav-item .icon {
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(248, 246, 240, 0.7);
+}
+
+.user-badge-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.user-badge-mini:hover {
+  background: #ffffff;
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--accent-gold);
+  object-fit: cover;
+}
+
+.user-meta-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-name-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  background: rgba(184, 134, 11, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid rgba(184, 134, 11, 0.25);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.dashboard-waves-canvas {
+  position: fixed;
+  top: 0;
+  left: 280px;
+  right: 0;
+  bottom: 0;
+  width: calc(100vw - 280px);
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+@media (max-width: 900px) {
+  .dashboard-waves-canvas {
+    left: 0;
+    width: 100vw;
+  }
+}
+
+/* Top App Header */
+.app-header {
+  height: 72px;
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 1px 10px rgba(184, 134, 11, 0.04);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-title-wrap h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+.header-title-wrap p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Role Simulator Dropdown Pill */
+.role-simulator-badge {
+  background: #ffffff;
+  border: 1px solid rgba(184, 134, 11, 0.28);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.role-select-native {
+  background: transparent;
+  color: var(--accent-gold);
+  border: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.role-select-native option {
+  background: #ffffff;
+  color: #1c1917;
+}
+
+/* Main Viewport Container */
+.main-viewport {
+  flex: 1;
+  padding: 32px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   DEDICATED AUTH PAGE (SPLIT-SCREEN WITH EXPANSION TRANSITION)
+   ========================================================= */
+
+.app-container.auth-hidden {
+  display: none !important;
+}
+
+.auth-page-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  background: var(--bg-main);
+  display: flex;
+  overflow: hidden !important;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+}
+
+.auth-page-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: none !important;
+}
+
+/* Scrollbar Elimination for Auth Page */
+.auth-page-wrapper,
+.auth-brand-pane,
+.auth-form-pane,
+.auth-card-box {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.auth-page-wrapper::-webkit-scrollbar,
+.auth-brand-pane::-webkit-scrollbar,
+.auth-form-pane::-webkit-scrollbar,
+.auth-card-box::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Left Pane: Dark Luxury Brand, Radiant Gold & Expanding Cover */
+.auth-brand-pane {
+  flex: 1 1 50%;
+  width: 50%;
+  min-width: 0;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(155deg, #181512 0%, #251f19 50%, #120f0d 100%);
+  border-right: 1.5px solid rgba(212, 175, 55, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 48px;
+  box-sizing: border-box;
+  overflow: hidden !important;
+  z-index: 10;
+  transition: all 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 12px 0 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Background Glowing Gold Wave Canvas for Left Pane */
+.auth-brand-pane::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(184, 134, 11, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+  animation: subtlePulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtlePulse {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.08) rotate(3deg); }
+}
+
+.auth-brand-pane::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-gold);
+}
+
+/* Left Pane Expanded State - Covers the Whole Screen Smoothly */
+.auth-brand-pane.expanded-cover {
+  flex: 1 0 100vw !important;
+  width: 100vw !important;
+  border-right: none;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, #181512 0%, #251f19 50%, #120f0d 100%);
+}
+
+.auth-brand-pane.expanded-cover .auth-brand-features {
+  display: none;
+}
+
+.auth-brand-pane.expanded-cover .auth-brand-hero {
+  transform: scale(1.1);
+  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-brand-hero {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+  margin-bottom: 0;
+}
+
+/* Big Gold Vector Logo */
+.auth-logo-emblem {
+  width: 66px;
+  height: 66px;
+  margin-bottom: 18px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #8c620a 100%);
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.40);
+  position: relative;
+}
+
+.auth-logo-emblem svg {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.auth-brand-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  line-height: 1.05;
+  margin-bottom: 4px;
+}
+
+.auth-brand-title span.gold-dot {
+  color: var(--accent-champagne);
+}
+
+.auth-brand-subtitle {
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-champagne);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.auth-brand-tagline {
+  font-size: 1.02rem;
+  color: rgba(255, 255, 255, 0.80);
+  line-height: 1.55;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* Brand Feature Badges - Evenly Sized Dark Glass Cards */
+.auth-brand-features {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 36px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 98px;
+  height: auto;
+  box-sizing: border-box;
+  background: rgba(30, 24, 18, 0.88);
+  border: 1px solid rgba(212, 175, 55, 0.26);
+  padding: 18px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.auth-feature-item:hover {
+  transform: translateX(6px);
+  border-color: var(--accent-champagne);
+  background: rgba(45, 36, 27, 0.94);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.42);
+}
+
+.auth-feature-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  color: var(--accent-champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-feature-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.auth-feature-text h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.auth-feature-text p {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Dynamic Auth Loading Banner on Left Side */
+.auth-transition-banner {
+  display: none;
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: rgba(28, 24, 19, 0.95);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--accent-champagne);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+  animation: fadeIn 0.4s ease;
+}
+
+.auth-brand-pane.expanded-cover .auth-transition-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.spinner-gold {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(212, 175, 55, 0.25);
+  border-top-color: var(--accent-champagne);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Right Pane: Login & Sign Up Form with Golden Curvy Waves */
+.auth-form-pane {
+  flex: 1 1 50%;
+  width: 50%;
+  min-width: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 24px;
+  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f7f3ea 100%);
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.auth-waves-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.auth-form-pane.fade-out {
+  opacity: 0;
+  transform: translateX(60px);
+  pointer-events: none;
+}
+
+.auth-card-box {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 16px;
+  padding: 30px 32px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 2;
+  margin: auto 0;
+  box-sizing: border-box;
+}
+
+.auth-tabs-nav {
+  display: flex;
+  background: #fdfbf7;
+  border: 1px solid rgba(212, 175, 55, 0.20);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 22px;
+  gap: 4px;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #57534e;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.auth-tab-btn.active {
+  background: #ffffff;
+  color: var(--accent-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-weight: 700;
+}
+
+.auth-form-header {
+  margin-bottom: 20px;
+}
+
+.auth-form-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: #1c1917;
+  margin-bottom: 6px;
+}
+
+.auth-form-header p {
+  font-size: 0.88rem;
+  color: #78716c;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+  }
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+  .app-main {
+    margin-left: 0;
+  }
+  .auth-page-wrapper {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .auth-brand-pane, .auth-form-pane {
+    width: 100%;
+    flex: none;
+  }
+  .auth-brand-pane {
+    padding: 36px 24px;
+    border-right: none;
+    border-bottom: 1.5px solid rgba(184, 134, 11, 0.22);
+  }
+  .auth-brand-title {
+    font-size: 2.2rem;
+  }
+  .auth-brand-pane.expanded-cover {
+    height: 100vh;
+  }
+}
+

@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinIQ — AI Skin Intelligence & Personalized Skincare Planner</title>
+  <meta name="description" content="AI-powered clinical skincare intelligence platform for personalized skincare routines, skin health scoring, lifestyle tracking, and dermatologist-level skin insights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css?v=12.0">
+  <link rel="stylesheet" href="/css/layout.css?v=12.0">
+  <link rel="stylesheet" href="/css/components.css?v=12.0">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="brand-header">
+        <div class="brand-text">
+          <h1>SkinIQ<span class="brand-dot"></span></h1>
+          <p>Clinical Intelligence</p>
+        </div>
+      </div>
+
+      <nav class="nav-menu" id="app-nav-menu">
+        <!-- Consumer Navigation (USER) -->
+        <div class="role-nav-group" id="nav-group-consumer">
+          <div class="nav-section-title">Skin Intelligence</div>
+          <div class="nav-item active" data-view="dashboard" id="nav-dashboard">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            </span>
+            <span>Skin Health Overview</span>
+          </div>
+          <div class="nav-item" data-view="profile-wizard" id="nav-profile-wizard">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+            <span>Skin Profile & Assessment</span>
+          </div>
+          <div class="nav-item" data-view="lifestyle-tracking" id="nav-lifestyle-tracking">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </span>
+            <span>Daily Lifestyle & Vitals</span>
+          </div>
+          <div class="nav-item" data-view="routine-planner" id="nav-routine-planner">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </span>
+            <span>Routine & Assessment</span>
+          </div>
+          <div class="nav-item" data-view="product-recommendations" id="nav-product-recommendations">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20.53a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v15.53z"></path><path d="M2 13h20"></path><path d="M12 4v9"></path></svg>
+            </span>
+            <span>Product Recommendations</span>
+          </div>
+          <div class="nav-item" data-view="progress-analytics" id="nav-progress-analytics">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </span>
+            <span>Progress Analytics</span>
+          </div>
+          <div class="nav-item" data-view="ingredient-intelligence" id="nav-ingredient-intelligence">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
+            </span>
+            <span>Ingredient Intelligence</span>
+          </div>
+        </div>
+
+        <!-- Skincare Consultant Navigation (SKINCARE_CONSULTANT) -->
+        <div class="role-nav-group" id="nav-group-consultant" style="display:none;">
+          <div class="nav-section-title">Consultant Suite</div>
+          <div class="nav-item" data-view="consultant-workstation" id="nav-consultant-workstation">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <span>Client Queue & Intakes</span>
+          </div>
+          <div class="nav-item" data-view="consultant-prescription" id="nav-consultant-prescription">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </span>
+            <span>Regimen Prescription Studio</span>
+          </div>
+          <div class="nav-item" data-view="consultant-compatibility" id="nav-consultant-compatibility">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"></path><path d="M14 9.3V1.99"></path><path d="M8.5 2h7"></path><path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path><path d="M5.52 16h12.96"></path></svg>
+            </span>
+            <span>Ingredient Synergy Matrix</span>
+          </div>
+        </div>
+
+        <!-- Dermatologist MD Navigation (DERMATOLOGIST) -->
+        <div class="role-nav-group" id="nav-group-dermatologist" style="display:none;">
+          <div class="nav-section-title">Clinical Dermatology</div>
+          <div class="nav-item" data-view="dermatologist-diagnostics" id="nav-dermatologist-diagnostics">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </span>
+            <span>Patient Triage & Diagnostics</span>
+          </div>
+          <div class="nav-item" data-view="dermatologist-staging" id="nav-dermatologist-staging">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg>
+            </span>
+            <span>Pathology & Staging</span>
+          </div>
+          <div class="nav-item" data-view="dermatologist-titration" id="nav-dermatologist-titration">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </span>
+            <span>Clinical Rx Active Titration</span>
+          </div>
+        </div>
+
+        <!-- Administrator Navigation (ADMINISTRATOR) -->
+        <div class="role-nav-group" id="nav-group-admin" style="display:none;">
+          <div class="nav-section-title">Platform Administration</div>
+          <div class="nav-item" data-view="admin-overview" id="nav-admin-overview">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </span>
+            <span>Executive Hub & Telemetry</span>
+          </div>
+          <div class="nav-item" data-view="admin-users" id="nav-admin-users">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+            </span>
+            <span>User Directory & RBAC</span>
+          </div>
+          <div class="nav-item" data-view="admin-regulatory" id="nav-admin-regulatory">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            <span>Regulatory & Safety Database</span>
+          </div>
+          <div class="nav-item" data-view="admin-telemetry" id="nav-admin-telemetry">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+            </span>
+            <span>Database Health & Storage</span>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div id="user-logged-in-wrap" class="user-badge-mini" onclick="window.auth.showAuthPage('login')">
+          <img id="header-user-avatar" class="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="User Avatar">
+          <div class="user-meta-info">
+            <div id="header-user-name" class="user-name-text">Geona Michelle</div>
+            <span id="header-user-role" class="user-role-pill">USER</span>
+          </div>
+        </div>
+        <div id="user-logged-out-wrap" style="display:none; padding:8px;">
+          <button class="btn btn-gold btn-sm" style="width:100%;" onclick="window.auth.showAuthPage('login')">Sign In</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Background Glowing Gold Wave Canvas for Main Dashboard -->
+      <canvas id="dashboard-waves-canvas" class="dashboard-waves-canvas"></canvas>
+
+      <!-- Sticky Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <div class="header-title-wrap">
+            <h2 id="header-current-view-title">Skin Health Intelligence Overview</h2>
+            <p id="header-current-view-desc">Real-time overview of skin profile, recovery scoring, and daily vitals.</p>
+          </div>
+        </div>
+
+        <div class="header-right" style="display: flex; align-items: center; gap: 16px;">
+          <!-- Notification Bell -->
+          <div class="notification-container" style="position: relative; cursor: pointer;" onclick="window.app.toggleNotifications()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-secondary);"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span id="notification-badge" style="position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; border-radius: 50%; width: 14px; height: 14px; font-size: 0.65rem; display: flex; align-items: center; justify-content: center; font-weight: bold; display: none;">0</span>
+            
+            <!-- Notification Dropdown -->
+            <div id="notification-dropdown" class="glass-card" style="display: none; position: absolute; right: 0; top: 30px; width: 320px; z-index: 1000; padding: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+              <div class="card-header" style="border-bottom: 1px solid var(--border-subtle); padding: 12px 16px;">
+                <div class="card-title" style="font-size: 0.95rem;">Notifications & Reminders</div>
+              </div>
+              <div id="notification-list" style="max-height: 350px; overflow-y: auto; padding: 8px 0;">
+                <div style="padding: 16px; text-align: center; color: var(--text-muted); font-size: 0.85rem;">Loading...</div>
+              </div>
+            </div>
+          </div>
+
+          <button id="btn-open-login" class="btn btn-secondary btn-sm" onclick="window.auth.showAuthPage('login')">Sign In</button>
+          <button id="btn-logout" class="btn btn-ghost btn-sm" onclick="window.auth.logout()" title="Sign out">Sign Out</button>
+        </div>
+      </header>
+
+      <!-- Viewport Area -->
+      <div class="main-viewport">
+
+        <!-- VIEW: ROUTINE PLANNER (MILESTONE 2) -->
+        <section id="view-routine-planner" class="view-section" style="display:none;">
+          
+          <div class="header-banner" style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(206, 175, 122, 0.15) 100%); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div>
+              <h2 style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.5px;">Intelligent Skin Routine</h2>
+              <p style="color: var(--text-secondary); margin: 0; font-size: 1.05rem;">AI-driven personalized skincare regimens optimized for your unique profile.</p>
+            </div>
+            <div style="display: flex; gap: 16px; align-items: center;">
+              <div style="text-align: right;">
+                <label style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; display: block; margin-bottom: 4px;">Adapt to Season</label>
+                <select id="season-selector" class="form-control" style="border-radius: 20px; background: rgba(0,0,0,0.2); backdrop-filter: blur(10px); color: var(--text-primary); padding: 8px 16px; border: 1px solid var(--border-light);">
+                  <option value="Spring">Spring</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Autumn">Autumn</option>
+                  <option value="Winter">Winter</option>
+                </select>
+              </div>
+              <button class="btn btn-gold" id="btn-generate-assessment" style="padding: 12px 24px; font-weight: 600; box-shadow: 0 4px 14px rgba(206, 175, 122, 0.4); transition: transform 0.2s;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Generate Regimen
+              </button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+            
+            <!-- Left Column: Score & Assessment -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+              <!-- Score Card -->
+              <div class="glass-card" id="score-results" style="display:none; position: relative; overflow: hidden; padding: 24px;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(206, 175, 122, 0.15) 0%, transparent 70%); border-radius: 50%;"></div>
+                <h3 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-top: 0; margin-bottom: 20px;">Skin Health Score</h3>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 24px;">
+                  <div style="position: relative; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: conic-gradient(var(--accent-gold) calc(var(--score) * 1%), rgba(255,255,255,0.05) 0); box-shadow: inset 0 0 20px rgba(0,0,0,0.5);" id="overall-score-circle" style="--score: 0;">
+                    <div style="position: absolute; width: 100px; height: 100px; background: var(--bg-surface); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                      <span id="overall-score-display" style="font-size: 2.2rem; font-family: var(--font-heading); color: var(--accent-gold); font-weight: 600; line-height: 1;">--</span>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;" id="score-components">
+                  <!-- Components injected via JS -->
+                </div>
+              </div>
+
+              <!-- Assessment Card -->
+              <div class="glass-card" id="assessment-results" style="display:none; padding: 24px;">
+                <h3 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-top: 0; margin-bottom: 16px;">Clinical Assessment</h3>
+                <p id="assessment-summary" style="font-size: 1.05rem; line-height: 1.6; color: var(--text-primary); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle);"></p>
+                
+                <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 12px;">Prioritized Targets</h4>
+                <div id="assessment-concerns-list" style="display: flex; flex-direction: column; gap: 12px;">
+                  <!-- Injected via JS -->
+                </div>
+                
+                <div id="assessment-high-risk-container" style="display: none; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+                  <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #F26060; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    High Risk Skin Factors
+                  </h4>
+                  <div id="assessment-high-risk-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <!-- Injected via JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Routine -->
+            <div class="glass-card" id="routine-results" style="display:none; padding: 0; overflow: hidden; background: transparent; border: none; box-shadow: none;">
+               <div style="background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); height: 100%; display: flex; flex-direction: column; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                 <div style="padding: 24px; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                   <div>
+                     <h3 style="font-size: 1.2rem; margin: 0 0 4px 0; color: var(--text-primary); font-family: var(--font-heading);">Prescribed Regimen</h3>
+                     <span id="routine-target" style="font-size: 0.85rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;"></span>
+                   </div>
+                 </div>
+                 
+                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1;">
+                   <!-- Morning -->
+                   <div style="padding: 24px; border-right: 1px solid var(--border-subtle);">
+                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                       <div style="background: rgba(234, 184, 114, 0.15); padding: 8px; border-radius: 50%; color: #F5A623;">
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                       </div>
+                       <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-primary); font-weight: 400;">Morning</h4>
+                     </div>
+                     <div id="morning-routine-list" style="display: flex; flex-direction: column; gap: 16px;"></div>
+                   </div>
+
+                   <!-- Evening -->
+                   <div style="padding: 24px;">
+                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+                       <div style="background: rgba(144, 164, 255, 0.15); padding: 8px; border-radius: 50%; color: #90A4FF;">
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                       </div>
+                       <h4 style="margin: 0; font-size: 1.1rem; color: var(--text-primary); font-weight: 400;">Evening</h4>
+                     </div>
+                     <div id="evening-routine-list" style="display: flex; flex-direction: column; gap: 16px;"></div>
+                   </div>
+                 </div>
+
+                 <!-- Weekly -->
+                 <div style="padding: 20px 24px; border-top: 1px solid var(--border-subtle); background: #f9f9f9;">
+                   <h4 style="margin: 0 0 8px 0; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Weekly Treatment Directive</h4>
+                   <p id="weekly-treatment-text" style="margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--text-secondary);"></p>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 1: DASHBOARD OVERVIEW -->
+        <section id="view-dashboard" class="view-section">
+          <!-- Stats Row -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Lifestyle Recovery Score</div>
+                <div id="stat-lifestyle-score" class="stat-value">86</div>
+                <div class="stat-desc">Optimal hydration & sleep balance</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Today's Hydration</div>
+                <div id="hydration-percent-text" class="stat-value">70%</div>
+                <div id="hydration-target-amount" class="stat-desc">Target: 2500 ml</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Sleep Duration & State</div>
+                <div id="summary-sleep-hours" class="stat-value">7.5h</div>
+                <div id="summary-sleep-quality" class="stat-desc" style="color:var(--accent-indigo);">GOOD • Refreshed</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">UV Index & Environment</div>
+                <div id="stat-uv-index" class="stat-value">4.5</div>
+                <div class="stat-desc" style="color:var(--accent-gold);">Moderate UV • SPF 30+</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Dashboard Split Layout -->
+          <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:24px;">
+            <!-- Skin Profile Summary Card -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Active User Skin Profile</div>
+                <button class="btn btn-secondary btn-sm" onclick="window.app.navigate('profile-wizard')">Edit Profile</button>
+              </div>
+
+              <!-- Key Characteristics Grid -->
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:18px;">
+                <div style="background:var(--bg-surface); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <span style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; display:block;">Skin Type</span>
+                  <strong id="summary-skin-type" style="font-size:1.05rem; color:var(--accent-gold); font-family:var(--font-heading);">COMBINATION</strong>
+                </div>
+                <div style="background:var(--bg-surface); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <span style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; display:block;">Age & Group</span>
+                  <strong id="summary-age-group" style="font-size:1.05rem; color:var(--text-primary); font-family:var(--font-heading);">25 yrs (25-34)</strong>
+                </div>
+                <div style="background:var(--bg-surface); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <span style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; display:block;">Oil Characteristics</span>
+                  <span id="summary-oil-characteristics" style="font-size:0.85rem; color:var(--text-primary); font-weight:600;">Moderate T-Zone sebum</span>
+                </div>
+                <div style="background:var(--bg-surface); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <span style="font-size:0.72rem; text-transform:uppercase; color:var(--text-muted); font-weight:700; display:block;">Exercise & Routine</span>
+                  <span id="summary-exercise-habits" style="font-size:0.85rem; color:var(--text-primary); font-weight:600;">3-4x / week (45m)</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom:14px;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-primary); display:block; margin-bottom:6px;">Target Skin Concerns</label>
+                <div id="summary-concerns-tags" class="tags-cloud" style="margin:0 0 12px 0;"></div>
+              </div>
+
+              <div style="margin-bottom:14px;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-primary); display:block; margin-bottom:6px;">Allergens & Sensitivities</label>
+                <div id="summary-allergies-tags" class="tags-cloud" style="margin:0 0 12px 0;"></div>
+              </div>
+
+              <div>
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-primary); display:block; margin-bottom:6px;">Personal Skin Goals</label>
+                <div id="summary-goals-tags" class="tags-cloud" style="margin:0;"></div>
+              </div>
+            </div>
+
+            <!-- Quick Hydration Tracker Card -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Daily Hydration Input</div>
+                <button class="btn btn-ghost btn-sm" id="btn-reset-water">Reset</button>
+              </div>
+
+              <div class="hydration-dial-wrap">
+                <div class="hydration-ring" id="hydration-dial-ring" style="--percent: 70;">
+                  <div class="hydration-ring-inner">
+                    <span id="hydration-current-amount" class="hydration-amount">1750 ml</span>
+                    <span class="hydration-target">of 2500 ml Goal</span>
+                  </div>
+                </div>
+
+                <div class="quick-hydration-actions">
+                  <button id="btn-add-250-water" class="btn btn-secondary btn-sm">+250 ml (1 Glass)</button>
+                  <button id="btn-add-500-water" class="btn btn-gold btn-sm">+500 ml (1 Bottle)</button>
+                </div>
+              </div>
+
+              <div style="margin-top:20px; border-top:1px solid var(--border-subtle); padding-top:16px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <span style="font-size:0.82rem; color:var(--text-secondary);">Log sleep, stress & environment</span>
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="window.app.navigate('lifestyle-tracking')">Full Lifestyle Hub →</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: SKIN PROFILE WIZARD -->
+        <section id="view-profile-wizard" class="view-section" style="display:none;">
+          <div class="glass-card" style="max-width:860px; margin:0 auto;">
+            <!-- Wizard Step Bar -->
+            <div class="wizard-progress">
+              <div class="wizard-step-pill active" id="step-pill-1">1. Skin Type & Age</div>
+              <div class="wizard-step-pill" id="step-pill-2">2. Concerns & Goals</div>
+              <div class="wizard-step-pill" id="step-pill-3">3. Allergies & Safety</div>
+              <div class="wizard-step-pill" id="step-pill-4">4. Habits & Lifestyle</div>
+            </div>
+
+            <!-- Step 1: Skin Type, Exact Age & Oil Characteristics -->
+            <div class="wizard-step-content" id="wizard-step-1">
+              <h3 style="margin-bottom:6px;">Basic Profile — Skin Type & Characteristics</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:20px;">Provide your exact age, oil production characteristics, and primary skin type.</p>
+
+              <div class="option-grid">
+                <div class="option-card skin-type-opt" data-type="NORMAL">
+                  <div class="opt-title">Normal</div>
+                  <div class="opt-desc">Well balanced, neither excessively oily nor dry.</div>
+                </div>
+                <div class="option-card skin-type-opt selected" data-type="COMBINATION">
+                  <div class="opt-title">Combination</div>
+                  <div class="opt-desc">Oily T-zone (forehead, nose) & normal/dry cheeks.</div>
+                </div>
+                <div class="option-card skin-type-opt" data-type="OILY">
+                  <div class="opt-title">Oily</div>
+                  <div class="opt-desc">Active sebum across face, shine, enlarged pores.</div>
+                </div>
+                <div class="option-card skin-type-opt" data-type="DRY">
+                  <div class="opt-title">Dry</div>
+                  <div class="opt-desc">Tight feeling, prone to flakiness, low moisture.</div>
+                </div>
+                <div class="option-card skin-type-opt" data-type="SENSITIVE">
+                  <div class="opt-title">Sensitive</div>
+                  <div class="opt-desc">Easily irritated, redness, reactions to products.</div>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr 1.2fr; gap:16px; margin-top:20px;">
+                <div class="form-group">
+                  <label class="form-label">Age of the Person</label>
+                  <input type="number" id="wizard-age-input" class="form-input" min="1" max="120" value="25" placeholder="e.g. 25">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Age Group</label>
+                  <select id="wizard-age-group" class="form-select">
+                    <option value="UNDER_18">Under 18</option>
+                    <option value="18-24">18 - 24 years</option>
+                    <option value="25-34" selected>25 - 34 years</option>
+                    <option value="35-44">35 - 44 years</option>
+                    <option value="45-54">45 - 54 years</option>
+                    <option value="55+">55+ years</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Oil Type & Characteristics</label>
+                  <select id="wizard-oil-characteristics" class="form-select">
+                    <option value="Moderate T-zone shine, normal-to-dry cheeks" selected>Moderate T-Zone sebum, dry cheeks</option>
+                    <option value="High overall sebum production & shine">High overall sebum & shine</option>
+                    <option value="Low sebum, dehydrated surface">Low sebum, dehydrated</option>
+                    <option value="Balanced lipid barrier">Balanced sebum production</option>
+                    <option value="Reactive sebum with surface flakiness">Reactive sebum / surface flakiness</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Concerns & Goals -->
+            <div class="wizard-step-content" id="wizard-step-2" style="display:none;">
+              <h3 style="margin-bottom:6px;">Target Skin Concerns</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:16px;">Select all specific concerns you want addressed.</p>
+              <div id="wizard-concerns-cloud" class="tags-cloud"></div>
+
+              <h3 style="margin-top:28px; margin-bottom:6px;">Personal Skincare Goals</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:16px;">What are your main aspirations for your skin health?</p>
+              <div id="wizard-goals-cloud" class="tags-cloud"></div>
+            </div>
+
+            <!-- Step 3: Allergens & Sensitivities -->
+            <div class="wizard-step-content" id="wizard-step-3" style="display:none;">
+              <h3 style="margin-bottom:6px;">Allergy & Sensitivity Profile</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:16px;">Identify allergens and sensitive compounds to avoid.</p>
+              <div id="wizard-allergies-cloud" class="tags-cloud"></div>
+
+              <div class="form-group" style="margin-top:20px;">
+                <label class="form-label">Custom Sensitivity or Medical Notes</label>
+                <textarea id="wizard-notes-input" class="form-textarea" rows="3" placeholder="e.g. Sensitive to essential oils, avoid high strength AHAs..."></textarea>
+              </div>
+            </div>
+
+            <!-- Step 4: Lifestyle & Working Routine -->
+            <div class="wizard-step-content" id="wizard-step-4" style="display:none;">
+              <h3 style="margin-bottom:6px;">Lifestyle & Working Habits</h3>
+              <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:20px;">Record your daily work routine, exercise frequency, and stress level.</p>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:20px;">
+                <div class="form-group">
+                  <label class="form-label">Working Habits / Routine</label>
+                  <select id="wizard-work-routine" class="form-select">
+                    <option value="Desk/Screen work indoors" selected>Desk / Screen work indoors</option>
+                    <option value="Outdoor work with sun exposure">Outdoor work with sun exposure</option>
+                    <option value="Active field work">Active field work</option>
+                    <option value="Night shifts / Irregular schedule">Night shifts / Irregular schedule</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">How Often They Exercise</label>
+                  <select id="wizard-exercise-freq" class="form-select">
+                    <option value="Daily">Daily</option>
+                    <option value="3-4 times a week" selected>3 - 4 times a week</option>
+                    <option value="1-2 times a week">1 - 2 times a week</option>
+                    <option value="Rarely / None">Rarely / None</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:20px;">
+                <div class="form-group">
+                  <label class="form-label">Exercise Duration (Minutes)</label>
+                  <input type="number" id="wizard-exercise-dur" class="form-input" value="45" min="0" max="300">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Daily Stress Level (1 - 10)</label>
+                  <div class="form-range-wrap">
+                    <input type="range" id="wizard-stress-range" class="form-range" min="1" max="10" step="1" value="4">
+                    <span id="wizard-stress-val" class="range-val-badge">4 / 10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:20px;">
+                <div class="form-group">
+                  <label class="form-label">Sun Exposure Level</label>
+                  <select id="wizard-sun-exposure" class="form-select">
+                    <option value="Low (< 1 hour)">Low (&lt; 1 hour)</option>
+                    <option value="Moderate (1-3 hours)" selected>Moderate (1 - 3 hours)</option>
+                    <option value="High (3-5 hours)">High (3 - 5 hours)</option>
+                    <option value="Extreme (5+ hours)">Extreme (5+ hours outdoors)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Weather & Climate Condition</label>
+                  <select id="wizard-climate" class="form-select">
+                    <option value="Cold & Dry" selected>Cold & Dry (Winter / AC)</option>
+                    <option value="Hot & Humid">Hot & Humid (Tropical)</option>
+                    <option value="Temperate">Temperate / Mild</option>
+                    <option value="Arid & Desert">Arid & Desert</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Daily Hydration Baseline (ml)</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="wizard-water-range" class="form-range" min="1000" max="4000" step="100" value="2200">
+                  <span id="wizard-water-val" class="range-val-badge">2200 ml</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wizard Footer Buttons -->
+            <div style="display:flex; justify-content:space-between; margin-top:28px; border-top:1px solid var(--border-subtle); padding-top:18px;">
+              <button id="btn-wizard-prev" class="btn btn-secondary" style="display:none;">Back</button>
+              <div></div>
+              <button id="btn-wizard-next" class="btn btn-gold">Continue</button>
+              <button id="btn-wizard-save" class="btn btn-gold" style="display:none;">Save Profile to Database</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 3: LIFESTYLE & SLEEP TRACKING -->
+        <section id="view-lifestyle-tracking" class="view-section" style="display:none;">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px; margin-bottom:24px;">
+            <!-- Sleep Pattern Tracker Card -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Sleep Pattern Tracking</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">How Many Hours Slept</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="sleep-duration-slider" class="form-range" min="3" max="12" step="0.5" value="7.5">
+                  <span id="sleep-duration-val" class="range-val-badge">7.5 hrs</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Quality of Sleep</label>
+                <div class="quality-pills">
+                  <div class="quality-pill" data-quality="POOR">Poor</div>
+                  <div class="quality-pill" data-quality="FAIR">Fair</div>
+                  <div class="quality-pill active" data-quality="GOOD">Good</div>
+                  <div class="quality-pill" data-quality="EXCELLENT">Excellent</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Waking State (Feel Good vs Tired)</label>
+                <div class="quality-pills">
+                  <div class="quality-pill feeling-pill active" data-feeling="Good & Refreshed">Good & Refreshed</div>
+                  <div class="quality-pill feeling-pill" data-feeling="Moderate">Moderate</div>
+                  <div class="quality-pill feeling-pill" data-feeling="Tired & Fatigued">Tired & Fatigued</div>
+                  <div class="quality-pill feeling-pill" data-feeling="Exhausted">Exhausted</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Sleep Notes</label>
+                <input type="text" id="sleep-notes" class="form-input" placeholder="e.g. Slept deeply, woke up energized">
+              </div>
+
+              <button id="btn-save-sleep" class="btn btn-gold" style="width:100%;">Record Sleep Pattern</button>
+            </div>
+
+            <!-- Lifestyle Habits Tracker Card -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Lifestyle & Routine Habits</div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+                <div class="form-group">
+                  <label class="form-label">Working Habits / Routine</label>
+                  <select id="tracking-work-routine" class="form-select">
+                    <option value="Desk/Screen work indoors" selected>Desk / Screen work indoors</option>
+                    <option value="Outdoor work">Outdoor work</option>
+                    <option value="Active field work">Active field work</option>
+                    <option value="Night shift / Irregular">Night shift / Irregular</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">How Often They Exercise</label>
+                  <select id="tracking-exercise-freq" class="form-select">
+                    <option value="Daily">Daily</option>
+                    <option value="3-4 times a week" selected>3 - 4 times a week</option>
+                    <option value="1-2 times a week">1 - 2 times a week</option>
+                    <option value="Rarely">Rarely</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+                <div>
+                  <label class="form-label">Exercise (Minutes)</label>
+                  <input type="number" id="exercise-mins-input" class="form-input" value="45" min="0">
+                </div>
+                <div>
+                  <label class="form-label">Smoking Status</label>
+                  <select id="smoking-status-select" class="form-select">
+                    <option value="Non-smoker" selected>Non-smoker</option>
+                    <option value="Occasional">Occasional</option>
+                    <option value="Regular">Regular</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Stress Level (1 = Calm, 10 = High)</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="stress-level-slider" class="form-range" min="1" max="10" step="1" value="4">
+                  <span id="stress-level-val" class="range-val-badge">4 / 10</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Diet Quality (1 = Poor, 10 = Clean)</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="diet-quality-slider" class="form-range" min="1" max="10" step="1" value="8">
+                  <span id="diet-quality-val" class="range-val-badge">8 / 10</span>
+                </div>
+              </div>
+
+              <button id="btn-save-lifestyle" class="btn btn-gold" style="width:100%;">Record Lifestyle Habits</button>
+            </div>
+          </div>
+
+          <!-- Environmental Exposure Tracking Card -->
+          <div class="glass-card">
+            <div class="card-header">
+              <div class="card-title">Environmental Exposure Tracking</div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:18px; margin-bottom:18px;">
+              <div class="form-group">
+                <label class="form-label">Exposure to Sun (Hours)</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="env-sun-hours-slider" class="form-range" min="0" max="10" step="0.5" value="2.0">
+                  <span id="env-sun-hours-val" class="range-val-badge">2.0 hrs</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">UV Exposure Index</label>
+                <input type="number" id="env-uv-input" class="form-input" value="4.5" step="0.1" min="0" max="15">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Exposure to Dust & Pollution</label>
+                <select id="env-dust-select" class="form-select">
+                  <option value="Low">Low (Filtered indoor air)</option>
+                  <option value="Moderate" selected>Moderate (Urban commute)</option>
+                  <option value="High">High (Heavy traffic / dust)</option>
+                  <option value="Severe">Severe (Industrial smog)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Exposure to Cold & Weather</label>
+                <select id="env-weather-select" class="form-select">
+                  <option value="Cold & Dry" selected>Cold & Dry (Winter AC)</option>
+                  <option value="Hot & Humid">Hot & Humid (Tropical)</option>
+                  <option value="Mild / Moderate">Mild / Moderate</option>
+                  <option value="Windy & Arid">Windy & Arid</option>
+                </select>
+              </div>
+            </div>
+
+            <button id="btn-save-environment" class="btn btn-gold" style="width:100%;">Record Environmental Exposure</button>
+          </div>
+        </section>
+
+        <!-- VIEW 4: PRODUCT RECOMMENDATIONS (MILESTONE 3) -->
+        <section id="view-product-recommendations" class="view-section" style="display:none;">
+          <div class="header-banner" style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(206, 175, 122, 0.15) 100%); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div>
+              <h2 style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.5px;">Product Recommendations</h2>
+              <p style="color: var(--text-secondary); margin: 0; font-size: 1.05rem;">AI-curated products tailored specifically for your skin concerns and profile.</p>
+            </div>
+            <div style="display: flex; gap: 16px; align-items: center;">
+              <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                <label for="budget-filter" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">Max Budget: $<span id="budget-value">50</span></label>
+                <input type="range" id="budget-filter" min="10" max="200" step="5" value="50" style="width: 150px;" oninput="document.getElementById('budget-value').innerText = this.value">
+              </div>
+              <button class="btn btn-gold" id="btn-fetch-products" style="padding: 12px 24px; font-weight: 600;" onclick="window.milestone3.loadProductRecommendations()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Refresh Catalog
+              </button>
+              <button class="btn btn-secondary" id="btn-compare-products" style="padding: 12px 24px; font-weight: 600;" onclick="window.milestone3.compareSelectedProducts()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> Compare
+              </button>
+            </div>
+          </div>
+          
+          <div id="product-comparison-view" style="display: none; margin-bottom: 24px;"></div>
+
+          <div id="product-recommendation-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">Loading recommendations...</div>
+          </div>
+        </section>
+
+        <!-- VIEW 5: PROGRESS ANALYTICS (MILESTONE 3) -->
+        <section id="view-progress-analytics" class="view-section" style="display:none;">
+          <div class="header-banner" style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(144, 164, 255, 0.15) 100%); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div>
+              <h2 style="font-family: var(--font-heading); color: var(--accent-indigo); font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.5px;">Progress Tracking & Reports</h2>
+              <p style="color: var(--text-secondary); margin: 0; font-size: 1.05rem;">Monitor your routine adherence, generate health reports, and export your skin history.</p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <button class="btn btn-secondary" onclick="window.app.exportReport('pdf')" style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Export PDF
+              </button>
+              <button class="btn btn-secondary" onclick="window.app.exportReport('csv')" style="display: flex; align-items: center; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> Export Excel
+              </button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px;">
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Skin Health Scoring Engine</div>
+              </div>
+              <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px; text-align: center; display: flex; flex-direction: column; justify-content: center; padding: 20px;">
+                  <h3 style="color: var(--text-secondary); margin: 0; font-size: 1rem; text-transform: uppercase;">Overall Score</h3>
+                  <div id="score-overall" style="font-size: 4rem; color: var(--accent-indigo); font-weight: 700; line-height: 1;">--</div>
+                  <div id="score-improvement" style="color: var(--accent-emerald); font-weight: 600; font-size: 0.9rem; margin-top: 8px;">-- Improvement</div>
+                </div>
+                <div style="flex: 2; min-width: 300px;">
+                  <table class="table" style="width: 100%; font-size: 0.9rem; text-align: left; border-collapse: collapse;">
+                    <tbody>
+                      <tr style="border-bottom: 1px solid var(--border-subtle);">
+                        <td style="color: var(--text-muted); padding: 10px 0;">Skin Condition Assessment (35%)</td>
+                        <td id="score-skin" style="font-weight: 600; text-align: right; color: var(--text-primary);">--</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--border-subtle);">
+                        <td style="color: var(--text-muted); padding: 10px 0;">Lifestyle Habits (20%)</td>
+                        <td id="score-lifestyle" style="font-weight: 600; text-align: right; color: var(--text-primary);">--</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--border-subtle);">
+                        <td style="color: var(--text-muted); padding: 10px 0;">Sleep Quality (15%)</td>
+                        <td id="score-sleep" style="font-weight: 600; text-align: right; color: var(--text-primary);">--</td>
+                      </tr>
+                      <tr style="border-bottom: 1px solid var(--border-subtle);">
+                        <td style="color: var(--text-muted); padding: 10px 0;">Routine Consistency (20%)</td>
+                        <td id="score-routine" style="font-weight: 600; text-align: right; color: var(--text-primary);">--</td>
+                      </tr>
+                      <tr>
+                        <td style="color: var(--text-muted); padding: 10px 0;">Hydration Level (10%)</td>
+                        <td id="score-hydration" style="font-weight: 600; text-align: right; color: var(--text-primary);">--</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Routine Adherence</div>
+              </div>
+              <div style="text-align: center; padding: 20px 0;">
+                <h1 id="analytics-adherence-rate" style="font-size: 3rem; color: var(--accent-emerald); margin: 0;">--%</h1>
+                <p style="color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">30-Day Completion Rate</p>
+              </div>
+              
+              <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; margin-top: 10px;">
+                <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; text-transform: uppercase;">Log Today's Routine</h4>
+                <div style="display: flex; gap: 12px;">
+                  <button id="btn-log-morning" class="btn btn-secondary btn-sm" style="flex:1;">Log Morning</button>
+                  <button id="btn-log-evening" class="btn btn-secondary btn-sm" style="flex:1;">Log Evening</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Skin Health Score History</div>
+              </div>
+              <div id="score-history-chart-container" style="height: 200px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                [Chart Placeholder - Scores will appear here]
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-header">
+              <div class="card-title">Recent Adherence Logs</div>
+            </div>
+            <table class="table" style="width: 100%; text-align: left; border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Date</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Morning</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Evening</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="adherence-logs-table">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">
+            <!-- Trend & Improvement Analysis -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Trend & Improvement Analysis</div>
+              </div>
+              <div style="padding: 20px;">
+                <div style="margin-bottom: 16px;">
+                  <h4 style="color: var(--text-secondary); margin: 0 0 8px 0; text-transform: uppercase; font-size: 0.85rem;">Overall Trend</h4>
+                  <div id="trend-analysis-result" style="font-size: 1.25rem; color: var(--accent-indigo); font-weight: 600;">Loading...</div>
+                </div>
+                <div>
+                  <h4 style="color: var(--text-secondary); margin: 0 0 8px 0; text-transform: uppercase; font-size: 0.85rem;">Total Net Improvement</h4>
+                  <div id="improvement-analysis-result" style="font-size: 1.25rem; color: var(--accent-emerald); font-weight: 600;">Loading...</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Before / After Comparison -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Before / After Score Comparison (30 Days)</div>
+              </div>
+              <div style="padding: 20px; display: flex; gap: 20px; justify-content: space-around; align-items: center;">
+                <div style="text-align: center;">
+                  <div style="color: var(--text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Baseline Score</div>
+                  <div id="compare-before" style="font-size: 3rem; color: var(--text-secondary); font-weight: 700; line-height: 1;">--</div>
+                </div>
+                <div style="color: var(--border-subtle); font-size: 2rem;">&rarr;</div>
+                <div style="text-align: center;">
+                  <div style="color: var(--text-muted); margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase;">Current Score</div>
+                  <div id="compare-after" style="font-size: 3rem; color: var(--accent-emerald); font-weight: 700; line-height: 1;">--</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 6: INGREDIENT INTELLIGENCE (MILESTONE 3) -->
+        <section id="view-ingredient-intelligence" class="view-section" style="display:none;">
+          <div class="header-banner" style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(16, 185, 129, 0.15) 100%); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div>
+              <h2 style="font-family: var(--font-heading); color: var(--accent-emerald); font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.5px;">Ingredient Intelligence</h2>
+              <p style="color: var(--text-secondary); margin: 0; font-size: 1.05rem;">Deep clinical dive into skincare ingredients, their ratings, and safety profiles.</p>
+            </div>
+            <div>
+              <button class="btn btn-secondary" id="btn-fetch-ingredients" style="padding: 12px 24px; font-weight: 600;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Load Database
+              </button>
+            </div>
+          </div>
+          
+          <div class="glass-card">
+            <div class="card-header">
+              <div class="card-title">Active Ingredients Database</div>
+            </div>
+            <table class="table" style="width: 100%; text-align: left; border-collapse: collapse;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--border-subtle);">
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Ingredient</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Category</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Suitability</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Interactions & Warnings</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Safety</th>
+                  <th style="padding: 12px; color: var(--text-muted); font-size: 0.85rem;">Clinical Note</th>
+                </tr>
+              </thead>
+              <tbody id="ingredient-intelligence-table">
+                <tr><td colspan="6" style="padding: 20px; text-align: center; color: var(--text-muted);">Click "Load Database" to view intelligence analysis.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             CONSULTANT PORTAL VIEWS (SKINCARE_CONSULTANT)
+             ========================================== -->
+
+        <!-- CONSULTANT VIEW 1: CLIENT QUEUE & INTAKES -->
+        <section id="view-consultant-workstation" class="view-section" style="display:none;">
+          <!-- Consultant Metrics Overview -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(212, 175, 55, 0.15); color:var(--accent-gold);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Active Client Roster</div>
+                <div id="stat-consultant-total-clients" class="stat-value">18</div>
+                <div class="stat-desc">Consumers under routine guidance</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(16, 185, 129, 0.15); color:var(--accent-emerald);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Barrier Recovery Protocols</div>
+                <div class="stat-value">12</div>
+                <div class="stat-desc">Ceramide & Lipid active repair</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(99, 102, 241, 0.15); color:var(--accent-indigo);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Pending Intakes</div>
+                <div class="stat-value">4</div>
+                <div class="stat-desc">Assessments awaiting routine design</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(239, 68, 68, 0.15); color:#ef4444;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Allergy / Sensitivity Alerts</div>
+                <div class="stat-value">3</div>
+                <div class="stat-desc">Fragrance & Essential oil warnings</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Intake Queue & Search -->
+          <div class="glass-card">
+            <div class="card-header" style="flex-wrap:wrap; gap:12px;">
+              <div>
+                <div class="card-title">Consultation Client Queue</div>
+                <p style="margin:2px 0 0; font-size:0.84rem; color:var(--text-secondary);">Direct access to client skin barrier indices, hydration logs, and personalized routine history.</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input type="text" id="consultant-client-search" class="form-input" placeholder="Search by client name or email..." style="width:260px; padding:7px 12px; font-size:0.85rem;" oninput="window.app.filterConsultantClients()">
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border-subtle); color:var(--text-secondary); background:var(--bg-surface);">
+                    <th style="padding:12px 14px;">Client Name</th>
+                    <th style="padding:12px 14px;">Email</th>
+                    <th style="padding:12px 14px;">Skin Type</th>
+                    <th style="padding:12px 14px;">Primary Concern</th>
+                    <th style="padding:12px 14px;">Latest Score</th>
+                    <th style="padding:12px 14px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="consultant-clients-table">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONSULTANT VIEW 1.5: CLIENT DOSSIER -->
+        <section id="view-consultant-dossier" class="view-section" style="display:none;">
+          <div class="header-banner" style="background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(212, 175, 55, 0.15) 100%); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div style="display: flex; gap: 20px; align-items: center;">
+              <img id="dossier-avatar" src="" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+              <div>
+                <h2 id="dossier-name" style="font-family: var(--font-heading); color: var(--accent-gold); font-size: 2rem; margin: 0 0 8px 0; letter-spacing: -0.5px;">Client Name</h2>
+                <p style="color: var(--text-secondary); margin: 0; font-size: 1.05rem;">Comprehensive Skin Profile, Assessment Reports & Progress Monitoring.</p>
+              </div>
+            </div>
+            <div>
+              <button class="btn btn-secondary" onclick="window.app.navigate('consultant-workstation')" style="padding: 12px 24px; font-weight: 600;">
+                Back to Queue
+              </button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+            <!-- Client Profile -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Client Skin Profile</div>
+              </div>
+              <div style="padding: 20px;" id="dossier-profile-details">
+                Loading profile...
+              </div>
+            </div>
+
+            <!-- Skin Assessment Reports -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Skin Assessment Reports</div>
+              </div>
+              <div style="padding: 20px; max-height: 300px; overflow-y: auto;" id="dossier-assessment-reports">
+                Loading assessments...
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+            <!-- Progress Monitoring -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Progress Monitoring</div>
+              </div>
+              <div style="padding: 20px; max-height: 300px; overflow-y: auto;" id="dossier-progress-history">
+                Loading progress history...
+              </div>
+            </div>
+
+            <!-- Recommendation Management -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Recommendation Management</div>
+              </div>
+              <div style="padding: 20px;">
+                <div id="dossier-active-routine" style="margin-bottom: 16px;">
+                  <!-- Active Routine summary goes here -->
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 16px 0;">
+                <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; text-transform: uppercase;">Consultant Notes</h4>
+                <textarea id="dossier-note-input" class="form-input" rows="3" placeholder="Add clinical note or adjust recommendations..."></textarea>
+                <button class="btn btn-gold btn-sm" style="margin-top: 10px;" onclick="window.app.addClientNote()">Save Note</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONSULTANT VIEW 2: REGIMEN PRESCRIPTION STUDIO -->
+        <section id="view-consultant-prescription" class="view-section" style="display:none;">
+          <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:24px;">
+            <!-- Prescription Form -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Custom Regimen Prescription Builder</div>
+                  <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Formulate tailored 5-step morning and evening protocols for clients.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Select Client for Prescription</label>
+                <select id="prescribe-client-select" class="form-select" onchange="window.app.handlePrescribeClientChange()">
+                  <!-- Dynamically filled -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Regimen Protocol Mode</label>
+                <select id="prescribe-protocol-mode" class="form-select" onchange="window.app.updatePrescriptionPreview()">
+                  <option value="BARRIER_REPAIR" selected>Lipid Barrier Repair & Soothing (Damaged / Reactive)</option>
+                  <option value="ACNE_CLARIFYING">Anti-Inflammatory Acne Clarifying (BHA + Niacinamide)</option>
+                  <option value="ANTIOXIDANT_RADIANCE">Antioxidant Radiance & Brightening (Vitamin C + Ferulic)</option>
+                  <option value="HYDRATION_PLUMP">Deep Circadian Hydration (Hyaluronic + Panthenol B5)</option>
+                </select>
+              </div>
+
+              <!-- 5-Step Routine Selection -->
+              <div style="margin-top:18px; display:flex; flex-direction:column; gap:14px;">
+                <div class="form-group">
+                  <label class="form-label" style="display:flex; justify-content:space-between;">
+                    <span>Step 1: Cleanser</span>
+                    <span style="color:var(--accent-gold); font-size:0.75rem;">AM & PM</span>
+                  </label>
+                  <input type="text" id="prescribe-step-1" class="form-input" value="Centella Calming Gel Cleanser (pH 5.5)" oninput="window.app.updatePrescriptionPreview()">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" style="display:flex; justify-content:space-between;">
+                    <span>Step 2: Hydrating Toner / Essence</span>
+                    <span style="color:var(--accent-gold); font-size:0.75rem;">AM & PM</span>
+                  </label>
+                  <input type="text" id="prescribe-step-2" class="form-input" value="Bifida Ferment & Panthenol Barrier Essence" oninput="window.app.updatePrescriptionPreview()">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" style="display:flex; justify-content:space-between;">
+                    <span>Step 3: Targeted Active Treatment</span>
+                    <span style="color:var(--accent-gold); font-size:0.75rem;">Target Serum</span>
+                  </label>
+                  <input type="text" id="prescribe-step-3" class="form-input" value="10% Niacinamide + 1% Zinc PCA Barrier Serum" oninput="window.app.updatePrescriptionPreview()">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" style="display:flex; justify-content:space-between;">
+                    <span>Step 4: Lipid Barrier Moisturizer</span>
+                    <span style="color:var(--accent-gold); font-size:0.75rem;">AM & PM</span>
+                  </label>
+                  <input type="text" id="prescribe-step-4" class="form-input" value="Ceramide NP 3:1:1 Cholesterol Recovery Cream" oninput="window.app.updatePrescriptionPreview()">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" style="display:flex; justify-content:space-between;">
+                    <span>Step 5: Photoprotection (Daytime)</span>
+                    <span style="color:var(--accent-gold); font-size:0.75rem;">AM Essential</span>
+                  </label>
+                  <input type="text" id="prescribe-step-5" class="form-input" value="Mineral Zinc Oxide SPF 50+ PA++++ (Invisible Finish)" oninput="window.app.updatePrescriptionPreview()">
+                </div>
+              </div>
+
+              <button class="btn btn-gold" style="width:100%; margin-top:16px;" onclick="window.app.issuePrescription()">✦ Authorize & Issue Regimen to Client</button>
+            </div>
+
+            <!-- Live Regimen Preview Card -->
+            <div class="glass-card" style="display:flex; flex-direction:column;">
+              <div class="card-header">
+                <div class="card-title">Prescription Preview & Patient Handout</div>
+                <span class="user-role-pill" style="background:rgba(212, 175, 55, 0.12); color:var(--accent-gold);">Consultant Verified</span>
+              </div>
+
+              <div id="prescription-preview-box" style="flex:1; background:var(--bg-surface); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); display:flex; flex-direction:column; justify-content:space-between;">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONSULTANT VIEW 3: INGREDIENT COMPATIBILITY MATRIX -->
+        <section id="view-consultant-compatibility" class="view-section" style="display:none;">
+          <div class="glass-card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Clinical Ingredient Synergy & Conflict Matrix</div>
+                <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Analyze pH windows, molecular synergies, and application timings between active ingredients.</p>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+              <div class="form-group">
+                <label class="form-label">Select Active Ingredient A</label>
+                <select id="matrix-active-a" class="form-select" onchange="window.app.analyzeIngredientCompatibility()">
+                  <option value="VITAMIN_C">L-Ascorbic Acid (Pure Vitamin C 15%)</option>
+                  <option value="RETINOL" selected>Retinol / Granactive Retinoid</option>
+                  <option value="AHA">Glycolic Acid (AHA 7%)</option>
+                  <option value="BHA">Salicylic Acid (BHA 2%)</option>
+                  <option value="NIACINAMIDE">Niacinamide (Vitamin B3 5-10%)</option>
+                  <option value="BENZOYL_PEROXIDE">Benzoyl Peroxide 2.5%</option>
+                  <option value="AZELAIC_ACID">Azelaic Acid 10%</option>
+                  <option value="PEPTIDES">Copper Tripeptide-1</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Select Active Ingredient B</label>
+                <select id="matrix-active-b" class="form-select" onchange="window.app.analyzeIngredientCompatibility()">
+                  <option value="VITAMIN_C" selected>L-Ascorbic Acid (Pure Vitamin C 15%)</option>
+                  <option value="RETINOL">Retinol / Granactive Retinoid</option>
+                  <option value="AHA">Glycolic Acid (AHA 7%)</option>
+                  <option value="BHA">Salicylic Acid (BHA 2%)</option>
+                  <option value="NIACINAMIDE">Niacinamide (Vitamin B3 5-10%)</option>
+                  <option value="BENZOYL_PEROXIDE">Benzoyl Peroxide 2.5%</option>
+                  <option value="AZELAIC_ACID">Azelaic Acid 10%</option>
+                  <option value="PEPTIDES">Copper Tripeptide-1</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="ingredient-matrix-result">
+              <!-- Dynamically rendered compatibility output -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             DERMATOLOGIST PORTAL VIEWS (DERMATOLOGIST)
+             ========================================== -->
+
+        <!-- DERMATOLOGIST VIEW 1: CLINICAL DIAGNOSTICS & TRIAGE -->
+        <section id="view-dermatologist-diagnostics" class="view-section" style="display:none;">
+          <!-- Triage Priority Cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(239, 68, 68, 0.15); color:#ef4444;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">High Priority Triage</div>
+                <div class="stat-value" style="color:#ef4444;">3 Patients</div>
+                <div class="stat-desc">Severe Inflammatory / Flare</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(245, 158, 11, 0.15); color:#f59e0b;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Moderate Pathology</div>
+                <div class="stat-value" style="color:#f59e0b;">8 Patients</div>
+                <div class="stat-desc">Papulopustular & Melasma</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(16, 185, 129, 0.15); color:var(--accent-emerald);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Clinical Clearance Rate</div>
+                <div class="stat-value" style="color:var(--accent-emerald);">91.4%</div>
+                <div class="stat-desc">30-day TEWL barrier resolution</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon-wrap" style="background:rgba(139, 92, 246, 0.15); color:#8b5cf6;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <div class="stat-info">
+                <div class="stat-label">Active Rx Protocols</div>
+                <div class="stat-value">14</div>
+                <div class="stat-desc">Titrated retinoid/azelaic regimens</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinical Patient Triage Table -->
+          <div class="glass-card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Clinical Diagnostic & Triage Queue</div>
+                <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Physician case review, Fitzpatrick typing, and pathology status.</p>
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border-subtle); color:var(--text-secondary); background:var(--bg-surface);">
+                    <th style="padding:12px 14px;">Patient</th>
+                    <th style="padding:12px 14px;">Fitzpatrick Type</th>
+                    <th style="padding:12px 14px;">Clinical Pathology</th>
+                    <th style="padding:12px 14px;">Triage Severity</th>
+                    <th style="padding:12px 14px;">Barrier TEWL</th>
+                    <th style="padding:12px 14px;">Clinical Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="derm-patients-table">
+                  <!-- Dynamically rendered -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- DERMATOLOGIST VIEW 2: PATHOLOGY & CONDITION STAGING -->
+        <section id="view-dermatologist-staging" class="view-section" style="display:none;">
+          <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:24px;">
+            <!-- Condition Selector & Diagnostic Staging Form -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div>
+                  <div class="card-title">Dermatological Condition Staging</div>
+                  <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Standardized medical grading according to international consensus criteria.</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Primary Pathology Category</label>
+                <select id="staging-condition-select" class="form-select" onchange="window.app.updateConditionStaging()">
+                  <option value="ACNE_VULGARIS" selected>Acne Vulgaris (Leeds Grading System)</option>
+                  <option value="ROSACEA">Rosacea (National Rosacea Society Expert Committee)</option>
+                  <option value="MELASMA">Melasma (MASI - Melasma Area and Severity Index)</option>
+                  <option value="ATOPIC_DERMATITIS">Atopic Dermatitis (SCORAD Clinical Index)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Severity Grade / Staging</label>
+                <select id="staging-grade-select" class="form-select" onchange="window.app.updateConditionStaging()">
+                  <option value="GRADE_1">Grade I: Mild (Comedonal, < 10 inflammatory papules)</option>
+                  <option value="GRADE_2" selected>Grade II: Moderate (Papulopustular, 10-30 lesions)</option>
+                  <option value="GRADE_3">Grade III: Severe (Deep nodules, cystic components)</option>
+                  <option value="GRADE_4">Grade IV: Very Severe (Conglobata, widespread scarring)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Fitzpatrick Phototype</label>
+                <select id="staging-fitzpatrick" class="form-select">
+                  <option value="TYPE_I">Type I: Pale white, always burns, never tans</option>
+                  <option value="TYPE_II">Type II: Fair, usually burns, tans with difficulty</option>
+                  <option value="TYPE_III" selected>Type III: Medium, sometimes mild burn, tans uniformly</option>
+                  <option value="TYPE_IV">Type IV: Olive, rarely burns, tans easily</option>
+                  <option value="TYPE_V">Type V: Brown, very rarely burns, tans very easily</option>
+                  <option value="TYPE_VI">Type VI: Deeply pigmented, never burns</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Erythema Intensity Index (1-10)</label>
+                <div class="form-range-wrap">
+                  <input type="range" id="staging-erythema" class="form-range" min="1" max="10" value="6" oninput="document.getElementById('erythema-val').textContent = this.value + '/10'">
+                  <span id="erythema-val" class="range-val-badge">6/10</span>
+                </div>
+              </div>
+
+              <button class="btn btn-gold" style="width:100%; margin-top:14px;" onclick="window.app.saveClinicalStaging()">✦ Record Clinical Diagnostic Staging</button>
+            </div>
+
+            <!-- Staging Output & Clinical Evidence Guidance -->
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">Evidence-Based Clinical Protocol Matrix</div>
+                <span class="user-role-pill" style="background:rgba(99, 102, 241, 0.15); color:var(--accent-indigo);">Guidelines v2026</span>
+              </div>
+
+              <div id="staging-clinical-guidelines" style="background:var(--bg-surface); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle); flex:1;">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DERMATOLOGIST VIEW 3: CLINICAL RX ACTIVE TITRATION -->
+        <section id="view-dermatologist-titration" class="view-section" style="display:none;">
+          <div class="glass-card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Medical Rx Active Ingredient Titration Studio</div>
+                <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Precision concentration adjustments with real-time contraindication and retinization monitoring.</p>
+              </div>
+              <span class="user-role-pill" style="background:rgba(239, 68, 68, 0.12); color:#ef4444;">Prescription Authority Active</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+              <!-- Titration Sliders -->
+              <div style="display:flex; flex-direction:column; gap:18px;">
+                <div style="background:var(--bg-surface); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <label style="font-weight:700; color:var(--text-primary);">Tretinoin Micro-Encapsulated Gel</label>
+                    <span id="rx-tretinoin-val" style="font-weight:700; color:var(--accent-gold);">0.05%</span>
+                  </div>
+                  <input type="range" id="rx-tretinoin-slider" class="form-range" min="0" max="3" step="1" value="1" oninput="window.app.updateTitrationValues()">
+                  <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); margin-top:4px;">
+                    <span>Off (0%)</span>
+                    <span>0.025% (Mild)</span>
+                    <span>0.05% (Standard)</span>
+                    <span>0.1% (High Potency)</span>
+                  </div>
+                </div>
+
+                <div style="background:var(--bg-surface); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <label style="font-weight:700; color:var(--text-primary);">Azelaic Acid Pharmaceutical Gel</label>
+                    <span id="rx-azelaic-val" style="font-weight:700; color:var(--accent-emerald);">15% (Rx Gel)</span>
+                  </div>
+                  <input type="range" id="rx-azelaic-slider" class="form-range" min="0" max="3" step="1" value="2" oninput="window.app.updateTitrationValues()">
+                  <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); margin-top:4px;">
+                    <span>Off (0%)</span>
+                    <span>10% (OTC)</span>
+                    <span>15% (Rx Gel)</span>
+                    <span>20% (Rx Cream)</span>
+                  </div>
+                </div>
+
+                <div style="background:var(--bg-surface); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <label style="font-weight:700; color:var(--text-primary);">Hydroquinone Compounding</label>
+                    <span id="rx-hq-val" style="font-weight:700; color:#8b5cf6;">4.0%</span>
+                  </div>
+                  <input type="range" id="rx-hq-slider" class="form-range" min="0" max="2" step="1" value="1" oninput="window.app.updateTitrationValues()">
+                  <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); margin-top:4px;">
+                    <span>Off (0%)</span>
+                    <span>4.0% (Cycled)</span>
+                    <span>5.0% (Compounded)</span>
+                  </div>
+                </div>
+
+                <div style="background:var(--bg-surface); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <label class="form-label">Systemic Adjuvant Therapy</label>
+                  <select id="rx-systemic-select" class="form-select" onchange="window.app.updateTitrationValues()">
+                    <option value="NONE" selected>Topical Monotherapy Only</option>
+                    <option value="DOXY_50">Doxycycline 50mg (Anti-Inflammatory Sub-Antimicrobial)</option>
+                    <option value="DOXY_100">Doxycycline 100mg (Daily Antimicrobial)</option>
+                    <option value="SPIRONO_50">Spironolactone 50mg (Hormonal Anti-Androgen)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Safety Alerts & Order Summary -->
+              <div style="display:flex; flex-direction:column; gap:16px;">
+                <div id="rx-safety-alerts-box" style="background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius-sm); padding:16px;">
+                  <!-- Dynamically populated alerts -->
+                </div>
+
+                <div style="background:var(--bg-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:18px; flex:1;">
+                  <h4 style="margin:0 0 10px; font-size:1rem; font-family:var(--font-heading);">Clinical Order Authorization</h4>
+                  <div id="rx-summary-details" style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;">
+                    <!-- Dynamically populated -->
+                  </div>
+                  <button class="btn btn-gold" style="width:100%; margin-top:16px;" onclick="window.app.signOffRxProtocol()">✦ Authorize & Issue Medical Prescription</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             ADMINISTRATOR PORTAL VIEWS (ADMINISTRATOR)
+             ========================================== -->
+
+        <!-- ADMIN VIEW 1: EXECUTIVE HUB & TELEMETRY -->
+        <section id="view-admin-overview" class="view-section" style="display:none;">
+          <div id="admin-stats-summary"></div>
+
+          <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin-top:24px;">
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">System Role Distribution & RBAC Security</div>
+                <span class="user-role-pill" style="background:rgba(239, 68, 68, 0.12); color:#ef4444;">Admin Level 0</span>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent-gold);"></span>
+                    <strong>Consumers (`USER`)</strong>
+                  </div>
+                  <span id="role-count-user" style="font-weight:700; color:var(--accent-gold);">--</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent-emerald);"></span>
+                    <strong>Skincare Consultants</strong>
+                  </div>
+                  <span id="role-count-consultant" style="font-weight:700; color:var(--accent-emerald);">--</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent-indigo);"></span>
+                    <strong>Dermatologists (MD)</strong>
+                  </div>
+                  <span id="role-count-derm" style="font-weight:700; color:var(--accent-indigo);">--</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border-subtle);">
+                  <div style="display:flex; align-items:center; gap:10px;">
+                    <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#ef4444;"></span>
+                    <strong>Platform Administrators</strong>
+                  </div>
+                  <span id="role-count-admin" style="font-weight:700; color:#ef4444;">--</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <div class="card-header">
+                <div class="card-title">API Gateways & Telemetry Health</div>
+                <span class="user-role-pill" style="background:rgba(16, 185, 129, 0.12); color:var(--accent-emerald);">Operational</span>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem;">
+                <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-subtle);">
+                  <span style="color:var(--text-secondary);">Avg API Latency</span>
+                  <strong style="color:var(--accent-emerald);">&lt; 14 ms (FastAPI + Async)</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-subtle);">
+                  <span style="color:var(--text-secondary);">MongoDB Cluster Status</span>
+                  <strong style="color:var(--accent-emerald);">Connected & Indexed</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--border-subtle);">
+                  <span style="color:var(--text-secondary);">JWT Token Encryption</span>
+                  <strong style="color:var(--text-primary);">HS256 (24-Hour Expiry)</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding:8px 0;">
+                  <span style="color:var(--text-secondary);">AI Formulation Model</span>
+                  <strong style="color:var(--accent-gold);">SkinIQ Clinical Engine v1.0</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ADMIN VIEW 2: USER DIRECTORY & RBAC -->
+        <section id="view-admin-users" class="view-section" style="display:none;">
+          <div class="glass-card">
+            <div class="card-header" style="flex-wrap:wrap; gap:12px;">
+              <div>
+                <div class="card-title">User Directory & RBAC Role Controller</div>
+                <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">Manage registered accounts, assign specialist privileges, and elevate RBAC tiers.</p>
+              </div>
+              <div style="display:flex; gap:10px; align-items:center;">
+                <input type="text" id="admin-user-search-input" class="form-input" placeholder="Search by name or email..." style="width:240px; padding:7px 12px; font-size:0.85rem;" oninput="window.app.filterAdminUsers()">
+              </div>
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border-subtle); color:var(--text-secondary); background:var(--bg-surface);">
+                    <th style="padding:12px 14px;">ID</th>
+                    <th style="padding:12px 14px;">Full Name</th>
+                    <th style="padding:12px 14px;">Email</th>
+                    <th style="padding:12px 14px;">Current Role</th>
+                    <th style="padding:12px 14px;">RBAC Elevation</th>
+                    <th style="padding:12px 14px;">Status</th>
+                    <th style="padding:12px 14px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-users-table">
+                  <!-- Dynamically loaded -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ADMIN VIEW 3: REGULATORY & SAFETY DATABASE -->
+        <section id="view-admin-regulatory" class="view-section" style="display:none;">
+          <div class="glass-card">
+            <div class="card-header" style="flex-wrap:wrap; gap:12px;">
+              <div>
+                <div class="card-title">INCI Ingredient Safety & Regulatory Matrix</div>
+                <p style="font-size:0.84rem; color:var(--text-secondary); margin:2px 0 0;">CIR safety assessments, comedogenic ratings, and EU 1223/2009 compliance index.</p>
+              </div>
+              <input type="text" id="admin-inci-search" class="form-input" placeholder="Filter ingredients..." style="width:220px; padding:7px 12px; font-size:0.85rem;" oninput="window.app.filterInciDatabase()">
+            </div>
+
+            <div style="overflow-x:auto;">
+              <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border-subtle); color:var(--text-secondary); background:var(--bg-surface);">
+                    <th style="padding:12px 14px;">INCI Chemical Name</th>
+                    <th style="padding:12px 14px;">Function / Class</th>
+                    <th style="padding:12px 14px;">Comedogenic (0-5)</th>
+                    <th style="padding:12px 14px;">Irritancy Risk</th>
+                    <th style="padding:12px 14px;">EU Regulation 1223/2009</th>
+                    <th style="padding:12px 14px;">Safety Status</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-inci-table">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ADMIN VIEW 4: DATABASE HEALTH & STORAGE -->
+        <section id="view-admin-telemetry" class="view-section" style="display:none;">
+          <div class="glass-card">
+            <div class="card-header">
+              <div class="card-title">MongoDB Database & Document Storage Health</div>
+              <span class="user-role-pill" style="background:rgba(16, 185, 129, 0.12); color:var(--accent-emerald);">MongoDB Active</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-bottom:24px;" id="admin-mongo-collections-grid">
+              <!-- Dynamically populated -->
+            </div>
+
+            <div style="background:var(--bg-surface); padding:20px; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+              <h4 style="margin:0 0 12px; font-size:1rem; font-family:var(--font-heading);">Database Connection Parameters</h4>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:0.88rem;">
+                <div><span style="color:var(--text-secondary);">Database Engine:</span> <strong>MongoDB 7.0+ (via PyMongo)</strong></div>
+                <div><span style="color:var(--text-secondary);">Database Name:</span> <strong>skincare_db</strong></div>
+                <div><span style="color:var(--text-secondary);">Indexing Status:</span> <strong>Unique Compound Indexes Enforced</strong></div>
+                <div><span style="color:var(--text-secondary);">Fallback Mode:</span> <strong>Automatic In-Memory Mock Resilience</strong></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Clinical Dossier Modal -->
+  <div id="clinical-dossier-modal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(28, 25, 23, 0.65); backdrop-filter:blur(8px); z-index:9999; justify-content:center; align-items:center;">
+    <div class="glass-card" style="width:90%; max-width:720px; max-height:88vh; overflow-y:auto; background:var(--bg-card-solid); box-shadow:var(--shadow-lg); padding:28px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-subtle); padding-bottom:16px; margin-bottom:20px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img id="dossier-patient-avatar" src="" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-gold);">
+          <div>
+            <h3 id="dossier-patient-name" style="margin:0; font-size:1.25rem;">Clinical Skin Dossier</h3>
+            <span style="font-size:0.8rem; color:var(--accent-emerald); font-weight:600;">Active Clinical Assessment</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="window.app.closeDossierModal()" style="font-size:1.2rem; cursor:pointer;">&times;</button>
+      </div>
+      <div id="dossier-modal-body">
+        <!-- Dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Dedicated Split-Screen Authentication Page -->
+  <div class="auth-page-wrapper" id="auth-page">
+    <!-- Left Pane: Prominent Big Logo & Expanding Cover on Success -->
+    <div class="auth-brand-pane" id="auth-brand-pane">
+      <div class="auth-brand-hero">
+        <div class="auth-logo-emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <h1 class="auth-brand-title">SkinIQ<span class="gold-dot">.</span></h1>
+        <div class="auth-brand-subtitle">Clinical Skin Intelligence</div>
+        <p class="auth-brand-tagline">
+          Dermatology-grade AI formulation planner, circadian recovery scoring, and personalized lifestyle tracking.
+        </p>
+
+        <!-- Loading / Transition banner (appears during smooth expansion) -->
+        <div class="auth-transition-banner" id="auth-transition-banner">
+          <div class="spinner-gold"></div>
+          <div>
+            <strong id="auth-transition-user" style="display:block; color:var(--text-primary); font-size:1.05rem;">Authenticating...</strong>
+            <span style="font-size:0.82rem; color:var(--accent-gold);">Unlocking clinical workspace...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature badges on left side -->
+      <div class="auth-brand-features">
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.62 17.7a2 2 0 0 0 1.68 3h11.4a2 2 0 0 0 1.68-3L14 9.31V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line><line x1="14" y1="9.3" x2="10" y2="9.3"></line></svg>
+          </div>
+          <div class="auth-feature-text">
+            <h4>Personalized AI Formulations</h4>
+            <p>Smart ingredient matching tailored to your exact skin type & barrier score.</p>
+          </div>
+        </div>
+
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <div class="auth-feature-text">
+            <h4>Circadian Recovery & Vitals</h4>
+            <p>Correlate daily hydration, sleep quality, and environmental UV stress.</p>
+          </div>
+        </div>
+
+        <div class="auth-feature-item">
+          <div class="auth-feature-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div class="auth-feature-text">
+            <h4>Clinical RBAC & Specialist Portals</h4>
+            <p>Dedicated access for dermatologists, consultants, and platform administrators.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Pane: Login / Register Form with Golden Curvy Waves in Motion -->
+    <div class="auth-form-pane" id="auth-form-pane">
+      <!-- Animated Golden Waves Canvas in background of Right Pane -->
+      <canvas id="auth-waves-canvas" class="auth-waves-canvas"></canvas>
+
+      <div class="auth-card-box">
+        <div class="auth-tabs-nav">
+          <button type="button" class="auth-tab-btn active" id="tab-btn-login" onclick="window.auth.switchMode('login')">Sign In</button>
+          <button type="button" class="auth-tab-btn" id="tab-btn-register" onclick="window.auth.switchMode('register')">Create Account</button>
+        </div>
+
+        <div class="auth-form-header">
+          <h2 id="auth-page-title">Sign In to SkinIQ</h2>
+          <p id="auth-page-desc">Enter your credentials to access your personalized skin planner.</p>
+        </div>
+
+        <form id="auth-form" onsubmit="return window.auth.handleAuthSubmit(event);">
+          <input type="hidden" id="auth-mode" value="login">
+
+          <div id="auth-register-fields" style="display:none;">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" id="auth-fullname" class="form-input" placeholder="e.g. Dr. Marcus Chen">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Account Role</label>
+              <select id="auth-role" class="form-select">
+                <option value="USER">User (Consumer)</option>
+                <option value="SKINCARE_CONSULTANT">Skincare Professional / Consultant</option>
+                <option value="DERMATOLOGIST">Dermatologist (MD)</option>
+                <option value="ADMINISTRATOR">Administrator</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="auth-email" class="form-input" placeholder="name@example.com" required value="user@skiniq.ai">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="auth-password" class="form-input" placeholder="••••••••" required value="Password123!">
+          </div>
+
+          <button type="submit" id="auth-submit-btn" class="btn btn-gold" style="width:100%; padding:12px; font-size:0.95rem; margin-top:10px;">Sign In to Dashboard</button>
+        </form>
+
+        <!-- 1-Click Instant Demo Credentials -->
+        <div class="demo-accounts-box" style="margin-top:24px;">
+          <div class="demo-title">
+            <span>ARE YOU?</span>
+          </div>
+          <div class="demo-buttons-grid">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.auth.quickSwitchRole('USER')">Consumer</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.auth.quickSwitchRole('SKINCARE_CONSULTANT')">Consultant</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.auth.quickSwitchRole('DERMATOLOGIST')">Dermatologist</button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.auth.quickSwitchRole('ADMINISTRATOR')">Administrator</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Messages Container -->
+  <div class="toast-wrap" id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/profile.js"></script>
+  <script src="/js/tracking.js"></script>
+  <script src="/js/gold-curves.js"></script>
+  <script src="/js/milestone2.js"></script>
+  <script src="/js/milestone3.js?v=8"></script>
+  <script src="/js/app.js?v=6"></script>
+
+</body>
+</html>
