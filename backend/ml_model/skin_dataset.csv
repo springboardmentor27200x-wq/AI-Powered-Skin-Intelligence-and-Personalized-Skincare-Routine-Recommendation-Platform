@@ -1,0 +1,3001 @@
+Age,Skin_Type,Sensitivity,Hydration,Stress_Level,Sleep_Quality,Physical_Activity,Water_Intake,Skin_Concern
+20,Combination,Low,Medium,5,9,Moderate,2.6,Oiliness
+58,Sensitive,Medium,High,3,10,Moderate,3.69,Fine Lines/Aging
+52,Dry,High,Low,10,8,Low,0.83,Dryness
+40,Dry,Medium,Medium,5,9,Moderate,2.78,Dryness
+39,Combination,High,Medium,8,9,Moderate,2.97,Acne
+63,Normal,High,Medium,7,8,High,3.02,Redness/Sensitivity
+20,Combination,High,Medium,4,10,Moderate,1.39,Dryness
+54,Normal,High,Medium,4,9,Moderate,1.35,Dryness
+27,Oily,Low,Medium,8,8,Low,1.98,Fine Lines/Aging
+21,Combination,Low,Medium,8,7,Moderate,2.27,Acne
+44,Oily,Medium,Medium,2,10,Low,1.45,Acne
+69,Oily,Medium,Medium,7,10,Low,2.93,Fine Lines/Aging
+56,Normal,High,Medium,5,10,Moderate,1.88,Redness/Sensitivity
+57,Combination,Medium,Medium,3,10,Moderate,0.69,Fine Lines/Aging
+55,Sensitive,High,Medium,6,6,Low,1.72,Redness/Sensitivity
+59,Dry,Low,Medium,3,8,Moderate,2.58,Dryness
+44,Oily,Medium,High,5,9,Moderate,2.47,Oiliness
+23,Sensitive,High,Medium,4,10,Low,2.17,Redness/Sensitivity
+62,Oily,Low,High,5,9,Moderate,3.4,Oiliness
+40,Oily,Low,Medium,5,7,Moderate,1.31,Fine Lines/Aging
+43,Dry,High,Medium,3,10,Moderate,1.86,Dullness
+36,Normal,Medium,Medium,9,10,Moderate,3.44,Dullness
+26,Sensitive,High,Medium,6,10,Low,0.5,Redness/Sensitivity
+66,Combination,High,Medium,9,9,Moderate,2.16,Dullness
+58,Combination,High,Medium,5,9,Low,2.88,Fine Lines/Aging
+51,Oily,High,High,4,8,Moderate,3.17,Oiliness
+38,Dry,High,Low,9,7,Low,2.43,Dryness
+61,Normal,Low,High,4,10,Moderate,2.75,Fine Lines/Aging
+45,Oily,High,Medium,5,9,High,1.77,Fine Lines/Aging
+40,Dry,Medium,Low,7,7,Moderate,3.3,Dryness
+40,Dry,Medium,Medium,3,10,Moderate,1.24,Dryness
+28,Oily,Medium,Low,7,10,Moderate,1.29,Oiliness
+21,Normal,Medium,Medium,7,7,Low,2.21,Fine Lines/Aging
+46,Combination,Medium,Medium,8,7,High,2.21,Fine Lines/Aging
+64,Oily,High,Medium,7,7,Moderate,2.37,Acne
+19,Normal,Medium,Low,8,8,Low,2.24,Dryness
+63,Combination,High,Medium,5,10,Low,3.32,Dryness
+61,Combination,High,Medium,4,8,Moderate,2.55,Redness/Sensitivity
+31,Combination,High,Low,10,8,Moderate,1.71,Dryness
+50,Normal,Low,Medium,2,10,Low,2.44,Dryness
+25,Combination,High,Medium,3,10,High,1.93,Normal/None
+57,Dry,Low,Low,7,9,Moderate,2.93,Dryness
+54,Dry,High,Low,9,7,Low,1.95,Dryness
+35,Oily,Medium,Medium,6,9,Moderate,2.52,Acne
+19,Normal,High,Medium,7,8,High,1.18,Normal/None
+69,Dry,High,Low,2,8,Low,0.5,Dryness
+40,Dry,High,Low,5,9,Low,0.7,Dryness
+65,Combination,High,High,2,10,High,4.0,Fine Lines/Aging
+53,Dry,High,Low,7,6,Moderate,1.28,Dryness
+58,Dry,High,High,2,10,Low,2.49,Fine Lines/Aging
+57,Oily,Low,High,3,7,High,2.09,Fine Lines/Aging
+26,Dry,High,Medium,7,8,Moderate,2.01,Redness/Sensitivity
+36,Dry,Low,Medium,8,8,Moderate,2.16,Dryness
+41,Dry,High,Low,5,9,Low,3.22,Redness/Sensitivity
+43,Oily,High,Medium,7,8,Moderate,2.67,Acne
+18,Combination,High,Low,7,8,Moderate,2.51,Dryness
+46,Sensitive,High,High,5,8,Low,2.94,Redness/Sensitivity
+24,Normal,Low,Medium,3,10,High,2.09,Normal/None
+56,Combination,High,Low,7,8,High,3.45,Dryness
+53,Combination,High,Medium,7,7,Moderate,2.92,Fine Lines/Aging
+66,Sensitive,High,Low,7,8,Moderate,2.91,Redness/Sensitivity
+56,Normal,High,Medium,6,9,High,2.48,Normal/None
+36,Sensitive,High,Medium,3,10,High,2.25,Redness/Sensitivity
+69,Sensitive,Medium,Low,7,10,High,1.9,Fine Lines/Aging
+38,Combination,Medium,Medium,5,9,Low,1.25,Dryness
+33,Normal,High,Medium,5,9,Moderate,1.47,Redness/Sensitivity
+65,Oily,High,Medium,5,8,Moderate,2.49,Redness/Sensitivity
+36,Oily,Medium,Medium,4,8,Moderate,2.02,Redness/Sensitivity
+20,Normal,High,Medium,7,9,High,2.95,Normal/None
+41,Normal,Medium,Medium,3,9,High,2.99,Redness/Sensitivity
+59,Dry,Low,Low,4,9,Low,1.05,Dryness
+26,Normal,Low,Medium,5,8,Moderate,1.33,Oiliness
+41,Normal,Low,Medium,9,6,Low,1.72,Acne
+23,Combination,Medium,Low,8,5,Moderate,1.58,Dryness
+53,Oily,Low,Medium,2,10,Moderate,1.5,Fine Lines/Aging
+42,Oily,High,Medium,8,9,Moderate,3.56,Redness/Sensitivity
+34,Combination,High,Low,8,8,Low,0.67,Normal/None
+28,Combination,Low,High,3,10,Low,3.52,Oiliness
+47,Sensitive,Low,High,1,10,Low,2.13,Dullness
+52,Combination,Low,High,5,10,Low,2.69,Fine Lines/Aging
+67,Sensitive,High,Low,8,10,Low,2.59,Redness/Sensitivity
+40,Dry,Low,Low,9,7,Moderate,2.69,Dryness
+24,Dry,Medium,High,4,10,Low,3.23,Dryness
+61,Dry,Low,Low,9,7,Low,1.03,Dryness
+50,Normal,Medium,High,1,10,Low,1.77,Fine Lines/Aging
+54,Sensitive,High,Medium,5,9,Low,1.22,Redness/Sensitivity
+21,Dry,High,Low,5,8,Moderate,0.84,Dryness
+33,Normal,High,Medium,8,8,Low,1.37,Fine Lines/Aging
+58,Dry,Low,Medium,8,7,Moderate,3.7,Dryness
+61,Oily,Medium,Low,7,9,Low,1.76,Normal/None
+39,Oily,Medium,High,3,10,Moderate,3.79,Oiliness
+60,Oily,Low,High,7,8,Low,3.57,Fine Lines/Aging
+62,Sensitive,High,Medium,7,9,Moderate,4.6,Redness/Sensitivity
+37,Dry,High,High,2,8,Moderate,3.72,Dryness
+65,Combination,Low,Medium,1,10,High,4.49,Fine Lines/Aging
+31,Combination,Low,Low,8,7,Low,2.16,Fine Lines/Aging
+29,Oily,Low,High,5,10,Moderate,2.38,Normal/None
+53,Oily,High,High,3,10,Moderate,2.44,Fine Lines/Aging
+51,Combination,Medium,Medium,5,8,Low,1.9,Fine Lines/Aging
+23,Dry,Low,Low,6,7,Moderate,2.32,Dryness
+61,Sensitive,High,Medium,5,10,High,3.2,Redness/Sensitivity
+26,Oily,Low,High,2,10,Low,1.53,Oiliness
+60,Combination,Medium,Low,9,6,Moderate,1.1,Fine Lines/Aging
+16,Combination,High,Low,8,8,Low,2.19,Oiliness
+59,Oily,Low,Medium,5,10,Low,1.35,Oiliness
+59,Dry,Low,Low,5,10,Low,1.43,Dryness
+58,Sensitive,High,Medium,6,9,Moderate,2.09,Fine Lines/Aging
+52,Dry,High,Medium,3,10,Moderate,1.9,Fine Lines/Aging
+41,Dry,Medium,Medium,6,9,Moderate,3.09,Dryness
+54,Dry,Medium,Low,3,10,Low,1.77,Dryness
+31,Dry,Low,Medium,5,10,Low,2.83,Dryness
+58,Combination,High,High,3,10,Moderate,2.36,Redness/Sensitivity
+46,Combination,High,High,3,10,Low,1.83,Fine Lines/Aging
+41,Dry,High,Low,9,6,Moderate,2.33,Dryness
+43,Combination,Medium,Low,6,8,Moderate,1.17,Dryness
+47,Oily,High,Medium,6,10,Low,2.17,Redness/Sensitivity
+18,Oily,Medium,High,1,8,Moderate,2.88,Oiliness
+23,Normal,Low,Medium,4,7,Low,2.69,Dullness
+29,Sensitive,Medium,Low,6,10,Moderate,1.12,Redness/Sensitivity
+22,Oily,High,Medium,6,10,Moderate,0.98,Dryness
+40,Oily,Medium,High,1,9,Moderate,1.77,Oiliness
+52,Normal,High,Medium,6,9,High,3.71,Fine Lines/Aging
+51,Combination,High,High,6,8,Moderate,2.38,Fine Lines/Aging
+41,Oily,Low,Medium,8,7,Low,1.28,Acne
+63,Dry,Low,Low,4,10,High,1.44,Dryness
+47,Combination,Low,Medium,1,9,High,2.05,Normal/None
+20,Dry,High,Low,4,8,Low,1.3,Dryness
+58,Oily,High,High,3,9,Moderate,2.95,Normal/None
+47,Oily,Low,Medium,7,8,Moderate,3.01,Fine Lines/Aging
+50,Dry,Low,Low,1,9,Moderate,1.36,Dryness
+47,Normal,Medium,Medium,5,10,Moderate,2.8,Redness/Sensitivity
+46,Combination,Medium,High,8,7,Moderate,2.72,Normal/None
+20,Combination,High,Low,6,8,Low,0.96,Dryness
+46,Combination,Medium,Medium,7,8,Moderate,2.13,Fine Lines/Aging
+59,Sensitive,Medium,High,2,10,Moderate,2.47,Redness/Sensitivity
+32,Dry,Low,Medium,2,10,Low,2.03,Dryness
+49,Dry,High,Low,8,6,Low,0.53,Dryness
+17,Sensitive,High,Medium,6,7,Low,2.0,Redness/Sensitivity
+35,Dry,High,Low,6,8,Moderate,2.71,Dryness
+40,Combination,Medium,High,3,10,High,3.86,Normal/None
+70,Combination,High,Medium,6,7,Moderate,1.66,Fine Lines/Aging
+27,Oily,Low,Medium,3,8,Moderate,1.76,Dryness
+31,Normal,Low,Medium,8,8,Moderate,2.03,Dullness
+38,Oily,High,Medium,10,6,Moderate,2.43,Oiliness
+70,Oily,High,Medium,6,7,Moderate,2.28,Acne
+62,Normal,Low,Medium,4,10,Moderate,2.68,Normal/None
+17,Dry,High,Medium,1,10,Low,1.0,Dryness
+28,Combination,Medium,Medium,2,10,Low,2.22,Oiliness
+61,Sensitive,Medium,Low,9,7,Low,1.31,Acne
+19,Combination,High,High,3,10,High,2.49,Redness/Sensitivity
+63,Dry,High,Medium,5,9,High,3.97,Redness/Sensitivity
+31,Dry,Medium,Low,7,4,Low,0.78,Dryness
+66,Dry,Low,Low,8,6,High,2.38,Dryness
+32,Oily,High,Medium,5,9,Moderate,1.18,Redness/Sensitivity
+39,Sensitive,High,Medium,5,10,High,2.72,Redness/Sensitivity
+52,Dry,Low,Medium,6,6,Moderate,3.04,Fine Lines/Aging
+22,Oily,High,Medium,4,9,High,2.74,Redness/Sensitivity
+46,Combination,Medium,Medium,4,8,Moderate,2.11,Fine Lines/Aging
+43,Dry,High,Low,6,9,Low,2.96,Normal/None
+59,Oily,Low,Medium,6,9,Moderate,2.46,Oiliness
+70,Oily,High,Low,10,8,Moderate,2.86,Acne
+52,Normal,High,Medium,6,10,Moderate,2.77,Dryness
+38,Combination,Medium,Low,8,8,Moderate,0.5,Dryness
+38,Oily,High,High,3,10,Moderate,2.14,Oiliness
+38,Sensitive,High,Low,7,8,Low,1.04,Dryness
+60,Combination,High,Low,4,10,Low,1.24,Dryness
+33,Combination,High,Medium,6,7,Moderate,3.38,Normal/None
+25,Oily,High,Medium,7,7,Moderate,1.9,Redness/Sensitivity
+34,Oily,High,Medium,6,10,Low,3.41,Redness/Sensitivity
+17,Combination,High,Low,10,8,Low,0.77,Dryness
+21,Dry,High,Low,8,8,Low,1.03,Dryness
+20,Normal,High,Medium,8,9,Low,2.51,Redness/Sensitivity
+58,Combination,Low,Medium,7,5,High,2.33,Fine Lines/Aging
+55,Oily,Medium,Low,9,9,Low,2.15,Acne
+54,Combination,Medium,Medium,3,10,Moderate,2.11,Oiliness
+41,Sensitive,High,Low,8,9,High,2.49,Redness/Sensitivity
+55,Combination,Low,Medium,4,7,High,2.36,Fine Lines/Aging
+24,Normal,High,Medium,4,10,Moderate,2.34,Redness/Sensitivity
+65,Combination,Medium,Medium,7,7,Moderate,2.71,Dryness
+43,Normal,High,Medium,8,8,Low,3.19,Fine Lines/Aging
+67,Combination,High,Medium,3,10,Low,1.74,Redness/Sensitivity
+24,Combination,Low,Medium,4,10,Moderate,1.89,Redness/Sensitivity
+43,Combination,High,Medium,6,7,Moderate,1.78,Redness/Sensitivity
+54,Dry,Medium,Medium,5,9,High,3.78,Dryness
+43,Oily,High,Medium,7,8,Low,2.45,Redness/Sensitivity
+40,Oily,High,Low,10,7,Moderate,0.68,Acne
+25,Normal,Low,Medium,6,10,Moderate,0.65,Dryness
+36,Normal,Low,Medium,4,10,Moderate,1.54,Normal/None
+29,Normal,Medium,High,3,8,Moderate,2.38,Redness/Sensitivity
+32,Dry,Low,Low,5,9,Low,1.87,Dryness
+53,Combination,Low,Medium,4,10,Moderate,2.61,Fine Lines/Aging
+50,Sensitive,High,Medium,6,10,Moderate,2.06,Redness/Sensitivity
+49,Dry,High,Medium,6,4,Moderate,3.32,Redness/Sensitivity
+35,Combination,Medium,High,5,9,Moderate,2.82,Redness/Sensitivity
+68,Combination,Low,Low,9,9,Moderate,2.26,Dryness
+20,Normal,Low,Medium,4,9,Moderate,3.12,Oiliness
+34,Oily,High,Medium,5,8,Low,0.58,Redness/Sensitivity
+22,Combination,Medium,Medium,7,8,Moderate,2.13,Acne
+34,Sensitive,Low,Medium,7,9,Low,2.01,Acne
+68,Combination,Low,Medium,8,6,Moderate,2.68,Fine Lines/Aging
+36,Sensitive,High,Medium,6,10,Low,0.53,Redness/Sensitivity
+65,Sensitive,High,Medium,8,8,High,2.39,Redness/Sensitivity
+43,Dry,High,Medium,4,8,Moderate,2.52,Dryness
+54,Normal,High,Medium,7,10,High,2.98,Fine Lines/Aging
+41,Normal,High,High,7,6,Moderate,3.15,Dullness
+30,Sensitive,High,Low,9,6,Moderate,2.81,Redness/Sensitivity
+58,Oily,Low,High,2,10,Moderate,2.15,Fine Lines/Aging
+69,Dry,Medium,Medium,4,10,High,3.14,Fine Lines/Aging
+30,Combination,Low,Medium,7,7,Moderate,2.04,Acne
+58,Dry,High,Medium,1,8,Low,2.02,Redness/Sensitivity
+30,Combination,High,Low,6,8,Moderate,2.84,Dryness
+55,Dry,Medium,Low,8,8,Moderate,2.16,Dryness
+59,Sensitive,High,High,4,10,High,2.89,Redness/Sensitivity
+40,Sensitive,High,Medium,5,10,Moderate,2.97,Redness/Sensitivity
+56,Dry,High,Medium,3,10,Moderate,2.77,Fine Lines/Aging
+30,Combination,Low,High,4,10,High,3.59,Oiliness
+20,Dry,High,Medium,5,8,Low,3.76,Redness/Sensitivity
+21,Normal,Low,Medium,4,10,Moderate,2.76,Redness/Sensitivity
+40,Combination,Low,Medium,4,9,Low,1.53,Normal/None
+65,Combination,High,Medium,5,8,Low,2.31,Redness/Sensitivity
+23,Oily,Low,Medium,5,8,Moderate,2.58,Oiliness
+41,Oily,High,Medium,9,5,Low,2.39,Acne
+54,Combination,Low,Medium,5,8,Moderate,3.4,Normal/None
+27,Normal,Low,Medium,6,8,Moderate,0.85,Normal/None
+55,Normal,Low,High,4,10,Moderate,3.41,Fine Lines/Aging
+32,Oily,High,High,4,9,Moderate,3.68,Dryness
+60,Dry,High,Low,2,9,Moderate,2.65,Dryness
+47,Combination,Medium,High,2,8,Moderate,2.67,Fine Lines/Aging
+46,Oily,High,Medium,3,10,High,2.41,Fine Lines/Aging
+25,Dry,Low,Low,6,9,Moderate,2.21,Dryness
+41,Sensitive,High,Medium,8,7,Low,2.46,Redness/Sensitivity
+63,Oily,Low,High,2,10,Low,2.41,Oiliness
+17,Combination,High,Medium,4,10,Moderate,2.78,Redness/Sensitivity
+57,Dry,Low,Medium,3,10,Moderate,2.7,Dryness
+43,Combination,Medium,Medium,5,8,Moderate,2.92,Fine Lines/Aging
+55,Combination,Medium,Low,8,8,Moderate,2.83,Dryness
+52,Sensitive,High,Low,5,10,Moderate,1.38,Dryness
+39,Oily,Medium,Medium,5,8,Moderate,2.87,Fine Lines/Aging
+32,Normal,Medium,Medium,8,8,Moderate,3.69,Acne
+50,Combination,Medium,Medium,6,8,High,2.58,Fine Lines/Aging
+23,Dry,Low,Medium,4,8,Moderate,3.4,Dryness
+48,Oily,Medium,Medium,6,9,High,1.87,Fine Lines/Aging
+21,Oily,Medium,Medium,4,9,Low,1.88,Acne
+51,Sensitive,High,Medium,6,9,Low,1.39,Redness/Sensitivity
+50,Combination,High,Medium,7,6,Moderate,3.3,Fine Lines/Aging
+20,Normal,High,Medium,3,10,Moderate,3.51,Redness/Sensitivity
+57,Combination,High,Low,6,10,Moderate,2.12,Normal/None
+38,Normal,High,High,5,10,High,3.54,Redness/Sensitivity
+59,Normal,Medium,Medium,7,10,Low,3.22,Acne
+18,Normal,Low,Medium,7,6,High,2.57,Acne
+25,Combination,Medium,Medium,6,9,Moderate,2.3,Dullness
+43,Oily,Medium,Medium,5,8,Low,2.49,Dryness
+26,Sensitive,Medium,Low,7,8,Moderate,1.53,Dullness
+34,Combination,High,Medium,4,8,Moderate,2.29,Redness/Sensitivity
+52,Dry,High,Medium,3,8,Moderate,3.91,Fine Lines/Aging
+23,Normal,Low,High,1,10,High,2.2,Normal/None
+53,Oily,Medium,Medium,5,10,Moderate,2.88,Fine Lines/Aging
+21,Sensitive,Medium,Medium,4,10,Low,2.32,Redness/Sensitivity
+25,Sensitive,High,Medium,6,9,Moderate,2.07,Redness/Sensitivity
+48,Sensitive,Medium,High,2,10,Low,2.08,Fine Lines/Aging
+59,Dry,Medium,Medium,4,10,Moderate,3.6,Dryness
+25,Oily,Low,Medium,6,9,High,3.04,Normal/None
+32,Oily,Low,High,3,10,Low,2.47,Oiliness
+66,Oily,Low,Medium,6,9,Low,3.18,Fine Lines/Aging
+70,Oily,High,Medium,4,10,Low,1.67,Oiliness
+47,Oily,Low,Low,5,9,Moderate,1.36,Dryness
+40,Sensitive,High,Medium,7,8,Moderate,3.61,Redness/Sensitivity
+35,Oily,Low,Medium,7,8,Moderate,2.31,Acne
+49,Oily,High,High,6,8,Moderate,2.91,Oiliness
+48,Combination,Medium,Medium,4,9,High,1.99,Normal/None
+32,Normal,High,High,5,9,High,2.91,Normal/None
+17,Combination,Low,Low,7,7,Low,1.02,Acne
+24,Normal,High,Medium,3,10,High,2.65,Normal/None
+68,Sensitive,High,Medium,5,8,High,2.08,Redness/Sensitivity
+38,Normal,Low,High,5,9,High,1.9,Fine Lines/Aging
+42,Normal,Medium,Medium,5,10,Moderate,1.96,Redness/Sensitivity
+41,Combination,Low,Medium,3,10,Low,0.5,Normal/None
+59,Normal,Medium,Medium,2,8,Low,0.97,Dullness
+19,Dry,High,Low,7,9,Low,2.53,Acne
+20,Normal,Low,Medium,7,8,Moderate,2.48,Acne
+31,Oily,High,Medium,2,9,High,1.74,Redness/Sensitivity
+42,Combination,Low,Low,6,10,High,3.04,Dryness
+52,Dry,Low,Low,8,6,Low,1.2,Dryness
+42,Oily,Low,Medium,7,10,Moderate,2.78,Oiliness
+40,Dry,Low,Low,5,9,Moderate,2.11,Dryness
+67,Combination,Medium,Medium,4,6,Moderate,1.94,Fine Lines/Aging
+24,Dry,Low,Low,6,9,Moderate,2.13,Dryness
+47,Combination,Low,High,6,8,Moderate,4.25,Fine Lines/Aging
+45,Combination,Medium,Medium,6,8,Moderate,1.59,Fine Lines/Aging
+42,Oily,Low,Medium,5,8,Moderate,2.38,Fine Lines/Aging
+60,Combination,Medium,Medium,3,10,Moderate,2.83,Fine Lines/Aging
+30,Dry,High,Low,6,8,Moderate,1.43,Dryness
+68,Oily,High,Medium,6,6,Low,0.62,Oiliness
+34,Combination,High,Low,6,10,Moderate,1.72,Redness/Sensitivity
+45,Sensitive,Medium,Medium,6,8,Moderate,2.81,Redness/Sensitivity
+44,Dry,Low,Low,9,6,Low,1.63,Dryness
+62,Normal,High,Medium,4,8,Moderate,2.02,Fine Lines/Aging
+40,Dry,Medium,Medium,8,9,Moderate,2.93,Dryness
+31,Normal,High,Medium,4,8,High,1.95,Redness/Sensitivity
+17,Normal,Medium,Low,8,8,Low,1.83,Acne
+36,Normal,Low,Medium,8,7,High,1.39,Normal/None
+61,Normal,High,Medium,5,8,Moderate,2.46,Fine Lines/Aging
+16,Oily,High,Medium,9,6,Low,2.08,Acne
+65,Combination,High,Medium,6,8,Moderate,2.84,Fine Lines/Aging
+45,Combination,Medium,Low,4,9,Low,0.98,Fine Lines/Aging
+23,Combination,Low,High,5,9,Low,1.75,Dryness
+32,Oily,High,Low,8,7,Moderate,1.18,Dryness
+46,Normal,Low,Medium,7,8,High,2.4,Fine Lines/Aging
+33,Dry,High,Medium,3,10,Low,3.09,Redness/Sensitivity
+21,Oily,Low,Medium,5,7,Low,1.64,Oiliness
+52,Oily,High,Medium,6,9,Moderate,1.11,Acne
+52,Normal,High,Medium,4,8,Moderate,1.66,Fine Lines/Aging
+22,Combination,Medium,Low,10,5,Moderate,0.91,Dryness
+31,Oily,High,Medium,6,9,Moderate,1.16,Redness/Sensitivity
+29,Combination,Low,Medium,5,8,Moderate,2.74,Dryness
+52,Normal,Low,Low,8,6,Moderate,1.04,Fine Lines/Aging
+56,Combination,High,High,5,10,Low,2.15,Fine Lines/Aging
+55,Normal,Medium,Low,8,9,Low,1.92,Dryness
+67,Normal,Medium,High,2,8,High,2.17,Normal/None
+58,Normal,Low,Medium,5,7,High,2.78,Dryness
+33,Sensitive,Low,Medium,8,8,High,1.85,Redness/Sensitivity
+21,Normal,High,Medium,9,7,Moderate,2.87,Redness/Sensitivity
+49,Normal,High,Medium,4,10,Low,1.34,Dryness
+66,Normal,High,Medium,4,10,Moderate,1.89,Redness/Sensitivity
+69,Combination,Medium,Medium,7,9,High,2.2,Acne
+28,Oily,Medium,High,4,8,High,3.15,Fine Lines/Aging
+29,Normal,Low,High,5,10,High,3.04,Normal/None
+18,Normal,Low,Low,7,6,Moderate,0.5,Acne
+23,Sensitive,High,Low,4,10,Low,2.1,Redness/Sensitivity
+46,Normal,High,Medium,2,10,Moderate,0.8,Fine Lines/Aging
+46,Normal,Low,Medium,3,9,Moderate,1.93,Fine Lines/Aging
+36,Sensitive,High,Medium,6,10,High,2.51,Redness/Sensitivity
+33,Normal,Medium,Medium,2,10,Moderate,1.92,Normal/None
+61,Oily,High,High,5,9,Moderate,2.6,Dryness
+41,Oily,High,Medium,3,10,Moderate,2.78,Normal/None
+60,Oily,Medium,Medium,9,7,Moderate,1.58,Acne
+68,Oily,Medium,Low,10,7,Moderate,1.55,Fine Lines/Aging
+33,Dry,High,Medium,3,8,Low,1.87,Dryness
+27,Combination,High,Medium,6,9,Low,0.67,Dryness
+68,Combination,Low,High,4,10,High,2.22,Fine Lines/Aging
+50,Oily,High,Medium,5,10,Low,2.98,Normal/None
+32,Normal,Low,Low,9,5,High,1.39,Dryness
+50,Oily,Medium,Medium,5,9,Low,1.63,Acne
+44,Sensitive,Medium,Medium,5,10,Moderate,1.73,Normal/None
+65,Oily,High,High,4,9,High,4.2,Oiliness
+30,Normal,Low,Low,8,7,Moderate,1.77,Acne
+70,Dry,High,Medium,1,10,Low,1.52,Dryness
+67,Combination,Low,Low,5,8,Moderate,1.38,Fine Lines/Aging
+25,Dry,Low,Medium,5,6,Moderate,2.21,Dryness
+25,Combination,High,High,4,9,Moderate,2.42,Oiliness
+45,Oily,High,Low,7,7,Low,1.19,Fine Lines/Aging
+18,Sensitive,Medium,Medium,8,8,Moderate,2.99,Redness/Sensitivity
+32,Normal,Low,High,3,9,Moderate,2.42,Oiliness
+39,Combination,Low,Medium,10,6,High,3.28,Dullness
+69,Combination,Medium,High,3,9,Moderate,1.94,Fine Lines/Aging
+70,Sensitive,Low,Medium,8,8,Moderate,2.39,Fine Lines/Aging
+24,Oily,High,Medium,6,8,Low,1.73,Oiliness
+65,Dry,Low,Medium,4,8,High,3.77,Fine Lines/Aging
+21,Dry,High,Medium,5,9,Low,1.99,Redness/Sensitivity
+57,Dry,High,Medium,5,10,Moderate,2.21,Redness/Sensitivity
+62,Normal,High,Medium,6,9,Moderate,1.83,Redness/Sensitivity
+64,Sensitive,High,Medium,4,9,Low,1.49,Redness/Sensitivity
+28,Sensitive,High,Medium,5,9,Low,2.09,Redness/Sensitivity
+65,Normal,Low,Medium,4,7,Moderate,2.86,Fine Lines/Aging
+22,Normal,Medium,Medium,3,10,Low,1.35,Normal/None
+44,Combination,High,Medium,4,9,Moderate,2.3,Normal/None
+41,Sensitive,Medium,Medium,3,9,High,2.75,Normal/None
+33,Oily,High,Medium,5,8,Moderate,2.49,Normal/None
+17,Normal,High,Medium,6,8,Low,0.53,Redness/Sensitivity
+58,Combination,High,Low,6,10,Low,1.16,Dryness
+34,Dry,Low,Low,9,9,Moderate,1.11,Dryness
+52,Dry,High,Medium,1,10,Moderate,2.23,Dryness
+38,Sensitive,Low,Low,6,8,Moderate,1.48,Dryness
+36,Sensitive,Medium,Medium,6,8,Moderate,1.8,Redness/Sensitivity
+64,Sensitive,Medium,Medium,7,9,High,1.64,Redness/Sensitivity
+21,Combination,Low,Medium,7,8,Moderate,1.88,Fine Lines/Aging
+56,Dry,Medium,Low,5,9,Low,1.0,Dryness
+57,Dry,High,Medium,6,9,High,3.21,Acne
+36,Normal,High,High,4,9,High,2.98,Normal/None
+30,Normal,High,Medium,7,10,Moderate,2.32,Redness/Sensitivity
+16,Normal,Low,Medium,2,10,Moderate,1.96,Oiliness
+67,Normal,Medium,Low,7,7,Moderate,0.57,Dryness
+68,Dry,High,Low,5,9,Moderate,1.83,Dryness
+29,Combination,Medium,Medium,5,10,Low,1.29,Normal/None
+17,Dry,Medium,Medium,5,8,Moderate,2.4,Dryness
+22,Dry,High,Medium,5,10,Moderate,2.7,Normal/None
+19,Oily,High,Medium,8,7,High,2.86,Acne
+61,Oily,High,Medium,10,6,Low,2.91,Fine Lines/Aging
+65,Combination,Medium,Low,8,9,Moderate,1.75,Acne
+24,Normal,Medium,High,4,8,Moderate,1.71,Redness/Sensitivity
+57,Oily,Medium,Medium,7,9,Moderate,3.03,Acne
+25,Combination,High,Low,7,9,Moderate,2.33,Dryness
+36,Normal,Medium,Low,4,8,Moderate,2.0,Normal/None
+48,Oily,Medium,High,3,10,Moderate,3.68,Fine Lines/Aging
+55,Dry,Low,Medium,5,8,Moderate,2.66,Dryness
+64,Oily,Medium,Medium,7,9,High,2.45,Fine Lines/Aging
+18,Combination,Low,High,2,10,Moderate,1.65,Dryness
+26,Dry,Medium,Medium,4,9,Moderate,3.26,Normal/None
+31,Oily,High,Medium,7,9,Moderate,2.37,Acne
+33,Oily,High,Medium,6,9,Low,1.92,Oiliness
+70,Normal,Medium,Low,8,8,Low,2.44,Dryness
+58,Oily,High,High,3,10,Moderate,2.9,Oiliness
+33,Combination,High,Medium,10,6,Moderate,2.64,Normal/None
+69,Oily,Low,High,2,10,Moderate,2.91,Oiliness
+43,Normal,High,High,1,10,Moderate,2.56,Redness/Sensitivity
+43,Normal,Medium,Medium,5,8,Moderate,2.64,Normal/None
+39,Normal,High,Medium,3,10,High,2.01,Redness/Sensitivity
+23,Oily,Medium,High,5,9,Moderate,3.65,Acne
+67,Combination,Low,Low,5,9,Low,0.91,Dryness
+16,Sensitive,Low,Medium,5,10,Moderate,2.45,Acne
+25,Oily,High,Medium,4,7,High,1.53,Normal/None
+28,Oily,Medium,Medium,6,10,Low,1.82,Oiliness
+31,Sensitive,High,Low,5,8,Moderate,1.74,Redness/Sensitivity
+23,Normal,Low,Low,8,8,Moderate,2.31,Dryness
+16,Oily,High,Medium,5,8,Low,2.17,Oiliness
+53,Oily,Medium,Medium,4,8,Moderate,1.43,Fine Lines/Aging
+69,Combination,Medium,High,2,10,Moderate,2.18,Fine Lines/Aging
+22,Combination,Low,Medium,5,10,Moderate,3.31,Normal/None
+32,Normal,Low,Medium,3,10,Moderate,1.15,Redness/Sensitivity
+43,Sensitive,High,Medium,3,10,Moderate,1.52,Redness/Sensitivity
+67,Normal,Medium,Low,7,8,Moderate,2.89,Acne
+54,Dry,High,Medium,2,10,Moderate,2.26,Fine Lines/Aging
+58,Normal,Medium,Medium,8,5,Low,2.02,Acne
+47,Dry,Low,Medium,6,9,Moderate,3.02,Fine Lines/Aging
+38,Oily,Medium,Medium,5,8,High,1.96,Redness/Sensitivity
+26,Oily,Medium,Low,3,7,Low,1.48,Dryness
+63,Dry,Medium,Low,7,8,Low,1.39,Dryness
+60,Combination,High,High,5,10,High,2.32,Normal/None
+17,Oily,Medium,High,4,9,Moderate,3.27,Redness/Sensitivity
+55,Dry,High,Low,6,10,Moderate,0.84,Dryness
+20,Combination,Low,Medium,2,10,Moderate,1.24,Dryness
+56,Normal,Low,Medium,2,10,Moderate,1.11,Fine Lines/Aging
+61,Combination,High,High,3,10,Moderate,3.32,Redness/Sensitivity
+23,Combination,Low,Medium,6,6,Moderate,1.71,Dullness
+39,Combination,Low,Medium,5,8,Low,1.64,Oiliness
+22,Oily,Medium,Low,8,9,Moderate,0.91,Oiliness
+47,Normal,Low,Medium,4,10,Low,1.69,Fine Lines/Aging
+67,Normal,Medium,Medium,7,9,High,3.29,Fine Lines/Aging
+20,Dry,High,Low,5,9,Moderate,2.4,Dryness
+37,Oily,Low,Medium,4,10,Moderate,2.11,Oiliness
+69,Oily,Medium,Low,6,8,Moderate,0.95,Dryness
+32,Normal,Low,Medium,5,10,Moderate,1.94,Oiliness
+23,Dry,Medium,Low,4,10,Moderate,2.32,Dryness
+42,Oily,High,Medium,6,10,Moderate,1.41,Oiliness
+43,Combination,Medium,Medium,5,7,Low,2.42,Fine Lines/Aging
+52,Sensitive,Medium,Medium,5,9,Low,2.61,Fine Lines/Aging
+33,Oily,High,Medium,5,8,Moderate,1.78,Redness/Sensitivity
+68,Sensitive,High,High,3,10,Moderate,2.78,Normal/None
+44,Oily,High,Medium,6,10,High,2.51,Normal/None
+31,Sensitive,Medium,High,4,10,Moderate,3.12,Redness/Sensitivity
+68,Sensitive,High,High,3,10,Moderate,3.83,Redness/Sensitivity
+66,Oily,Medium,Medium,5,8,Moderate,1.33,Fine Lines/Aging
+43,Combination,High,Medium,7,7,Moderate,2.82,Acne
+17,Sensitive,High,Medium,6,9,Moderate,3.24,Redness/Sensitivity
+48,Sensitive,Medium,Medium,4,9,Moderate,1.42,Dullness
+46,Sensitive,Medium,Medium,4,9,Moderate,1.74,Fine Lines/Aging
+24,Normal,Low,Medium,7,7,Low,1.43,Dullness
+50,Oily,High,High,1,10,Low,1.79,Fine Lines/Aging
+62,Combination,Medium,Medium,7,8,Moderate,1.91,Acne
+21,Normal,Medium,High,2,10,Moderate,2.04,Dullness
+55,Normal,Low,High,3,10,Moderate,2.87,Fine Lines/Aging
+23,Dry,Low,Medium,4,10,High,1.08,Dryness
+57,Normal,Medium,Low,10,8,Moderate,1.42,Acne
+39,Oily,High,Medium,9,6,High,3.14,Acne
+16,Combination,Low,Low,7,9,High,3.04,Dullness
+69,Oily,Medium,Medium,6,10,Moderate,1.35,Fine Lines/Aging
+25,Combination,High,High,2,10,Low,2.35,Normal/None
+48,Combination,Low,Medium,6,10,Moderate,3.26,Fine Lines/Aging
+25,Normal,High,Medium,4,10,High,2.56,Redness/Sensitivity
+67,Normal,High,Medium,4,10,Moderate,1.39,Dryness
+56,Dry,Medium,Medium,6,9,Moderate,2.9,Normal/None
+60,Sensitive,High,Medium,5,10,Low,3.28,Redness/Sensitivity
+39,Combination,Medium,Medium,7,9,High,1.89,Normal/None
+41,Dry,High,Medium,2,8,Low,1.93,Dryness
+50,Oily,Low,High,6,9,Low,2.77,Dryness
+59,Oily,Low,High,4,9,Moderate,2.29,Acne
+62,Normal,Medium,Low,5,8,Low,0.5,Fine Lines/Aging
+16,Sensitive,Medium,Medium,6,10,Low,2.25,Redness/Sensitivity
+52,Combination,Low,Medium,3,9,High,1.82,Normal/None
+22,Oily,Medium,Medium,6,7,Moderate,1.18,Dryness
+31,Combination,High,Medium,5,10,Low,0.52,Redness/Sensitivity
+61,Dry,Low,High,4,7,Moderate,3.15,Dryness
+29,Combination,Low,Low,5,6,Low,1.23,Dryness
+59,Dry,Medium,Medium,5,10,Moderate,2.47,Fine Lines/Aging
+41,Normal,Medium,Medium,4,10,Low,2.36,Redness/Sensitivity
+28,Sensitive,High,Medium,6,9,Moderate,2.33,Redness/Sensitivity
+34,Dry,Medium,Low,5,8,Low,2.14,Dryness
+45,Combination,Low,Medium,4,8,High,2.9,Fine Lines/Aging
+58,Sensitive,High,Low,9,6,Moderate,2.31,Redness/Sensitivity
+49,Oily,Low,Medium,6,8,Moderate,1.59,Fine Lines/Aging
+67,Oily,Medium,Medium,5,7,Moderate,1.52,Acne
+63,Combination,Low,Low,6,9,Low,1.82,Dryness
+57,Dry,High,Low,3,9,Low,1.8,Dryness
+49,Oily,Medium,Medium,5,9,Low,2.24,Acne
+31,Normal,High,High,5,9,High,3.48,Oiliness
+38,Combination,High,Medium,3,10,Moderate,2.48,Redness/Sensitivity
+22,Dry,Medium,Low,6,9,Low,1.25,Dryness
+36,Dry,High,Low,4,9,Low,0.5,Dryness
+66,Combination,High,Medium,5,9,Moderate,1.58,Fine Lines/Aging
+39,Normal,Low,Medium,4,10,Moderate,1.12,Acne
+22,Combination,High,Low,10,3,Moderate,1.62,Redness/Sensitivity
+51,Normal,Low,Medium,4,10,High,2.79,Acne
+68,Sensitive,Medium,High,1,10,Moderate,2.27,Redness/Sensitivity
+63,Combination,Medium,High,2,10,Moderate,3.69,Normal/None
+31,Oily,Low,Low,7,6,Low,2.29,Acne
+40,Sensitive,Medium,Low,8,7,Moderate,3.73,Acne
+45,Normal,Low,Medium,4,8,Moderate,2.77,Fine Lines/Aging
+29,Oily,Medium,Medium,8,9,Moderate,3.07,Fine Lines/Aging
+30,Oily,High,Medium,7,6,Moderate,1.91,Acne
+29,Combination,High,Medium,5,8,Moderate,1.34,Redness/Sensitivity
+70,Oily,Low,Medium,5,10,Moderate,1.84,Fine Lines/Aging
+57,Dry,High,Medium,6,8,Moderate,2.19,Fine Lines/Aging
+62,Oily,Medium,High,7,7,High,2.1,Oiliness
+60,Normal,Medium,Low,6,10,Moderate,1.4,Fine Lines/Aging
+68,Dry,Medium,Low,4,10,Moderate,2.53,Dryness
+21,Normal,High,Medium,5,10,Low,1.1,Redness/Sensitivity
+64,Dry,Medium,Low,9,8,Moderate,0.97,Acne
+19,Oily,Low,Medium,6,8,Moderate,1.3,Oiliness
+42,Normal,High,Medium,7,8,Moderate,2.01,Acne
+48,Dry,High,Low,7,7,Moderate,1.41,Dryness
+35,Combination,Low,Medium,6,9,Moderate,2.02,Fine Lines/Aging
+24,Oily,Medium,Medium,6,8,Moderate,2.68,Normal/None
+26,Oily,High,Medium,7,7,High,3.06,Acne
+61,Dry,High,Low,7,9,High,2.07,Dryness
+33,Normal,Medium,Medium,6,10,Moderate,1.16,Normal/None
+33,Dry,High,Medium,4,10,High,2.14,Redness/Sensitivity
+66,Combination,High,Medium,6,10,Moderate,2.72,Fine Lines/Aging
+23,Dry,High,Low,5,8,Moderate,2.91,Dryness
+66,Normal,Low,Medium,5,6,High,2.88,Fine Lines/Aging
+66,Normal,Low,Medium,10,8,Moderate,3.16,Acne
+48,Oily,High,High,2,9,High,3.98,Redness/Sensitivity
+25,Normal,Low,Low,7,8,Moderate,1.81,Dryness
+24,Dry,High,High,4,7,High,3.79,Dryness
+31,Dry,High,Low,6,7,Moderate,1.99,Dryness
+47,Oily,Low,Medium,10,5,Moderate,3.02,Acne
+24,Combination,Medium,Medium,4,9,Moderate,2.77,Dullness
+41,Sensitive,High,Low,4,9,Moderate,0.62,Redness/Sensitivity
+22,Oily,Low,Medium,5,9,Low,1.13,Oiliness
+45,Normal,High,Medium,4,10,High,1.62,Fine Lines/Aging
+17,Combination,High,Low,7,9,Low,0.5,Acne
+54,Dry,Low,Medium,4,7,Moderate,2.9,Fine Lines/Aging
+19,Combination,Medium,Medium,7,9,Low,3.56,Dullness
+26,Normal,Low,Medium,3,10,Moderate,1.99,Oiliness
+25,Sensitive,High,Medium,2,10,Low,2.58,Redness/Sensitivity
+61,Sensitive,High,Medium,5,9,Low,3.09,Redness/Sensitivity
+18,Oily,Low,High,2,10,Moderate,2.37,Normal/None
+39,Normal,Low,Low,9,6,Low,1.88,Dryness
+48,Normal,Medium,Medium,2,10,Moderate,2.0,Fine Lines/Aging
+44,Oily,High,High,3,10,Moderate,2.63,Fine Lines/Aging
+53,Dry,Low,Medium,6,8,Moderate,2.9,Fine Lines/Aging
+60,Sensitive,High,Medium,4,8,Low,2.27,Redness/Sensitivity
+37,Oily,Low,High,2,10,Low,2.24,Oiliness
+61,Normal,Low,Low,10,5,Moderate,2.16,Fine Lines/Aging
+33,Combination,Low,Medium,3,7,Moderate,0.93,Dryness
+70,Dry,High,Medium,5,9,High,3.32,Fine Lines/Aging
+43,Normal,Low,Medium,5,10,Low,0.87,Fine Lines/Aging
+56,Sensitive,High,Medium,7,8,Moderate,2.7,Redness/Sensitivity
+64,Normal,Low,Medium,6,9,High,3.2,Normal/None
+59,Oily,High,Medium,4,6,High,1.69,Fine Lines/Aging
+62,Oily,High,Medium,5,10,Low,1.41,Fine Lines/Aging
+45,Sensitive,Medium,Medium,5,9,Low,3.6,Fine Lines/Aging
+18,Dry,Medium,Low,7,7,Moderate,2.14,Dryness
+43,Normal,Medium,Medium,3,10,Moderate,1.22,Acne
+25,Oily,High,Low,10,7,Low,2.54,Normal/None
+64,Dry,High,Medium,4,8,Moderate,1.58,Fine Lines/Aging
+29,Sensitive,High,Low,5,9,High,1.06,Redness/Sensitivity
+28,Normal,Medium,Medium,3,10,Low,2.32,Acne
+29,Sensitive,High,Medium,3,10,High,1.87,Redness/Sensitivity
+51,Dry,Medium,Low,4,8,Moderate,2.46,Dryness
+47,Normal,High,Medium,4,9,Moderate,1.55,Redness/Sensitivity
+68,Combination,High,Medium,5,10,High,3.17,Fine Lines/Aging
+38,Normal,High,High,4,8,Moderate,2.35,Redness/Sensitivity
+31,Dry,Low,Low,7,9,Moderate,0.5,Dryness
+18,Combination,Low,Medium,4,9,Moderate,2.51,Normal/None
+16,Dry,High,Low,4,10,Moderate,1.97,Normal/None
+36,Normal,High,High,5,8,Moderate,3.33,Fine Lines/Aging
+66,Sensitive,High,Medium,7,7,Moderate,2.52,Redness/Sensitivity
+44,Oily,Low,Low,6,10,Moderate,2.8,Oiliness
+65,Dry,Low,Low,5,7,Low,1.33,Dryness
+21,Oily,High,Low,3,10,Low,1.27,Dryness
+21,Dry,High,Low,3,10,Low,1.88,Dryness
+61,Oily,Medium,High,3,10,Moderate,1.91,Fine Lines/Aging
+21,Combination,High,High,8,6,Low,2.97,Redness/Sensitivity
+18,Oily,Low,Medium,7,6,Low,1.78,Acne
+38,Combination,High,Low,4,8,Low,0.92,Dryness
+66,Dry,Low,Low,4,10,High,1.94,Fine Lines/Aging
+53,Dry,High,Medium,4,10,Low,2.67,Dryness
+21,Dry,High,Low,4,8,Low,1.77,Dryness
+62,Combination,High,Low,6,7,Moderate,2.02,Fine Lines/Aging
+62,Normal,Low,Medium,5,8,High,3.45,Fine Lines/Aging
+60,Dry,Low,Low,10,6,Moderate,1.47,Dryness
+65,Combination,Low,Low,8,10,Moderate,0.5,Dryness
+29,Normal,High,Low,8,6,High,1.92,Dullness
+69,Oily,Low,Medium,7,7,Moderate,2.39,Fine Lines/Aging
+33,Sensitive,High,Medium,5,7,Moderate,2.0,Redness/Sensitivity
+60,Dry,Medium,Low,7,9,Low,0.65,Dryness
+47,Oily,High,Medium,5,9,Moderate,3.01,Redness/Sensitivity
+58,Normal,High,Medium,9,6,Low,2.03,Fine Lines/Aging
+50,Oily,High,Medium,6,8,Low,2.21,Fine Lines/Aging
+51,Oily,High,Medium,6,7,High,2.94,Fine Lines/Aging
+49,Combination,Medium,Medium,6,9,High,1.56,Normal/None
+58,Oily,Medium,Medium,9,10,Moderate,2.44,Acne
+56,Combination,Low,Medium,3,10,Low,2.63,Redness/Sensitivity
+23,Sensitive,Medium,Low,9,7,Low,2.81,Redness/Sensitivity
+61,Normal,Medium,Medium,5,8,Low,2.48,Dryness
+45,Combination,Low,High,3,8,Moderate,2.61,Fine Lines/Aging
+33,Combination,Medium,Low,4,10,Low,0.51,Dryness
+44,Sensitive,High,Medium,2,10,Moderate,2.19,Redness/Sensitivity
+69,Dry,Medium,Low,7,7,High,1.83,Dryness
+63,Oily,High,Medium,3,10,Moderate,3.23,Redness/Sensitivity
+61,Normal,High,High,6,9,Moderate,3.1,Fine Lines/Aging
+41,Normal,High,Low,8,9,Low,1.14,Dryness
+59,Oily,Low,Medium,4,10,Low,1.86,Acne
+37,Normal,Low,Medium,5,9,Low,2.1,Dryness
+53,Oily,High,High,3,9,Low,2.62,Oiliness
+51,Sensitive,High,Medium,5,9,Moderate,0.86,Redness/Sensitivity
+29,Dry,Medium,Low,10,8,Moderate,0.5,Dryness
+30,Oily,Medium,High,7,7,Low,1.93,Acne
+19,Oily,Medium,Medium,5,10,Moderate,0.5,Normal/None
+23,Dry,Medium,Medium,4,8,High,2.73,Dryness
+39,Dry,Low,Low,5,10,High,3.07,Dryness
+42,Oily,High,Medium,6,9,Moderate,3.19,Fine Lines/Aging
+25,Dry,Medium,Medium,5,7,Moderate,1.7,Dryness
+38,Oily,High,Medium,7,8,Moderate,2.33,Acne
+49,Dry,High,Medium,4,10,High,3.12,Normal/None
+28,Dry,High,Medium,4,8,Low,0.96,Dryness
+34,Dry,Medium,Low,6,7,High,3.33,Dryness
+36,Dry,High,Medium,3,10,Moderate,2.42,Acne
+43,Oily,High,Medium,7,10,Low,1.42,Dullness
+36,Oily,Medium,Medium,5,8,Moderate,2.31,Oiliness
+56,Oily,Low,Medium,2,10,Moderate,2.09,Fine Lines/Aging
+34,Combination,Low,Medium,6,9,Low,2.52,Acne
+39,Sensitive,Medium,Medium,2,10,Moderate,1.91,Redness/Sensitivity
+36,Sensitive,Low,Medium,7,8,Moderate,2.38,Dullness
+26,Normal,High,Medium,5,8,Moderate,1.7,Normal/None
+53,Normal,High,Low,9,7,Moderate,1.45,Acne
+28,Dry,High,Medium,8,5,Moderate,2.34,Acne
+32,Combination,High,High,3,10,Moderate,1.48,Redness/Sensitivity
+59,Combination,High,High,1,10,High,3.24,Fine Lines/Aging
+68,Combination,High,High,4,10,High,3.07,Fine Lines/Aging
+52,Sensitive,High,Medium,3,10,Moderate,1.59,Redness/Sensitivity
+66,Dry,High,Low,9,8,Moderate,2.37,Fine Lines/Aging
+62,Combination,Medium,Medium,5,9,Moderate,1.58,Redness/Sensitivity
+42,Combination,Medium,Medium,7,7,High,1.32,Dryness
+58,Dry,Medium,Low,5,8,High,2.12,Dryness
+34,Sensitive,High,Medium,5,7,Moderate,2.16,Redness/Sensitivity
+41,Oily,Medium,High,5,9,Low,2.32,Oiliness
+45,Sensitive,High,Medium,8,8,Moderate,2.32,Redness/Sensitivity
+68,Combination,High,Medium,6,10,Moderate,2.93,Fine Lines/Aging
+62,Oily,Medium,Medium,3,10,Moderate,1.42,Oiliness
+42,Combination,Low,Low,9,6,Low,1.6,Acne
+51,Oily,Medium,Medium,5,7,High,3.92,Normal/None
+27,Combination,High,Medium,5,9,Low,0.5,Redness/Sensitivity
+60,Combination,Low,High,1,10,Low,1.54,Fine Lines/Aging
+46,Normal,High,Low,7,8,Moderate,1.34,Acne
+45,Combination,Low,Medium,6,9,Low,1.74,Fine Lines/Aging
+58,Oily,High,Medium,6,8,Low,1.55,Fine Lines/Aging
+50,Dry,High,Medium,5,10,Low,2.38,Fine Lines/Aging
+19,Dry,High,Medium,4,7,Low,2.1,Redness/Sensitivity
+31,Oily,High,Medium,5,10,Moderate,1.16,Dryness
+25,Normal,Medium,Low,6,7,Low,1.43,Normal/None
+56,Dry,High,Low,7,9,Low,1.9,Dryness
+17,Dry,Low,Medium,5,9,Moderate,2.79,Dryness
+27,Dry,Medium,Medium,7,8,Moderate,4.15,Dryness
+48,Combination,Low,Medium,5,9,High,3.16,Acne
+54,Dry,High,Medium,4,10,Moderate,1.39,Dryness
+43,Sensitive,High,Medium,6,9,Moderate,2.12,Redness/Sensitivity
+63,Dry,Medium,Medium,3,10,Moderate,2.34,Fine Lines/Aging
+66,Dry,Low,Low,6,10,Moderate,1.78,Dryness
+23,Normal,Low,High,2,10,Moderate,2.58,Dullness
+68,Dry,High,Low,3,10,High,0.78,Dryness
+49,Dry,High,Medium,1,10,Low,2.34,Redness/Sensitivity
+50,Normal,High,Medium,5,10,Moderate,1.82,Fine Lines/Aging
+21,Oily,Low,Low,9,8,Moderate,2.11,Acne
+50,Dry,Medium,Medium,5,8,Moderate,3.37,Fine Lines/Aging
+55,Normal,Low,Medium,7,8,Low,0.89,Acne
+47,Dry,High,Low,10,7,Low,2.12,Dryness
+20,Combination,Low,Medium,6,9,Moderate,2.84,Oiliness
+44,Dry,High,Medium,4,10,Low,2.04,Redness/Sensitivity
+67,Sensitive,Medium,Medium,4,10,Low,0.61,Fine Lines/Aging
+55,Combination,Low,High,6,9,Moderate,3.28,Normal/None
+23,Sensitive,High,Medium,4,5,Moderate,2.03,Redness/Sensitivity
+68,Combination,Medium,Medium,4,10,Moderate,1.78,Fine Lines/Aging
+68,Oily,Medium,Medium,7,8,Low,1.65,Fine Lines/Aging
+25,Normal,Medium,Medium,8,6,Moderate,1.89,Acne
+60,Oily,Medium,Medium,2,9,High,1.65,Fine Lines/Aging
+38,Combination,Medium,Medium,4,9,Low,2.03,Fine Lines/Aging
+48,Normal,Low,Medium,5,8,Low,1.42,Fine Lines/Aging
+40,Dry,Medium,Low,7,7,Low,2.44,Dryness
+59,Sensitive,Medium,Medium,8,7,Moderate,2.61,Redness/Sensitivity
+70,Oily,Low,Medium,10,7,Low,3.2,Oiliness
+59,Normal,Low,High,5,10,Moderate,2.03,Fine Lines/Aging
+67,Combination,Medium,Medium,5,10,High,1.96,Fine Lines/Aging
+68,Oily,Low,Medium,7,10,Moderate,1.02,Acne
+20,Normal,Low,Medium,4,9,Moderate,3.95,Normal/None
+29,Combination,Medium,Medium,5,9,Moderate,2.73,Normal/None
+55,Oily,Medium,Medium,5,10,Moderate,1.65,Fine Lines/Aging
+48,Normal,Low,High,1,10,Low,3.25,Fine Lines/Aging
+18,Dry,High,Low,6,8,Low,2.98,Dryness
+21,Combination,Medium,Low,5,10,Low,0.82,Dryness
+44,Oily,Low,Low,8,9,Moderate,1.6,Acne
+49,Sensitive,Medium,High,6,9,Moderate,2.09,Redness/Sensitivity
+25,Sensitive,High,Medium,3,8,Low,1.04,Redness/Sensitivity
+25,Oily,High,Medium,5,9,Moderate,2.12,Oiliness
+23,Dry,Low,Medium,1,9,Low,2.47,Normal/None
+47,Normal,High,Medium,3,10,Low,0.8,Redness/Sensitivity
+16,Combination,Low,Low,7,8,Low,2.13,Dryness
+47,Normal,Low,Medium,5,9,Low,2.83,Fine Lines/Aging
+42,Oily,High,Medium,7,8,Moderate,2.52,Acne
+41,Oily,Low,High,2,10,Moderate,2.14,Redness/Sensitivity
+53,Sensitive,Medium,Medium,5,9,Moderate,1.67,Fine Lines/Aging
+44,Normal,High,High,5,7,Moderate,2.86,Fine Lines/Aging
+56,Combination,Medium,Medium,7,8,Moderate,1.26,Fine Lines/Aging
+58,Normal,Medium,Medium,7,9,High,2.79,Fine Lines/Aging
+66,Sensitive,High,Medium,7,10,Low,1.92,Redness/Sensitivity
+59,Oily,Medium,Medium,9,7,High,3.5,Fine Lines/Aging
+44,Oily,Medium,Medium,5,10,High,2.13,Fine Lines/Aging
+43,Sensitive,Medium,Medium,8,9,Moderate,1.8,Redness/Sensitivity
+28,Sensitive,High,Low,3,10,Moderate,1.21,Redness/Sensitivity
+48,Dry,Low,Medium,3,10,High,2.95,Dryness
+23,Dry,High,Low,7,10,Moderate,1.86,Dryness
+67,Normal,High,Medium,2,10,Moderate,1.51,Normal/None
+62,Dry,Low,Medium,7,9,Moderate,1.59,Dryness
+22,Oily,High,Medium,6,10,Low,2.33,Oiliness
+59,Sensitive,Medium,Low,8,7,Low,1.02,Dryness
+22,Dry,Medium,Low,5,10,High,1.79,Dryness
+55,Combination,High,Medium,6,10,Low,2.62,Redness/Sensitivity
+20,Oily,High,Medium,7,10,Moderate,2.07,Oiliness
+42,Oily,High,Medium,4,9,Low,2.66,Oiliness
+52,Combination,High,High,4,10,Moderate,1.91,Redness/Sensitivity
+56,Dry,High,Medium,6,10,Low,1.9,Dryness
+39,Combination,Low,Medium,5,7,Low,2.03,Acne
+66,Oily,Medium,Medium,5,9,Moderate,3.31,Fine Lines/Aging
+58,Sensitive,Medium,Medium,5,6,High,3.64,Normal/None
+27,Combination,Medium,Medium,9,7,Moderate,3.12,Dullness
+52,Combination,Low,Medium,5,8,Moderate,1.7,Fine Lines/Aging
+56,Oily,Low,Medium,5,9,Moderate,1.41,Acne
+34,Dry,High,Medium,2,10,Moderate,2.81,Dullness
+56,Dry,High,Medium,5,10,Moderate,3.3,Redness/Sensitivity
+65,Normal,Medium,Medium,7,6,Low,2.83,Fine Lines/Aging
+60,Dry,Medium,Low,7,9,Moderate,2.21,Dryness
+57,Oily,Medium,High,6,10,High,3.18,Oiliness
+50,Dry,High,Low,7,8,Low,2.5,Dryness
+30,Dry,Low,Low,7,8,Low,2.02,Dryness
+59,Dry,High,Low,8,8,Low,2.05,Dryness
+36,Oily,High,Medium,7,6,Low,1.98,Acne
+45,Dry,Medium,Low,9,6,Low,1.27,Fine Lines/Aging
+33,Normal,Medium,High,5,9,High,2.05,Dryness
+33,Dry,Medium,Medium,3,10,Low,1.34,Dryness
+24,Dry,Medium,Low,7,7,High,1.32,Dryness
+68,Normal,Low,Medium,7,7,Moderate,2.31,Acne
+24,Combination,Medium,Low,9,7,High,2.57,Dryness
+20,Dry,High,Low,8,9,Low,2.51,Dryness
+67,Normal,Low,Medium,9,7,Moderate,3.21,Fine Lines/Aging
+46,Sensitive,High,Medium,7,10,Low,2.96,Redness/Sensitivity
+40,Normal,High,Medium,6,8,Low,3.03,Dryness
+56,Sensitive,Medium,Medium,3,10,High,1.99,Redness/Sensitivity
+37,Combination,Medium,Low,6,8,Moderate,1.05,Dryness
+23,Oily,High,Medium,4,10,High,3.34,Normal/None
+56,Dry,Medium,Medium,6,7,Low,3.01,Dryness
+25,Combination,High,High,6,10,Moderate,3.44,Redness/Sensitivity
+46,Sensitive,Medium,Medium,6,6,Low,2.29,Fine Lines/Aging
+68,Normal,High,Medium,5,10,Low,0.5,Redness/Sensitivity
+67,Oily,Medium,Medium,7,8,Moderate,2.49,Acne
+35,Normal,High,High,1,10,Moderate,2.64,Acne
+58,Oily,Medium,Medium,6,10,Moderate,3.2,Oiliness
+49,Combination,Medium,Medium,8,9,Moderate,3.34,Fine Lines/Aging
+42,Normal,Medium,Medium,9,6,Moderate,2.93,Dullness
+23,Combination,High,Medium,7,9,High,2.13,Redness/Sensitivity
+36,Combination,High,Low,9,10,Low,1.08,Dryness
+51,Normal,Low,Medium,6,7,High,3.03,Normal/None
+70,Normal,High,Low,6,10,High,1.97,Dryness
+16,Combination,High,Medium,7,9,Moderate,3.38,Acne
+55,Combination,Low,Medium,5,8,Low,0.54,Dryness
+62,Combination,Low,High,4,8,Low,2.35,Fine Lines/Aging
+68,Oily,High,Medium,4,9,Moderate,2.46,Fine Lines/Aging
+39,Normal,High,Medium,3,7,High,2.43,Fine Lines/Aging
+22,Oily,Medium,Medium,7,8,Moderate,1.46,Dryness
+30,Combination,High,Low,6,8,Low,0.5,Dryness
+62,Combination,High,Medium,5,7,Low,1.47,Redness/Sensitivity
+64,Dry,Low,Low,4,10,Low,1.49,Dryness
+51,Oily,Low,Medium,7,8,Moderate,3.09,Fine Lines/Aging
+22,Dry,High,Low,7,7,Moderate,1.57,Dryness
+22,Combination,Low,High,3,9,High,2.96,Oiliness
+42,Oily,Medium,Medium,3,10,Moderate,1.17,Normal/None
+48,Oily,Medium,Medium,7,8,Moderate,2.58,Acne
+17,Sensitive,High,Low,3,9,Moderate,0.5,Redness/Sensitivity
+53,Combination,Low,High,7,8,Low,3.58,Acne
+45,Oily,High,Medium,9,7,Low,1.79,Acne
+16,Dry,High,Low,9,6,Low,0.5,Dryness
+21,Sensitive,Medium,Low,7,8,Moderate,1.63,Redness/Sensitivity
+40,Combination,Low,Medium,7,9,Moderate,1.5,Acne
+55,Normal,Low,Low,10,8,Moderate,1.68,Acne
+61,Dry,Medium,Medium,1,10,Moderate,1.91,Fine Lines/Aging
+39,Dry,High,Low,5,10,Moderate,1.67,Dryness
+32,Oily,Medium,Low,7,7,Low,1.25,Acne
+69,Combination,High,Medium,5,8,Moderate,1.27,Redness/Sensitivity
+41,Oily,High,Medium,8,7,Moderate,2.86,Redness/Sensitivity
+33,Oily,High,High,5,10,Moderate,3.16,Normal/None
+40,Combination,High,Medium,6,9,Low,1.7,Redness/Sensitivity
+16,Sensitive,High,Medium,5,9,Moderate,2.19,Redness/Sensitivity
+32,Combination,Medium,Low,4,10,High,1.7,Normal/None
+44,Normal,Medium,Medium,4,9,Moderate,2.26,Acne
+66,Normal,Low,Medium,6,10,Moderate,2.38,Normal/None
+56,Dry,High,Medium,4,9,Moderate,2.02,Redness/Sensitivity
+58,Dry,Medium,Medium,7,7,High,2.92,Fine Lines/Aging
+45,Normal,High,Low,7,8,Moderate,2.45,Redness/Sensitivity
+22,Dry,High,Low,8,7,Moderate,1.36,Dryness
+37,Normal,Low,Medium,3,9,Moderate,3.15,Normal/None
+70,Sensitive,High,High,2,10,Moderate,2.03,Redness/Sensitivity
+18,Sensitive,High,Medium,5,9,Low,3.24,Redness/Sensitivity
+64,Oily,Medium,Medium,10,7,Moderate,2.54,Dryness
+53,Dry,High,Low,8,7,Low,3.48,Fine Lines/Aging
+31,Oily,High,High,4,9,Moderate,3.14,Redness/Sensitivity
+58,Dry,High,Medium,6,10,Moderate,2.38,Fine Lines/Aging
+62,Dry,Low,Medium,7,6,Moderate,1.62,Acne
+18,Oily,Low,Medium,3,8,Moderate,1.64,Oiliness
+21,Combination,High,Low,8,7,Low,2.33,Acne
+52,Normal,Medium,High,5,10,Moderate,2.31,Fine Lines/Aging
+70,Sensitive,Medium,Medium,5,8,Moderate,1.73,Fine Lines/Aging
+17,Oily,Medium,Medium,6,9,Low,2.57,Normal/None
+52,Oily,Low,Medium,8,8,High,2.63,Acne
+23,Dry,Low,Medium,4,10,Low,2.57,Normal/None
+51,Oily,Low,Medium,2,8,Low,1.12,Normal/None
+50,Dry,Low,Medium,6,10,Moderate,3.0,Fine Lines/Aging
+20,Sensitive,Medium,High,1,10,High,3.0,Normal/None
+53,Oily,High,Medium,5,10,Low,2.86,Redness/Sensitivity
+65,Oily,High,Medium,8,7,Moderate,2.98,Acne
+63,Normal,High,Medium,7,8,Low,1.83,Acne
+17,Normal,Low,Low,8,8,Moderate,2.07,Acne
+29,Normal,Low,Medium,7,7,Low,3.33,Acne
+29,Dry,High,Low,10,5,High,2.37,Dryness
+40,Combination,Medium,Medium,4,9,Moderate,2.8,Redness/Sensitivity
+23,Oily,High,Medium,6,9,Low,1.59,Acne
+62,Dry,Low,Low,5,8,Moderate,0.71,Dryness
+58,Combination,High,Medium,7,8,Moderate,1.22,Fine Lines/Aging
+60,Combination,Medium,Medium,5,6,Moderate,2.52,Normal/None
+26,Dry,High,Low,9,7,Moderate,2.76,Dryness
+16,Normal,Low,Medium,4,10,Moderate,2.53,Normal/None
+66,Oily,Medium,Medium,8,9,Low,2.82,Normal/None
+31,Oily,High,Medium,7,8,Moderate,2.51,Oiliness
+52,Oily,Medium,Medium,5,9,Moderate,1.58,Fine Lines/Aging
+66,Combination,Medium,Low,7,7,Low,2.38,Fine Lines/Aging
+17,Dry,Low,Medium,6,10,Moderate,2.34,Normal/None
+16,Combination,High,Medium,6,10,Moderate,1.74,Redness/Sensitivity
+16,Oily,Low,High,5,9,Moderate,2.58,Oiliness
+24,Combination,High,High,4,10,High,2.66,Redness/Sensitivity
+18,Combination,High,Medium,5,8,Low,1.42,Dryness
+61,Oily,High,High,2,9,Moderate,2.06,Fine Lines/Aging
+49,Oily,Medium,Medium,7,7,High,3.73,Fine Lines/Aging
+69,Oily,Low,High,3,10,High,3.7,Normal/None
+60,Combination,Medium,Low,5,10,High,2.75,Normal/None
+68,Oily,High,Medium,7,8,Moderate,2.25,Fine Lines/Aging
+29,Normal,Low,Low,7,7,Moderate,1.05,Dryness
+31,Dry,High,Medium,2,9,Moderate,3.58,Normal/None
+62,Combination,Medium,Medium,5,10,High,3.43,Fine Lines/Aging
+29,Normal,Low,Medium,6,10,Moderate,2.8,Acne
+19,Normal,High,Low,6,8,Moderate,0.5,Dryness
+52,Sensitive,High,Low,8,5,Moderate,2.23,Redness/Sensitivity
+60,Oily,Medium,High,4,8,Moderate,2.1,Fine Lines/Aging
+69,Combination,Medium,High,1,10,Low,2.45,Fine Lines/Aging
+67,Oily,Medium,Medium,7,9,Moderate,1.84,Acne
+22,Normal,High,Medium,4,10,Moderate,2.01,Fine Lines/Aging
+58,Sensitive,Medium,Medium,2,10,Low,2.4,Fine Lines/Aging
+62,Combination,High,Medium,5,10,Low,1.28,Normal/None
+54,Combination,High,Low,8,8,Low,1.44,Dryness
+61,Dry,Medium,Low,3,10,Moderate,2.35,Dryness
+62,Dry,Low,Low,10,6,Moderate,3.27,Dryness
+40,Dry,Medium,Medium,4,9,Moderate,2.85,Dryness
+18,Normal,Medium,High,6,6,Moderate,3.06,Dryness
+41,Normal,Medium,High,3,8,Moderate,2.25,Acne
+27,Dry,Low,Medium,6,6,Low,3.1,Dryness
+22,Dry,High,Low,5,10,Moderate,0.81,Dryness
+22,Dry,Medium,Medium,3,8,Moderate,3.82,Dryness
+54,Dry,High,Low,10,9,Low,3.62,Dryness
+43,Oily,High,Medium,5,8,Moderate,2.57,Redness/Sensitivity
+45,Combination,High,Medium,5,10,Low,2.57,Dryness
+56,Normal,Medium,Medium,7,8,Low,1.87,Acne
+46,Oily,Medium,Medium,9,5,Low,1.73,Fine Lines/Aging
+50,Combination,Medium,Low,8,9,Moderate,1.71,Fine Lines/Aging
+20,Combination,Medium,Medium,3,10,Moderate,2.16,Dullness
+62,Oily,High,Medium,6,7,Moderate,2.64,Fine Lines/Aging
+40,Oily,Medium,High,2,10,High,2.94,Normal/None
+24,Oily,Low,Medium,7,7,High,4.19,Normal/None
+60,Oily,Low,High,2,10,High,2.68,Fine Lines/Aging
+56,Combination,High,Low,4,10,Moderate,1.01,Dryness
+18,Sensitive,High,High,5,9,Moderate,3.52,Oiliness
+26,Oily,High,Medium,6,6,Moderate,1.22,Redness/Sensitivity
+16,Combination,High,Medium,5,8,Moderate,1.75,Redness/Sensitivity
+30,Oily,Medium,Medium,9,8,Low,2.12,Acne
+21,Normal,Medium,Medium,7,8,Low,2.23,Acne
+55,Combination,High,Low,7,8,High,1.44,Normal/None
+44,Dry,Low,Low,3,9,Low,1.3,Dryness
+69,Oily,High,Medium,9,6,Moderate,1.02,Fine Lines/Aging
+57,Normal,Medium,Medium,4,10,Low,2.4,Normal/None
+49,Sensitive,High,Medium,9,6,Moderate,3.15,Redness/Sensitivity
+44,Dry,High,Low,10,8,Moderate,1.22,Dryness
+18,Oily,High,Medium,7,8,Moderate,3.0,Redness/Sensitivity
+19,Oily,High,Medium,8,8,High,3.34,Redness/Sensitivity
+49,Normal,High,Medium,1,10,Moderate,1.67,Redness/Sensitivity
+16,Normal,Medium,Medium,5,9,High,1.01,Normal/None
+18,Combination,Medium,Medium,8,8,Moderate,1.34,Acne
+28,Combination,Low,Medium,7,7,Low,1.42,Redness/Sensitivity
+64,Sensitive,High,High,3,10,Moderate,3.43,Fine Lines/Aging
+41,Combination,High,Medium,5,10,Moderate,2.11,Redness/Sensitivity
+55,Dry,Low,Medium,1,10,Moderate,1.39,Fine Lines/Aging
+38,Normal,High,Medium,6,9,Low,2.02,Redness/Sensitivity
+25,Dry,High,Low,2,8,Moderate,1.16,Dryness
+36,Dry,High,Medium,8,9,Low,2.31,Redness/Sensitivity
+21,Sensitive,High,Low,8,7,Low,1.12,Dryness
+58,Combination,High,Low,5,10,Moderate,1.53,Fine Lines/Aging
+26,Sensitive,Medium,Medium,7,10,Low,2.2,Dullness
+36,Dry,Medium,Medium,5,8,Low,3.3,Dryness
+69,Normal,High,Medium,6,10,Low,3.66,Fine Lines/Aging
+48,Normal,Medium,Medium,3,9,Low,1.07,Fine Lines/Aging
+41,Oily,Low,Medium,7,8,Moderate,1.72,Acne
+45,Oily,Low,Medium,2,10,Moderate,2.61,Oiliness
+59,Normal,Medium,High,2,10,Moderate,3.14,Fine Lines/Aging
+29,Oily,High,Medium,5,10,High,0.87,Dryness
+51,Sensitive,High,Medium,5,9,Moderate,2.27,Redness/Sensitivity
+63,Oily,Low,Medium,6,10,Moderate,1.81,Normal/None
+47,Oily,Low,Medium,4,9,High,1.06,Fine Lines/Aging
+40,Combination,High,Low,9,5,Low,0.83,Redness/Sensitivity
+23,Oily,Low,Medium,6,7,Moderate,1.75,Dryness
+29,Sensitive,Low,Medium,6,10,Moderate,2.25,Dryness
+68,Combination,Medium,Medium,6,8,Moderate,3.01,Fine Lines/Aging
+45,Oily,Medium,Low,8,8,Low,2.18,Acne
+32,Combination,Low,High,7,7,Moderate,2.96,Acne
+39,Normal,Low,Medium,6,8,Low,1.92,Normal/None
+47,Combination,Low,Medium,7,7,Low,1.34,Dryness
+45,Combination,Medium,High,2,10,Moderate,2.05,Fine Lines/Aging
+54,Combination,Low,Medium,2,10,Moderate,2.76,Fine Lines/Aging
+30,Normal,Low,Low,5,10,Moderate,3.03,Dryness
+51,Dry,High,Low,5,9,High,2.48,Dryness
+40,Combination,Low,Medium,7,8,Low,1.16,Dryness
+67,Sensitive,Medium,Medium,6,7,Low,2.17,Redness/Sensitivity
+24,Normal,Medium,Medium,7,6,Moderate,2.58,Acne
+24,Combination,Low,Medium,3,10,Low,2.89,Redness/Sensitivity
+41,Dry,High,Low,5,10,Low,1.36,Dryness
+43,Combination,High,Medium,3,10,Low,1.37,Normal/None
+53,Sensitive,High,Medium,6,8,Moderate,2.8,Redness/Sensitivity
+38,Oily,High,High,2,10,High,2.27,Oiliness
+66,Oily,High,Low,6,7,Low,1.54,Normal/None
+42,Normal,Low,Medium,3,8,High,3.6,Normal/None
+23,Normal,Medium,Medium,5,8,Moderate,1.1,Acne
+22,Normal,Low,Medium,7,10,Low,3.54,Acne
+69,Oily,High,Medium,6,10,Low,1.41,Oiliness
+23,Dry,High,High,2,9,Low,2.59,Dryness
+68,Normal,High,Medium,4,9,Moderate,2.11,Fine Lines/Aging
+31,Normal,Medium,Medium,2,10,Moderate,2.42,Redness/Sensitivity
+21,Combination,Medium,Medium,2,10,High,2.39,Normal/None
+32,Combination,Low,Low,6,9,Low,2.59,Dryness
+49,Combination,Low,Medium,7,9,Low,1.62,Acne
+39,Combination,Medium,Low,6,9,Low,1.44,Normal/None
+59,Normal,Medium,Medium,7,8,Low,3.35,Fine Lines/Aging
+49,Normal,Low,Medium,5,8,Moderate,2.22,Oiliness
+38,Normal,High,Medium,5,8,Moderate,1.66,Oiliness
+50,Oily,High,Medium,3,8,Low,0.71,Fine Lines/Aging
+69,Dry,Low,Medium,5,7,Moderate,3.69,Fine Lines/Aging
+38,Normal,High,Medium,3,10,Low,1.46,Redness/Sensitivity
+24,Combination,Low,High,4,10,Moderate,3.85,Normal/None
+38,Combination,High,Medium,6,7,High,2.92,Fine Lines/Aging
+62,Oily,High,Medium,5,9,Moderate,2.31,Fine Lines/Aging
+27,Normal,Medium,Low,10,8,Moderate,2.34,Redness/Sensitivity
+68,Oily,Medium,High,3,7,Moderate,3.97,Fine Lines/Aging
+48,Combination,Low,Low,5,9,Moderate,0.5,Dryness
+49,Combination,High,High,3,10,Moderate,2.37,Fine Lines/Aging
+33,Normal,Low,Medium,5,10,Moderate,1.99,Fine Lines/Aging
+66,Normal,Low,Medium,5,6,Moderate,2.03,Fine Lines/Aging
+17,Dry,Medium,Low,7,9,Moderate,2.32,Dryness
+32,Normal,Medium,Medium,5,8,Low,1.69,Dullness
+39,Combination,Low,Medium,5,10,Low,2.05,Fine Lines/Aging
+42,Combination,High,Low,5,8,Moderate,2.18,Redness/Sensitivity
+42,Normal,Medium,Medium,3,10,Moderate,1.15,Redness/Sensitivity
+24,Dry,High,Low,4,9,Moderate,2.51,Dryness
+28,Oily,Low,High,5,9,High,3.17,Oiliness
+21,Oily,Medium,Medium,6,8,Moderate,1.77,Redness/Sensitivity
+47,Oily,High,High,7,8,Moderate,3.69,Oiliness
+35,Dry,Medium,Medium,5,7,Low,2.97,Dryness
+47,Sensitive,Low,Medium,5,10,High,3.28,Normal/None
+48,Normal,Medium,Medium,2,10,Moderate,2.87,Normal/None
+54,Oily,Low,Medium,7,6,High,2.62,Fine Lines/Aging
+46,Oily,Medium,High,4,10,High,3.51,Normal/None
+51,Dry,High,Medium,7,8,Low,3.16,Redness/Sensitivity
+48,Combination,Low,Medium,8,8,Low,2.55,Dullness
+51,Dry,Medium,Low,5,10,Low,1.44,Dryness
+49,Combination,Low,High,3,10,High,2.57,Dullness
+33,Combination,Medium,Medium,5,10,Moderate,2.66,Normal/None
+29,Oily,High,High,6,8,Moderate,2.87,Redness/Sensitivity
+59,Normal,High,Low,5,10,Low,1.84,Redness/Sensitivity
+34,Sensitive,Medium,Medium,4,10,Moderate,1.75,Redness/Sensitivity
+46,Dry,Low,Medium,7,9,Moderate,3.47,Dryness
+26,Oily,High,Medium,6,9,Moderate,1.34,Redness/Sensitivity
+39,Sensitive,Medium,Low,5,10,Moderate,1.45,Dryness
+45,Sensitive,High,Medium,2,10,Moderate,1.14,Redness/Sensitivity
+50,Normal,Medium,Medium,6,8,Moderate,1.45,Fine Lines/Aging
+44,Normal,High,Medium,4,9,High,3.6,Redness/Sensitivity
+35,Oily,Medium,Medium,6,8,Moderate,3.22,Acne
+68,Combination,Medium,Low,6,7,Low,1.84,Dryness
+44,Normal,Medium,High,2,9,High,3.0,Normal/None
+60,Oily,Medium,Medium,6,6,High,2.59,Fine Lines/Aging
+56,Combination,Low,Low,7,6,Moderate,1.25,Acne
+46,Sensitive,High,Medium,7,10,Moderate,3.97,Redness/Sensitivity
+64,Combination,High,High,6,8,High,3.7,Redness/Sensitivity
+23,Dry,Low,Medium,2,10,Low,2.18,Dryness
+66,Oily,High,Low,8,8,High,1.92,Acne
+62,Sensitive,High,Low,6,8,Moderate,2.02,Redness/Sensitivity
+43,Sensitive,Medium,Medium,3,8,High,2.05,Fine Lines/Aging
+56,Normal,High,High,4,9,Moderate,2.28,Normal/None
+44,Combination,Low,Medium,6,10,Low,2.15,Dryness
+30,Normal,Medium,Low,7,10,Low,1.63,Acne
+59,Dry,Medium,Low,5,9,High,1.44,Dryness
+29,Oily,Medium,High,7,6,Moderate,3.91,Acne
+33,Oily,High,High,2,9,Moderate,2.39,Acne
+44,Oily,High,High,3,9,Moderate,2.57,Oiliness
+62,Combination,Medium,Medium,1,10,Moderate,1.86,Fine Lines/Aging
+37,Oily,High,Medium,4,10,High,1.35,Oiliness
+43,Oily,High,Low,9,7,Low,1.83,Dryness
+18,Normal,Medium,Low,10,6,High,2.34,Redness/Sensitivity
+22,Oily,Medium,Medium,6,10,Moderate,2.77,Dullness
+19,Oily,Low,High,4,8,Moderate,2.92,Oiliness
+19,Normal,Low,Low,5,9,Moderate,2.81,Dryness
+63,Dry,High,Medium,6,9,Moderate,2.99,Redness/Sensitivity
+62,Normal,Medium,Medium,2,9,Moderate,3.64,Oiliness
+61,Sensitive,Low,Medium,4,9,Low,2.21,Dryness
+19,Oily,Low,Medium,8,7,Low,2.78,Acne
+20,Sensitive,High,High,3,10,High,3.0,Redness/Sensitivity
+31,Sensitive,High,Low,4,10,Low,0.5,Dryness
+47,Combination,High,Medium,6,9,Moderate,2.08,Fine Lines/Aging
+34,Normal,Low,Low,6,8,Moderate,1.51,Dullness
+42,Normal,Low,Medium,4,9,Low,2.09,Dryness
+25,Normal,Medium,Medium,6,9,High,1.97,Normal/None
+56,Combination,High,Medium,7,7,Low,2.38,Normal/None
+33,Oily,Medium,Low,9,7,Low,2.68,Acne
+19,Sensitive,High,Medium,5,10,Moderate,3.16,Redness/Sensitivity
+56,Normal,Low,Medium,5,8,Low,3.2,Fine Lines/Aging
+65,Combination,Low,Low,9,7,Moderate,0.86,Fine Lines/Aging
+16,Dry,Medium,Low,4,9,Moderate,1.24,Acne
+40,Oily,High,High,3,9,Moderate,4.54,Oiliness
+61,Normal,Medium,High,6,8,Moderate,3.01,Normal/None
+54,Normal,Medium,Medium,8,9,Low,2.08,Fine Lines/Aging
+63,Dry,High,Medium,6,6,Moderate,2.23,Dryness
+38,Dry,Medium,Medium,5,10,Moderate,2.15,Fine Lines/Aging
+36,Dry,High,Low,3,10,Moderate,0.65,Dryness
+55,Normal,Medium,High,5,10,High,1.98,Fine Lines/Aging
+24,Dry,High,Low,8,9,Moderate,2.11,Dryness
+29,Sensitive,High,Medium,3,9,High,2.03,Redness/Sensitivity
+49,Oily,High,Medium,5,8,High,2.13,Normal/None
+52,Dry,Medium,Medium,5,8,High,4.65,Dryness
+22,Dry,Medium,Medium,4,9,Moderate,2.0,Dryness
+43,Normal,Low,Medium,6,10,Moderate,2.42,Dryness
+36,Normal,High,Medium,6,8,Moderate,2.39,Redness/Sensitivity
+43,Combination,Medium,Medium,6,9,Moderate,2.67,Fine Lines/Aging
+68,Sensitive,Medium,Medium,4,6,Low,1.52,Redness/Sensitivity
+20,Dry,Medium,Medium,2,10,Moderate,3.2,Dryness
+70,Combination,Low,Medium,6,10,Moderate,2.55,Redness/Sensitivity
+40,Oily,High,Medium,4,9,Moderate,1.17,Acne
+58,Dry,Medium,Low,9,6,Moderate,2.11,Acne
+39,Normal,High,Medium,9,6,Moderate,2.06,Acne
+33,Oily,Low,Low,9,3,Low,1.73,Acne
+58,Normal,Low,Medium,4,8,Low,2.31,Acne
+53,Combination,Low,Medium,7,10,Low,2.41,Oiliness
+23,Combination,High,Medium,7,7,Moderate,2.61,Redness/Sensitivity
+54,Normal,High,Medium,7,7,Low,2.17,Fine Lines/Aging
+57,Normal,Low,Medium,5,6,Low,1.97,Fine Lines/Aging
+37,Dry,Low,Low,8,5,Moderate,0.5,Fine Lines/Aging
+66,Oily,High,Medium,6,10,Moderate,2.82,Oiliness
+51,Oily,Medium,Low,6,9,Low,2.29,Acne
+34,Combination,Low,Medium,2,9,High,1.81,Dryness
+16,Sensitive,High,Medium,7,7,Moderate,2.42,Redness/Sensitivity
+53,Oily,Low,Medium,5,9,Low,2.42,Normal/None
+27,Normal,Low,High,6,7,Low,2.84,Dullness
+57,Combination,Medium,Medium,6,6,Moderate,2.61,Fine Lines/Aging
+44,Combination,High,Medium,6,8,Moderate,2.46,Normal/None
+41,Normal,High,High,5,10,High,3.36,Normal/None
+25,Normal,Low,Medium,7,9,Moderate,1.95,Acne
+55,Combination,Medium,Medium,5,10,High,2.93,Normal/None
+25,Combination,High,Medium,3,8,Moderate,1.7,Redness/Sensitivity
+38,Oily,High,Medium,7,8,Moderate,3.09,Acne
+61,Sensitive,High,Medium,4,9,High,1.31,Redness/Sensitivity
+66,Oily,Low,High,3,10,High,3.25,Normal/None
+70,Combination,Low,High,3,10,High,2.61,Normal/None
+68,Oily,Low,Medium,6,8,Moderate,2.97,Fine Lines/Aging
+46,Oily,Low,Medium,5,5,Moderate,1.58,Fine Lines/Aging
+27,Oily,Medium,High,1,10,Low,1.97,Oiliness
+62,Normal,Low,Medium,5,9,Moderate,2.25,Fine Lines/Aging
+60,Dry,High,Medium,8,6,Moderate,2.55,Dryness
+70,Oily,Medium,Medium,5,10,Moderate,1.36,Oiliness
+51,Normal,Medium,Medium,5,8,Moderate,2.71,Fine Lines/Aging
+23,Dry,Medium,Low,8,7,High,1.12,Dryness
+43,Combination,Low,Low,7,7,Moderate,1.67,Normal/None
+40,Sensitive,High,Low,8,8,Low,0.65,Redness/Sensitivity
+62,Combination,Medium,High,1,10,Moderate,2.86,Oiliness
+37,Oily,Low,Medium,9,6,Low,2.22,Acne
+34,Dry,High,Low,7,10,Moderate,2.56,Dryness
+20,Sensitive,High,Medium,10,6,Moderate,3.38,Redness/Sensitivity
+61,Oily,High,Medium,4,9,Moderate,1.95,Fine Lines/Aging
+57,Dry,Low,High,2,10,Moderate,2.69,Dryness
+18,Sensitive,Medium,Medium,6,8,Moderate,2.25,Redness/Sensitivity
+39,Sensitive,High,Medium,5,8,Low,1.83,Redness/Sensitivity
+42,Dry,High,Low,7,9,Moderate,3.25,Dryness
+41,Combination,Low,Medium,8,5,Moderate,3.87,Acne
+66,Normal,High,Medium,5,9,Low,1.55,Redness/Sensitivity
+24,Combination,Medium,High,5,8,Moderate,2.87,Oiliness
+32,Oily,Medium,Medium,7,9,Moderate,2.46,Acne
+25,Oily,Medium,Medium,5,10,High,2.86,Acne
+29,Normal,High,Low,5,10,Low,2.1,Redness/Sensitivity
+65,Oily,Low,Medium,8,5,Moderate,1.93,Acne
+67,Combination,Medium,Low,8,8,Low,0.5,Dryness
+18,Dry,High,Medium,8,6,Low,3.13,Oiliness
+50,Sensitive,High,Low,5,9,Moderate,1.64,Redness/Sensitivity
+28,Combination,Low,High,1,8,Moderate,2.01,Oiliness
+26,Normal,Low,Medium,5,7,Moderate,2.02,Normal/None
+32,Combination,Medium,Medium,4,10,Moderate,1.57,Oiliness
+26,Dry,High,Low,5,10,Moderate,2.39,Dryness
+42,Normal,High,Low,4,9,Moderate,2.16,Dryness
+70,Oily,High,Medium,5,8,Moderate,1.63,Oiliness
+48,Combination,Medium,High,3,8,Moderate,2.32,Oiliness
+55,Combination,High,High,3,10,Moderate,2.17,Fine Lines/Aging
+43,Sensitive,Low,Medium,8,7,Moderate,2.94,Redness/Sensitivity
+16,Combination,Medium,Medium,4,10,Moderate,1.13,Dullness
+20,Sensitive,Medium,Medium,6,8,Moderate,1.56,Redness/Sensitivity
+30,Oily,High,High,7,8,Moderate,2.78,Oiliness
+29,Sensitive,Medium,Low,7,6,Moderate,1.69,Acne
+62,Normal,High,Low,7,8,Low,1.18,Dryness
+62,Dry,Medium,Low,6,9,Low,1.43,Dryness
+62,Normal,Medium,Medium,7,8,Low,1.82,Acne
+51,Dry,Low,Low,8,7,High,2.52,Dryness
+46,Dry,Low,Low,6,9,Low,1.73,Dryness
+51,Dry,High,Medium,2,10,High,1.78,Fine Lines/Aging
+38,Oily,Low,High,4,10,Low,2.52,Oiliness
+52,Normal,Medium,Medium,7,10,High,3.66,Dryness
+59,Sensitive,High,Low,4,10,Low,0.5,Dryness
+57,Normal,High,Medium,9,9,Moderate,0.96,Redness/Sensitivity
+49,Normal,Low,Medium,5,8,High,3.4,Fine Lines/Aging
+19,Dry,Medium,Medium,6,8,Moderate,3.46,Dryness
+55,Normal,Medium,Low,8,7,Moderate,0.5,Dryness
+36,Oily,Low,Medium,5,10,Low,2.55,Oiliness
+56,Combination,Low,Medium,6,10,Low,3.21,Fine Lines/Aging
+45,Oily,Medium,Medium,7,8,High,1.91,Acne
+64,Combination,Medium,High,3,10,Moderate,3.46,Fine Lines/Aging
+34,Combination,Low,Medium,5,8,Moderate,2.06,Oiliness
+67,Normal,Medium,Medium,7,9,Moderate,2.45,Acne
+62,Combination,Medium,Low,6,10,Low,1.32,Fine Lines/Aging
+34,Dry,Low,Low,8,9,Moderate,3.0,Dryness
+42,Sensitive,Medium,High,2,10,Moderate,2.87,Redness/Sensitivity
+45,Combination,High,Medium,2,10,Moderate,3.58,Fine Lines/Aging
+58,Combination,Medium,Medium,7,7,Low,3.05,Fine Lines/Aging
+53,Combination,Medium,Low,7,8,Low,1.89,Dryness
+62,Combination,High,Medium,5,9,Moderate,4.69,Fine Lines/Aging
+36,Sensitive,High,Medium,6,7,Moderate,3.28,Redness/Sensitivity
+43,Dry,Low,Low,7,9,Moderate,2.63,Dryness
+39,Combination,Medium,Medium,4,8,Moderate,1.4,Normal/None
+66,Combination,Medium,Medium,4,9,Moderate,0.98,Fine Lines/Aging
+32,Normal,Medium,Medium,6,9,Moderate,1.04,Dryness
+48,Sensitive,Medium,Medium,7,7,Moderate,1.45,Redness/Sensitivity
+22,Dry,Low,Medium,3,10,Moderate,3.3,Dryness
+62,Normal,Medium,Medium,5,9,Moderate,2.59,Fine Lines/Aging
+37,Oily,High,High,5,8,Moderate,1.71,Fine Lines/Aging
+34,Oily,High,Medium,6,9,Low,1.79,Acne
+48,Combination,High,Medium,5,8,Low,1.69,Fine Lines/Aging
+43,Dry,Medium,Medium,4,10,High,3.24,Redness/Sensitivity
+62,Dry,Medium,Low,8,7,Low,1.2,Dryness
+45,Dry,High,Medium,4,8,Moderate,2.48,Fine Lines/Aging
+44,Normal,Medium,Medium,5,8,High,2.84,Normal/None
+21,Combination,Medium,Medium,2,10,Moderate,1.52,Redness/Sensitivity
+17,Sensitive,High,Medium,4,9,High,3.87,Redness/Sensitivity
+37,Oily,Low,Medium,7,6,Low,1.66,Acne
+70,Normal,High,Low,6,10,High,1.81,Dryness
+66,Normal,High,Medium,7,8,Moderate,2.88,Fine Lines/Aging
+50,Normal,Low,Medium,7,9,Moderate,2.24,Dullness
+50,Normal,Medium,Low,10,8,High,2.93,Fine Lines/Aging
+37,Dry,High,Low,4,10,Moderate,1.25,Dryness
+25,Normal,High,High,2,10,Moderate,2.85,Dullness
+16,Normal,High,High,3,7,Low,3.64,Acne
+34,Normal,Medium,Low,4,8,Moderate,1.19,Dryness
+33,Normal,High,Medium,4,9,Moderate,2.48,Redness/Sensitivity
+26,Combination,High,Medium,6,10,Moderate,1.57,Redness/Sensitivity
+30,Combination,High,Medium,8,10,Low,4.05,Redness/Sensitivity
+17,Dry,Medium,Low,9,9,Moderate,3.19,Dryness
+49,Combination,Medium,Low,7,7,Low,2.13,Normal/None
+67,Combination,High,Low,10,6,Moderate,1.22,Normal/None
+53,Oily,Low,High,5,8,Moderate,1.41,Oiliness
+40,Normal,High,High,2,9,Moderate,2.8,Fine Lines/Aging
+39,Dry,High,Low,8,10,Moderate,1.11,Dryness
+32,Combination,Medium,Medium,2,10,Low,0.84,Normal/None
+23,Oily,Medium,Medium,4,9,Moderate,2.21,Oiliness
+48,Combination,Medium,Low,7,9,Low,2.01,Dullness
+47,Dry,Low,Low,5,7,Moderate,2.5,Normal/None
+16,Normal,High,Medium,5,9,Moderate,1.85,Redness/Sensitivity
+38,Sensitive,Medium,High,3,8,High,3.34,Normal/None
+31,Dry,High,Low,5,9,Moderate,1.51,Dryness
+25,Combination,Low,Medium,8,7,Moderate,2.7,Acne
+54,Sensitive,High,Medium,6,8,Moderate,2.37,Acne
+44,Combination,High,Medium,4,10,Low,2.38,Redness/Sensitivity
+50,Oily,Medium,Medium,3,10,Low,2.85,Oiliness
+55,Combination,High,Medium,4,9,Moderate,1.84,Redness/Sensitivity
+69,Oily,High,Medium,6,9,Low,1.37,Redness/Sensitivity
+60,Dry,High,Low,6,7,Low,0.55,Dryness
+50,Combination,High,Low,4,10,Moderate,0.58,Dryness
+64,Combination,Low,High,1,10,Moderate,2.06,Fine Lines/Aging
+42,Normal,Medium,Medium,6,8,Moderate,2.11,Acne
+70,Dry,High,Low,4,8,Low,1.03,Dryness
+57,Combination,Low,Low,7,8,Moderate,1.5,Acne
+51,Combination,High,Medium,4,10,Moderate,3.42,Fine Lines/Aging
+65,Normal,Low,Medium,4,9,Moderate,2.9,Fine Lines/Aging
+44,Sensitive,High,Medium,6,7,Moderate,1.19,Redness/Sensitivity
+55,Oily,High,Low,10,8,Low,1.55,Redness/Sensitivity
+31,Oily,High,Medium,7,7,Moderate,2.52,Redness/Sensitivity
+68,Combination,High,Medium,6,9,High,2.1,Fine Lines/Aging
+50,Sensitive,Medium,Medium,6,8,High,1.95,Redness/Sensitivity
+59,Dry,Medium,Medium,2,10,High,2.33,Dryness
+41,Dry,High,High,3,9,Moderate,3.07,Redness/Sensitivity
+63,Oily,Low,High,1,10,Moderate,3.15,Fine Lines/Aging
+20,Combination,High,Low,9,6,Low,1.31,Dryness
+22,Oily,Low,Low,9,7,Low,2.27,Acne
+43,Normal,Medium,Medium,6,10,Low,1.89,Fine Lines/Aging
+56,Sensitive,High,Low,6,9,Moderate,1.39,Redness/Sensitivity
+60,Oily,High,Medium,2,10,Moderate,1.96,Fine Lines/Aging
+40,Normal,High,High,5,9,High,1.59,Fine Lines/Aging
+51,Normal,Medium,Medium,9,8,High,3.53,Fine Lines/Aging
+46,Combination,Medium,High,6,10,Low,3.14,Fine Lines/Aging
+68,Dry,Medium,Medium,4,7,Moderate,1.87,Redness/Sensitivity
+51,Dry,High,Medium,2,8,Moderate,1.68,Fine Lines/Aging
+38,Oily,High,Medium,8,7,Moderate,3.04,Redness/Sensitivity
+69,Combination,High,High,5,10,Moderate,3.17,Redness/Sensitivity
+21,Combination,Medium,High,2,8,High,1.71,Oiliness
+70,Oily,High,Medium,4,10,Moderate,2.08,Fine Lines/Aging
+24,Dry,Low,Medium,3,10,High,2.55,Normal/None
+31,Sensitive,Low,Medium,5,10,Low,1.28,Acne
+61,Oily,Low,Medium,6,10,High,2.91,Fine Lines/Aging
+56,Dry,High,Low,4,10,Moderate,1.64,Dryness
+69,Normal,Low,Medium,7,10,Moderate,1.77,Fine Lines/Aging
+57,Dry,High,Medium,6,9,Low,1.82,Dryness
+51,Dry,High,Low,8,7,Moderate,1.01,Dryness
+35,Normal,High,Medium,5,7,High,0.95,Fine Lines/Aging
+16,Oily,High,Low,10,6,Low,2.63,Redness/Sensitivity
+22,Normal,Low,Medium,4,9,Moderate,1.61,Normal/None
+32,Combination,Medium,High,4,10,Moderate,3.91,Redness/Sensitivity
+18,Normal,Medium,High,3,7,High,4.18,Normal/None
+43,Oily,High,Medium,5,9,Moderate,1.79,Redness/Sensitivity
+58,Combination,High,Medium,2,10,Low,3.77,Fine Lines/Aging
+68,Oily,Medium,High,6,9,Moderate,2.95,Redness/Sensitivity
+42,Combination,Low,Medium,2,10,High,2.08,Oiliness
+64,Dry,Low,Low,6,9,Moderate,0.5,Fine Lines/Aging
+70,Combination,Medium,Medium,3,9,Moderate,2.75,Dryness
+63,Oily,Low,Medium,5,6,High,2.63,Normal/None
+41,Oily,High,Medium,7,9,High,2.95,Acne
+33,Normal,High,Low,10,6,Moderate,2.02,Dryness
+69,Oily,High,Medium,3,10,Moderate,1.28,Normal/None
+29,Oily,High,Medium,5,10,Moderate,1.86,Redness/Sensitivity
+38,Combination,Low,Medium,4,7,Moderate,2.77,Fine Lines/Aging
+20,Combination,Medium,Medium,4,10,Low,1.62,Oiliness
+59,Oily,Medium,Medium,4,10,Moderate,1.91,Oiliness
+51,Sensitive,Medium,Low,7,10,Moderate,0.98,Acne
+20,Combination,Low,Medium,5,6,Moderate,2.27,Fine Lines/Aging
+28,Combination,High,Low,10,6,Moderate,1.31,Dryness
+46,Combination,High,Medium,6,7,Low,2.63,Redness/Sensitivity
+45,Combination,High,Medium,3,10,Low,1.31,Redness/Sensitivity
+60,Normal,High,Medium,5,10,High,2.36,Normal/None
+30,Combination,Low,Medium,4,6,Moderate,3.93,Normal/None
+66,Sensitive,Medium,Low,7,8,Low,1.65,Redness/Sensitivity
+40,Oily,High,High,2,10,Moderate,1.85,Normal/None
+61,Dry,Medium,Medium,3,10,High,3.07,Fine Lines/Aging
+29,Oily,Medium,Medium,4,10,Moderate,0.77,Oiliness
+18,Sensitive,Medium,High,7,8,High,3.6,Redness/Sensitivity
+19,Normal,Low,Low,8,6,Moderate,3.0,Dullness
+36,Combination,Medium,Medium,8,8,Low,2.32,Acne
+68,Combination,Medium,Low,7,8,Moderate,0.5,Dryness
+18,Sensitive,High,Medium,5,10,Moderate,1.99,Redness/Sensitivity
+36,Oily,High,Medium,7,9,Low,0.88,Redness/Sensitivity
+22,Combination,Medium,Medium,3,10,Low,2.8,Normal/None
+67,Sensitive,High,Medium,2,10,Low,2.74,Redness/Sensitivity
+53,Oily,Medium,Medium,6,8,Low,2.21,Fine Lines/Aging
+57,Combination,Low,Medium,3,8,Moderate,1.24,Dryness
+55,Dry,Low,Medium,5,10,High,3.8,Fine Lines/Aging
+52,Combination,High,Low,6,9,Moderate,1.99,Dryness
+58,Normal,Low,High,6,9,Moderate,3.64,Redness/Sensitivity
+16,Dry,Medium,Low,7,6,Moderate,2.41,Dullness
+63,Oily,High,Medium,7,10,Moderate,2.61,Acne
+56,Oily,High,Medium,6,10,Moderate,1.83,Acne
+56,Oily,High,Medium,5,9,Moderate,3.33,Redness/Sensitivity
+37,Normal,Low,High,6,7,High,3.09,Normal/None
+60,Dry,High,Medium,4,10,Low,3.05,Normal/None
+37,Oily,High,High,5,7,Low,2.04,Oiliness
+18,Combination,Low,Medium,10,10,Moderate,2.16,Acne
+65,Combination,High,Medium,6,8,Moderate,2.68,Fine Lines/Aging
+28,Normal,High,Medium,6,10,Low,3.05,Redness/Sensitivity
+21,Sensitive,Medium,High,4,9,Low,2.71,Redness/Sensitivity
+50,Dry,Medium,Low,8,10,Low,2.01,Dryness
+28,Combination,Medium,Low,7,7,Moderate,0.71,Dryness
+63,Oily,High,Medium,7,8,High,3.25,Acne
+40,Combination,Low,Low,6,10,High,1.45,Dryness
+16,Sensitive,High,Medium,8,9,Low,1.93,Redness/Sensitivity
+68,Combination,High,Low,8,9,Low,1.81,Fine Lines/Aging
+44,Normal,Medium,Medium,6,8,Low,0.77,Fine Lines/Aging
+30,Normal,Medium,High,5,9,High,2.9,Normal/None
+53,Dry,High,Medium,7,10,Moderate,3.92,Fine Lines/Aging
+45,Combination,High,Medium,4,8,Moderate,1.95,Oiliness
+17,Combination,Low,Medium,4,10,Moderate,2.81,Oiliness
+57,Sensitive,Low,Medium,5,9,Moderate,4.08,Fine Lines/Aging
+38,Normal,High,High,2,10,Low,2.59,Fine Lines/Aging
+54,Oily,Low,Medium,7,8,Moderate,1.68,Fine Lines/Aging
+65,Normal,Low,Medium,4,8,Moderate,2.39,Fine Lines/Aging
+49,Oily,High,Medium,5,9,Low,2.28,Fine Lines/Aging
+52,Dry,Medium,Medium,5,9,Moderate,3.35,Dryness
+30,Dry,Medium,Medium,6,8,Moderate,3.17,Dryness
+29,Combination,Medium,Low,5,10,Moderate,0.5,Dryness
+38,Oily,Low,High,5,10,Moderate,1.52,Dullness
+62,Oily,Low,Medium,5,9,Moderate,2.14,Fine Lines/Aging
+44,Oily,Medium,Medium,5,8,Moderate,1.39,Oiliness
+35,Combination,Low,Low,4,8,Low,0.5,Dryness
+58,Combination,Medium,Medium,8,10,Moderate,1.62,Acne
+62,Oily,Medium,High,1,9,Moderate,2.2,Oiliness
+65,Oily,High,High,5,9,Moderate,1.78,Oiliness
+32,Normal,Medium,Medium,5,10,High,1.8,Oiliness
+55,Dry,Medium,Medium,6,8,Low,1.93,Fine Lines/Aging
+48,Normal,Medium,Medium,3,8,Moderate,2.47,Fine Lines/Aging
+40,Dry,Low,Medium,5,8,Low,1.53,Fine Lines/Aging
+37,Sensitive,Medium,Medium,5,8,Moderate,3.3,Fine Lines/Aging
+22,Dry,High,Low,8,7,Moderate,2.25,Redness/Sensitivity
+31,Combination,High,Low,6,10,High,1.9,Dryness
+46,Oily,Medium,Medium,3,10,Moderate,1.3,Fine Lines/Aging
+64,Sensitive,High,Low,5,8,Moderate,2.03,Dryness
+63,Sensitive,High,Medium,7,8,Low,2.79,Redness/Sensitivity
+26,Combination,Low,Medium,3,10,Moderate,1.54,Dullness
+53,Normal,High,Medium,5,9,Low,2.38,Fine Lines/Aging
+20,Oily,Medium,Medium,5,10,High,2.68,Normal/None
+53,Combination,Medium,Medium,5,7,Low,3.49,Fine Lines/Aging
+34,Combination,Medium,Medium,10,8,Moderate,2.51,Acne
+40,Oily,Medium,High,5,9,Moderate,1.64,Normal/None
+55,Normal,High,Medium,6,8,Low,2.49,Oiliness
+39,Normal,Medium,High,4,8,Moderate,2.82,Normal/None
+60,Combination,Medium,Medium,7,6,Moderate,1.88,Fine Lines/Aging
+45,Combination,Low,Low,7,6,Moderate,1.27,Acne
+70,Combination,High,Medium,4,8,Low,2.33,Redness/Sensitivity
+51,Combination,Low,Medium,5,10,Moderate,2.25,Fine Lines/Aging
+32,Dry,Low,Low,4,8,High,1.39,Dryness
+58,Dry,High,Medium,3,8,Moderate,2.4,Dryness
+38,Oily,Low,Low,8,6,High,2.09,Fine Lines/Aging
+45,Combination,High,Medium,4,9,Low,0.69,Redness/Sensitivity
+23,Dry,High,Medium,1,10,High,2.32,Normal/None
+22,Dry,High,Low,9,7,Moderate,3.23,Dryness
+47,Dry,Medium,Medium,4,10,High,3.57,Fine Lines/Aging
+26,Oily,High,Medium,5,10,Moderate,2.96,Redness/Sensitivity
+70,Normal,High,Low,9,10,Low,2.12,Dryness
+63,Oily,High,Medium,5,7,Moderate,2.68,Dryness
+54,Oily,Low,Medium,5,8,Moderate,2.28,Fine Lines/Aging
+56,Combination,High,Medium,3,10,Moderate,1.32,Fine Lines/Aging
+48,Dry,Low,Low,2,10,Low,1.18,Dryness
+19,Dry,High,Low,5,10,High,2.11,Dryness
+37,Dry,Low,Medium,6,9,Moderate,3.32,Dullness
+43,Combination,Low,Medium,6,10,High,3.46,Normal/None
+66,Dry,Low,Low,5,10,Moderate,1.34,Dryness
+28,Combination,Medium,Medium,6,10,Low,1.94,Acne
+43,Sensitive,Low,Medium,2,10,High,2.28,Redness/Sensitivity
+34,Combination,Low,Low,6,8,Moderate,2.08,Normal/None
+23,Dry,Medium,Low,6,8,Moderate,1.77,Dryness
+21,Combination,High,Medium,9,5,Low,3.02,Redness/Sensitivity
+36,Normal,Medium,Medium,6,10,Moderate,2.18,Normal/None
+20,Dry,Medium,Medium,4,10,Moderate,2.37,Dryness
+19,Normal,Medium,Medium,5,9,Low,2.08,Normal/None
+35,Dry,Medium,Medium,5,10,Moderate,1.38,Dryness
+27,Oily,Medium,Medium,6,8,Moderate,2.29,Dullness
+46,Dry,Medium,Low,6,6,Moderate,3.05,Dryness
+16,Oily,Low,High,3,10,High,3.78,Oiliness
+32,Dry,Low,Medium,2,9,Moderate,1.28,Dryness
+40,Normal,High,Low,6,8,Low,0.69,Fine Lines/Aging
+68,Sensitive,High,Medium,8,8,High,2.65,Redness/Sensitivity
+50,Oily,Low,Medium,6,9,Moderate,3.09,Oiliness
+64,Normal,Low,Medium,7,9,Moderate,2.49,Normal/None
+34,Normal,High,Medium,8,8,Moderate,2.74,Acne
+40,Oily,Low,Medium,6,9,Moderate,1.11,Oiliness
+39,Dry,Low,Low,4,8,Moderate,1.74,Fine Lines/Aging
+64,Oily,High,Low,6,9,Moderate,0.5,Redness/Sensitivity
+68,Oily,Medium,Medium,8,6,Moderate,2.09,Fine Lines/Aging
+68,Dry,High,Low,7,10,Moderate,0.5,Dryness
+57,Dry,High,Medium,7,6,Moderate,3.27,Redness/Sensitivity
+43,Normal,Medium,High,5,9,Moderate,3.44,Redness/Sensitivity
+45,Oily,Medium,Medium,5,7,Moderate,2.31,Fine Lines/Aging
+69,Oily,High,Medium,5,8,High,1.39,Redness/Sensitivity
+31,Oily,Medium,Medium,5,9,Low,2.2,Oiliness
+35,Normal,Low,Low,8,7,High,4.09,Oiliness
+65,Dry,High,Medium,1,10,Moderate,2.58,Acne
+37,Normal,High,Medium,6,9,Moderate,3.15,Dryness
+28,Oily,Low,Medium,5,8,Low,1.51,Oiliness
+46,Oily,Low,High,3,10,Low,1.2,Fine Lines/Aging
+33,Sensitive,High,Medium,7,10,Moderate,2.14,Redness/Sensitivity
+64,Oily,Low,Low,4,10,High,1.06,Dryness
+65,Oily,High,Medium,5,7,Moderate,4.01,Redness/Sensitivity
+32,Oily,Low,Medium,9,6,Moderate,2.31,Oiliness
+45,Sensitive,High,Medium,8,8,Moderate,2.89,Redness/Sensitivity
+70,Normal,High,Medium,7,9,Moderate,1.83,Fine Lines/Aging
+56,Normal,Medium,Medium,6,7,High,1.37,Fine Lines/Aging
+27,Sensitive,High,High,5,10,High,3.74,Redness/Sensitivity
+48,Oily,Medium,Low,9,6,Moderate,1.3,Dryness
+50,Sensitive,High,Medium,7,10,Moderate,2.48,Fine Lines/Aging
+51,Oily,High,Medium,4,10,Moderate,2.55,Oiliness
+17,Normal,Low,High,3,8,Moderate,2.26,Dryness
+32,Dry,High,Low,7,7,Low,1.27,Dryness
+63,Dry,High,Low,5,8,Low,1.78,Dryness
+29,Sensitive,Medium,Medium,3,10,High,1.84,Normal/None
+32,Oily,High,High,6,8,High,3.25,Redness/Sensitivity
+33,Sensitive,Medium,Medium,5,7,Moderate,2.66,Normal/None
+25,Dry,High,Medium,7,6,Moderate,2.18,Redness/Sensitivity
+24,Combination,Low,Low,6,9,High,2.15,Dryness
+35,Sensitive,High,Medium,4,10,Low,3.59,Redness/Sensitivity
+64,Oily,Medium,Low,7,8,Moderate,1.16,Dryness
+16,Sensitive,High,Medium,5,9,High,1.36,Redness/Sensitivity
+31,Normal,Low,Medium,5,8,Moderate,2.13,Dullness
+19,Combination,Medium,Medium,4,10,Low,1.69,Redness/Sensitivity
+46,Oily,Low,Medium,8,10,Moderate,3.08,Acne
+29,Normal,High,Medium,5,10,High,3.12,Redness/Sensitivity
+59,Combination,Low,Medium,8,7,Low,1.92,Fine Lines/Aging
+48,Normal,High,Low,9,6,Moderate,2.6,Fine Lines/Aging
+59,Oily,High,Medium,4,5,Moderate,2.59,Fine Lines/Aging
+50,Dry,Low,Medium,1,10,Low,3.58,Dryness
+40,Combination,Low,Low,8,9,Moderate,2.4,Dullness
+63,Oily,High,Medium,5,8,Moderate,1.66,Redness/Sensitivity
+42,Combination,Low,High,4,7,Moderate,2.36,Oiliness
+68,Sensitive,High,Medium,4,8,Moderate,0.5,Redness/Sensitivity
+70,Oily,Medium,Medium,5,10,Low,1.87,Normal/None
+48,Oily,High,Medium,8,8,Low,2.77,Fine Lines/Aging
+53,Combination,Low,Medium,6,10,Low,2.38,Oiliness
+30,Oily,Low,Medium,8,8,Moderate,2.44,Acne
+60,Normal,High,Low,6,10,Moderate,2.72,Fine Lines/Aging
+52,Combination,High,Medium,5,10,Moderate,3.08,Fine Lines/Aging
+65,Normal,High,High,5,10,Low,3.04,Fine Lines/Aging
+30,Dry,Medium,Low,7,5,Moderate,2.56,Acne
+59,Combination,Low,Medium,7,6,Moderate,1.95,Fine Lines/Aging
+41,Normal,Medium,Low,7,8,Moderate,0.5,Acne
+26,Oily,Medium,Medium,5,10,Moderate,2.98,Oiliness
+25,Normal,Low,Medium,6,10,Low,2.31,Normal/None
+46,Sensitive,High,Low,7,8,Low,2.02,Redness/Sensitivity
+33,Combination,Medium,Medium,5,8,Moderate,1.65,Dullness
+21,Normal,Low,High,3,7,Low,2.67,Dullness
+39,Dry,Medium,Medium,4,10,Moderate,1.99,Dryness
+51,Oily,Low,Medium,5,8,Moderate,2.17,Oiliness
+33,Dry,Low,Low,7,10,Moderate,2.16,Dryness
+68,Oily,Low,Low,8,7,Moderate,2.56,Dryness
+58,Sensitive,Medium,Medium,3,10,Low,0.98,Fine Lines/Aging
+44,Oily,Low,Medium,4,10,Moderate,2.65,Oiliness
+67,Combination,Medium,Medium,5,8,Low,1.32,Fine Lines/Aging
+39,Oily,Medium,Medium,7,8,Moderate,1.65,Dullness
+23,Dry,High,Medium,4,10,Low,2.61,Dryness
+17,Dry,Low,Medium,5,9,High,1.8,Dryness
+67,Dry,Medium,Medium,3,10,Moderate,2.91,Dullness
+68,Combination,Low,Medium,6,10,Moderate,2.28,Fine Lines/Aging
+56,Sensitive,Medium,Low,5,10,Moderate,0.88,Dryness
+21,Combination,Medium,Medium,4,9,Low,2.99,Normal/None
+32,Oily,High,Medium,5,7,Low,2.15,Acne
+18,Combination,Medium,Medium,8,8,Moderate,2.52,Redness/Sensitivity
+18,Oily,High,Medium,3,10,High,3.41,Normal/None
+29,Sensitive,Low,Medium,4,7,Moderate,3.4,Fine Lines/Aging
+47,Normal,Low,Medium,8,8,Moderate,2.36,Fine Lines/Aging
+19,Dry,Low,Low,6,8,Moderate,2.69,Dryness
+70,Oily,Low,Medium,7,6,Moderate,2.5,Fine Lines/Aging
+41,Oily,Low,Medium,6,8,High,2.33,Normal/None
+30,Dry,Low,Low,5,9,High,1.33,Dryness
+44,Sensitive,Medium,Medium,5,10,Moderate,2.37,Redness/Sensitivity
+59,Combination,High,Medium,7,8,Moderate,3.3,Fine Lines/Aging
+33,Sensitive,High,Low,8,9,Moderate,2.67,Redness/Sensitivity
+18,Oily,Low,Medium,8,7,Moderate,1.35,Oiliness
+18,Normal,High,Medium,3,7,Moderate,3.08,Normal/None
+62,Dry,Medium,Low,8,9,Low,1.65,Dryness
+22,Normal,Medium,Medium,5,8,High,0.93,Normal/None
+50,Dry,Low,Medium,4,9,Moderate,3.01,Fine Lines/Aging
+37,Dry,Medium,Low,5,8,Moderate,1.44,Dryness
+58,Normal,High,Medium,7,8,High,4.02,Normal/None
+19,Oily,High,High,7,10,Moderate,3.12,Acne
+65,Normal,Medium,Medium,5,10,Moderate,2.02,Normal/None
+54,Combination,High,Medium,7,10,High,2.97,Acne
+40,Oily,High,High,6,10,Moderate,4.14,Oiliness
+27,Sensitive,High,Medium,4,7,Low,2.7,Redness/Sensitivity
+69,Normal,Medium,High,4,8,Moderate,2.39,Redness/Sensitivity
+32,Combination,Low,Medium,6,6,High,4.91,Normal/None
+42,Combination,High,Medium,5,10,Low,1.99,Redness/Sensitivity
+37,Combination,Low,Medium,3,9,Low,2.37,Fine Lines/Aging
+28,Combination,Medium,Low,7,7,Moderate,1.45,Dryness
+38,Combination,High,Medium,5,9,Moderate,0.86,Dryness
+24,Normal,Low,Medium,9,8,Moderate,1.97,Acne
+16,Dry,Low,Medium,3,8,High,2.63,Dryness
+31,Oily,High,Medium,5,7,Low,2.16,Normal/None
+22,Normal,Low,Low,4,9,Low,0.76,Dryness
+38,Oily,Low,High,4,10,Low,2.43,Oiliness
+63,Dry,Low,Medium,5,9,Moderate,1.54,Fine Lines/Aging
+24,Oily,High,Low,9,6,Moderate,2.69,Dryness
+16,Normal,Low,Medium,6,6,Low,2.65,Oiliness
+22,Oily,High,Medium,4,10,Low,1.58,Acne
+43,Normal,Medium,High,2,9,Moderate,1.43,Fine Lines/Aging
+31,Combination,High,High,2,9,High,3.83,Redness/Sensitivity
+42,Combination,Medium,Medium,4,7,Low,2.6,Normal/None
+17,Dry,Low,Medium,4,7,Low,2.02,Dryness
+34,Normal,Medium,High,5,8,Low,3.07,Fine Lines/Aging
+38,Normal,Medium,Medium,1,10,Moderate,2.27,Fine Lines/Aging
+39,Normal,Low,Medium,5,7,Moderate,1.7,Normal/None
+46,Combination,Medium,Low,8,8,High,1.8,Normal/None
+58,Oily,Low,Medium,9,7,Moderate,2.11,Acne
+41,Sensitive,High,Medium,2,10,Moderate,2.82,Redness/Sensitivity
+62,Oily,High,High,4,7,Moderate,3.31,Fine Lines/Aging
+45,Combination,Low,High,4,10,Moderate,2.22,Oiliness
+30,Normal,Medium,Medium,6,9,Low,2.87,Dryness
+28,Dry,High,Medium,3,8,High,2.43,Redness/Sensitivity
+33,Combination,Low,Low,9,7,Moderate,1.57,Acne
+48,Oily,Medium,Low,6,10,Moderate,1.15,Dryness
+29,Combination,Low,Medium,5,9,Moderate,1.8,Redness/Sensitivity
+66,Normal,Low,Low,9,9,Moderate,1.19,Dryness
+42,Oily,High,High,5,6,High,4.21,Normal/None
+63,Oily,Medium,Medium,6,7,Low,2.25,Oiliness
+53,Combination,High,Medium,4,10,Moderate,2.12,Redness/Sensitivity
+34,Dry,Medium,High,3,10,Moderate,3.58,Redness/Sensitivity
+28,Sensitive,High,Medium,4,10,High,1.56,Redness/Sensitivity
+56,Combination,High,Low,10,8,Moderate,2.09,Dryness
+34,Combination,Medium,Medium,7,5,Moderate,3.8,Redness/Sensitivity
+29,Dry,Medium,Medium,6,10,Moderate,2.08,Dryness
+67,Combination,Low,High,4,10,Moderate,4.16,Fine Lines/Aging
+42,Sensitive,High,Medium,7,7,Low,2.53,Redness/Sensitivity
+18,Oily,Medium,High,3,10,High,3.64,Redness/Sensitivity
+43,Dry,High,Medium,2,10,Moderate,3.27,Dryness
+41,Oily,Low,Medium,4,6,Moderate,2.2,Oiliness
+63,Dry,High,Low,9,8,Low,1.51,Dryness
+55,Combination,Medium,Medium,9,6,Moderate,2.11,Acne
+26,Normal,Medium,Medium,5,10,Moderate,1.41,Dryness
+24,Normal,Medium,Medium,4,10,Low,1.85,Redness/Sensitivity
+49,Dry,Medium,High,2,10,Moderate,2.2,Fine Lines/Aging
+18,Oily,Low,Medium,6,10,Moderate,3.55,Redness/Sensitivity
+33,Dry,High,Medium,6,10,Low,2.37,Dryness
+23,Combination,High,Medium,7,7,Moderate,4.09,Acne
+17,Normal,High,Low,7,8,Moderate,0.5,Normal/None
+66,Dry,Medium,Medium,5,10,Moderate,1.23,Dryness
+20,Combination,Low,Low,7,8,Moderate,1.92,Dryness
+16,Oily,Low,High,4,9,Moderate,3.39,Acne
+67,Dry,High,Low,7,8,Low,1.81,Dryness
+26,Oily,Low,Medium,4,8,Low,0.73,Dryness
+60,Sensitive,High,Medium,6,5,High,2.4,Redness/Sensitivity
+17,Combination,High,Medium,6,9,Moderate,1.24,Normal/None
+24,Normal,Low,Low,6,6,High,1.49,Dryness
+22,Oily,High,High,7,7,Low,3.5,Oiliness
+54,Oily,Low,Medium,2,8,Moderate,1.92,Fine Lines/Aging
+50,Normal,Medium,Medium,3,8,Low,2.04,Dullness
+42,Dry,Medium,Low,5,10,Low,1.83,Dryness
+29,Sensitive,High,High,3,10,Moderate,2.0,Redness/Sensitivity
+20,Combination,High,Medium,5,9,Moderate,1.53,Normal/None
+47,Normal,High,Medium,5,7,High,2.35,Redness/Sensitivity
+28,Combination,Medium,Medium,8,7,Moderate,2.47,Acne
+48,Sensitive,High,Medium,6,9,Low,3.03,Redness/Sensitivity
+53,Normal,High,Medium,8,8,Low,2.66,Fine Lines/Aging
+62,Combination,High,Low,6,10,Low,0.92,Dryness
+43,Sensitive,High,Medium,4,10,High,3.39,Redness/Sensitivity
+16,Dry,Medium,Medium,6,8,Moderate,2.58,Normal/None
+31,Sensitive,High,Low,7,6,Moderate,1.7,Redness/Sensitivity
+62,Oily,High,Medium,8,7,Moderate,2.35,Dullness
+45,Combination,High,Medium,5,9,Moderate,2.66,Fine Lines/Aging
+50,Combination,Medium,Medium,2,9,Moderate,2.24,Fine Lines/Aging
+41,Normal,High,Medium,2,9,Moderate,2.58,Redness/Sensitivity
+24,Normal,High,Low,5,9,Moderate,1.51,Dullness
+65,Normal,High,High,1,10,Moderate,3.79,Fine Lines/Aging
+58,Oily,Low,Low,9,7,Low,0.5,Acne
+70,Oily,Medium,Medium,7,8,Moderate,2.66,Fine Lines/Aging
+63,Dry,High,Medium,4,8,Low,2.19,Redness/Sensitivity
+32,Normal,High,Medium,3,10,Moderate,2.71,Normal/None
+29,Normal,High,Medium,8,9,Moderate,1.63,Redness/Sensitivity
+29,Dry,Medium,Medium,3,10,Moderate,3.14,Dryness
+66,Sensitive,Medium,High,3,10,Low,1.81,Fine Lines/Aging
+46,Dry,High,Low,4,9,Moderate,1.25,Dryness
+40,Normal,High,Medium,6,8,Moderate,1.32,Redness/Sensitivity
+69,Dry,Low,Low,7,10,Moderate,2.3,Oiliness
+49,Oily,Medium,Low,8,9,Moderate,0.92,Dryness
+66,Combination,High,Medium,8,5,Low,3.34,Acne
+70,Normal,Medium,Medium,6,9,High,3.44,Fine Lines/Aging
+20,Oily,High,Medium,8,7,Moderate,3.66,Acne
+35,Sensitive,Medium,High,4,10,Moderate,3.58,Redness/Sensitivity
+56,Combination,Low,Medium,2,10,Moderate,1.92,Fine Lines/Aging
+60,Combination,Medium,Medium,4,7,High,1.9,Fine Lines/Aging
+24,Combination,High,Medium,4,10,Moderate,0.5,Normal/None
+33,Sensitive,High,Medium,4,10,Moderate,1.88,Redness/Sensitivity
+46,Dry,High,Medium,4,10,Moderate,3.61,Fine Lines/Aging
+59,Normal,Medium,Low,5,10,Moderate,1.54,Fine Lines/Aging
+22,Normal,Medium,Medium,7,10,Moderate,2.03,Acne
+49,Dry,High,Low,9,8,Moderate,1.76,Fine Lines/Aging
+32,Oily,High,High,2,10,Moderate,2.5,Oiliness
+27,Oily,Low,High,3,10,Moderate,3.23,Oiliness
+44,Combination,Medium,Medium,4,10,Low,0.67,Dullness
+38,Combination,Medium,Low,7,9,Moderate,1.12,Dryness
+50,Combination,Medium,Medium,5,9,Moderate,3.39,Fine Lines/Aging
+33,Dry,High,Medium,4,10,Moderate,2.79,Redness/Sensitivity
+61,Oily,Medium,Medium,7,8,Moderate,1.99,Dullness
+20,Normal,High,Medium,7,8,Moderate,3.57,Redness/Sensitivity
+63,Normal,High,Low,5,10,Moderate,1.11,Redness/Sensitivity
+17,Sensitive,High,Medium,4,8,Moderate,2.94,Redness/Sensitivity
+56,Combination,High,Medium,6,10,Low,1.85,Redness/Sensitivity
+35,Sensitive,High,Medium,5,9,Moderate,2.69,Redness/Sensitivity
+37,Combination,Low,Low,5,7,Moderate,0.5,Dryness
+17,Sensitive,High,Medium,4,9,Low,1.69,Redness/Sensitivity
+54,Normal,High,Medium,7,7,Low,2.49,Acne
+25,Oily,Low,Medium,6,9,Moderate,2.15,Acne
+52,Oily,Low,Low,8,8,Low,2.9,Acne
+55,Dry,Low,Medium,8,6,Low,2.88,Acne
+62,Dry,High,Low,6,10,High,1.83,Dryness
+54,Oily,Low,High,4,10,Low,2.56,Fine Lines/Aging
+32,Sensitive,High,Low,8,10,Moderate,1.41,Dryness
+56,Oily,Medium,Low,6,9,Low,1.94,Dryness
+61,Sensitive,Medium,Low,10,7,Low,2.42,Acne
+33,Combination,High,Low,6,10,Moderate,1.53,Redness/Sensitivity
+22,Combination,High,Medium,7,7,Low,2.53,Acne
+64,Combination,High,Low,6,9,Moderate,1.8,Fine Lines/Aging
+24,Dry,High,Low,5,9,High,2.14,Dryness
+48,Combination,Medium,Medium,5,7,Moderate,2.77,Fine Lines/Aging
+28,Oily,Low,Medium,6,9,Moderate,1.53,Acne
+22,Sensitive,Medium,Medium,7,7,Low,1.19,Redness/Sensitivity
+58,Dry,Medium,Low,8,7,Moderate,3.03,Dryness
+23,Dry,Medium,Low,6,9,Moderate,2.29,Dryness
+52,Combination,Low,Medium,5,10,Moderate,1.04,Normal/None
+54,Combination,High,High,5,8,High,3.28,Redness/Sensitivity
+19,Normal,Medium,Medium,3,9,High,2.27,Redness/Sensitivity
+25,Normal,Low,Low,9,6,Moderate,1.08,Dryness
+59,Oily,High,Medium,4,8,High,0.59,Normal/None
+43,Combination,Low,Medium,7,7,Moderate,2.92,Dryness
+22,Dry,High,Low,6,8,Moderate,1.51,Dryness
+70,Dry,Low,Medium,6,9,Moderate,1.2,Dryness
+30,Oily,Medium,High,5,9,Low,2.41,Redness/Sensitivity
+16,Dry,Low,Medium,4,8,Moderate,2.84,Dryness
+66,Dry,High,Low,4,10,Low,1.27,Dryness
+16,Normal,Low,Low,9,9,Low,2.63,Acne
+46,Oily,High,Medium,6,7,Moderate,3.84,Redness/Sensitivity
+70,Oily,Medium,Medium,8,9,Moderate,3.28,Fine Lines/Aging
+47,Normal,Low,Medium,8,8,Moderate,3.15,Acne
+48,Oily,Medium,Medium,5,9,Low,2.15,Fine Lines/Aging
+37,Combination,High,Low,6,9,High,2.25,Dryness
+22,Sensitive,High,Medium,6,9,Moderate,2.16,Redness/Sensitivity
+47,Dry,Low,Medium,3,10,Moderate,2.55,Dryness
+65,Sensitive,Medium,Medium,5,9,Low,0.89,Fine Lines/Aging
+21,Oily,Medium,Medium,7,8,Low,1.28,Acne
+64,Oily,Low,Medium,5,6,High,1.46,Fine Lines/Aging
+38,Combination,Low,High,5,10,Moderate,2.39,Oiliness
+45,Combination,High,Medium,5,8,Moderate,2.27,Fine Lines/Aging
+25,Combination,Low,Medium,10,8,Moderate,1.68,Acne
+50,Oily,Low,Medium,2,10,Low,2.56,Oiliness
+26,Combination,High,Medium,7,8,Moderate,1.36,Acne
+31,Dry,Low,Low,5,10,High,2.05,Dryness
+55,Dry,Medium,High,4,10,High,3.22,Fine Lines/Aging
+18,Oily,Low,Medium,5,9,Moderate,2.94,Oiliness
+40,Sensitive,High,Medium,7,8,High,1.96,Redness/Sensitivity
+48,Oily,Medium,Medium,7,10,Low,2.09,Fine Lines/Aging
+23,Combination,High,Medium,6,8,Low,1.28,Redness/Sensitivity
+32,Normal,High,Medium,8,7,High,2.44,Acne
+34,Combination,Medium,Low,8,6,Moderate,2.32,Dryness
+52,Combination,Low,Low,7,9,Moderate,2.65,Fine Lines/Aging
+69,Combination,Medium,High,4,9,Moderate,2.45,Fine Lines/Aging
+61,Oily,Low,Medium,6,8,Low,2.12,Oiliness
+26,Oily,Medium,Low,6,8,Moderate,1.34,Dryness
+16,Normal,Low,Medium,4,10,Moderate,2.51,Fine Lines/Aging
+18,Dry,High,Medium,2,9,Moderate,2.64,Dryness
+48,Oily,Medium,High,1,8,Low,2.45,Oiliness
+24,Oily,Low,Medium,6,9,Moderate,1.62,Oiliness
+28,Dry,High,Medium,6,6,Moderate,2.93,Redness/Sensitivity
+62,Oily,High,Medium,3,10,Low,0.85,Oiliness
+64,Oily,Low,Medium,8,10,High,2.26,Normal/None
+62,Sensitive,Low,Medium,6,8,High,2.38,Redness/Sensitivity
+29,Dry,Medium,Low,8,9,High,1.59,Dryness
+50,Sensitive,High,Medium,6,9,Moderate,1.97,Redness/Sensitivity
+49,Sensitive,High,Medium,3,10,Moderate,2.38,Redness/Sensitivity
+26,Oily,Low,Low,6,8,Moderate,0.74,Dryness
+46,Combination,High,Medium,7,5,Moderate,1.88,Acne
+44,Normal,Low,Medium,4,9,Moderate,0.8,Normal/None
+37,Combination,Low,High,3,10,High,4.23,Normal/None
+57,Oily,Medium,Medium,6,9,Low,2.07,Oiliness
+53,Oily,Low,High,3,9,Moderate,2.3,Fine Lines/Aging
+45,Oily,Medium,Medium,8,8,Moderate,2.39,Oiliness
+55,Normal,Medium,Medium,5,10,Low,2.38,Fine Lines/Aging
+57,Sensitive,Medium,Medium,9,7,Moderate,2.98,Redness/Sensitivity
+47,Combination,High,Medium,1,10,Moderate,0.95,Fine Lines/Aging
+30,Combination,Low,High,6,8,High,3.65,Dryness
+57,Sensitive,High,Medium,8,9,Low,2.9,Acne
+55,Combination,High,Medium,4,10,Low,1.85,Fine Lines/Aging
+70,Oily,Medium,Medium,5,8,Low,1.81,Oiliness
+24,Combination,Low,Medium,5,8,Low,0.5,Dryness
+39,Dry,High,Low,4,10,Low,0.9,Dryness
+66,Oily,Low,Medium,6,9,Low,2.32,Fine Lines/Aging
+44,Normal,Low,High,3,10,High,3.56,Fine Lines/Aging
+67,Sensitive,High,Medium,5,7,Moderate,2.78,Redness/Sensitivity
+16,Dry,Medium,Low,7,9,Moderate,2.14,Dryness
+17,Normal,Medium,High,5,9,Low,3.44,Oiliness
+59,Oily,Low,High,3,10,Moderate,3.0,Oiliness
+35,Oily,Medium,Medium,8,8,High,2.28,Oiliness
+44,Oily,High,Medium,7,8,Low,3.65,Dullness
+39,Combination,High,Medium,3,9,High,1.72,Normal/None
+38,Combination,High,Medium,3,10,Moderate,1.02,Dryness
+67,Oily,High,Medium,4,9,Moderate,1.86,Redness/Sensitivity
+21,Dry,Medium,Low,7,10,Moderate,1.59,Dryness
+58,Oily,Medium,Medium,6,10,Moderate,1.91,Oiliness
+64,Oily,Low,High,7,7,High,3.24,Fine Lines/Aging
+52,Normal,High,Medium,5,10,Moderate,2.17,Fine Lines/Aging
+37,Combination,High,Medium,4,9,Moderate,2.19,Dullness
+24,Combination,High,Low,7,8,Moderate,2.25,Dryness
+53,Dry,High,Low,4,10,Moderate,0.5,Dryness
+41,Normal,Low,Low,6,6,Low,0.69,Dryness
+24,Oily,High,High,2,10,Moderate,1.89,Redness/Sensitivity
+35,Oily,High,Medium,4,9,High,1.93,Oiliness
+68,Sensitive,Medium,Medium,8,8,Low,1.71,Redness/Sensitivity
+30,Combination,Medium,High,4,10,Moderate,3.32,Oiliness
+25,Sensitive,High,Medium,7,8,Moderate,2.14,Acne
+53,Sensitive,High,Medium,1,10,Moderate,1.14,Redness/Sensitivity
+26,Combination,Medium,Medium,4,10,Moderate,1.57,Dryness
+66,Sensitive,High,High,5,9,Moderate,3.57,Fine Lines/Aging
+63,Dry,High,Low,9,7,Moderate,3.43,Dryness
+70,Oily,High,Medium,3,10,Moderate,2.68,Fine Lines/Aging
+66,Oily,High,Medium,7,10,Low,0.65,Acne
+29,Oily,Medium,Medium,8,8,High,2.85,Acne
+27,Oily,High,Medium,4,9,Moderate,2.51,Oiliness
+34,Dry,Low,Medium,5,6,Moderate,2.22,Dryness
+41,Combination,High,Medium,6,7,Low,1.44,Redness/Sensitivity
+64,Combination,Medium,Low,3,9,High,2.31,Fine Lines/Aging
+56,Normal,Medium,Medium,5,9,Moderate,1.69,Fine Lines/Aging
+51,Oily,Low,Medium,8,7,Moderate,1.28,Acne
+64,Combination,Medium,Medium,7,9,Low,2.99,Acne
+51,Dry,High,Low,5,8,Low,2.61,Dryness
+36,Oily,Medium,High,6,7,High,2.37,Acne
+38,Dry,Medium,Low,7,9,Low,2.18,Dryness
+44,Dry,High,Low,7,10,Moderate,2.51,Dryness
+20,Dry,Medium,Medium,4,8,Low,3.77,Dryness
+56,Combination,Medium,Medium,9,8,Moderate,2.9,Fine Lines/Aging
+51,Combination,Low,Medium,8,5,Low,2.57,Normal/None
+56,Combination,Low,Low,7,6,Low,1.93,Dryness
+45,Oily,High,High,4,9,Low,1.55,Oiliness
+59,Combination,Low,High,3,10,Moderate,3.31,Fine Lines/Aging
+68,Combination,High,Medium,5,8,Moderate,2.72,Fine Lines/Aging
+47,Oily,High,Medium,6,7,Moderate,1.54,Redness/Sensitivity
+40,Combination,Low,High,2,10,Low,2.26,Fine Lines/Aging
+21,Normal,High,Medium,6,9,Moderate,2.87,Redness/Sensitivity
+58,Dry,Medium,Low,8,7,Low,0.5,Dryness
+65,Oily,High,High,7,10,Moderate,1.46,Acne
+54,Normal,Low,Medium,4,9,Moderate,2.49,Fine Lines/Aging
+63,Oily,Low,Medium,4,10,Moderate,0.66,Oiliness
+63,Oily,Medium,Medium,6,8,Moderate,0.79,Fine Lines/Aging
+59,Oily,High,Medium,5,10,High,2.38,Oiliness
+43,Sensitive,Low,Medium,6,10,Moderate,2.59,Normal/None
+21,Dry,High,Low,7,10,Low,2.33,Dryness
+16,Dry,Low,Low,8,7,Moderate,3.47,Dryness
+27,Dry,Low,Medium,3,10,Low,1.97,Normal/None
+39,Sensitive,High,Medium,6,9,Moderate,1.9,Redness/Sensitivity
+56,Normal,Low,Low,5,10,Moderate,1.15,Fine Lines/Aging
+41,Sensitive,Medium,Medium,5,9,Low,1.59,Redness/Sensitivity
+17,Dry,High,Low,7,8,Moderate,2.77,Dryness
+27,Oily,High,Medium,7,9,Moderate,2.8,Oiliness
+69,Normal,Low,Medium,8,9,Moderate,2.41,Normal/None
+70,Dry,High,Medium,6,10,Moderate,2.64,Fine Lines/Aging
+36,Combination,Medium,High,5,9,Moderate,3.22,Fine Lines/Aging
+60,Combination,Low,Medium,5,9,Moderate,2.26,Fine Lines/Aging
+55,Normal,Medium,High,2,7,Low,2.99,Fine Lines/Aging
+67,Sensitive,High,Low,8,5,Moderate,1.62,Redness/Sensitivity
+64,Normal,High,Medium,5,8,Low,1.84,Fine Lines/Aging
+50,Dry,Low,Low,7,7,Low,1.52,Dryness
+37,Normal,Low,Medium,7,9,Moderate,2.83,Oiliness
+50,Oily,High,Medium,3,8,Moderate,1.39,Oiliness
+33,Combination,High,Medium,4,9,Moderate,1.94,Redness/Sensitivity
+35,Oily,Low,Low,9,7,High,1.11,Acne
+49,Dry,Medium,Low,6,10,Moderate,2.68,Dryness
+47,Normal,High,Medium,4,9,Moderate,3.2,Redness/Sensitivity
+47,Oily,High,High,5,10,High,3.33,Fine Lines/Aging
+37,Oily,Low,Medium,8,8,High,3.25,Acne
+38,Combination,Low,High,7,9,Moderate,2.87,Acne
+16,Oily,High,High,3,10,Low,2.46,Redness/Sensitivity
+49,Normal,High,Low,9,7,Low,2.39,Redness/Sensitivity
+47,Dry,High,Low,7,6,Low,2.44,Fine Lines/Aging
+67,Oily,Medium,Medium,5,9,Moderate,1.68,Fine Lines/Aging
+43,Oily,High,Medium,3,10,Low,1.74,Oiliness
+41,Combination,Low,Low,8,8,Moderate,2.26,Redness/Sensitivity
+19,Sensitive,Medium,Medium,6,8,Moderate,1.93,Redness/Sensitivity
+26,Oily,Low,High,3,10,Low,0.65,Normal/None
+34,Sensitive,Low,Low,5,9,Low,0.91,Dryness
+36,Normal,High,Low,10,5,Low,2.08,Fine Lines/Aging
+35,Combination,High,Low,6,8,Moderate,2.92,Redness/Sensitivity
+37,Combination,Low,Medium,4,10,Moderate,2.21,Normal/None
+58,Combination,Medium,High,3,10,Moderate,4.41,Redness/Sensitivity
+23,Combination,Low,Low,9,9,Low,1.16,Dryness
+34,Normal,Medium,Medium,7,7,Low,2.26,Acne
+24,Normal,Medium,Medium,8,7,Low,2.93,Dullness
+32,Dry,Low,Medium,6,8,Moderate,3.05,Dryness
+53,Oily,High,Medium,8,8,Moderate,2.72,Acne
+18,Combination,Low,Medium,4,9,Moderate,3.06,Dullness
+34,Oily,Medium,High,6,8,Moderate,2.24,Oiliness
+17,Dry,Medium,Medium,6,8,Moderate,3.53,Redness/Sensitivity
+68,Oily,Medium,High,8,7,Low,2.93,Oiliness
+55,Oily,Medium,Medium,6,8,Low,1.22,Dryness
+29,Normal,High,High,4,10,High,2.86,Normal/None
+26,Normal,Low,Low,6,6,Moderate,0.96,Dryness
+21,Dry,Low,High,2,10,Low,3.12,Dryness
+42,Oily,Low,High,1,10,Moderate,2.38,Oiliness
+57,Dry,Medium,Low,7,8,Moderate,3.28,Dryness
+48,Dry,High,Low,5,8,High,2.51,Redness/Sensitivity
+64,Combination,Medium,Medium,5,10,Moderate,0.71,Normal/None
+34,Normal,Low,Medium,7,7,Moderate,4.31,Normal/None
+31,Normal,Low,Low,8,8,Low,2.0,Dryness
+42,Normal,Low,Medium,7,7,Moderate,1.4,Acne
+27,Sensitive,Medium,Low,9,5,Moderate,3.12,Redness/Sensitivity
+69,Combination,Medium,Medium,7,8,Moderate,3.83,Acne
+26,Normal,High,Medium,6,7,High,2.44,Normal/None
+42,Normal,Low,Medium,6,9,Moderate,2.12,Oiliness
+44,Oily,Low,Medium,3,10,Low,2.09,Normal/None
+19,Sensitive,High,Low,7,10,Low,1.01,Dryness
+41,Dry,High,Low,1,10,High,2.05,Dryness
+41,Dry,Low,Medium,4,10,Moderate,3.63,Fine Lines/Aging
+30,Sensitive,Medium,Medium,6,9,Moderate,2.09,Redness/Sensitivity
+23,Combination,Medium,Medium,4,9,Moderate,1.53,Acne
+18,Oily,Medium,Medium,5,6,Moderate,1.84,Oiliness
+16,Oily,High,Medium,9,9,Low,2.76,Normal/None
+42,Oily,Low,Low,8,6,Moderate,0.62,Acne
+20,Normal,Low,High,4,10,Low,2.1,Redness/Sensitivity
+68,Oily,High,High,5,10,Moderate,4.17,Oiliness
+29,Sensitive,High,Medium,3,9,Moderate,3.82,Redness/Sensitivity
+51,Sensitive,High,Medium,7,9,Low,2.36,Redness/Sensitivity
+53,Normal,Medium,Medium,5,10,Moderate,3.25,Fine Lines/Aging
+43,Normal,Low,High,2,10,Low,2.95,Fine Lines/Aging
+64,Dry,Low,Low,6,8,Moderate,2.1,Fine Lines/Aging
+22,Oily,Low,Medium,6,8,Moderate,2.94,Oiliness
+28,Combination,High,Medium,7,8,High,4.03,Fine Lines/Aging
+29,Oily,Low,Medium,5,9,Moderate,1.19,Oiliness
+23,Oily,Medium,Medium,5,10,Moderate,2.66,Oiliness
+32,Dry,High,Low,9,8,Moderate,2.49,Dryness
+33,Oily,High,Medium,6,6,Moderate,2.28,Redness/Sensitivity
+58,Dry,Low,Low,7,9,Moderate,2.21,Dryness
+32,Combination,Low,Medium,4,9,Moderate,2.39,Dryness
+64,Combination,Medium,Medium,7,8,Moderate,2.45,Redness/Sensitivity
+58,Normal,High,High,3,10,Low,2.79,Redness/Sensitivity
+65,Combination,Low,Medium,5,10,High,2.98,Fine Lines/Aging
+21,Dry,High,Medium,3,10,High,2.46,Redness/Sensitivity
+70,Combination,Low,Medium,4,8,Moderate,1.53,Fine Lines/Aging
+49,Normal,High,Low,8,8,Low,1.52,Dryness
+70,Oily,High,High,4,9,High,2.81,Fine Lines/Aging
+35,Sensitive,Medium,Medium,7,6,Low,1.34,Acne
+68,Dry,Medium,Low,9,7,Moderate,2.96,Normal/None
+48,Oily,Medium,Medium,5,10,Low,2.24,Fine Lines/Aging
+19,Dry,Low,Medium,7,6,High,3.51,Dryness
+38,Dry,Low,Low,7,8,Low,1.39,Dryness
+23,Dry,High,Low,6,8,Moderate,1.54,Dryness
+67,Normal,Medium,Medium,7,9,Low,2.81,Fine Lines/Aging
+32,Sensitive,Medium,Low,9,6,Moderate,2.3,Oiliness
+28,Dry,Low,Low,4,7,Moderate,2.04,Fine Lines/Aging
+46,Normal,Medium,Medium,4,8,High,3.16,Normal/None
+39,Dry,High,Medium,3,10,Moderate,2.73,Redness/Sensitivity
+21,Combination,Medium,Medium,7,7,High,1.6,Normal/None
+60,Oily,High,Medium,8,7,Low,3.01,Acne
+62,Oily,Medium,Medium,4,10,Moderate,1.87,Fine Lines/Aging
+56,Normal,High,High,1,10,Moderate,3.56,Fine Lines/Aging
+49,Combination,High,Medium,4,10,Moderate,1.13,Redness/Sensitivity
+38,Combination,Low,Low,7,10,Moderate,2.45,Dullness
+45,Normal,Low,High,5,10,Moderate,2.05,Fine Lines/Aging
+44,Combination,High,Medium,6,7,Moderate,0.62,Normal/None
+25,Dry,High,High,4,8,Moderate,2.73,Redness/Sensitivity
+20,Oily,Low,Low,8,8,Low,0.5,Acne
+29,Oily,Medium,Medium,6,10,Moderate,1.97,Redness/Sensitivity
+40,Oily,High,Medium,7,7,High,3.48,Acne
+24,Dry,High,Low,6,8,Low,1.48,Dryness
+21,Normal,Medium,Low,7,9,Moderate,1.48,Acne
+62,Dry,High,Low,6,9,Moderate,2.84,Dryness
+36,Normal,Medium,Medium,4,10,High,2.4,Normal/None
+48,Normal,High,Low,6,7,Moderate,1.88,Dryness
+44,Combination,Low,High,7,7,Moderate,3.22,Acne
+56,Combination,Medium,Low,8,8,Moderate,1.27,Dryness
+56,Dry,Low,Low,6,10,Low,1.53,Dryness
+32,Dry,Low,Medium,4,9,Moderate,2.89,Normal/None
+62,Normal,Low,Medium,4,9,Low,0.91,Fine Lines/Aging
+36,Normal,Medium,High,5,8,High,4.02,Fine Lines/Aging
+61,Dry,High,Low,6,10,Moderate,2.03,Dryness
+38,Dry,High,Low,5,9,Low,2.6,Dryness
+22,Combination,Low,High,3,10,Moderate,2.9,Oiliness
+57,Combination,Low,High,3,10,High,2.48,Normal/None
+17,Oily,Medium,Medium,1,10,High,2.22,Normal/None
+58,Normal,High,High,1,9,Low,1.87,Dullness
+18,Sensitive,Medium,Medium,5,6,Low,2.47,Redness/Sensitivity
+27,Oily,Low,Low,10,9,Moderate,1.41,Acne
+49,Combination,High,Low,9,7,Low,0.94,Acne
+67,Oily,High,High,4,10,Moderate,3.39,Redness/Sensitivity
+38,Normal,Medium,Medium,6,7,Moderate,1.61,Acne
+22,Dry,Low,Medium,3,9,High,2.88,Acne
+28,Oily,Low,High,3,10,High,2.44,Oiliness
+65,Sensitive,High,Medium,3,10,High,2.47,Redness/Sensitivity
+55,Normal,High,Medium,5,8,High,3.74,Fine Lines/Aging
+21,Sensitive,Medium,Medium,5,10,High,2.53,Redness/Sensitivity
+37,Dry,Low,Low,6,9,High,2.31,Dryness
+30,Combination,Low,Low,7,8,Moderate,1.98,Dryness
+25,Sensitive,Medium,Medium,5,10,Low,1.5,Redness/Sensitivity
+62,Normal,High,Medium,6,8,High,2.06,Fine Lines/Aging
+49,Oily,Low,High,3,10,Moderate,1.8,Oiliness
+25,Combination,High,High,3,10,High,3.93,Redness/Sensitivity
+51,Normal,Low,Medium,3,10,Moderate,2.77,Acne
+38,Sensitive,High,Medium,7,10,Moderate,1.92,Redness/Sensitivity
+19,Dry,Low,Medium,5,9,Low,2.69,Oiliness
+40,Dry,High,Low,2,10,Moderate,0.93,Dryness
+26,Oily,Low,High,5,10,Moderate,3.3,Oiliness
+29,Combination,Low,High,3,10,Moderate,3.24,Dryness
+64,Sensitive,Medium,Medium,9,9,Moderate,3.99,Redness/Sensitivity
+55,Oily,High,High,4,4,Low,2.71,Normal/None
+23,Combination,Medium,Medium,7,9,Moderate,2.55,Acne
+62,Sensitive,High,Medium,8,8,High,3.63,Redness/Sensitivity
+47,Oily,High,Medium,4,9,High,2.1,Oiliness
+64,Oily,Medium,Medium,6,9,Moderate,1.88,Fine Lines/Aging
+57,Combination,Medium,Low,7,8,Moderate,2.15,Dryness
+34,Combination,Low,Medium,6,9,Low,3.0,Dryness
+45,Oily,Low,Medium,6,8,High,1.92,Fine Lines/Aging
+45,Combination,Low,Medium,3,10,Moderate,1.43,Fine Lines/Aging
+55,Normal,Low,Low,7,9,Moderate,2.39,Fine Lines/Aging
+29,Sensitive,High,Medium,5,10,Low,2.47,Redness/Sensitivity
+34,Combination,High,Low,6,9,Low,1.34,Redness/Sensitivity
+29,Combination,Medium,Low,7,10,Moderate,2.74,Dryness
+32,Normal,High,Medium,7,10,Moderate,3.29,Normal/None
+24,Dry,Low,Medium,6,8,Low,2.86,Fine Lines/Aging
+18,Normal,High,Medium,7,9,Moderate,2.48,Oiliness
+67,Oily,High,Medium,7,8,Low,1.83,Fine Lines/Aging
+20,Combination,Medium,Medium,8,10,High,3.99,Redness/Sensitivity
+64,Oily,High,Medium,5,10,Moderate,2.21,Redness/Sensitivity
+16,Normal,Low,Medium,6,8,Moderate,2.95,Dullness
+58,Oily,Low,Medium,7,10,Moderate,3.77,Fine Lines/Aging
+34,Dry,Medium,Medium,5,6,Moderate,2.87,Normal/None
+44,Oily,Medium,Medium,3,10,High,1.8,Oiliness
+31,Normal,Medium,Low,6,8,Moderate,1.21,Dryness
+42,Combination,Low,Low,5,10,Moderate,1.96,Dryness
+40,Oily,Low,High,3,10,Moderate,2.77,Fine Lines/Aging
+45,Combination,Low,Medium,7,7,Moderate,2.56,Fine Lines/Aging
+37,Combination,Medium,Medium,8,7,High,4.37,Acne
+45,Dry,High,Medium,2,9,Moderate,2.55,Dryness
+61,Combination,Medium,Low,8,7,Moderate,1.94,Acne
+39,Dry,Medium,Medium,1,10,Low,0.99,Dryness
+35,Oily,Low,High,5,8,Low,2.84,Oiliness
+23,Normal,Low,Medium,9,8,Moderate,2.2,Acne
+35,Oily,High,Low,5,10,Moderate,1.0,Redness/Sensitivity
+22,Combination,High,Medium,6,7,Moderate,2.22,Redness/Sensitivity
+26,Sensitive,Medium,Low,7,6,Low,1.1,Dryness
+68,Combination,Low,High,2,10,Moderate,1.86,Fine Lines/Aging
+20,Normal,Low,Medium,6,9,Moderate,2.2,Oiliness
+42,Normal,High,Low,6,10,Low,1.18,Redness/Sensitivity
+61,Sensitive,Medium,Low,9,8,Low,1.51,Fine Lines/Aging
+68,Dry,High,Low,3,10,Moderate,1.6,Dryness
+24,Oily,Medium,Medium,5,10,Moderate,1.63,Oiliness
+24,Normal,Low,Medium,4,10,Moderate,1.39,Dryness
+36,Dry,High,Medium,3,10,Low,1.51,Redness/Sensitivity
+46,Dry,Medium,Low,8,5,Moderate,1.48,Dryness
+68,Oily,High,Medium,6,5,Moderate,2.67,Redness/Sensitivity
+27,Normal,Low,High,4,9,Low,2.06,Redness/Sensitivity
+25,Dry,Medium,Medium,4,10,Moderate,3.16,Dryness
+29,Oily,Medium,High,4,9,High,4.11,Acne
+64,Oily,Medium,High,5,10,Low,2.44,Oiliness
+17,Dry,Low,Medium,3,10,High,2.96,Dryness
+36,Combination,Medium,High,5,8,High,3.19,Acne
+22,Dry,High,Low,5,8,Moderate,2.57,Dryness
+24,Combination,High,Medium,4,9,Moderate,2.24,Normal/None
+66,Combination,Low,Low,6,10,Moderate,2.18,Fine Lines/Aging
+16,Dry,High,Low,6,8,Moderate,1.38,Dryness
+33,Combination,High,Medium,4,9,Low,2.57,Redness/Sensitivity
+66,Combination,Low,Medium,5,10,Moderate,2.17,Fine Lines/Aging
+49,Normal,Low,Low,10,6,Moderate,3.36,Fine Lines/Aging
+19,Oily,High,Low,10,8,Moderate,2.93,Normal/None
+41,Oily,Low,Medium,3,9,Low,1.4,Oiliness
+69,Sensitive,Medium,High,4,8,Moderate,3.2,Redness/Sensitivity
+38,Combination,Low,Medium,3,10,High,0.55,Redness/Sensitivity
+45,Sensitive,High,High,8,8,Moderate,3.74,Fine Lines/Aging
+45,Sensitive,High,Medium,5,8,Low,0.83,Redness/Sensitivity
+52,Oily,Medium,High,6,10,High,3.0,Normal/None
+26,Combination,High,Medium,9,10,Moderate,2.54,Redness/Sensitivity
+62,Normal,High,High,5,8,High,3.5,Normal/None
+70,Combination,Low,Medium,7,10,Low,1.64,Fine Lines/Aging
+23,Oily,Low,Low,7,5,Moderate,0.5,Dullness
+61,Dry,Low,Medium,4,10,Moderate,1.94,Fine Lines/Aging
+60,Combination,Medium,Medium,8,6,Moderate,2.02,Fine Lines/Aging
+56,Combination,Medium,Low,4,10,Low,0.5,Fine Lines/Aging
+36,Normal,High,Low,8,6,Low,1.94,Redness/Sensitivity
+41,Dry,Medium,Low,4,9,High,1.74,Dryness
+62,Dry,Medium,Medium,5,8,Moderate,2.72,Fine Lines/Aging
+24,Sensitive,High,Medium,3,10,High,2.4,Redness/Sensitivity
+61,Dry,Medium,Medium,4,10,Moderate,3.77,Fine Lines/Aging
+66,Normal,High,Medium,5,9,Moderate,2.0,Fine Lines/Aging
+53,Normal,High,High,1,10,Moderate,2.54,Fine Lines/Aging
+34,Dry,High,Low,5,8,Moderate,2.03,Dryness
+46,Normal,High,Low,4,10,High,1.3,Fine Lines/Aging
+18,Dry,Low,Low,7,6,Moderate,2.04,Dryness
+67,Combination,Medium,Medium,6,8,High,3.2,Fine Lines/Aging
+34,Sensitive,High,Medium,4,9,Low,2.38,Redness/Sensitivity
+19,Sensitive,High,Medium,5,10,Low,1.67,Redness/Sensitivity
+59,Normal,Medium,Low,5,9,Moderate,1.03,Dryness
+52,Normal,Medium,Medium,8,5,Low,2.42,Fine Lines/Aging
+50,Combination,Low,Medium,4,8,High,2.94,Fine Lines/Aging
+18,Combination,High,High,4,8,High,3.27,Fine Lines/Aging
+57,Normal,High,Medium,3,10,High,2.38,Redness/Sensitivity
+51,Combination,High,Medium,3,10,High,1.25,Redness/Sensitivity
+59,Combination,Low,Medium,6,8,Low,2.33,Dullness
+61,Combination,High,Medium,6,8,Low,1.89,Normal/None
+27,Combination,Low,Medium,8,9,High,3.71,Oiliness
+27,Oily,Medium,Medium,8,6,Low,1.92,Fine Lines/Aging
+66,Normal,High,Low,10,7,High,2.56,Redness/Sensitivity
+45,Normal,High,High,5,10,Moderate,2.53,Redness/Sensitivity
+40,Oily,Low,Medium,5,9,Moderate,1.72,Fine Lines/Aging
+31,Combination,High,Medium,3,10,Moderate,1.68,Dryness
+51,Normal,High,Medium,7,8,Moderate,2.12,Acne
+57,Oily,Low,Medium,6,9,Moderate,1.46,Normal/None
+16,Combination,Low,Low,7,6,High,2.42,Dryness
+46,Combination,Low,High,3,10,High,4.15,Fine Lines/Aging
+70,Combination,Low,Medium,6,10,Moderate,3.03,Fine Lines/Aging
+31,Dry,Medium,Medium,6,9,Low,2.15,Dryness
+31,Combination,Low,High,6,9,High,3.84,Normal/None
+64,Dry,High,Low,4,9,Low,1.24,Dryness
+19,Normal,Low,Medium,8,9,Moderate,4.19,Acne
+37,Oily,Medium,Medium,10,7,Moderate,1.83,Acne
+41,Combination,Medium,High,3,8,Low,3.5,Fine Lines/Aging
+59,Combination,Medium,Medium,7,9,Moderate,3.8,Dullness
+23,Normal,Low,Medium,1,9,Moderate,0.8,Oiliness
+39,Normal,Medium,Medium,7,8,Low,3.07,Dullness
+24,Combination,Medium,Medium,2,10,High,2.37,Normal/None
+59,Combination,Medium,Medium,4,9,Low,1.45,Fine Lines/Aging
+50,Dry,High,High,3,10,Moderate,2.62,Dryness
+43,Sensitive,High,Low,5,8,Low,1.09,Redness/Sensitivity
+37,Combination,Medium,Medium,7,9,Moderate,2.6,Normal/None
+24,Sensitive,Low,Medium,2,10,Moderate,1.45,Dryness
+66,Sensitive,Medium,Medium,5,8,Moderate,2.34,Redness/Sensitivity
+51,Sensitive,High,Medium,4,10,Moderate,3.27,Redness/Sensitivity
+33,Combination,Medium,Low,9,7,Moderate,2.51,Redness/Sensitivity
+38,Normal,High,Medium,6,9,Moderate,1.91,Oiliness
+55,Oily,High,Medium,3,10,Moderate,2.63,Redness/Sensitivity
+55,Normal,Low,Low,5,10,Moderate,1.07,Dryness
+41,Combination,High,Low,9,8,Moderate,1.53,Normal/None
+32,Normal,Medium,Low,7,8,Moderate,1.86,Dryness
+52,Combination,Low,High,4,7,Moderate,2.83,Fine Lines/Aging
+52,Oily,Medium,Medium,5,9,Moderate,2.52,Fine Lines/Aging
+48,Dry,Medium,Medium,5,10,Moderate,2.63,Fine Lines/Aging
+20,Normal,Low,Medium,4,10,High,2.58,Normal/None
+42,Dry,Medium,Low,2,6,Moderate,1.57,Dryness
+49,Oily,Medium,Medium,4,10,Moderate,3.39,Acne
+68,Oily,Low,Low,8,9,Low,1.34,Dryness
+44,Combination,Medium,Medium,5,9,Moderate,2.54,Oiliness
+34,Normal,Low,Medium,5,10,Moderate,2.11,Normal/None
+46,Oily,Low,Medium,6,9,Low,2.35,Fine Lines/Aging
+25,Oily,High,Low,10,6,High,2.12,Acne
+20,Normal,High,Medium,6,10,Moderate,3.04,Redness/Sensitivity
+53,Oily,Low,Medium,8,6,Moderate,3.3,Acne
+70,Combination,Low,Medium,4,9,Moderate,2.99,Fine Lines/Aging
+62,Combination,Low,Medium,5,9,Moderate,2.33,Fine Lines/Aging
+48,Oily,Medium,Medium,6,7,Moderate,1.85,Normal/None
+18,Normal,Low,High,4,10,Moderate,4.46,Normal/None
+70,Oily,Medium,Medium,5,10,High,1.81,Normal/None
+40,Dry,High,Low,7,10,Moderate,2.9,Dryness
+31,Sensitive,High,Medium,4,10,High,2.87,Redness/Sensitivity
+65,Normal,Medium,Medium,6,6,Moderate,2.15,Acne
+57,Sensitive,Medium,Medium,7,6,Low,2.05,Fine Lines/Aging
+57,Oily,Low,Medium,4,10,Low,1.49,Dryness
+31,Dry,Medium,Low,8,8,Low,2.24,Redness/Sensitivity
+70,Normal,Low,Low,6,8,Moderate,2.45,Dryness
+40,Normal,Low,High,5,10,Moderate,4.34,Fine Lines/Aging
+45,Sensitive,High,High,1,10,Moderate,3.06,Redness/Sensitivity
+57,Oily,Low,Medium,5,10,Moderate,2.61,Fine Lines/Aging
+52,Combination,Low,Medium,6,10,Moderate,2.66,Fine Lines/Aging
+25,Combination,High,Medium,9,7,Moderate,3.67,Redness/Sensitivity
+32,Normal,High,Medium,7,10,Moderate,1.42,Redness/Sensitivity
+35,Dry,High,Low,8,6,Low,1.75,Redness/Sensitivity
+68,Normal,Low,Medium,3,9,High,1.07,Fine Lines/Aging
+55,Dry,Low,Low,5,8,Low,2.35,Dryness
+36,Combination,Low,Medium,8,10,Moderate,2.88,Dullness
+56,Normal,Low,Medium,4,10,Moderate,1.4,Fine Lines/Aging
+56,Sensitive,High,Medium,7,7,Moderate,3.35,Redness/Sensitivity
+37,Normal,High,Low,7,7,Moderate,1.62,Acne
+38,Normal,High,Medium,6,10,Moderate,1.93,Fine Lines/Aging
+65,Combination,High,Medium,5,10,Moderate,2.3,Fine Lines/Aging
+46,Normal,Low,High,4,10,High,3.88,Fine Lines/Aging
+24,Sensitive,High,Medium,9,7,Moderate,1.51,Redness/Sensitivity
+55,Oily,High,Medium,7,9,High,2.83,Acne
+48,Sensitive,High,Medium,6,9,Moderate,2.82,Redness/Sensitivity
+43,Combination,Medium,Medium,5,8,Moderate,2.65,Oiliness
+55,Combination,High,Medium,6,8,Moderate,2.68,Fine Lines/Aging
+65,Normal,Medium,Medium,6,7,Moderate,2.81,Normal/None
+34,Combination,Medium,Medium,6,9,Low,1.46,Dullness
+39,Dry,High,Low,7,9,Moderate,3.55,Dryness
+26,Combination,Medium,Medium,4,10,Moderate,2.11,Normal/None
+51,Oily,High,High,3,10,Moderate,2.0,Fine Lines/Aging
+38,Dry,Medium,Medium,6,8,Moderate,3.28,Dryness
+34,Normal,Low,Medium,2,10,Moderate,1.7,Normal/None
+54,Dry,Low,Low,5,10,Moderate,2.46,Dryness
+38,Dry,High,Medium,4,10,High,2.02,Redness/Sensitivity
+41,Combination,Medium,Medium,6,10,Moderate,4.22,Acne
+40,Dry,Medium,Medium,9,7,High,4.45,Fine Lines/Aging
+30,Combination,High,High,2,10,Moderate,2.11,Normal/None
+22,Oily,Low,Medium,10,8,Moderate,2.62,Acne
+61,Combination,Low,Low,5,7,Low,1.9,Dryness
+21,Combination,High,Low,6,7,High,2.32,Redness/Sensitivity
+33,Dry,High,Medium,3,8,Moderate,2.3,Redness/Sensitivity
+52,Combination,Medium,Medium,7,8,Moderate,2.17,Fine Lines/Aging
+23,Sensitive,Medium,Low,6,8,Moderate,0.98,Dryness
+52,Combination,Medium,Medium,5,7,Moderate,2.41,Fine Lines/Aging
+56,Dry,Medium,Low,2,10,Moderate,2.17,Dryness
+52,Normal,High,Medium,6,8,Low,2.15,Fine Lines/Aging
+32,Combination,Low,Low,7,10,Moderate,2.14,Acne
+17,Dry,High,Medium,5,10,High,2.31,Normal/None
+64,Combination,Medium,Medium,8,8,Moderate,2.9,Acne
+33,Dry,Medium,Medium,8,7,Low,2.33,Normal/None
+60,Combination,Low,High,4,10,High,3.72,Fine Lines/Aging
+26,Oily,High,Low,9,7,Low,2.3,Oiliness
+24,Oily,High,Medium,6,8,Moderate,2.04,Redness/Sensitivity
+58,Sensitive,High,High,6,7,Moderate,2.69,Redness/Sensitivity
+67,Combination,High,Medium,6,8,Moderate,0.62,Fine Lines/Aging
+63,Sensitive,High,High,6,8,High,4.28,Redness/Sensitivity
+57,Sensitive,Low,Medium,1,10,Moderate,2.42,Redness/Sensitivity
+29,Dry,Medium,Medium,5,10,Moderate,3.95,Dryness
+66,Dry,High,Medium,3,10,High,1.9,Fine Lines/Aging
+52,Oily,Low,Low,9,8,Low,1.01,Dryness
+25,Normal,High,Low,9,8,Low,2.19,Dryness
+23,Oily,Low,High,7,8,Moderate,2.49,Oiliness
+63,Sensitive,Medium,Medium,5,8,Moderate,2.47,Redness/Sensitivity
+31,Oily,Medium,Medium,3,9,Low,2.05,Oiliness
+58,Oily,Medium,High,4,8,Moderate,1.7,Oiliness
+23,Dry,Medium,Low,9,4,Low,0.71,Dryness
+31,Oily,Low,High,4,8,High,2.83,Acne
+31,Oily,High,High,1,10,Moderate,1.17,Fine Lines/Aging
+31,Combination,Low,Low,8,8,High,1.5,Redness/Sensitivity
+53,Dry,High,Low,9,7,Moderate,1.9,Dryness
+66,Normal,High,Low,9,8,Moderate,2.54,Dryness
+66,Sensitive,Medium,Low,8,5,Low,3.49,Fine Lines/Aging
+56,Normal,High,High,8,8,Moderate,2.98,Fine Lines/Aging
+27,Combination,Low,Medium,6,10,Moderate,3.35,Redness/Sensitivity
+68,Dry,Medium,High,1,10,High,3.12,Dryness
+45,Oily,High,Medium,6,6,Low,2.19,Redness/Sensitivity
+46,Dry,Low,Medium,7,8,High,4.6,Fine Lines/Aging
+54,Sensitive,Medium,Medium,5,10,High,1.54,Redness/Sensitivity
+58,Normal,Low,Medium,5,9,Moderate,1.87,Fine Lines/Aging
+68,Dry,High,Medium,4,7,High,2.33,Redness/Sensitivity
+48,Normal,Low,High,3,10,Low,2.61,Fine Lines/Aging
+49,Combination,Medium,Low,9,5,Moderate,1.42,Dryness
+57,Combination,Medium,Low,9,7,Low,2.51,Fine Lines/Aging
+30,Normal,Low,Medium,5,8,High,3.06,Normal/None
+32,Sensitive,Medium,High,6,7,Low,2.55,Redness/Sensitivity
+50,Combination,Low,Medium,4,9,Low,2.54,Fine Lines/Aging
+19,Combination,High,Medium,7,9,Low,3.13,Redness/Sensitivity
+33,Oily,High,Low,9,9,High,2.56,Dryness
+55,Oily,High,High,2,10,High,3.02,Fine Lines/Aging
+69,Sensitive,Medium,Medium,6,7,Moderate,1.61,Fine Lines/Aging
+44,Normal,Medium,Low,7,9,Moderate,1.43,Dryness
+37,Dry,Medium,Medium,7,9,Moderate,3.61,Normal/None
+40,Normal,High,Low,9,8,Moderate,1.55,Dryness
+53,Oily,Low,Medium,10,7,High,3.11,Acne
+45,Combination,High,Medium,5,9,Moderate,2.62,Redness/Sensitivity
+17,Oily,Low,Medium,7,8,Low,2.84,Acne
+45,Combination,High,Medium,6,8,Moderate,0.87,Redness/Sensitivity
+38,Normal,High,High,4,10,Moderate,2.91,Oiliness
+54,Dry,Low,Low,6,10,Moderate,2.15,Fine Lines/Aging
+64,Oily,Low,Medium,7,8,Moderate,1.72,Acne
+68,Combination,High,Medium,6,9,Moderate,2.0,Redness/Sensitivity
+49,Oily,Low,Medium,4,10,Moderate,3.03,Oiliness
+35,Oily,High,Medium,5,8,Moderate,2.78,Oiliness
+40,Combination,Medium,Medium,5,10,Moderate,2.1,Acne
+25,Dry,Medium,Medium,4,10,High,1.69,Dryness
+67,Dry,High,Low,6,8,Moderate,1.35,Dryness
+62,Dry,High,Medium,6,10,Moderate,2.8,Fine Lines/Aging
+62,Combination,Low,Low,7,8,Moderate,1.18,Dryness
+34,Dry,Low,Medium,4,8,High,2.51,Normal/None
+33,Oily,Low,High,4,10,Moderate,4.34,Oiliness
+63,Dry,Low,Low,9,8,Moderate,2.57,Dryness
+45,Oily,High,High,5,10,Low,2.49,Fine Lines/Aging
+54,Dry,High,Low,6,10,Low,1.05,Dryness
+42,Oily,High,Medium,5,9,High,1.62,Oiliness
+40,Oily,Medium,High,8,7,Moderate,2.84,Acne
+50,Dry,High,Low,8,8,Moderate,1.97,Dryness
+60,Combination,High,Medium,8,8,Moderate,3.14,Fine Lines/Aging
+34,Oily,Medium,Medium,6,9,High,2.71,Redness/Sensitivity
+60,Oily,Medium,High,4,10,High,5.0,Oiliness
+29,Sensitive,High,Low,9,7,Moderate,1.82,Redness/Sensitivity
+38,Sensitive,High,Medium,7,9,Low,2.21,Redness/Sensitivity
+66,Combination,Medium,Low,5,8,Low,1.26,Dryness
+68,Dry,High,Medium,8,10,Low,2.81,Dryness
+66,Dry,Medium,Medium,4,10,Moderate,2.63,Fine Lines/Aging
+33,Oily,High,Medium,8,6,Moderate,1.51,Oiliness
+62,Oily,High,Medium,8,8,High,2.43,Redness/Sensitivity
+67,Dry,High,High,4,10,Moderate,3.38,Redness/Sensitivity
+69,Normal,High,High,7,8,Moderate,3.28,Fine Lines/Aging
+17,Dry,Medium,Low,7,6,Low,0.85,Dryness
+56,Normal,High,Low,10,5,Low,1.61,Normal/None
+70,Dry,Medium,High,4,10,Moderate,3.74,Fine Lines/Aging
+58,Dry,Medium,Low,8,5,Low,1.85,Dryness
+28,Combination,Low,Low,6,7,High,2.83,Redness/Sensitivity
+57,Combination,Low,High,3,10,Low,2.8,Normal/None
+21,Dry,High,Medium,5,9,Moderate,1.21,Acne
+42,Normal,Medium,Low,6,8,Low,1.23,Dryness
+50,Dry,High,Medium,3,9,Moderate,2.02,Fine Lines/Aging
+41,Oily,Medium,Medium,6,6,Moderate,3.24,Oiliness
+54,Combination,Medium,Medium,7,9,Moderate,3.1,Fine Lines/Aging
+29,Oily,Low,High,6,7,Low,2.56,Oiliness
+49,Dry,Medium,Medium,4,9,Moderate,2.17,Dryness
+51,Normal,High,Medium,5,9,Moderate,3.18,Redness/Sensitivity
+50,Oily,Low,Medium,5,9,Moderate,2.16,Fine Lines/Aging
+31,Oily,Medium,High,6,8,High,3.14,Oiliness
+32,Dry,High,Low,8,5,Moderate,3.01,Dryness
+30,Sensitive,Medium,Medium,6,9,Moderate,3.64,Redness/Sensitivity
+41,Normal,High,High,3,10,Moderate,2.23,Oiliness
+48,Dry,High,Low,4,9,Low,1.69,Dryness
+35,Oily,Low,Medium,6,7,Moderate,3.32,Normal/None
+38,Normal,High,Medium,8,8,High,3.78,Dullness
+31,Oily,High,Low,8,8,Moderate,1.85,Dryness
+28,Normal,High,Low,9,7,Moderate,1.4,Dryness
+52,Combination,Low,Medium,6,10,Low,2.96,Normal/None
+60,Dry,High,Low,7,9,Low,0.67,Dryness
+31,Dry,Medium,Medium,3,10,Low,0.63,Dryness
+63,Oily,High,Medium,6,10,High,2.47,Oiliness
+47,Oily,Medium,Medium,3,10,Moderate,2.28,Oiliness
+25,Dry,Medium,Medium,5,9,High,1.75,Dryness
+36,Sensitive,High,Low,10,9,Low,2.08,Redness/Sensitivity
+16,Dry,High,Low,6,7,Low,2.11,Dryness
+18,Normal,Medium,Medium,4,9,Low,1.52,Normal/None
+34,Combination,Low,High,6,10,Moderate,3.83,Dryness
+40,Oily,Low,High,4,10,Moderate,2.54,Oiliness
+59,Oily,High,Medium,4,9,Moderate,3.1,Fine Lines/Aging
+23,Dry,Medium,Low,10,4,Low,0.74,Dryness
+62,Combination,High,Low,8,4,Moderate,1.03,Dryness
+28,Dry,High,Low,6,10,Moderate,2.57,Dryness
+23,Combination,High,High,5,9,Moderate,3.68,Redness/Sensitivity
+54,Combination,Low,Medium,5,8,Moderate,1.39,Normal/None
+58,Combination,Medium,Low,9,8,Low,2.01,Fine Lines/Aging
+49,Sensitive,Medium,Medium,6,7,Low,0.91,Redness/Sensitivity
+22,Combination,Low,High,1,10,Moderate,1.63,Dullness
+22,Combination,Medium,Medium,10,5,High,2.75,Normal/None
+37,Combination,High,Medium,6,7,High,2.21,Oiliness
+40,Combination,High,Low,6,6,Moderate,1.16,Dryness
+70,Combination,High,Medium,8,5,Low,0.84,Fine Lines/Aging
+31,Sensitive,Medium,Low,6,10,Low,0.5,Redness/Sensitivity
+26,Normal,High,Medium,7,7,Moderate,2.58,Acne
+68,Normal,High,Medium,5,10,Moderate,2.68,Fine Lines/Aging
+24,Normal,Low,High,3,10,Moderate,2.67,Normal/None
+17,Combination,Medium,Medium,6,9,Moderate,1.47,Dryness
+39,Dry,High,Medium,8,7,Low,2.7,Dryness
+38,Combination,High,High,4,10,Moderate,2.77,Redness/Sensitivity
+50,Combination,Low,Medium,4,9,High,2.61,Normal/None
+64,Sensitive,High,Medium,8,9,Low,1.77,Redness/Sensitivity
+67,Dry,High,Medium,5,10,Low,1.38,Fine Lines/Aging
+31,Combination,Medium,Medium,5,10,High,2.75,Normal/None
+69,Combination,High,Medium,5,6,Low,3.19,Fine Lines/Aging
+50,Sensitive,High,Medium,5,8,High,3.51,Normal/None
+19,Sensitive,Medium,High,2,10,Moderate,2.0,Normal/None
+67,Normal,Low,Medium,4,10,Moderate,2.63,Fine Lines/Aging
+23,Normal,Medium,Medium,6,6,Moderate,1.32,Redness/Sensitivity
+48,Oily,Low,Medium,6,6,Moderate,2.78,Oiliness
+59,Sensitive,High,Medium,8,9,Moderate,1.54,Redness/Sensitivity
+29,Dry,High,Low,9,6,Moderate,2.75,Dryness
+30,Combination,High,Medium,9,5,Moderate,4.58,Dryness
+42,Combination,High,Medium,7,7,Moderate,1.74,Redness/Sensitivity
+64,Normal,Low,High,5,10,Moderate,4.54,Oiliness
+28,Oily,Medium,Medium,4,8,Moderate,2.59,Redness/Sensitivity
+52,Oily,Medium,High,6,9,Moderate,1.6,Oiliness
+40,Combination,Low,Medium,7,7,High,1.96,Oiliness
+22,Normal,Low,High,7,6,Moderate,4.09,Oiliness
+55,Oily,High,Medium,7,10,Moderate,2.59,Oiliness
+61,Combination,High,Medium,5,10,Low,1.45,Fine Lines/Aging
+47,Dry,Low,Low,7,8,High,2.44,Dryness
+25,Combination,Medium,Medium,8,7,Moderate,2.54,Dullness
+24,Dry,High,Low,7,10,Moderate,2.19,Dryness
+39,Oily,Low,Medium,5,10,High,2.88,Oiliness
+43,Oily,High,Medium,4,10,Moderate,3.62,Redness/Sensitivity
+46,Normal,Medium,Medium,4,9,Moderate,1.3,Redness/Sensitivity
+29,Normal,Medium,High,4,10,Moderate,2.72,Normal/None
+43,Combination,High,Low,6,9,Low,1.84,Normal/None
+32,Normal,High,Low,7,7,Moderate,1.8,Dryness
+53,Dry,High,Medium,3,10,Low,2.76,Fine Lines/Aging
+59,Dry,Low,Low,4,9,Moderate,1.03,Dryness
+51,Dry,Low,Low,6,9,Low,0.5,Dryness
+16,Sensitive,High,High,4,8,Moderate,2.38,Redness/Sensitivity
+70,Oily,Medium,Medium,6,9,Low,1.79,Fine Lines/Aging
+17,Sensitive,Medium,Low,5,9,Moderate,1.12,Normal/None
+70,Dry,Medium,Medium,4,9,Moderate,0.83,Dryness
+17,Oily,High,High,6,9,Moderate,3.74,Redness/Sensitivity
+44,Dry,Low,Medium,6,8,High,2.97,Dryness
+21,Oily,High,Medium,4,9,Moderate,2.22,Oiliness
+21,Combination,Medium,High,5,10,Moderate,3.96,Fine Lines/Aging
+53,Normal,Low,Medium,6,9,Moderate,3.02,Fine Lines/Aging
+56,Dry,Low,Medium,4,9,Moderate,3.62,Fine Lines/Aging
+22,Combination,High,Medium,2,10,Moderate,1.26,Normal/None
+69,Normal,Low,Medium,2,10,Moderate,1.23,Dryness
+33,Sensitive,Medium,Low,5,8,Moderate,2.69,Redness/Sensitivity
+33,Sensitive,High,High,3,10,Moderate,2.53,Redness/Sensitivity
+32,Combination,High,High,5,9,Moderate,3.2,Fine Lines/Aging
+41,Combination,Low,Low,9,7,Moderate,0.9,Acne
+25,Combination,Low,Medium,3,9,Low,2.46,Dryness
+39,Normal,High,Medium,5,10,High,3.39,Normal/None
+27,Combination,Medium,Medium,10,6,High,3.35,Oiliness
+18,Oily,Low,Medium,6,8,Moderate,1.87,Oiliness
+36,Combination,Low,Medium,5,10,Moderate,2.61,Normal/None
+52,Sensitive,High,Medium,5,10,High,1.98,Redness/Sensitivity
+57,Oily,Low,High,6,5,Low,1.67,Fine Lines/Aging
+35,Combination,Medium,Low,9,7,Moderate,1.37,Normal/None
+33,Sensitive,Low,Medium,4,10,Moderate,1.59,Fine Lines/Aging
+59,Oily,High,High,4,9,High,2.41,Oiliness
+53,Normal,Medium,Medium,3,10,Moderate,1.81,Fine Lines/Aging
+61,Sensitive,High,Medium,6,6,Moderate,1.59,Redness/Sensitivity
+65,Sensitive,Medium,Medium,3,6,Moderate,1.16,Fine Lines/Aging
+61,Oily,Medium,Medium,5,8,High,4.17,Fine Lines/Aging
+67,Dry,Medium,Low,4,10,Moderate,1.8,Dryness
+38,Combination,Medium,Medium,8,3,Moderate,2.46,Dullness
+37,Oily,High,Medium,4,8,Moderate,0.79,Acne
+33,Dry,Medium,Medium,6,6,Moderate,3.29,Normal/None
+28,Oily,High,High,2,10,Moderate,2.33,Redness/Sensitivity
+57,Oily,Medium,Low,6,10,Low,1.54,Normal/None
+55,Normal,High,Medium,3,10,Low,1.55,Dryness
+60,Combination,Low,High,5,9,High,3.3,Fine Lines/Aging
+25,Combination,High,Low,10,8,Low,0.5,Dryness
+43,Combination,Medium,Low,7,8,High,1.94,Dryness
+28,Dry,Low,Medium,5,9,Moderate,2.1,Dryness
+65,Dry,Medium,Low,10,8,Moderate,2.1,Dryness
+30,Oily,High,High,4,10,Moderate,4.2,Oiliness
+23,Oily,High,Medium,8,8,Low,1.63,Normal/None
+47,Dry,Medium,Medium,2,10,Moderate,2.99,Dryness
+64,Oily,Medium,High,5,9,Moderate,3.65,Oiliness
+66,Oily,High,High,3,10,High,3.14,Fine Lines/Aging
+21,Oily,Medium,Medium,6,8,Moderate,1.66,Oiliness
+33,Combination,Low,Medium,6,10,Moderate,1.17,Dullness
+24,Normal,Medium,High,5,8,Moderate,2.8,Normal/None
+32,Sensitive,Medium,Medium,8,10,Low,3.22,Redness/Sensitivity
+45,Combination,Low,Medium,4,10,Moderate,2.64,Fine Lines/Aging
+31,Normal,High,Medium,6,7,Low,2.89,Fine Lines/Aging
+19,Oily,Low,Medium,7,9,Low,3.97,Normal/None
+44,Normal,High,Medium,3,9,Low,2.57,Dryness
+18,Oily,High,Medium,4,9,Low,1.02,Redness/Sensitivity
+28,Dry,High,Medium,6,8,Moderate,2.24,Redness/Sensitivity
+16,Dry,High,Medium,7,8,Moderate,3.3,Acne
+20,Dry,Low,Low,8,9,Moderate,2.0,Dryness
+39,Dry,Medium,Medium,5,10,Moderate,3.4,Redness/Sensitivity
+62,Combination,High,Medium,5,7,Low,1.85,Redness/Sensitivity
+58,Combination,Medium,Medium,4,8,Moderate,2.47,Fine Lines/Aging
+21,Combination,High,Low,6,9,Low,1.62,Redness/Sensitivity
+17,Normal,Medium,High,5,9,Moderate,2.33,Acne
+34,Normal,Medium,High,5,8,Low,2.07,Dryness
+51,Oily,Low,Low,5,10,Moderate,0.91,Fine Lines/Aging
+57,Combination,Medium,Medium,7,9,Low,1.55,Fine Lines/Aging
+61,Normal,Medium,Medium,4,9,Moderate,1.21,Fine Lines/Aging
+34,Dry,Low,Medium,4,8,Moderate,1.87,Dryness
+25,Dry,Low,Low,6,8,Moderate,1.56,Dryness
+17,Sensitive,Medium,High,1,10,High,3.41,Normal/None
+24,Normal,Medium,Medium,4,10,Low,2.72,Oiliness
+19,Normal,High,High,3,10,Moderate,2.65,Normal/None
+63,Normal,High,Low,8,8,Moderate,1.19,Fine Lines/Aging
+30,Dry,High,Low,5,10,Moderate,2.12,Dryness
+61,Normal,Low,Medium,4,10,High,1.52,Fine Lines/Aging
+46,Dry,High,Low,5,9,High,2.48,Fine Lines/Aging
+45,Dry,High,Medium,4,10,Moderate,2.72,Fine Lines/Aging
+41,Combination,Low,Low,5,10,Moderate,2.99,Dryness
+61,Oily,Medium,Medium,6,9,Low,2.28,Oiliness
+18,Combination,High,Medium,5,8,Moderate,3.21,Redness/Sensitivity
+21,Dry,High,Low,5,8,Moderate,2.41,Dryness
+39,Combination,High,Medium,3,9,Moderate,2.01,Redness/Sensitivity
+37,Combination,Medium,High,3,9,Low,2.6,Oiliness
+46,Combination,High,Medium,6,6,Moderate,2.93,Fine Lines/Aging
+56,Normal,High,Medium,6,9,High,2.18,Fine Lines/Aging
+48,Sensitive,High,Medium,3,10,High,2.9,Redness/Sensitivity
+30,Normal,Medium,Medium,7,6,Moderate,1.96,Acne
+34,Combination,Medium,Medium,7,8,Moderate,0.59,Acne
+57,Combination,High,Medium,7,8,Moderate,2.55,Redness/Sensitivity
+27,Oily,Low,Medium,6,9,Moderate,1.16,Dryness
+43,Dry,High,Low,7,7,Moderate,2.46,Dryness
+45,Dry,High,Low,10,5,Moderate,0.97,Dryness
+57,Dry,High,Low,5,10,Moderate,1.62,Dryness
+55,Dry,Medium,Low,3,8,Moderate,1.85,Dryness
+41,Dry,Low,Low,2,10,Moderate,3.16,Dryness
+33,Normal,High,Low,9,7,Low,1.47,Dryness
+36,Oily,Medium,Medium,9,7,Moderate,1.34,Acne
+38,Combination,Medium,Medium,4,10,Moderate,2.49,Fine Lines/Aging
+28,Dry,High,Medium,4,10,Moderate,2.03,Redness/Sensitivity
+50,Combination,Low,Medium,5,7,Low,2.53,Fine Lines/Aging
+27,Oily,Medium,Low,8,9,High,1.79,Acne
+51,Normal,High,High,3,6,High,2.77,Fine Lines/Aging
+57,Oily,High,High,2,10,Low,3.88,Oiliness
+68,Combination,High,Low,10,4,High,2.41,Redness/Sensitivity
+22,Dry,Medium,Medium,6,10,Moderate,2.35,Dryness
+57,Sensitive,High,Medium,6,8,Moderate,0.87,Redness/Sensitivity
+20,Dry,Low,Medium,5,10,High,1.92,Dryness
+34,Normal,High,Medium,6,10,High,2.97,Redness/Sensitivity
+25,Dry,High,Medium,2,10,High,2.34,Dryness
+24,Normal,High,High,4,9,Moderate,2.69,Normal/None
+25,Normal,Medium,Medium,6,7,Low,2.24,Oiliness
+18,Dry,High,Medium,1,10,Low,0.85,Dryness
+61,Oily,Low,Medium,5,8,Moderate,3.01,Oiliness
+19,Oily,High,Medium,5,8,High,1.61,Normal/None
+37,Oily,Low,Medium,5,10,Low,1.29,Normal/None
+54,Sensitive,High,Medium,4,8,Moderate,2.38,Redness/Sensitivity
+70,Dry,Medium,Medium,4,9,Moderate,3.45,Acne
+62,Oily,High,Medium,2,10,Moderate,1.4,Fine Lines/Aging
+23,Sensitive,High,Medium,6,8,High,2.72,Redness/Sensitivity
+70,Oily,Low,Medium,5,8,Moderate,2.32,Acne
+51,Dry,High,Medium,3,10,Moderate,2.73,Redness/Sensitivity
+25,Combination,Low,Medium,6,8,High,3.55,Normal/None
+40,Sensitive,High,Low,5,8,Low,1.58,Redness/Sensitivity
+66,Combination,Low,Medium,5,9,Moderate,3.01,Fine Lines/Aging
+37,Normal,Low,High,1,10,Low,2.96,Dullness
+26,Sensitive,Medium,Medium,7,7,Moderate,3.63,Redness/Sensitivity
+64,Oily,Medium,High,3,10,Moderate,2.6,Acne
+68,Sensitive,High,Medium,6,9,Moderate,2.33,Redness/Sensitivity
+69,Combination,High,Medium,4,7,Moderate,1.82,Fine Lines/Aging
+68,Sensitive,Low,Medium,5,10,Moderate,1.03,Redness/Sensitivity
+64,Dry,High,Low,8,10,Moderate,1.98,Dryness
+40,Oily,Low,Low,7,7,Low,1.99,Acne
+26,Combination,Medium,Medium,8,6,Moderate,2.11,Acne
+49,Normal,Low,Medium,6,9,Moderate,2.68,Fine Lines/Aging
+28,Normal,Low,Medium,6,7,Moderate,1.04,Dryness
+42,Sensitive,High,High,2,10,Moderate,2.05,Redness/Sensitivity
+52,Normal,High,Medium,5,8,Moderate,3.8,Redness/Sensitivity
+68,Dry,High,Medium,5,10,High,3.4,Fine Lines/Aging
+31,Dry,High,Low,8,6,Moderate,2.69,Dryness
+29,Oily,Medium,Medium,4,9,High,2.91,Oiliness
+56,Oily,Low,Medium,6,10,Moderate,1.91,Fine Lines/Aging
+16,Oily,Medium,Medium,6,8,High,1.2,Normal/None
+47,Combination,High,Low,8,8,Moderate,2.57,Acne
+57,Combination,Low,Medium,5,10,Moderate,0.5,Fine Lines/Aging
+46,Normal,Low,Low,7,7,High,2.34,Fine Lines/Aging
+37,Dry,High,Medium,2,9,High,2.6,Redness/Sensitivity
+61,Combination,Low,Medium,2,8,Moderate,1.84,Dryness
+36,Combination,High,High,1,10,Low,3.64,Acne
+55,Sensitive,High,Medium,7,9,Moderate,3.66,Redness/Sensitivity
+41,Normal,High,Medium,7,10,Low,2.73,Acne
+17,Combination,High,Medium,7,8,High,1.86,Redness/Sensitivity
+45,Normal,Medium,High,4,7,Moderate,3.74,Fine Lines/Aging
+18,Normal,Medium,Medium,4,6,Low,2.4,Redness/Sensitivity
+67,Combination,High,Medium,5,10,Low,1.15,Redness/Sensitivity
+49,Dry,High,Medium,8,8,Low,1.93,Dryness
+36,Dry,Medium,Low,9,7,Low,2.67,Dryness
+42,Dry,High,Low,7,8,Moderate,1.72,Dryness
+50,Normal,High,Low,6,7,High,2.71,Fine Lines/Aging
+30,Normal,Low,Medium,8,7,Low,2.15,Acne
+31,Combination,High,Medium,5,10,High,1.72,Redness/Sensitivity
+39,Dry,High,Low,5,10,Low,1.68,Dryness
+30,Oily,Medium,Medium,5,8,Low,1.08,Normal/None
+57,Combination,High,High,4,8,High,3.29,Redness/Sensitivity
+21,Dry,High,Low,5,8,High,1.87,Dryness
+61,Sensitive,High,Medium,3,9,Moderate,2.43,Redness/Sensitivity
+35,Oily,Low,Low,8,10,Moderate,1.09,Acne
+46,Normal,High,Medium,7,8,Moderate,1.29,Redness/Sensitivity
+24,Normal,High,Low,8,6,Moderate,1.25,Dullness
+37,Combination,High,Medium,2,10,Low,1.67,Dryness
+57,Oily,Medium,Medium,9,8,Low,2.04,Acne
+30,Sensitive,Medium,High,2,9,Low,2.19,Redness/Sensitivity
+23,Normal,Medium,Medium,3,10,High,1.18,Oiliness
+44,Normal,Low,Low,4,10,High,2.47,Normal/None
+24,Normal,High,Medium,8,8,Moderate,1.6,Redness/Sensitivity
+33,Oily,High,Medium,6,7,Low,2.33,Normal/None
+40,Normal,Low,Medium,5,8,Moderate,1.99,Normal/None
+47,Dry,High,Medium,4,7,Moderate,2.14,Fine Lines/Aging
+51,Dry,Low,Medium,3,10,Moderate,1.6,Fine Lines/Aging
+53,Combination,Low,High,8,8,Low,3.28,Fine Lines/Aging
+62,Normal,High,Low,7,7,High,1.57,Fine Lines/Aging
+19,Oily,Low,Low,8,10,Moderate,1.88,Dryness
+35,Oily,High,Medium,6,10,Moderate,2.29,Redness/Sensitivity
+16,Oily,High,High,1,8,Moderate,2.0,Oiliness
+16,Oily,Low,Medium,3,7,High,1.99,Normal/None
+27,Normal,Low,Low,6,7,Moderate,0.75,Dryness
+48,Oily,Low,Medium,5,10,Moderate,1.65,Fine Lines/Aging
+65,Sensitive,Medium,Low,4,10,Moderate,1.43,Redness/Sensitivity
+58,Oily,High,High,3,10,Moderate,3.54,Redness/Sensitivity
+51,Oily,High,Medium,7,8,Moderate,4.01,Oiliness
+58,Combination,High,Medium,6,8,Moderate,2.16,Fine Lines/Aging
+25,Dry,High,Low,7,6,Moderate,1.08,Dryness
+62,Dry,High,Medium,4,10,Moderate,2.79,Redness/Sensitivity
+64,Sensitive,High,Medium,6,8,High,1.82,Redness/Sensitivity
+21,Sensitive,High,High,3,10,Low,1.46,Dryness
+41,Combination,High,Low,5,10,Low,1.4,Dryness
+61,Oily,High,Medium,1,10,Moderate,1.8,Oiliness
+42,Normal,Low,High,2,10,Moderate,1.92,Normal/None
+62,Sensitive,High,Medium,5,7,Moderate,1.15,Redness/Sensitivity
+67,Sensitive,High,Low,10,10,Moderate,1.64,Redness/Sensitivity
+42,Oily,Low,High,2,10,Moderate,3.02,Fine Lines/Aging
+19,Dry,Low,Medium,3,10,Low,1.87,Dryness
+34,Dry,Low,Low,6,10,Moderate,2.3,Dryness
+27,Oily,Low,Low,9,7,Moderate,0.5,Acne
+42,Combination,Medium,Medium,6,10,Moderate,2.96,Fine Lines/Aging
+48,Dry,High,Medium,7,9,Moderate,1.65,Dryness
+41,Dry,Low,Medium,5,8,Moderate,3.1,Dryness
+26,Oily,High,Medium,4,8,Moderate,2.32,Oiliness
+32,Normal,High,Medium,6,9,Low,1.45,Redness/Sensitivity
+53,Oily,High,Medium,4,9,Moderate,0.86,Fine Lines/Aging
+17,Dry,High,Medium,7,10,Low,3.64,Redness/Sensitivity
+27,Oily,Low,High,2,10,Moderate,2.84,Oiliness
+65,Sensitive,High,Medium,7,8,Moderate,2.89,Acne
+21,Oily,High,Medium,6,9,Moderate,3.66,Redness/Sensitivity
+38,Normal,High,Medium,5,6,Moderate,2.38,Fine Lines/Aging
+27,Oily,Medium,High,2,9,Moderate,3.28,Oiliness
+21,Oily,High,Medium,4,10,High,2.22,Redness/Sensitivity
+39,Oily,High,Medium,8,9,Moderate,2.79,Acne
+44,Oily,Low,Medium,5,9,Moderate,1.7,Dryness
+25,Oily,High,Medium,6,10,Moderate,1.8,Acne
+20,Normal,Medium,Medium,4,10,Low,1.98,Normal/None
+23,Combination,Medium,Medium,5,8,Low,0.89,Normal/None
+51,Oily,Low,Medium,3,10,Moderate,2.46,Dryness
+63,Normal,High,Low,6,9,Moderate,1.95,Fine Lines/Aging
+25,Normal,Low,Low,6,8,Moderate,0.61,Dryness
+33,Oily,High,Medium,6,10,Moderate,1.83,Redness/Sensitivity
+34,Dry,High,Low,4,8,Low,1.62,Fine Lines/Aging
+35,Oily,High,Medium,5,9,Low,2.58,Fine Lines/Aging
+29,Oily,Low,Medium,7,9,High,2.83,Acne
+19,Normal,High,Medium,5,9,Moderate,3.36,Normal/None
+44,Sensitive,High,Medium,5,8,Moderate,2.62,Redness/Sensitivity
+35,Sensitive,High,Low,9,7,Low,1.46,Dryness
+34,Sensitive,High,High,4,10,High,2.55,Redness/Sensitivity
+30,Dry,Low,Medium,8,7,Moderate,1.92,Dryness
+67,Oily,Low,High,3,8,Low,2.29,Normal/None
+49,Dry,Low,Low,7,10,High,2.65,Dryness
+39,Oily,High,Medium,7,9,Moderate,1.7,Acne
+27,Oily,High,Medium,4,10,Moderate,2.21,Oiliness
+60,Oily,High,Medium,3,10,Moderate,2.57,Fine Lines/Aging
+64,Normal,High,Medium,2,10,Low,1.09,Redness/Sensitivity
+17,Dry,Low,Medium,4,10,Low,2.15,Dryness
+67,Oily,High,Medium,7,7,Moderate,0.94,Oiliness
+54,Combination,Medium,Medium,3,10,Moderate,3.08,Acne
+21,Dry,Low,Low,6,8,Moderate,2.62,Dryness
+57,Combination,High,High,3,9,Moderate,3.5,Normal/None
+21,Dry,Medium,Low,5,7,Moderate,1.31,Dryness
+18,Normal,Low,Medium,3,9,Low,2.81,Normal/None
+22,Oily,High,Medium,5,10,Low,2.65,Redness/Sensitivity
+41,Normal,Low,Medium,4,9,Moderate,2.05,Dryness
+50,Oily,High,Medium,3,8,Low,1.6,Dryness
+38,Oily,Low,Medium,4,7,Moderate,1.33,Redness/Sensitivity
+22,Normal,Low,Medium,4,10,Low,0.82,Fine Lines/Aging
+26,Dry,Medium,Medium,3,10,Moderate,1.6,Oiliness
+62,Oily,High,Medium,8,6,High,1.6,Redness/Sensitivity
+68,Sensitive,Medium,High,5,10,Moderate,3.48,Fine Lines/Aging
+57,Oily,Low,Medium,1,10,Low,0.7,Dryness
+21,Normal,Medium,Medium,4,10,Moderate,2.32,Oiliness
+61,Normal,Medium,Medium,7,4,High,2.95,Acne
+54,Dry,Medium,Medium,4,10,High,2.89,Fine Lines/Aging
+44,Normal,Medium,Low,8,5,Moderate,2.56,Fine Lines/Aging
+23,Oily,Low,High,4,9,Low,2.66,Redness/Sensitivity
+70,Combination,Low,Medium,7,7,Moderate,1.84,Fine Lines/Aging
+40,Oily,High,Low,8,7,High,2.67,Oiliness
+18,Oily,Low,Medium,6,9,Moderate,1.97,Oiliness
+27,Dry,Low,High,3,7,High,3.64,Dryness
+38,Sensitive,High,Medium,4,9,Low,3.58,Redness/Sensitivity
+19,Combination,Medium,Medium,8,9,Moderate,1.24,Acne
+33,Sensitive,High,Medium,4,8,Low,0.5,Redness/Sensitivity
+41,Combination,Medium,Medium,7,6,Low,2.36,Acne
+68,Combination,High,Medium,5,9,Moderate,3.06,Redness/Sensitivity
+20,Normal,High,High,6,8,Moderate,3.77,Redness/Sensitivity
+47,Sensitive,Medium,Medium,3,9,Low,2.49,Fine Lines/Aging
+66,Normal,High,High,4,8,Moderate,3.32,Fine Lines/Aging
+60,Dry,Medium,Medium,4,10,Moderate,3.53,Fine Lines/Aging
+66,Combination,High,High,6,9,Moderate,3.37,Fine Lines/Aging
+25,Normal,Medium,Medium,6,7,Moderate,2.9,Dullness
+60,Oily,High,Medium,6,7,Moderate,1.17,Redness/Sensitivity
+69,Dry,High,Medium,5,9,Moderate,2.19,Redness/Sensitivity
+33,Dry,Medium,Medium,4,8,High,2.84,Redness/Sensitivity
+43,Combination,Medium,Low,6,9,Low,1.82,Oiliness
+45,Dry,High,Medium,3,10,High,2.57,Redness/Sensitivity
+43,Combination,High,Medium,8,8,Moderate,3.45,Redness/Sensitivity
+31,Normal,High,Low,5,7,Moderate,1.59,Dryness
+69,Combination,High,Medium,5,10,Moderate,2.84,Acne
+68,Oily,Low,High,6,8,Moderate,2.45,Oiliness
+36,Sensitive,High,Low,5,9,Moderate,1.51,Redness/Sensitivity
+60,Normal,High,High,2,10,High,1.74,Fine Lines/Aging
+37,Dry,Low,Low,3,10,Low,0.54,Fine Lines/Aging
+59,Dry,High,Low,8,8,Moderate,2.59,Dryness
+48,Dry,High,Low,6,8,Low,1.85,Dryness
+41,Dry,Medium,Medium,2,10,Moderate,1.54,Redness/Sensitivity
+23,Combination,Low,Low,6,10,High,1.1,Dryness
+52,Sensitive,Medium,Medium,4,10,Low,2.25,Fine Lines/Aging
+33,Combination,Low,Low,4,10,Low,1.76,Dryness
+27,Normal,High,Medium,3,8,Moderate,1.63,Redness/Sensitivity
+26,Normal,High,Low,7,10,High,1.83,Acne
+70,Combination,High,High,2,10,Moderate,2.01,Redness/Sensitivity
+21,Combination,Medium,Medium,4,9,Low,2.28,Dryness
+59,Dry,Medium,Low,6,8,Low,1.64,Dryness
+63,Sensitive,High,Low,9,6,Moderate,1.25,Redness/Sensitivity
+17,Dry,High,Low,7,10,Low,1.85,Dryness
+48,Combination,Low,Medium,4,10,Moderate,3.04,Dryness
+47,Sensitive,High,Low,9,7,Moderate,2.23,Redness/Sensitivity
+35,Combination,High,High,3,10,Moderate,2.25,Dullness
+52,Oily,High,Medium,6,8,High,2.34,Fine Lines/Aging
+38,Normal,High,Medium,6,6,Moderate,1.49,Redness/Sensitivity
+40,Oily,Low,Medium,4,7,High,1.86,Oiliness
+39,Combination,Medium,Low,7,7,Moderate,0.87,Dryness
+60,Dry,Medium,Medium,4,8,Moderate,3.14,Fine Lines/Aging
+50,Combination,High,High,7,9,Moderate,2.57,Acne
+36,Sensitive,High,Medium,2,10,Moderate,2.27,Redness/Sensitivity
+66,Oily,Low,Medium,6,8,Moderate,2.44,Fine Lines/Aging
+60,Dry,Low,Low,5,10,Low,2.17,Dryness
+67,Combination,High,Low,8,7,High,2.01,Dryness
+56,Dry,High,Low,5,9,Low,1.64,Fine Lines/Aging
+37,Oily,High,Medium,8,8,Moderate,1.82,Acne
+58,Oily,High,High,7,10,Moderate,4.21,Acne
+34,Dry,High,Medium,5,9,Moderate,3.02,Dryness
+30,Combination,High,Medium,7,8,High,2.73,Redness/Sensitivity
+40,Normal,High,Medium,7,6,Moderate,3.29,Acne
+69,Oily,High,Medium,6,7,Moderate,3.19,Acne
+47,Normal,Medium,Medium,1,10,Moderate,1.1,Fine Lines/Aging
+37,Dry,High,Medium,4,7,Moderate,2.02,Redness/Sensitivity
+41,Dry,High,Low,8,10,Moderate,2.19,Dryness
+32,Combination,Low,High,3,10,Low,2.39,Normal/None
+52,Dry,High,Low,7,7,Moderate,2.02,Dryness
+35,Normal,Medium,Medium,7,7,Moderate,2.12,Acne
+46,Sensitive,Medium,Medium,4,10,High,2.23,Redness/Sensitivity
+36,Normal,Low,High,2,10,Moderate,3.04,Fine Lines/Aging
+33,Normal,Low,Medium,4,9,Moderate,1.05,Normal/None
+69,Oily,High,Low,10,7,Low,1.56,Acne
+35,Oily,High,Low,4,9,Moderate,0.73,Fine Lines/Aging
+19,Oily,Low,Medium,4,10,Low,1.08,Redness/Sensitivity
+36,Combination,High,Medium,4,9,Low,2.15,Fine Lines/Aging
+45,Combination,Medium,Medium,8,8,Low,2.17,Fine Lines/Aging
+21,Oily,Medium,Medium,5,10,Moderate,1.95,Oiliness
+32,Oily,High,High,4,9,Moderate,3.1,Normal/None
+25,Dry,High,Low,8,6,Moderate,3.28,Dryness
+43,Normal,Medium,Medium,7,6,Moderate,2.14,Dullness
+55,Normal,High,Medium,4,10,High,2.8,Normal/None
+69,Combination,Medium,High,3,9,Low,1.54,Normal/None
+37,Sensitive,High,Medium,8,8,Moderate,2.7,Redness/Sensitivity
+63,Dry,High,Low,6,6,Moderate,1.24,Dryness
+27,Combination,Medium,High,2,10,Moderate,3.64,Redness/Sensitivity
+58,Normal,High,High,2,9,Moderate,3.11,Fine Lines/Aging
+46,Dry,High,Medium,3,10,Moderate,1.24,Fine Lines/Aging
+57,Sensitive,High,High,3,9,Moderate,1.57,Redness/Sensitivity
+57,Oily,High,High,1,10,Moderate,2.54,Redness/Sensitivity
+45,Combination,High,High,3,10,High,2.33,Normal/None
+30,Combination,High,Medium,4,10,Moderate,2.64,Redness/Sensitivity
+44,Sensitive,High,Medium,5,10,Low,1.61,Redness/Sensitivity
+61,Normal,Medium,Medium,9,9,Moderate,3.42,Fine Lines/Aging
+69,Dry,Medium,Low,5,9,Moderate,2.21,Dryness
+67,Combination,High,High,5,9,Moderate,4.14,Redness/Sensitivity
+25,Combination,High,Medium,7,10,Moderate,2.68,Redness/Sensitivity
+48,Normal,Medium,Medium,5,10,Low,0.82,Normal/None
+21,Combination,High,High,6,9,Low,3.57,Redness/Sensitivity
+52,Dry,High,Medium,6,8,High,3.48,Redness/Sensitivity
+70,Normal,Low,Medium,6,8,Low,2.2,Fine Lines/Aging
+18,Combination,Low,Medium,10,8,Moderate,2.72,Fine Lines/Aging
+52,Dry,Medium,Low,7,10,Low,0.95,Dryness
+68,Normal,High,Medium,3,9,Low,0.5,Redness/Sensitivity
+62,Sensitive,High,Medium,6,8,Moderate,2.17,Redness/Sensitivity
+37,Combination,High,High,4,8,Moderate,3.3,Normal/None
+21,Sensitive,High,Medium,6,10,Moderate,2.52,Redness/Sensitivity
+66,Dry,Low,High,3,9,Moderate,3.57,Fine Lines/Aging
+66,Sensitive,High,Medium,3,10,Moderate,3.26,Redness/Sensitivity
+47,Oily,High,Medium,6,9,Low,1.92,Oiliness
+69,Normal,Medium,Medium,7,7,Low,2.85,Fine Lines/Aging
+16,Normal,Medium,Medium,7,10,High,3.82,Oiliness
+49,Combination,Medium,Low,7,6,High,2.54,Dryness
+18,Sensitive,High,Medium,6,10,Low,1.73,Redness/Sensitivity
+67,Combination,High,Low,6,9,Low,2.01,Dryness
+53,Normal,High,Low,4,7,Moderate,0.5,Fine Lines/Aging
+66,Dry,Low,Medium,7,10,Moderate,2.42,Fine Lines/Aging
+46,Normal,Low,Medium,8,9,Moderate,2.78,Fine Lines/Aging
+20,Normal,Medium,Medium,5,8,Moderate,2.32,Normal/None
+17,Oily,Medium,High,5,8,Moderate,2.48,Oiliness
+34,Normal,Medium,Medium,9,5,Moderate,2.17,Normal/None
+56,Combination,Medium,Medium,5,10,High,1.0,Normal/None
+24,Combination,Low,High,6,7,Moderate,3.53,Oiliness
+62,Combination,Medium,Medium,6,7,High,2.31,Normal/None
+29,Dry,Medium,Medium,5,9,High,2.11,Normal/None
+43,Normal,Medium,Medium,4,7,Moderate,3.29,Fine Lines/Aging
+27,Oily,Low,Medium,6,7,Low,2.68,Acne
+41,Dry,High,Medium,5,10,Moderate,2.42,Dryness
+40,Normal,Medium,Medium,9,8,Low,2.52,Normal/None
+16,Dry,High,Low,7,8,Moderate,1.28,Dryness
+47,Oily,Low,High,4,9,Low,1.84,Fine Lines/Aging
+59,Combination,Low,High,7,7,Moderate,3.24,Dullness
+67,Dry,Medium,Low,6,8,Moderate,1.66,Dryness
+34,Dry,Medium,Low,8,7,Moderate,1.4,Dryness
+64,Dry,Medium,Medium,4,9,Moderate,2.26,Fine Lines/Aging
+64,Normal,Low,Low,6,8,Low,1.98,Fine Lines/Aging
+70,Dry,Medium,Medium,5,8,Moderate,2.72,Dryness
+36,Normal,Medium,Low,6,10,High,1.5,Dryness
+62,Normal,Medium,Low,4,10,Moderate,0.5,Dryness
+47,Oily,Low,Low,7,7,Moderate,2.94,Acne
+19,Sensitive,High,Medium,6,7,Moderate,1.33,Redness/Sensitivity
+30,Oily,High,Low,8,7,Low,1.41,Acne
+52,Normal,Medium,Low,5,10,Moderate,0.5,Fine Lines/Aging
+24,Oily,High,High,5,8,Moderate,3.02,Fine Lines/Aging
+39,Normal,Medium,Medium,7,8,Moderate,2.48,Acne
+58,Dry,High,Low,4,10,Moderate,2.45,Dryness
+24,Combination,High,Medium,8,7,Moderate,2.44,Redness/Sensitivity
+43,Dry,Low,Low,8,7,Moderate,0.55,Dryness
+27,Normal,High,Low,8,9,Low,1.11,Dryness
+45,Dry,Medium,Low,6,9,Low,1.54,Fine Lines/Aging
+29,Oily,Medium,Medium,5,10,Moderate,1.6,Oiliness
+69,Dry,High,Low,6,9,Moderate,1.98,Dryness
+20,Normal,High,Medium,6,10,Moderate,2.4,Normal/None
+68,Normal,High,High,4,10,Moderate,3.01,Fine Lines/Aging
+59,Sensitive,Medium,Low,8,10,Moderate,1.02,Redness/Sensitivity
+63,Combination,Low,Medium,7,10,High,2.59,Normal/None
+62,Sensitive,High,Medium,4,10,High,3.17,Redness/Sensitivity
+26,Dry,High,Low,9,6,Low,1.16,Dryness
+67,Combination,High,Medium,6,10,Low,1.75,Redness/Sensitivity
+48,Normal,High,Medium,3,10,Moderate,2.57,Fine Lines/Aging
+68,Normal,High,Medium,4,10,Moderate,2.21,Fine Lines/Aging
+64,Sensitive,High,Medium,8,6,Moderate,2.74,Redness/Sensitivity
+47,Combination,Low,Low,9,8,Low,1.98,Dryness
+36,Sensitive,Medium,Low,8,7,Moderate,1.95,Redness/Sensitivity
+22,Combination,Low,Low,8,8,Moderate,1.26,Dryness
+21,Oily,Medium,Medium,8,7,Low,2.1,Oiliness
+37,Combination,High,Medium,7,9,High,2.68,Redness/Sensitivity
+60,Normal,Low,Medium,6,7,Moderate,1.41,Fine Lines/Aging
+43,Sensitive,High,High,7,9,Moderate,2.67,Redness/Sensitivity
+42,Combination,Medium,Medium,7,8,Low,2.91,Acne
+29,Oily,Medium,Medium,4,10,Moderate,1.67,Redness/Sensitivity
+47,Oily,High,Medium,7,10,Moderate,1.62,Redness/Sensitivity
+51,Oily,Low,Low,8,7,Moderate,1.59,Acne
+70,Normal,Medium,Low,5,9,Moderate,0.86,Dryness
+56,Oily,Low,High,5,9,High,4.2,Fine Lines/Aging
+49,Combination,High,Medium,6,9,Low,1.54,Fine Lines/Aging
+66,Normal,High,Medium,4,10,High,1.91,Fine Lines/Aging
+39,Combination,High,High,3,10,Moderate,1.3,Redness/Sensitivity
+67,Dry,High,Low,8,7,Low,1.59,Dryness
+36,Normal,Medium,Medium,5,10,High,2.04,Normal/None
+23,Oily,High,Medium,6,8,High,3.75,Oiliness
+38,Sensitive,Low,Medium,4,7,Low,0.9,Redness/Sensitivity
+23,Oily,High,Medium,8,7,Moderate,0.97,Acne
+22,Oily,High,Medium,7,6,Moderate,2.64,Oiliness
+64,Oily,High,Medium,5,6,Moderate,2.11,Oiliness
+59,Combination,High,High,3,9,High,2.42,Normal/None
+28,Oily,High,Medium,5,9,High,3.05,Oiliness
+62,Normal,High,Medium,7,10,Moderate,2.31,Fine Lines/Aging
+19,Combination,Low,Medium,6,9,High,2.56,Oiliness
+31,Combination,Low,Medium,6,9,Moderate,1.08,Dullness
+54,Oily,High,Medium,6,7,Moderate,0.87,Redness/Sensitivity
+32,Oily,Low,Medium,7,9,Low,1.34,Acne
+56,Normal,Low,Medium,5,10,High,1.73,Normal/None
+64,Oily,Low,Medium,6,9,Low,2.12,Acne
+19,Combination,Medium,Low,4,10,Moderate,0.76,Dryness
+17,Dry,High,Low,10,5,Moderate,1.84,Dryness
+67,Normal,High,Medium,5,10,Moderate,2.06,Fine Lines/Aging
+44,Oily,High,Medium,6,10,Moderate,2.17,Fine Lines/Aging
+43,Normal,Medium,Low,7,9,Low,2.22,Acne
+41,Oily,Medium,Medium,5,8,High,2.34,Normal/None
+39,Combination,Medium,Medium,6,8,Moderate,1.67,Redness/Sensitivity
+53,Oily,High,High,5,8,High,3.6,Normal/None
+47,Sensitive,High,High,4,9,Moderate,1.94,Redness/Sensitivity
+24,Combination,Low,High,6,9,High,3.74,Normal/None
+50,Oily,Low,High,2,10,Moderate,1.94,Fine Lines/Aging
+52,Oily,Medium,Medium,9,9,High,2.59,Normal/None
+22,Dry,High,Low,7,9,Moderate,2.09,Dryness
+36,Oily,Low,Medium,7,7,Moderate,2.38,Acne
+59,Oily,Low,Medium,2,10,High,2.26,Dullness
+50,Combination,Medium,High,4,9,High,2.68,Fine Lines/Aging
+23,Normal,High,Medium,8,7,Moderate,3.42,Acne
+18,Oily,Medium,Low,10,9,Moderate,3.04,Acne
+47,Normal,High,Medium,8,10,Moderate,3.04,Fine Lines/Aging
+41,Dry,High,Low,8,9,Moderate,1.13,Dryness
+68,Sensitive,High,Low,7,8,Moderate,1.26,Dryness
+44,Oily,Low,Medium,4,8,Low,2.07,Fine Lines/Aging
+67,Combination,Medium,Medium,7,8,Moderate,2.82,Fine Lines/Aging
+27,Combination,High,Medium,3,9,High,2.18,Oiliness
+40,Oily,Medium,High,3,10,Low,1.34,Dryness
+23,Oily,High,Medium,3,8,High,3.72,Dryness
+47,Dry,Low,Low,7,9,Moderate,2.75,Dryness
+26,Combination,Low,Medium,5,8,Moderate,3.05,Oiliness
+43,Normal,Low,Medium,6,9,Moderate,1.85,Dryness
+34,Combination,Low,Medium,5,10,Moderate,1.78,Oiliness
+26,Combination,Medium,High,3,10,Moderate,2.96,Normal/None
+21,Combination,Medium,Medium,4,9,High,2.39,Normal/None
+44,Normal,High,Medium,4,10,Moderate,1.71,Redness/Sensitivity
+68,Normal,Low,Medium,3,9,Low,1.17,Fine Lines/Aging
+26,Combination,High,Medium,4,10,Moderate,1.79,Dryness
+38,Dry,Low,Medium,3,10,Low,2.6,Normal/None
+28,Combination,Medium,Low,7,9,Moderate,0.99,Dryness
+60,Oily,Low,Medium,7,7,Moderate,2.7,Acne
+38,Oily,Low,Medium,3,10,High,2.03,Oiliness
+69,Combination,Low,Medium,5,10,Moderate,2.03,Dryness
+29,Dry,Low,Medium,9,6,Moderate,2.08,Acne
+20,Oily,Medium,Medium,4,8,Low,1.72,Redness/Sensitivity
+48,Oily,Medium,Medium,6,9,Moderate,1.97,Redness/Sensitivity
+51,Normal,Medium,Low,6,8,Low,1.54,Acne
+70,Combination,Medium,Medium,8,6,Moderate,1.74,Fine Lines/Aging
+63,Oily,Low,Medium,6,10,High,3.66,Fine Lines/Aging
+64,Oily,Low,Medium,5,7,High,2.62,Normal/None
+50,Normal,High,Medium,6,8,Moderate,2.1,Redness/Sensitivity
+35,Sensitive,High,Low,6,8,Moderate,1.68,Redness/Sensitivity
+39,Dry,Medium,Low,5,9,Low,1.57,Dryness
+23,Sensitive,Medium,High,3,9,Moderate,1.69,Redness/Sensitivity
+39,Sensitive,Medium,Medium,8,9,Moderate,2.81,Redness/Sensitivity
+36,Dry,Low,Low,8,8,Moderate,1.6,Dryness
+17,Combination,Low,Low,3,10,Low,0.5,Dryness
+27,Combination,Medium,Medium,5,8,Moderate,2.25,Dullness
+45,Normal,High,Medium,5,10,Low,1.68,Fine Lines/Aging
+36,Dry,High,Medium,3,7,Moderate,1.73,Dryness
+70,Combination,High,High,2,8,Moderate,2.93,Redness/Sensitivity
+42,Combination,Medium,Medium,4,10,Low,0.5,Normal/None
+68,Combination,Medium,Medium,5,10,Moderate,3.46,Fine Lines/Aging
+52,Sensitive,Medium,High,3,10,Moderate,3.04,Redness/Sensitivity
+18,Normal,Low,Medium,6,9,Moderate,1.7,Normal/None
+27,Combination,Medium,Medium,8,8,High,2.24,Acne
+54,Combination,Low,Medium,7,9,Moderate,2.6,Fine Lines/Aging
+45,Oily,Medium,Low,5,8,Low,2.32,Fine Lines/Aging
+32,Oily,Low,High,2,10,Moderate,1.69,Oiliness
+44,Dry,High,Low,7,9,Moderate,0.91,Dryness
+65,Combination,High,High,6,10,High,4.29,Normal/None
+37,Dry,High,Medium,6,10,Moderate,2.96,Dryness
+18,Combination,Low,Medium,9,8,Moderate,2.33,Acne
+33,Oily,Low,Medium,4,8,Low,2.04,Oiliness
+67,Dry,High,High,1,10,Moderate,2.7,Fine Lines/Aging
+57,Normal,High,High,3,8,Moderate,2.79,Fine Lines/Aging
+62,Oily,Medium,Medium,6,9,Low,0.5,Oiliness
+66,Sensitive,Medium,High,6,8,Moderate,1.92,Redness/Sensitivity
+22,Oily,High,Medium,3,9,Moderate,1.84,Oiliness
+31,Sensitive,High,Medium,3,10,Moderate,2.07,Redness/Sensitivity
+19,Oily,High,Medium,5,9,Low,2.52,Fine Lines/Aging
+16,Sensitive,High,Medium,3,10,Moderate,0.77,Redness/Sensitivity
+61,Normal,Low,Low,7,7,Moderate,1.12,Fine Lines/Aging
+67,Oily,High,Medium,5,9,Moderate,1.65,Fine Lines/Aging
+24,Oily,High,High,4,8,Moderate,2.32,Redness/Sensitivity
+55,Oily,Low,High,4,9,Moderate,2.87,Fine Lines/Aging
+45,Normal,Low,Medium,6,8,Moderate,3.51,Acne
+19,Combination,Low,Medium,6,10,Moderate,1.97,Dullness
+66,Dry,High,Medium,6,8,Moderate,2.86,Fine Lines/Aging
+63,Normal,Medium,Medium,6,6,Moderate,2.77,Fine Lines/Aging
+47,Normal,High,Medium,5,10,High,3.03,Redness/Sensitivity
+54,Normal,High,High,3,10,High,2.58,Redness/Sensitivity
+37,Combination,Low,Medium,4,9,High,2.28,Oiliness
+59,Normal,Low,Medium,5,8,High,1.75,Fine Lines/Aging
+40,Combination,High,Medium,10,5,High,1.69,Dryness
+70,Sensitive,High,Medium,3,10,Low,2.18,Redness/Sensitivity
+19,Dry,Low,Low,5,9,Moderate,2.16,Dryness
+25,Oily,High,Medium,6,6,High,2.27,Oiliness
+69,Oily,Low,Medium,5,9,High,3.13,Normal/None
+31,Normal,High,Low,8,9,Low,1.74,Oiliness
+33,Dry,High,Medium,5,9,Moderate,1.47,Dryness
+59,Sensitive,High,Medium,5,8,Moderate,1.99,Redness/Sensitivity
+26,Normal,Medium,Medium,7,7,High,3.26,Redness/Sensitivity
+44,Normal,Medium,Low,9,6,Low,1.08,Acne
+31,Combination,High,Low,8,10,Low,2.07,Dryness
+26,Dry,High,Low,5,9,Low,1.86,Dryness
+69,Combination,Medium,Medium,5,7,Moderate,1.59,Fine Lines/Aging
+26,Oily,Low,Medium,6,9,High,2.37,Oiliness
+21,Normal,Medium,Low,6,9,Moderate,0.94,Dryness
+53,Sensitive,High,Medium,4,9,Moderate,2.29,Redness/Sensitivity
+63,Combination,Low,Medium,7,7,Moderate,1.11,Dryness
+23,Combination,High,Medium,6,7,Moderate,3.06,Redness/Sensitivity
+54,Dry,Low,Medium,5,10,Moderate,2.13,Dryness
+45,Combination,High,Medium,3,10,Moderate,1.74,Redness/Sensitivity
+61,Normal,High,Medium,6,9,Low,2.83,Redness/Sensitivity
+22,Normal,High,Medium,2,10,Moderate,1.37,Redness/Sensitivity
+69,Oily,Low,Medium,4,10,Moderate,1.6,Fine Lines/Aging
+50,Oily,Medium,Low,4,9,Moderate,0.74,Fine Lines/Aging
+62,Normal,Medium,High,6,8,High,3.65,Fine Lines/Aging
+35,Oily,Medium,Medium,9,9,Moderate,3.7,Normal/None
+67,Combination,Low,Medium,7,10,Moderate,0.86,Dryness
+50,Combination,Medium,Low,8,6,Moderate,1.55,Fine Lines/Aging
+22,Sensitive,Medium,Low,7,8,Low,1.96,Redness/Sensitivity
+66,Oily,Medium,Medium,8,9,Low,1.49,Acne
+59,Sensitive,High,Medium,9,10,Moderate,2.17,Redness/Sensitivity
+32,Oily,High,Medium,4,10,Low,1.81,Normal/None
+46,Normal,High,Medium,4,8,Moderate,2.53,Fine Lines/Aging
+37,Combination,High,Low,7,10,Moderate,1.43,Dryness
+45,Oily,High,Medium,5,9,Low,2.05,Redness/Sensitivity
+69,Oily,High,Medium,6,10,Moderate,1.31,Oiliness
+65,Oily,High,Low,5,10,Low,1.57,Fine Lines/Aging
+27,Normal,Low,Low,4,8,Low,0.51,Dryness
+69,Combination,Low,Low,9,8,High,2.28,Dryness
+40,Oily,Medium,High,3,10,Low,1.44,Acne
+54,Oily,Medium,High,7,8,Low,2.65,Fine Lines/Aging
+58,Normal,High,Medium,7,8,Moderate,2.15,Acne
+42,Oily,Low,High,2,8,Moderate,2.3,Oiliness
+41,Combination,Low,Medium,4,10,Moderate,2.18,Oiliness
+41,Sensitive,High,Low,4,10,High,0.9,Redness/Sensitivity
+63,Combination,High,Low,7,7,Low,0.5,Dryness
+37,Combination,Low,Medium,5,9,Moderate,1.95,Dullness
+31,Normal,Low,Medium,5,9,High,2.82,Redness/Sensitivity
+35,Combination,Medium,High,3,9,High,2.41,Oiliness
+26,Oily,Medium,Low,10,7,Moderate,1.51,Acne
+37,Oily,Low,Medium,6,6,Low,1.71,Oiliness
+22,Combination,Medium,Medium,6,10,High,2.34,Normal/None
+20,Oily,High,Medium,4,9,Moderate,2.82,Oiliness
+55,Sensitive,High,Medium,4,8,Moderate,2.78,Redness/Sensitivity
+20,Combination,High,Medium,9,4,Low,1.46,Dryness
+47,Sensitive,High,High,2,10,Moderate,2.16,Redness/Sensitivity
+58,Dry,High,Medium,6,9,High,2.82,Dryness
+55,Normal,Low,Medium,3,10,Low,2.24,Fine Lines/Aging
+40,Combination,Low,High,5,10,Low,3.22,Oiliness
+26,Dry,Low,Medium,4,10,Moderate,2.18,Dryness
+67,Normal,High,Medium,4,10,Moderate,3.13,Fine Lines/Aging
+61,Combination,High,Medium,6,8,Moderate,1.27,Dryness
+49,Sensitive,Medium,Medium,1,10,High,2.09,Redness/Sensitivity
+20,Combination,High,Medium,5,10,Moderate,0.5,Redness/Sensitivity
+17,Oily,Low,Medium,5,10,Moderate,2.32,Oiliness
+33,Normal,Medium,Medium,3,10,Moderate,2.72,Redness/Sensitivity
+24,Normal,Low,Low,9,9,Moderate,0.5,Dryness
+63,Oily,Low,High,4,10,Low,2.05,Fine Lines/Aging
+27,Dry,Low,Low,5,10,High,3.08,Dryness
+31,Dry,Medium,Medium,4,10,Low,2.34,Dryness
+69,Oily,Medium,Medium,5,10,Moderate,1.24,Fine Lines/Aging
+61,Normal,Low,Medium,8,10,Moderate,2.82,Fine Lines/Aging
+28,Oily,Low,Medium,10,6,Moderate,2.21,Acne
+37,Normal,High,Medium,7,10,Moderate,2.67,Redness/Sensitivity
+44,Oily,Medium,Low,8,8,Moderate,2.1,Acne
+52,Combination,Medium,Medium,9,7,Moderate,2.5,Fine Lines/Aging
+67,Oily,High,Medium,6,6,High,3.49,Oiliness
+63,Sensitive,High,Medium,9,8,Moderate,2.04,Redness/Sensitivity
+69,Oily,High,Medium,7,7,Moderate,2.43,Oiliness
+18,Normal,Low,Medium,6,9,Moderate,3.2,Acne
+28,Dry,High,Low,6,7,Low,1.79,Dryness
+46,Oily,Medium,Medium,2,10,High,1.7,Dryness
+18,Normal,Medium,Medium,6,9,Low,2.44,Fine Lines/Aging
+35,Combination,High,High,2,10,Moderate,3.35,Acne
+24,Sensitive,Medium,High,2,9,Moderate,3.23,Redness/Sensitivity
+67,Dry,Medium,Low,6,10,Moderate,2.77,Fine Lines/Aging
+19,Oily,Medium,High,3,7,Moderate,0.5,Normal/None
+24,Combination,High,Medium,5,9,Low,1.39,Oiliness
+26,Normal,Low,Medium,6,8,High,2.13,Normal/None
+24,Oily,Medium,Medium,6,8,Low,1.94,Normal/None
+47,Combination,Low,High,4,9,High,3.95,Fine Lines/Aging
+36,Normal,Medium,Low,7,7,Moderate,1.34,Dryness
+66,Combination,Low,Medium,5,7,Moderate,3.99,Fine Lines/Aging
+30,Dry,High,Low,6,8,Moderate,1.89,Dryness
+45,Dry,High,Medium,3,10,Moderate,1.59,Fine Lines/Aging
+52,Oily,Medium,Medium,5,10,Low,2.58,Normal/None
+50,Combination,Medium,Low,8,8,Low,2.64,Normal/None
+59,Oily,High,Medium,7,10,Moderate,2.72,Oiliness
+27,Combination,Medium,Medium,4,7,Moderate,1.58,Dryness
+43,Combination,High,Medium,4,9,Moderate,2.6,Redness/Sensitivity
+60,Combination,Medium,Medium,4,10,Moderate,1.37,Fine Lines/Aging
+63,Oily,Medium,High,4,10,Moderate,1.56,Fine Lines/Aging
+49,Dry,Medium,Medium,3,9,Moderate,2.12,Redness/Sensitivity
+51,Normal,High,Medium,5,10,Low,1.24,Fine Lines/Aging
+63,Normal,Medium,Medium,7,7,Moderate,3.04,Fine Lines/Aging
+50,Sensitive,High,High,4,8,Moderate,1.74,Fine Lines/Aging
+68,Dry,Low,Medium,5,10,Moderate,2.02,Fine Lines/Aging
+23,Combination,Medium,Medium,5,9,High,1.9,Fine Lines/Aging
+35,Oily,Medium,Medium,8,7,Low,2.73,Acne
+22,Dry,Low,Low,4,9,Low,1.37,Dryness
+20,Oily,Medium,High,4,8,Moderate,3.11,Oiliness
+41,Combination,Medium,High,4,9,Moderate,3.05,Dryness
+28,Oily,Medium,Medium,3,10,Low,1.54,Redness/Sensitivity
+38,Dry,Low,Low,7,8,Moderate,2.22,Dryness
+40,Combination,Low,Medium,5,10,Moderate,1.82,Fine Lines/Aging
+50,Normal,Medium,Medium,6,9,Low,2.34,Normal/None
+68,Oily,High,Medium,8,7,Moderate,2.04,Normal/None
+62,Oily,Low,Low,8,5,Low,1.57,Fine Lines/Aging
+36,Normal,Low,High,2,9,Moderate,2.24,Normal/None
+33,Dry,High,Low,7,7,Low,0.63,Dryness
+58,Oily,Low,Medium,6,8,Moderate,2.14,Dullness
+22,Normal,Low,Medium,5,10,High,3.12,Normal/None
+45,Oily,Low,Medium,6,10,Moderate,2.31,Fine Lines/Aging
+39,Normal,High,High,2,10,Low,2.66,Redness/Sensitivity
+26,Dry,High,Low,8,7,Moderate,1.9,Dryness
+49,Oily,Low,High,7,10,Moderate,1.83,Acne
+33,Oily,Low,Medium,4,10,Low,1.01,Oiliness
+26,Oily,High,High,4,9,Moderate,1.88,Oiliness
+51,Oily,High,High,2,10,High,4.17,Fine Lines/Aging
+25,Dry,Medium,Low,5,10,Low,2.12,Dryness
+53,Sensitive,Medium,Low,5,9,Low,1.43,Dryness
+24,Combination,Low,Medium,3,10,Low,1.1,Dryness
+39,Dry,High,Low,7,7,Low,0.62,Dryness
+60,Normal,Low,Low,8,4,Moderate,1.54,Acne
+28,Normal,Medium,Medium,5,9,Moderate,2.81,Normal/None
+58,Combination,Medium,Medium,5,8,Low,1.56,Fine Lines/Aging
+55,Oily,Medium,Medium,6,7,Moderate,1.43,Fine Lines/Aging
+65,Dry,High,Low,5,10,Moderate,1.52,Dryness
+25,Dry,High,High,3,8,Moderate,2.72,Redness/Sensitivity
+55,Oily,Low,Medium,4,10,Moderate,2.13,Fine Lines/Aging
+67,Dry,Medium,Low,5,10,Low,1.4,Dryness
+57,Combination,Medium,Medium,6,8,Low,1.65,Normal/None
+26,Sensitive,Medium,Medium,6,8,Moderate,3.96,Redness/Sensitivity
+61,Oily,High,Medium,6,7,Low,2.88,Acne
+21,Normal,Medium,High,2,10,Low,3.07,Fine Lines/Aging
+48,Dry,Medium,Low,7,8,Low,0.5,Dryness
+43,Normal,High,Medium,6,9,High,2.48,Normal/None
+45,Normal,Low,Low,10,7,Moderate,1.68,Acne
+44,Oily,High,Medium,5,8,Moderate,2.64,Redness/Sensitivity
+17,Combination,High,Medium,6,6,Moderate,3.05,Redness/Sensitivity
+43,Sensitive,Medium,Low,10,8,High,2.86,Normal/None
+67,Combination,High,Medium,6,10,Low,1.2,Fine Lines/Aging
+40,Combination,High,Medium,5,8,Low,1.37,Oiliness
+31,Normal,Medium,High,4,10,High,3.1,Normal/None
+70,Dry,Medium,Low,9,9,Moderate,2.78,Dryness
+21,Oily,High,Medium,3,10,Moderate,2.31,Dullness
+42,Normal,Low,Medium,6,8,Moderate,2.3,Normal/None
+44,Oily,Low,High,5,7,Moderate,2.24,Dryness
+42,Combination,High,Medium,5,7,Low,2.12,Normal/None
+66,Dry,High,Medium,3,9,Low,2.47,Redness/Sensitivity
+39,Dry,High,Low,8,10,Moderate,2.7,Dullness
+69,Dry,Low,Medium,5,8,Moderate,2.22,Dryness
+19,Sensitive,High,High,3,9,High,2.56,Redness/Sensitivity
+56,Oily,Low,High,8,7,Moderate,2.13,Acne
+48,Oily,High,Medium,4,9,Moderate,1.58,Acne
+29,Oily,Medium,High,6,9,High,1.97,Normal/None
+28,Combination,Medium,Medium,7,6,Moderate,2.64,Acne
+55,Sensitive,High,Medium,6,10,Moderate,1.63,Redness/Sensitivity
+51,Oily,High,High,1,10,Low,2.55,Fine Lines/Aging
+49,Sensitive,High,Medium,7,10,Low,1.86,Redness/Sensitivity
+18,Dry,High,Medium,5,7,Low,2.56,Redness/Sensitivity
+48,Combination,Medium,High,5,10,Moderate,2.71,Normal/None
+69,Oily,Low,Medium,5,10,Moderate,2.87,Fine Lines/Aging
+16,Normal,Medium,Medium,2,10,High,2.22,Dryness
+41,Combination,Medium,Medium,6,8,Low,2.23,Fine Lines/Aging
+43,Normal,Medium,Medium,3,9,Low,2.49,Dullness
+65,Oily,High,Medium,5,8,Moderate,0.96,Oiliness
+31,Combination,High,High,6,9,Moderate,3.56,Redness/Sensitivity
+42,Sensitive,Medium,Medium,8,8,Low,3.71,Redness/Sensitivity
+55,Normal,Medium,High,4,7,Low,2.66,Dryness
+19,Normal,Low,Low,8,10,Moderate,2.84,Acne
+60,Combination,Medium,Medium,7,8,High,3.07,Normal/None
+61,Dry,High,Medium,5,9,High,2.34,Redness/Sensitivity
+55,Combination,High,Medium,3,9,Moderate,2.11,Redness/Sensitivity
+51,Dry,High,Medium,3,10,Moderate,2.97,Dullness
+57,Combination,Medium,Low,6,8,Low,1.12,Dryness
+58,Oily,High,Medium,4,9,Moderate,1.35,Dullness
+65,Dry,High,Low,8,8,High,2.28,Fine Lines/Aging
+39,Normal,High,High,4,10,High,3.13,Redness/Sensitivity
+41,Normal,Low,Medium,4,10,Moderate,1.51,Fine Lines/Aging
+51,Combination,Medium,High,6,10,Low,1.72,Oiliness
+26,Sensitive,High,Medium,4,9,Moderate,2.11,Redness/Sensitivity
+63,Oily,Medium,Medium,6,9,High,1.79,Oiliness
+58,Dry,High,Low,7,8,Moderate,0.5,Dryness
+50,Dry,High,Low,6,10,Low,1.08,Dryness
+32,Normal,Low,Medium,6,9,Moderate,2.41,Normal/None
+35,Normal,High,Medium,6,8,Moderate,2.59,Redness/Sensitivity
+39,Combination,Medium,Medium,2,10,Low,2.3,Redness/Sensitivity
+52,Combination,High,High,6,8,Moderate,2.69,Oiliness

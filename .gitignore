@@ -1,0 +1,42 @@
+# Environment variables
+.env
+**/.env
+
+# Python virtual environments
+**/.venv/
+**/venv/
+**/venv312/
+**/.venv312/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Node.js
+**/node_modules/
+**/dist/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python test/cache
+.pytest_cache/
+
+# Local project structure file
+project_structure.txt
+
+# Generated/cleaned local dataset
+backend/data/products_cleaned.csv

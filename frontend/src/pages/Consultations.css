@@ -1,0 +1,617 @@
+/* =========================================================
+   CONSULTATIONS PAGE
+========================================================= */
+
+.consultations-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(48, 170, 151, 0.10), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(31, 143, 128, 0.08), transparent 32%),
+    #f5faf8;
+  padding: 40px 24px 60px;
+}
+
+.consultations-shell {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.consultations-back {
+  border: 0;
+  background: transparent;
+  color: #087f73;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 26px;
+  transition: 0.2s ease;
+}
+
+.consultations-back:hover {
+  color: #075f57;
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.consultations-hero {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #dcebe7;
+  border-radius: 26px;
+  padding: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 15px 40px rgba(24, 92, 82, 0.07);
+}
+
+.consultations-label {
+  display: inline-block;
+  color: #168c80;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.consultations-hero h1 {
+  margin: 9px 0 12px;
+  color: #102c2a;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.consultations-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: #6b7d7b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.consultations-hero-icon {
+  width: 96px;
+  height: 96px;
+  min-width: 96px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #eaf8f4, #dff3ef);
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  box-shadow: 0 10px 25px rgba(22, 140, 128, 0.10);
+}
+
+
+/* =========================================================
+   PROFESSIONAL GRID
+========================================================= */
+
+.professional-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 26px;
+}
+
+
+/* =========================================================
+   PROFESSIONAL CARD
+========================================================= */
+
+.professional-card {
+  background: #ffffff;
+  border: 1px solid #dcebe7;
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 10px 28px rgba(24, 92, 82, 0.055);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.professional-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(24, 92, 82, 0.10);
+  border-color: #bcded8;
+}
+
+
+/* Selected card */
+
+.professional-card-selected {
+  border-color: #168f83;
+  box-shadow:
+    0 0 0 3px rgba(22, 143, 131, 0.10),
+    0 18px 38px rgba(24, 92, 82, 0.10);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PROFESSIONAL ICON
+========================================================= */
+
+.professional-icon {
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  border-radius: 18px;
+  background: #eaf7f4;
+  display: grid;
+  place-items: center;
+  font-size: 29px;
+  box-shadow: inset 0 0 0 1px rgba(22, 143, 131, 0.06);
+}
+
+
+/* =========================================================
+   PROFESSIONAL CONTENT
+========================================================= */
+
+.professional-content {
+  flex: 1;
+}
+
+.professional-role {
+  display: inline-block;
+  color: #168c80;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.professional-content h2 {
+  margin: 7px 0 9px;
+  color: #173532;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.professional-content p {
+  margin: 0;
+  color: #6b7d7b;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.professional-content ul {
+  margin: 17px 0 21px;
+  padding-left: 19px;
+  color: #435b58;
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.professional-content li::marker {
+  color: #168f83;
+}
+
+
+/* =========================================================
+   PROFESSIONAL BUTTON
+========================================================= */
+
+.professional-button {
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #168f83, #0d776d);
+  color: #ffffff;
+  padding: 12px 19px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(22, 143, 131, 0.18);
+  transition: 0.2s ease;
+}
+
+.professional-button:hover {
+  background: linear-gradient(135deg, #117e73, #09675f);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(22, 143, 131, 0.24);
+}
+
+.professional-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CONSULTATION REQUEST CARD
+========================================================= */
+
+.consultation-request-card {
+  margin-top: 28px;
+  background: #ffffff;
+  border: 1px solid #d5e9e4;
+  border-radius: 25px;
+  padding: 32px;
+  box-shadow: 0 14px 35px rgba(24, 92, 82, 0.08);
+  animation: consultationSlideIn 0.3s ease;
+}
+
+@keyframes consultationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   REQUEST HEADER
+========================================================= */
+
+.request-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 27px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5efed;
+}
+
+.request-header h2 {
+  margin: 7px 0 0;
+  color: #173532;
+  font-size: 24px;
+}
+
+.request-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  background: #eaf7f4;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+  margin-bottom: 21px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #233f3b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.form-group textarea {
+  width: 100%;
+  min-height: 145px;
+  resize: vertical;
+  box-sizing: border-box;
+
+  border: 1px solid #d5e5e1;
+  border-radius: 14px;
+
+  background: #fbfefd;
+  color: #243c39;
+
+  padding: 15px 16px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group textarea::placeholder {
+  color: #9aaba8;
+}
+
+.form-group textarea:focus {
+  border-color: #168f83;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(22, 143, 131, 0.09);
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.consultation-error {
+  margin: 15px 0;
+  padding: 13px 15px;
+  border-radius: 12px;
+
+  background: #fff3f2;
+  border: 1px solid #f3d0cd;
+
+  color: #b33b34;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.consultation-success {
+  margin: 15px 0;
+  padding: 13px 15px;
+  border-radius: 12px;
+
+  background: #edf9f5;
+  border: 1px solid #cce9e2;
+
+  color: #177568;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   REQUEST ACTIONS
+========================================================= */
+
+.request-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+
+/* Cancel */
+
+.request-cancel-button {
+  border: 1px solid #d5e5e1;
+  border-radius: 11px;
+
+  background: #ffffff;
+  color: #526966;
+
+  padding: 12px 20px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.request-cancel-button:hover {
+  background: #f4f9f7;
+  border-color: #bdd8d3;
+}
+
+
+/* Send */
+
+.request-send-button {
+  border: 0;
+  border-radius: 11px;
+
+  background: linear-gradient(135deg, #168f83, #0d776d);
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 17px rgba(22, 143, 131, 0.18);
+
+  transition: 0.2s ease;
+}
+
+.request-send-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #117e73, #09675f);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(22, 143, 131, 0.24);
+}
+
+.request-send-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.request-send-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+.consultations-info {
+  margin-top: 26px;
+
+  background: linear-gradient(
+    135deg,
+    #edf8f5,
+    #f5fbf9
+  );
+
+  border: 1px solid #d4ebe5;
+  border-radius: 20px;
+
+  padding: 22px;
+
+  display: flex;
+  gap: 14px;
+
+  color: #355a55;
+}
+
+.consultations-info > span {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 20px;
+
+  box-shadow: 0 4px 12px rgba(24, 92, 82, 0.06);
+}
+
+.consultations-info h3 {
+  margin: 0 0 6px;
+  color: #234a45;
+  font-size: 16px;
+}
+
+.consultations-info p {
+  margin: 0;
+  color: #607773;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .professional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultations-hero {
+    padding: 30px;
+  }
+
+  .consultations-hero h1 {
+    font-size: 30px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .consultations-page {
+    padding: 25px 15px 45px;
+  }
+
+  .consultations-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+  }
+
+  .consultations-hero-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    font-size: 32px;
+  }
+
+  .consultations-hero h1 {
+    font-size: 27px;
+  }
+
+  .professional-card {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .professional-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+  }
+
+  .consultation-request-card {
+    padding: 24px;
+  }
+
+  .request-header {
+    align-items: flex-start;
+  }
+
+  .request-header h2 {
+    font-size: 21px;
+  }
+
+  .request-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .request-cancel-button,
+  .request-send-button {
+    width: 100%;
+  }
+
+  .consultations-info {
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .consultations-hero h1 {
+    font-size: 24px;
+  }
+
+  .professional-content h2 {
+    font-size: 20px;
+  }
+
+  .consultation-request-card {
+    padding: 20px;
+  }
+
+  .request-header {
+    gap: 12px;
+  }
+
+  .request-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 22px;
+  }
+}
