@@ -1,0 +1,23 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+sqlalchemy>=2.0.35
+psycopg2-binary>=2.9.12
+alembic>=1.13.3
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.12
+bcrypt>=4.2.0
+pytest>=8.3.0
+httpx>=0.27.0
+email-validator>=2.2.0
+# AI/ML layer (Milestone 2)
+torch>=2.2.0                          # PyTorch CPU — neural network training & inference
+numpy>=1.26.0                         # Numerical operations
+pandas>=2.1.0                         # Dataset handling
+scikit-learn>=1.4.0                   # Preprocessing (StandardScaler) + metrics
+# Milestone 4 - Reports & Exports
+reportlab>=4.0.0
+openpyxl>=3.1.0

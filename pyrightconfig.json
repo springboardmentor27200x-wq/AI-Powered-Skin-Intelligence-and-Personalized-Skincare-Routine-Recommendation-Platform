@@ -1,0 +1,17 @@
+{
+  "venvPath": "backend",
+  "venv": "venv",
+  "extraPaths": [
+    "backend",
+    "backend/intelligence"
+  ],
+  "typeCheckingMode": "off",
+  "reportGeneralTypeIssues": "none",
+  "reportArgumentType": "none",
+  "reportAttributeAccessIssue": "none",
+  "reportAssignmentType": "none",
+  "reportCallIssue": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportReturnType": "none"
+}
+

@@ -1,0 +1,48 @@
+{
+  "model_version": "v1.0",
+  "training_date": "2026-09-03T15:02:46.592255",
+  "dataset": "skin_dataset_synthetic_v1.csv",
+  "dataset_version": "v1",
+  "dataset_type": "SYNTHETIC - Not clinical data",
+  "feature_version": "v1",
+  "concern_model": {
+    "architecture": "ConcernNet (15->64->32->10)",
+    "loss": "BCEWithLogitsLoss",
+    "optimizer": "Adam lr=1e-3",
+    "epochs": 50,
+    "metrics": {
+      "macro_f1": 0.2675,
+      "roc_auc": null,
+      "per_label_f1": {
+        "ACNE": 0.5063,
+        "HYPERPIGMENTATION": 0.0,
+        "DARK_SPOTS": 0.0,
+        "DRY_SKIN": 0.5915,
+        "OILY_SKIN": 0.0,
+        "SENSITIVE_SKIN": 0.663,
+        "WRINKLES": 0.5143,
+        "FINE_LINES": 0.0,
+        "REDNESS": 0.4,
+        "UNEVEN_TONE": 0.0
+      }
+    }
+  },
+  "risk_model": {
+    "architecture": "RiskNet (8->32->5)",
+    "loss": "BCEWithLogitsLoss",
+    "optimizer": "Adam lr=1e-3",
+    "epochs": 50,
+    "metrics": {
+      "macro_f1": 0.7659,
+      "roc_auc": 0.9331,
+      "per_label_f1": {
+        "STRESS": 0.7683,
+        "SLEEP": 0.8637,
+        "HYDRATION": 0.8017,
+        "LIFESTYLE": 0.7796,
+        "ENVIRONMENT": 0.6161
+      }
+    }
+  },
+  "disclaimer": "Evaluation is based on synthetic data and does not represent clinical accuracy."
+}

@@ -1,0 +1,18 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend",
+    "${workspaceFolder}/backend/intelligence"
+  ],
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportGeneralTypeIssues": "none",
+    "reportArgumentType": "none",
+    "reportAttributeAccessIssue": "none",
+    "reportAssignmentType": "none",
+    "reportCallIssue": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportReturnType": "none"
+  }
+}
+
