@@ -1841,35 +1841,9 @@ function Dashboard() {
 
           {/* PRODUCT RECOMMENDATIONS */}
 
-          <div className="dashboard-info-card">
+          
 
-            <div className="info-card-icon">
-              🧴
-            </div>
-
-            <div>
-
-              <h3>
-                Product Recommendations
-              </h3>
-
-              <p>
-                Discover products matched to
-                your skin type and concerns.
-              </p>
-
-              <button
-                className="card-link"
-                onClick={() =>
-                  navigate("/products")
-                }
-              >
-                Explore Products →
-              </button>
-
-            </div>
-
-          </div>
+      
 
 
           {/* INGREDIENT INTELLIGENCE */}

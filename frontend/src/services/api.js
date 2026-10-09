@@ -620,11 +620,20 @@ export const createPersonalizedRoutine =
       await response.json();
 
     if (!response.ok) {
-      throw new Error(
-        data.detail ||
-        "Failed to generate skincare routine"
-      );
-    }
+  const detail = data?.detail;
+
+  const message = Array.isArray(detail)
+    ? detail
+        .map((item) => item.msg || JSON.stringify(item))
+        .join(", ")
+    : typeof detail === "string"
+      ? detail
+      : detail
+        ? JSON.stringify(detail)
+        : "Failed to fetch skin assessment";
+
+  throw new Error(message);
+}
 
     return data;
   };
