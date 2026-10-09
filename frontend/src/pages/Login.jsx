@@ -28,7 +28,16 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setMessage("Login successful!");
-      navigate("/dashboard");
+      const userRole = (res.data.user?.role || "").toLowerCase();
+      if (userRole === "admin") {
+        navigate("/admin");
+      } else if (userRole === "dermatologist") {
+        navigate("/dermatologist");
+      } else if (userRole === "consultant") {
+        navigate("/consultant");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (err) {
       setMessage(err.response?.data?.error || "Login failed");
     }

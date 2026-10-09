@@ -12,6 +12,7 @@ import Settings from "./pages/Settings";
 import SkinAnalysis from "./pages/SkinAnalysis";
 import ProductRecommendations from "./pages/ProductRecommendations";
 import DermatologistDashboard from "./pages/DermatologistDashboard";
+import ConsultantDashboard from "./pages/ConsultantDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="/reports" element={<Reports />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/dermatologist" element={<DermatologistDashboard />} />
-        <Route path="/consultant" element={<DermatologistDashboard />} />
+        <Route path="/consultant" element={<ConsultantDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>

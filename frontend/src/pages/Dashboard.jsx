@@ -22,7 +22,23 @@ function Dashboard() {
       navigate("/login");
       return;
     }
-    if (storedUser) setUser(JSON.parse(storedUser));
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      const userRole = (parsedUser.role || "").toLowerCase();
+      if (userRole === "admin") {
+        navigate("/admin");
+        return;
+      }
+      if (userRole === "dermatologist") {
+        navigate("/dermatologist");
+        return;
+      }
+      if (userRole === "consultant") {
+        navigate("/consultant");
+        return;
+      }
+    }
 
     const headers = { Authorization: `Bearer ${token}` };
 

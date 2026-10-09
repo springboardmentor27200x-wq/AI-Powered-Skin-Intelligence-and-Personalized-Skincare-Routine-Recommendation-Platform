@@ -12,6 +12,13 @@ function Progress() {
   // Visual Photo Check-in State
   const [beforePhoto, setBeforePhoto] = useState(() => localStorage.getItem("skin_before_photo") || null);
   const [afterPhoto, setAfterPhoto] = useState(() => localStorage.getItem("skin_after_photo") || null);
+  const [visualAnalysis, setVisualAnalysis] = useState(() => {
+    const saved = localStorage.getItem("skin_visual_improvement");
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [analyzingVisual, setAnalyzingVisual] = useState(false);
+  const [visualError, setVisualError] = useState("");
+  const [prescriptions, setPrescriptions] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -39,7 +46,40 @@ function Progress() {
         setError(err.response?.data?.error || "Failed to load progress");
         setLoading(false);
       });
+
+    // Load active prescriptions
+    axios
+      .get("http://127.0.0.1:5000/api/user/prescriptions", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => setPrescriptions(res.data.prescriptions || []))
+      .catch(() => {});
   }, [navigate]);
+
+  const handleCalculateVisualImprovement = () => {
+    if (!beforePhoto || !afterPhoto) {
+      setVisualError("Please upload both Day 1 Baseline photo and a Follow-up photo to calculate improvement score.");
+      return;
+    }
+    setVisualError("");
+    setAnalyzingVisual(true);
+    const token = localStorage.getItem("token");
+
+    axios
+      .post(
+        "http://127.0.0.1:5000/api/progress/analyze-visual-improvement",
+        { before_image: beforePhoto, after_image: afterPhoto },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((res) => {
+        setVisualAnalysis(res.data);
+        localStorage.setItem("skin_visual_improvement", JSON.stringify(res.data));
+      })
+      .catch((err) => {
+        setVisualError(err.response?.data?.error || "Failed to analyze photos.");
+      })
+      .finally(() => setAnalyzingVisual(false));
+  };
 
   const handlePhotoUpload = (e, type) => {
     const file = e.target.files?.[0];
@@ -62,8 +102,10 @@ function Progress() {
   const handleClearPhotos = () => {
     setBeforePhoto(null);
     setAfterPhoto(null);
+    setVisualAnalysis(null);
     localStorage.removeItem("skin_before_photo");
     localStorage.removeItem("skin_after_photo");
+    localStorage.removeItem("skin_visual_improvement");
   };
 
   if (loading) {
@@ -535,10 +577,158 @@ function Progress() {
                 )}
               </div>
             </div>
+
+            {/* Calculate Visual Improvement Action */}
+            <div style={{ marginTop: 20, textAlign: "center" }}>
+              {visualError && (
+                <div style={{ background: "#fee2e2", color: "#991b1b", padding: "8px 14px", borderRadius: 8, fontSize: 13, marginBottom: 12, display: "inline-block" }}>
+                  {visualError}
+                </div>
+              )}
+              <div>
+                <button
+                  onClick={handleCalculateVisualImprovement}
+                  disabled={analyzingVisual}
+                  style={{
+                    background: (!beforePhoto || !afterPhoto) ? "#94a3b8" : "linear-gradient(135deg, #2d6a4f, #1b4332)",
+                    color: "white",
+                    padding: "12px 28px",
+                    borderRadius: 12,
+                    border: "none",
+                    fontWeight: 700,
+                    fontSize: 14,
+                    cursor: (!beforePhoto || !afterPhoto || analyzingVisual) ? "not-allowed" : "pointer",
+                    boxShadow: "0 4px 14px rgba(45, 106, 79, 0.25)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  {analyzingVisual ? "🔄 Analyzing Images & Calculating Score..." : "✨ Calculate Improvement Score from Photos"}
+                </button>
+                {(!beforePhoto || !afterPhoto) && (
+                  <p style={{ color: "#64748b", fontSize: 12, marginTop: 6, margin: 0 }}>
+                    Upload both Day 1 Baseline and Follow-up photos above to run the AI comparison.
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Visual Improvement Score Results Card */}
+            {visualAnalysis && (
+              <div
+                style={{
+                  marginTop: 24,
+                  background: "linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%)",
+                  border: "2px solid #86efac",
+                  borderRadius: 16,
+                  padding: 22,
+                  boxShadow: "0 8px 24px rgba(22, 163, 74, 0.08)",
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 24 }}>🔬</span>
+                    <h3 style={{ margin: 0, color: "#166534", fontSize: 18, fontWeight: 800 }}>
+                      AI Visual Improvement Score Analysis
+                    </h3>
+                  </div>
+                  <span
+                    style={{
+                      background: "#166534",
+                      color: "white",
+                      padding: "4px 12px",
+                      borderRadius: 14,
+                      fontWeight: 800,
+                      fontSize: 13,
+                    }}
+                  >
+                    +{visualAnalysis.visual_improvement_pct}% Overall Recovery (+{visualAnalysis.score_gain_pts} Pts)
+                  </span>
+                </div>
+
+                <p style={{ color: "#14532d", fontSize: 13, margin: "0 0 16px", lineHeight: 1.5 }}>
+                  <strong>AI Clinical Verdict:</strong> {visualAnalysis.verdict}
+                </p>
+
+                {/* 4 Quantitative Biomarkers */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 16 }}>
+                  <div style={{ background: "white", padding: 14, borderRadius: 12, border: "1px solid #bbf7d0" }}>
+                    <div style={{ fontSize: 11, color: "#64748b", fontWeight: 700, textTransform: "uppercase" }}>Redness & Erythema</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: "#dc2626", marginTop: 4 }}>
+                      -{visualAnalysis.redness_reduction_pct}%
+                    </div>
+                    <div style={{ fontSize: 11, color: "#166534", marginTop: 2 }}>Calmer barrier detected</div>
+                  </div>
+
+                  <div style={{ background: "white", padding: 14, borderRadius: 12, border: "1px solid #bbf7d0" }}>
+                    <div style={{ fontSize: 11, color: "#64748b", fontWeight: 700, textTransform: "uppercase" }}>Texture Smoothness</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: "#2563eb", marginTop: 4 }}>
+                      +{visualAnalysis.texture_smoothness_gain}%
+                    </div>
+                    <div style={{ fontSize: 11, color: "#166534", marginTop: 2 }}>Micro-relief refined</div>
+                  </div>
+
+                  <div style={{ background: "white", padding: 14, borderRadius: 12, border: "1px solid #bbf7d0" }}>
+                    <div style={{ fontSize: 11, color: "#64748b", fontWeight: 700, textTransform: "uppercase" }}>Spot & Melanin Fading</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: "#7c3aed", marginTop: 4 }}>
+                      -{visualAnalysis.hyperpigmentation_fading}%
+                    </div>
+                    <div style={{ fontSize: 11, color: "#166534", marginTop: 2 }}>Clearer tone contrast</div>
+                  </div>
+
+                  <div style={{ background: "white", padding: 14, borderRadius: 12, border: "1px solid #bbf7d0" }}>
+                    <div style={{ fontSize: 11, color: "#64748b", fontWeight: 700, textTransform: "uppercase" }}>Epidermal Hydration</div>
+                    <div style={{ fontSize: 20, fontWeight: 800, color: "#059669", marginTop: 4 }}>
+                      +{visualAnalysis.hydration_radiance_gain}%
+                    </div>
+                    <div style={{ fontSize: 11, color: "#166534", marginTop: 2 }}>Plumper stratum corneum</div>
+                  </div>
+                </div>
+
+                <div style={{ background: "white", padding: 12, borderRadius: 10, border: "1px solid #bbf7d0", fontSize: 12, color: "#334155" }}>
+                  <strong>Diagnostic Notes:</strong> {visualAnalysis.clinical_notes}
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* 4. PREDICTION FORECAST & ADAPTIVE TIPS */}
+        {/* ACTIVE PRESCRIPTIONS FROM DOCTOR / CONSULTANT */}
+        {prescriptions.length > 0 && (
+          <div style={{ ...card, marginBottom: 20, border: "1.5px solid #bfdbfe", background: "#f8fafc" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <span style={{ fontSize: 22 }}>💊</span>
+              <div>
+                <h3 style={{ ...h3, margin: 0, color: "#1e3a8a" }}>Prescriptions on File from Specialists</h3>
+                <p style={{ margin: "2px 0 0", fontSize: 12, color: "#64748b" }}>
+                  Medical treatments authorized by your clinical dermatologist and wellness consultant.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
+              {prescriptions.map((rx) => (
+                <div key={rx.id} style={{ background: "white", padding: 16, borderRadius: 12, border: "1px solid #e2e8f0" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                    <strong style={{ color: "#1e3a8a", fontSize: 15 }}>{rx.medication}</strong>
+                    <span style={{ background: "#dbeafe", color: "#1e40af", padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 700 }}>
+                      Rx Active
+                    </span>
+                  </div>
+                  <div style={{ fontSize: 13, color: "#475569", marginTop: 6, lineHeight: 1.5 }}>
+                    <div>Dosage / Strength: <strong>{rx.dosage}</strong></div>
+                    <div>Frequency: <strong>{rx.frequency}</strong></div>
+                    <div>Duration: {rx.duration_days} days</div>
+                  </div>
+                  {rx.instructions && (
+                    <div style={{ marginTop: 8, background: "#f8fafc", padding: "8px 10px", borderRadius: 8, fontSize: 12, color: "#334155", fontStyle: "italic" }}>
+                      Directions: {rx.instructions}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         <div
           style={{
             display: "grid",

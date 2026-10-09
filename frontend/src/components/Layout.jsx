@@ -13,9 +13,16 @@ function Layout({ children }) {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    if (storedUser) setUser(JSON.parse(storedUser));
+    let parsedUser = null;
+    if (storedUser) {
+      parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+    }
 
-    if (token) {
+    const currentRole = (parsedUser?.role || "").toLowerCase();
+    const isSpecialistOrAdmin = ["consultant", "dermatologist", "admin"].includes(currentRole);
+
+    if (token && !isSpecialistOrAdmin) {
       axios
         .get("http://127.0.0.1:5000/api/notifications", {
           headers: { Authorization: `Bearer ${token}` },
@@ -33,43 +40,59 @@ function Layout({ children }) {
 
   const role = (user?.role || "").toLowerCase();
 
-  const sidebarItems = [
-    { path: "/dashboard", label: "Dashboard", icon: "⌂" },
-    { path: "/assessment", label: "Skin Analysis", icon: "🔬" },
-    { path: "/checklist", label: "Routine", icon: "⏱" },
-    { path: "/products", label: "Product Recommendations", icon: "🛍️" },
-    { path: "/progress", label: "Progress", icon: "📈" },
-    { path: "/reports", label: "Reports", icon: "📄" },
-    { path: "/profile", label: "Profile", icon: "👤" },
-    { path: "/settings", label: "Settings", icon: "⚙️" },
-  ];
+  let sidebarItems = [];
+  let topNavItems = [];
 
-  if (["dermatologist", "consultant", "admin"].includes(role)) {
-    sidebarItems.push({
-      path: "/dermatologist",
-      label: role === "consultant" ? "Consultant Portal" : "Doctor Portal",
-      icon: "🩺",
-    });
-  }
-
-  if (role === "admin") {
-    sidebarItems.push({ path: "/admin", label: "Admin Portal", icon: "🛡️" });
-  }
-
-  const topNavItems = [
-    { path: "/dashboard", label: "Dashboard" },
-    { path: "/profile", label: "Profile" },
-    { path: "/assessment", label: "Assessment" },
-    { path: "/checklist", label: "Checklist" },
-    { path: "/products", label: "Products" },
-    { path: "/progress", label: "Progress" },
-  ];
-
-  if (["dermatologist", "consultant", "admin"].includes(role)) {
-    topNavItems.push({ path: "/dermatologist", label: "Doctor Portal" });
-  }
-  if (role === "admin") {
-    topNavItems.push({ path: "/admin", label: "Admin" });
+  if (role === "consultant") {
+    sidebarItems = [
+      { path: "/consultant", label: "Client Profiles", icon: "👥" },
+      { path: "/consultant", label: "Assessment Reports", icon: "📑" },
+      { path: "/consultant", label: "Progress Monitoring", icon: "📈" },
+      { path: "/consultant", label: "Recommendation Management", icon: "💡" },
+    ];
+    topNavItems = [
+      { path: "/consultant", label: "Consultant Portal" },
+    ];
+  } else if (role === "dermatologist") {
+    sidebarItems = [
+      { path: "/dermatologist", label: "Patient Insights", icon: "🩺" },
+      { path: "/dermatologist", label: "Skin Condition Reports", icon: "📋" },
+      { path: "/dermatologist", label: "Treatment Recommendations", icon: "💊" },
+      { path: "/dermatologist", label: "Progress Analytics", icon: "📊" },
+    ];
+    topNavItems = [
+      { path: "/dermatologist", label: "Doctor Portal" },
+    ];
+  } else if (role === "admin") {
+    sidebarItems = [
+      { path: "/admin", label: "User Management", icon: "👥" },
+      { path: "/admin", label: "Platform Analytics", icon: "📊" },
+      { path: "/admin", label: "Recommendation Monitoring", icon: "🎯" },
+      { path: "/admin", label: "System Reports", icon: "📜" },
+    ];
+    topNavItems = [
+      { path: "/admin", label: "Admin Portal" },
+    ];
+  } else {
+    // Standard End User (Consumer)
+    sidebarItems = [
+      { path: "/dashboard", label: "Dashboard", icon: "⌂" },
+      { path: "/assessment", label: "Skin Analysis", icon: "🔬" },
+      { path: "/checklist", label: "Routine Checklist", icon: "⏱" },
+      { path: "/products", label: "Product Recommendations", icon: "🛍️" },
+      { path: "/progress", label: "Progress Tracking", icon: "📈" },
+      { path: "/reports", label: "Reports & Exports", icon: "📄" },
+      { path: "/profile", label: "Clinical Profile", icon: "👤" },
+      { path: "/settings", label: "Settings", icon: "⚙️" },
+    ];
+    topNavItems = [
+      { path: "/dashboard", label: "Dashboard" },
+      { path: "/profile", label: "Profile" },
+      { path: "/assessment", label: "Assessment" },
+      { path: "/checklist", label: "Checklist" },
+      { path: "/products", label: "Products" },
+      { path: "/progress", label: "Progress" },
+    ];
   }
 
   return (
@@ -135,98 +158,103 @@ function Layout({ children }) {
           </nav>
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, position: "relative" }}>
-            <button
-              onClick={() => setShowNotifications(!showNotifications)}
-              style={{ ...s.bell, position: "relative", cursor: "pointer" }}
-            >
-              🔔
-              {notifications.length > 0 && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: -4,
-                    right: -4,
-                    background: "#dc2626",
-                    color: "white",
-                    borderRadius: "50%",
-                    fontSize: 10,
-                    fontWeight: 700,
-                    width: 17,
-                    height: 17,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
+            {/* Notification bell and dropdown - Only visible for consumer users */}
+            {!["consultant", "dermatologist", "admin"].includes(role) && (
+              <>
+                <button
+                  onClick={() => setShowNotifications(!showNotifications)}
+                  style={{ ...s.bell, position: "relative", cursor: "pointer" }}
                 >
-                  {notifications.length}
-                </span>
-              )}
-            </button>
+                  🔔
+                  {notifications.length > 0 && (
+                    <span
+                      style={{
+                        position: "absolute",
+                        top: -4,
+                        right: -4,
+                        background: "#dc2626",
+                        color: "white",
+                        borderRadius: "50%",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        width: 17,
+                        height: 17,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {notifications.length}
+                    </span>
+                  )}
+                </button>
 
-            {/* Notification Dropdown */}
-            {showNotifications && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: 45,
-                  right: 80,
-                  width: 320,
-                  background: "white",
-                  borderRadius: 14,
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                  border: "1px solid #e5e7eb",
-                  zIndex: 200,
-                  padding: 16,
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, borderBottom: "1px solid #f3f4f6", paddingBottom: 8 }}>
-                  <strong style={{ fontSize: 13.5, color: "#1b4332" }}>
-                    Reminders & Alerts ({notifications.length})
-                  </strong>
-                  <button
-                    onClick={() => setNotifications([])}
-                    style={{ background: "none", border: "none", color: "#6b7280", fontSize: 11, cursor: "pointer" }}
+                {/* Notification Dropdown */}
+                {showNotifications && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 45,
+                      right: 80,
+                      width: 320,
+                      background: "white",
+                      borderRadius: 14,
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+                      border: "1px solid #e5e7eb",
+                      zIndex: 200,
+                      padding: 16,
+                    }}
                   >
-                    Clear All
-                  </button>
-                </div>
-
-                {notifications.length === 0 ? (
-                  <p style={{ margin: "14px 0", fontSize: 13, color: "#9ca3af", textAlign: "center" }}>
-                    No new reminders at this time.
-                  </p>
-                ) : (
-                  <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 320, overflowY: "auto" }}>
-                    {notifications.map((n) => (
-                      <div
-                        key={n.id}
-                        style={{
-                          background: "#f8faf9",
-                          border: "1px solid #e2ebe4",
-                          borderRadius: 10,
-                          padding: 10,
-                          fontSize: 12.5,
-                        }}
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, borderBottom: "1px solid #f3f4f6", paddingBottom: 8 }}>
+                      <strong style={{ fontSize: 13.5, color: "#1b4332" }}>
+                        Reminders & Alerts ({notifications.length})
+                      </strong>
+                      <button
+                        onClick={() => setNotifications([])}
+                        style={{ background: "none", border: "none", color: "#6b7280", fontSize: 11, cursor: "pointer" }}
                       >
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                          <span style={{ fontWeight: 700, color: "#1b4332" }}>{n.title}</span>
-                          <span style={{ fontSize: 10, color: "#9ca3af" }}>{n.time}</span>
-                        </div>
-                        <p style={{ margin: "2px 0 6px", color: "#4b5563", lineHeight: 1.35 }}>
-                          {n.message}
-                        </p>
-                        <Link
-                          to={n.link}
-                          onClick={() => setShowNotifications(false)}
-                          style={{ color: "#2d6a4f", fontWeight: 700, textDecoration: "none", fontSize: 11.5 }}
-                        >
-                          View Details →
-                        </Link>
+                        Clear All
+                      </button>
+                    </div>
+
+                    {notifications.length === 0 ? (
+                      <p style={{ margin: "14px 0", fontSize: 13, color: "#9ca3af", textAlign: "center" }}>
+                        No new reminders at this time.
+                      </p>
+                    ) : (
+                      <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 320, overflowY: "auto" }}>
+                        {notifications.map((n) => (
+                          <div
+                            key={n.id}
+                            style={{
+                              background: "#f8faf9",
+                              border: "1px solid #e2ebe4",
+                              borderRadius: 10,
+                              padding: 10,
+                              fontSize: 12.5,
+                            }}
+                          >
+                            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
+                              <span style={{ fontWeight: 700, color: "#1b4332" }}>{n.title}</span>
+                              <span style={{ fontSize: 10, color: "#9ca3af" }}>{n.time}</span>
+                            </div>
+                            <p style={{ margin: "2px 0 6px", color: "#4b5563", lineHeight: 1.35 }}>
+                              {n.message}
+                            </p>
+                            <Link
+                              to={n.link}
+                              onClick={() => setShowNotifications(false)}
+                              style={{ color: "#2d6a4f", fontWeight: 700, textDecoration: "none", fontSize: 11.5 }}
+                            >
+                              View Details →
+                            </Link>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    )}
                   </div>
                 )}
-              </div>
+              </>
             )}
 
             <div style={s.userChip}>

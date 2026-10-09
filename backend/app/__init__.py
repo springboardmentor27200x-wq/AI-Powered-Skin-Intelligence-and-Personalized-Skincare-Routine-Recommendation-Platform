@@ -15,6 +15,8 @@ def create_app():
 
     # Secret key for JWT
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "super-secret-key-change-later")
+    from datetime import timedelta
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(days=30)
     
     # Database
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv(

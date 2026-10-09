@@ -1,4 +1,4 @@
-import logoImg from "C:/Users/adithraj/.gemini/antigravity/brain/c7c9ea52-5ccf-4bbf-8771-9df71db4b9d0/.user_uploaded/media_1791389955903_9705277c.jpg";
+import logoImg from "../assets/Dashlogo.png";
 
 export default function Logo({
   size = 42,

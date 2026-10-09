@@ -67,6 +67,31 @@ class ClinicalRecommendation(db.Model):
     routine_adjustment = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+class Prescription(db.Model):
+    __tablename__ = "prescriptions"
+    id = db.Column(db.Integer, primary_key=True)
+    patient_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    doctor_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    medication = db.Column(db.String(200), nullable=False)
+    dosage = db.Column(db.String(100), nullable=False)
+    frequency = db.Column(db.String(100), nullable=False)
+    instructions = db.Column(db.Text)
+    duration_days = db.Column(db.Integer, default=30)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "patient_id": self.patient_id,
+            "doctor_id": self.doctor_id,
+            "medication": self.medication,
+            "dosage": self.dosage,
+            "frequency": self.frequency,
+            "instructions": self.instructions,
+            "duration_days": self.duration_days,
+            "created_at": self.created_at.strftime("%Y-%m-%d %H:%M") if self.created_at else "",
+        }
+
 # ============================================================
 # Product Intelligence Models
 # ============================================================
