@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter,
   Routes,
@@ -7,15 +8,18 @@ import {
 } from "react-router-dom";
 
 import { useEffect } from "react";
-
 import "./App.css";
 
 // =========================
-// PAGES
+// AUTHENTICATION PAGES
 // =========================
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+
+// =========================
+// USER PAGES
+// =========================
 
 import Dashboard from "./pages/Dashboard";
 import SkinProfile from "./pages/SkinProfile";
@@ -28,6 +32,7 @@ import ProductRecommendations from "./pages/ProductRecommendations";
 import HealthDashboard from "./pages/HealthDashboard";
 import Reports from "./pages/Reports";
 import Consultations from "./pages/Consultations";
+import IngredientIntelligence from "./pages/IngredientIntelligence";
 
 // =========================
 // ROLE-BASED DASHBOARDS
@@ -38,15 +43,15 @@ import ConsultantDashboard from "./pages/ConsultantDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 
 // =========================
-// AUTH
+// AUTH CONTEXT & PROTECTION
 // =========================
 
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-// =========================================================
+// =========================
 // SCROLL TO TOP
-// =========================================================
+// =========================
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -61,38 +66,27 @@ function ScrollToTop() {
   return null;
 }
 
-// =========================================================
+// =========================
 // PAGE TRANSITION
-// =========================================================
+// =========================
 
 function PageTransition({ children }) {
-  return (
-    <div className="page-transition">
-      {children}
-    </div>
-  );
+  return <div className="page-transition">{children}</div>;
 }
 
-// =========================================================
+// =========================
 // 404 PAGE
-// =========================================================
+// =========================
 
 function NotFound() {
   return (
     <div className="not-found-page">
       <div className="not-found-card">
+        <div className="not-found-icon">🌿</div>
 
-        <div className="not-found-icon">
-          🌿
-        </div>
+        <h1 className="not-found-title">404</h1>
 
-        <h1 className="not-found-title">
-          404
-        </h1>
-
-        <h2 className="not-found-heading">
-          Page not found
-        </h2>
+        <h2 className="not-found-heading">Page not found</h2>
 
         <p className="not-found-text">
           The page you're looking for doesn't exist
@@ -107,15 +101,14 @@ function NotFound() {
         >
           Go to Dashboard
         </button>
-
       </div>
     </div>
   );
 }
 
-// =========================================================
+// =========================
 // APPLICATION ROUTES
-// =========================================================
+// =========================
 
 function AppRoutes() {
   return (
@@ -123,24 +116,14 @@ function AppRoutes() {
       <ScrollToTop />
 
       <Routes>
-
-        {/* =================================================
-            DEFAULT ROUTE
-        ================================================= */}
+        {/* DEFAULT ROUTE */}
 
         <Route
           path="/"
-          element={
-            <Navigate
-              to="/login"
-              replace
-            />
-          }
+          element={<Navigate to="/login" replace />}
         />
 
-        {/* =================================================
-            AUTHENTICATION
-        ================================================= */}
+        {/* AUTHENTICATION */}
 
         <Route
           path="/login"
@@ -160,9 +143,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            NORMAL USER DASHBOARD
-        ================================================= */}
+        {/* USER DASHBOARD */}
 
         <Route
           path="/dashboard"
@@ -175,9 +156,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER SKIN PROFILE
-        ================================================= */}
+        {/* SKIN PROFILE */}
 
         <Route
           path="/skin-profile"
@@ -190,9 +169,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            PRODUCT RECOMMENDATIONS
-        ================================================= */}
+        {/* PRODUCT RECOMMENDATIONS */}
 
         <Route
           path="/product-recommendations"
@@ -205,9 +182,20 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER LIFESTYLE
-        ================================================= */}
+        {/* INGREDIENT INTELLIGENCE */}
+
+        <Route
+          path="/ingredients"
+          element={
+            <PageTransition>
+              <ProtectedRoute allowedRoles={["user"]}>
+                <IngredientIntelligence />
+              </ProtectedRoute>
+            </PageTransition>
+          }
+        />
+
+        {/* LIFESTYLE TRACKING */}
 
         <Route
           path="/lifestyle"
@@ -220,9 +208,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER SLEEP
-        ================================================= */}
+        {/* SLEEP TRACKING */}
 
         <Route
           path="/sleep"
@@ -235,9 +221,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER PROGRESS
-        ================================================= */}
+        {/* PROGRESS TRACKING */}
 
         <Route
           path="/progress"
@@ -250,9 +234,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER ANALYTICS
-        ================================================= */}
+        {/* ANALYTICS */}
 
         <Route
           path="/analytics"
@@ -265,9 +247,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            HEALTH DASHBOARD
-        ================================================= */}
+        {/* HEALTH DASHBOARD */}
 
         <Route
           path="/health-dashboard"
@@ -280,9 +260,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            REPORTS
-        ================================================= */}
+        {/* REPORTS */}
 
         <Route
           path="/reports"
@@ -295,9 +273,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            CONSULTATIONS / FIND A PROFESSIONAL
-        ================================================= */}
+        {/* CONSULTATIONS */}
 
         <Route
           path="/consultations"
@@ -310,9 +286,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            USER ROUTINE ADHERENCE
-        ================================================= */}
+        {/* ROUTINE ADHERENCE */}
 
         <Route
           path="/routine-adherence"
@@ -325,9 +299,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            DERMATOLOGIST DASHBOARD
-        ================================================= */}
+        {/* DERMATOLOGIST DASHBOARD */}
 
         <Route
           path="/dermatologist"
@@ -340,9 +312,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            CONSULTANT DASHBOARD
-        ================================================= */}
+        {/* CONSULTANT DASHBOARD */}
 
         <Route
           path="/consultant"
@@ -355,9 +325,7 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            ADMIN DASHBOARD
-        ================================================= */}
+        {/* ADMIN DASHBOARD */}
 
         <Route
           path="/admin"
@@ -370,26 +338,17 @@ function AppRoutes() {
           }
         />
 
-        {/* =================================================
-            404
-            KEEP THIS ROUTE LAST
-        ================================================= */}
+        {/* 404 - KEEP LAST */}
 
-        <Route
-          path="*"
-          element={
-            <NotFound />
-          }
-        />
-
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
 
-// =========================================================
+// =========================
 // MAIN APP
-// =========================================================
+// =========================
 
 function App() {
   return (
