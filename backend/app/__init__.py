@@ -40,8 +40,34 @@ def create_app():
     app.register_blueprint(reports_bp)
     # ==========================================
 
-    # Create database tables
+    # Create database tables and seed initial demo accounts if empty
     with app.app_context():
         db.create_all()
+        try:
+            from app.models import User
+            from werkzeug.security import generate_password_hash
+            if User.query.count() == 0:
+                demo_user = User(
+                    name="Demo User",
+                    email="user@test.com",
+                    password=generate_password_hash("password123"),
+                    role="user"
+                )
+                demo_doc = User(
+                    name="Dr. Sarah Connor",
+                    email="doctor@test.com",
+                    password=generate_password_hash("password123"),
+                    role="dermatologist"
+                )
+                demo_admin = User(
+                    name="Admin",
+                    email="admin@test.com",
+                    password=generate_password_hash("password123"),
+                    role="admin"
+                )
+                db.session.add_all([demo_user, demo_doc, demo_admin])
+                db.session.commit()
+        except Exception:
+            pass
 
     return app
