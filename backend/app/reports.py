@@ -12,7 +12,7 @@ from reportlab.platypus import (
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
 from app import db
-from app.models import User, SkinProfile, ScoreHistory, DailyChecklist, ClinicalRecommendation
+from app.models import User, SkinProfile, ScoreHistory, DailyChecklist, ClinicalRecommendation, Product, Prescription
 from app.adherence import get_routine_consistency
 from app.ml.skin_score_model import assess_skin
 from app.routine import generate_routine
@@ -660,5 +660,128 @@ def export_products_pdf():
         pdf_buffer,
         as_attachment=True,
         download_name=f"Product_Recommendations_{datetime.utcnow().strftime('%Y%m%d')}.pdf",
+        mimetype="application/pdf"
+    )
+
+
+# -------------------------------------------------
+# 8. Download Complete Platform Database as Excel (.xlsx)
+# -------------------------------------------------
+@reports_bp.route("/api/reports/excel", methods=["GET"])
+@reports_bp.route("/api/admin/reports/excel", methods=["GET"])
+def export_database_excel():
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        # Sheet 1: Users
+        users = User.query.order_by(User.id.asc()).all()
+        user_rows = [{
+            "User ID": u.id,
+            "Name": u.name,
+            "Email": u.email,
+            "Role": u.role,
+            "Registration Date": u.created_at.strftime("%Y-%m-%d %H:%M") if u.created_at else ""
+        } for u in users]
+        pd.DataFrame(user_rows or [{"Status": "No users registered"}]).to_excel(writer, sheet_name="Users", index=False)
+
+        # Sheet 2: Skin Profiles
+        profiles = SkinProfile.query.order_by(SkinProfile.id.asc()).all()
+        profile_rows = [{
+            "Profile ID": p.id,
+            "User ID": p.user_id,
+            "Skin Type": p.skin_type,
+            "Age Group": p.age_group,
+            "Concerns": p.skin_concerns,
+            "Allergies": p.allergies,
+            "Sensitivities": p.sensitivities,
+            "Water Intake": p.water_intake_level,
+            "Sleep Hours": p.sleep_hours,
+            "Stress Level": p.stress_level
+        } for p in profiles]
+        pd.DataFrame(profile_rows or [{"Status": "No skin profiles"}]).to_excel(writer, sheet_name="Skin Profiles", index=False)
+
+        # Sheet 3: Score History
+        scores = ScoreHistory.query.order_by(ScoreHistory.id.asc()).all()
+        score_rows = [{
+            "Assessment ID": s.id,
+            "User ID": s.user_id,
+            "Assessment Date": str(s.date),
+            "Skin Health Score": s.score
+        } for s in scores]
+        pd.DataFrame(score_rows or [{"Status": "No score assessments"}]).to_excel(writer, sheet_name="Health Scores", index=False)
+
+        # Sheet 4: Prescriptions
+        rxs = Prescription.query.order_by(Prescription.id.asc()).all()
+        rx_rows = [{
+            "Prescription ID": r.id,
+            "Patient ID": r.patient_id,
+            "Doctor ID": r.doctor_id,
+            "Medication": r.medication,
+            "Dosage": r.dosage,
+            "Frequency": r.frequency,
+            "Duration (Days)": r.duration_days,
+            "Instructions": r.instructions,
+            "Issued Date": r.created_at.strftime("%Y-%m-%d %H:%M") if r.created_at else ""
+        } for r in rxs]
+        pd.DataFrame(rx_rows or [{"Status": "No prescriptions filed"}]).to_excel(writer, sheet_name="Prescriptions", index=False)
+
+        # Sheet 5: Products
+        products = Product.query.order_by(Product.id.asc()).all()
+        prod_rows = [{
+            "Product ID": p.id,
+            "Name": p.name,
+            "Brand": p.brand,
+            "Category": p.category,
+            "Skin Type": p.skin_type,
+            "Key Ingredients": p.key_ingredients
+        } for p in products]
+        pd.DataFrame(prod_rows or [{"Status": "No catalog products"}]).to_excel(writer, sheet_name="Product Catalog", index=False)
+
+    output.seek(0)
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=f"Skin_Intelligence_Database_Export_{datetime.utcnow().strftime('%Y%m%d')}.xlsx",
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
+
+
+# -------------------------------------------------
+# 9. Download Platform Master PDF Audit Report
+# -------------------------------------------------
+@reports_bp.route("/api/reports/pdf/skin_assessment", methods=["GET"])
+@reports_bp.route("/api/reports/pdf/platform_master", methods=["GET"])
+def export_platform_master_pdf():
+    total_users = User.query.count()
+    total_profiles = SkinProfile.query.count()
+    total_scores = ScoreHistory.query.count()
+    total_rxs = Prescription.query.count()
+    total_prods = Product.query.count()
+
+    admin_summary = [
+        ["System Metric", "Telemetry Count", "Status"],
+        ["Registered Users", str(total_users), "Active"],
+        ["Completed Skin Profiles", str(total_profiles), "Indexed"],
+        ["AI Health Assessments", str(total_scores), "Recorded"],
+        ["Specialist Prescriptions", str(total_rxs), "Filed"],
+        ["Catalog Formulations", str(total_prods), "Indexed"],
+        ["Machine Learning Engine", "XGBoost Regressor", "Nominal"],
+        ["Database Architecture", "PostgreSQL 15 Relational", "Nominal"]
+    ]
+
+    recent_users = User.query.order_by(User.id.desc()).limit(8).all()
+    user_table = [["ID", "Name", "Email", "Assigned Role"]]
+    for u in recent_users:
+        user_table.append([str(u.id), u.name, u.email, u.role.title() if u.role else "User"])
+
+    sections = [
+        ("1. Platform Telemetry & System Status", admin_summary, [160.0, 160.0, 203.0]),
+        ("2. Recent User Registration Audit", user_table, [45.0, 150.0, 228.0, 100.0]),
+    ]
+
+    pdf_buffer = create_pdf("Platform System Audit & Clinical Report", "Administrator", sections)
+    return send_file(
+        pdf_buffer,
+        as_attachment=True,
+        download_name=f"Platform_Master_Audit_{datetime.utcnow().strftime('%Y%m%d')}.pdf",
         mimetype="application/pdf"
     )

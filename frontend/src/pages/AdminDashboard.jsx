@@ -16,6 +16,8 @@ function AdminDashboard() {
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [roleMessage, setRoleMessage] = useState("");
+  const [downloadingExcel, setDownloadingExcel] = useState(false);
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
 
   const token = localStorage.getItem("token");
   const storedUser = localStorage.getItem("user");
@@ -84,6 +86,54 @@ function AdminDashboard() {
       loadAdminData();
     } catch {
       alert("Failed to delete user.");
+    }
+  };
+
+  const handleDownloadExcel = async () => {
+    setDownloadingExcel(true);
+    try {
+      const res = await axios.get("http://127.0.0.1:5000/api/reports/excel", {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: "blob",
+      });
+      const blob = new Blob([res.data], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `Skin_Intelligence_Database_${new Date().toISOString().slice(0, 10)}.xlsx`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      alert("Failed to export Excel report.");
+    } finally {
+      setDownloadingExcel(false);
+    }
+  };
+
+  const handleDownloadPdf = async () => {
+    setDownloadingPdf(true);
+    try {
+      const res = await axios.get("http://127.0.0.1:5000/api/reports/pdf/platform_master", {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: "blob",
+      });
+      const blob = new Blob([res.data], { type: "application/pdf" });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", `Platform_Master_Audit_${new Date().toISOString().slice(0, 10)}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch {
+      alert("Failed to export PDF report.");
+    } finally {
+      setDownloadingPdf(false);
     }
   };
 
@@ -435,40 +485,44 @@ function AdminDashboard() {
                     Download system-wide clinical audits and comprehensive relational database backups.
                   </p>
                   <div style={{ display: "flex", gap: 14 }}>
-                    <a
-                      href="http://127.0.0.1:5000/api/reports/pdf/skin_assessment"
-                      target="_blank"
-                      rel="noreferrer"
+                    <button
+                      onClick={handleDownloadPdf}
+                      disabled={downloadingPdf}
                       style={{
                         background: "#991b1b",
                         color: "white",
                         padding: "10px 18px",
                         borderRadius: 10,
-                        textDecoration: "none",
+                        border: "none",
+                        cursor: downloadingPdf ? "not-allowed" : "pointer",
                         fontWeight: 700,
                         fontSize: 13,
-                        display: "inline-block",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
                       }}
                     >
-                      📥 Download Platform PDF Master Report
-                    </a>
-                    <a
-                      href="http://127.0.0.1:5000/api/reports/excel"
-                      target="_blank"
-                      rel="noreferrer"
+                      {downloadingPdf ? "Generating..." : "📥 Download Platform PDF Master Report"}
+                    </button>
+                    <button
+                      onClick={handleDownloadExcel}
+                      disabled={downloadingExcel}
                       style={{
                         background: "#166534",
                         color: "white",
                         padding: "10px 18px",
                         borderRadius: 10,
-                        textDecoration: "none",
+                        border: "none",
+                        cursor: downloadingExcel ? "not-allowed" : "pointer",
                         fontWeight: 700,
                         fontSize: 13,
-                        display: "inline-block",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 8,
                       }}
                     >
-                      📊 Export Complete Database to Excel (.xlsx)
-                    </a>
+                      {downloadingExcel ? "Exporting..." : "📊 Export Complete Database to Excel (.xlsx)"}
+                    </button>
                   </div>
                 </div>
 
