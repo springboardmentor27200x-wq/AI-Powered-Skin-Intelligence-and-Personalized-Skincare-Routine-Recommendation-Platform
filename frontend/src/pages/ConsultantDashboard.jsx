@@ -152,6 +152,26 @@ function ConsultantDashboard() {
       .finally(() => setSavingRx(false));
   };
 
+  const handleDownloadClientReport = async (client) => {
+    try {
+      const res = await axios.get(`http://127.0.0.1:5000/api/reports/patient/${client.id}/dossier`, {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: "blob",
+      });
+      const blob = new Blob([res.data], { type: "application/pdf" });
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", `Skin_Assessment_${client.name.replace(/\s+/g, "_")}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch {
+      alert("Failed to download client assessment report.");
+    }
+  };
+
   const filteredClients = clients.filter(
     (c) =>
       c.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -653,23 +673,22 @@ function ConsultantDashboard() {
                           <td style={{ padding: "12px 14px", color: "#475569" }}>{c.skin_concerns}</td>
                           <td style={{ padding: "12px 14px", fontWeight: 700, color: "#166534" }}>{c.latest_score ?? "—"}/100</td>
                           <td style={{ padding: "12px 14px" }}>
-                            <a
-                              href="http://127.0.0.1:5000/api/reports/pdf/skin_assessment"
-                              target="_blank"
-                              rel="noreferrer"
+                            <button
+                              onClick={() => handleDownloadClientReport(c)}
                               style={{
                                 background: "#1b4332",
                                 color: "white",
                                 padding: "6px 12px",
                                 borderRadius: 8,
-                                textDecoration: "none",
+                                border: "none",
                                 fontSize: 12,
                                 fontWeight: 600,
+                                cursor: "pointer",
                                 display: "inline-block",
                               }}
                             >
                               📥 Download PDF Report
-                            </a>
+                            </button>
                           </td>
                         </tr>
                       ))}

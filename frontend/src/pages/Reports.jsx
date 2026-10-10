@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Layout from "../components/Layout";
 
 function Reports() {
@@ -29,18 +30,17 @@ function Reports() {
     setMessage("");
 
     try {
-      const response = await fetch(`http://127.0.0.1:5000${url}`, {
-        method: "GET",
+      const res = await axios.get(`http://127.0.0.1:5000${url}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
+        responseType: "blob",
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to generate and download report.");
-      }
-
-      const blob = await response.blob();
+      const mimeType = filename.endsWith(".xlsx")
+        ? "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        : "application/pdf";
+      const blob = new Blob([res.data], { type: mimeType });
       const downloadUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = downloadUrl;

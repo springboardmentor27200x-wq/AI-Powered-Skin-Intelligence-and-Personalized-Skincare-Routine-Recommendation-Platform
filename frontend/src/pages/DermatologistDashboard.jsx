@@ -153,6 +153,26 @@ function DermatologistDashboard() {
       .finally(() => setSavingRxNote(false));
   };
 
+  const handleDownloadDossier = async (patient) => {
+    try {
+      const res = await axios.get(`http://127.0.0.1:5000/api/reports/patient/${patient.id}/dossier`, {
+        headers: { Authorization: `Bearer ${token}` },
+        responseType: "blob",
+      });
+      const blob = new Blob([res.data], { type: "application/pdf" });
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", `Clinical_Dossier_${patient.name.replace(/\s+/g, "_")}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch {
+      alert("Failed to download patient clinical dossier.");
+    }
+  };
+
   const filteredPatients = patients.filter(
     (p) =>
       p.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -663,23 +683,22 @@ function DermatologistDashboard() {
                           <td style={{ padding: "12px 14px", color: "#475569" }}>{p.skin_concerns}</td>
                           <td style={{ padding: "12px 14px", fontWeight: 700, color: "#166534" }}>{p.latest_score ?? "—"}/100</td>
                           <td style={{ padding: "12px 14px" }}>
-                            <a
-                              href="http://127.0.0.1:5000/api/reports/pdf/skin_assessment"
-                              target="_blank"
-                              rel="noreferrer"
+                            <button
+                              onClick={() => handleDownloadDossier(p)}
                               style={{
                                 background: "#1e3a8a",
                                 color: "white",
                                 padding: "6px 12px",
                                 borderRadius: 8,
-                                textDecoration: "none",
+                                border: "none",
                                 fontSize: 12,
                                 fontWeight: 600,
+                                cursor: "pointer",
                                 display: "inline-block",
                               }}
                             >
                               📄 Clinical Dossier PDF
-                            </a>
+                            </button>
                           </td>
                         </tr>
                       ))}
