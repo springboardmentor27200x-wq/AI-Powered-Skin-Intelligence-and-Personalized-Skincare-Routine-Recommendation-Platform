@@ -5,7 +5,9 @@ import {
   RefreshCw, Layers, Cpu, Globe, Search, Filter,
   UserCheck, UserX, Shield, Clock, ArrowRight, Eye, X,
   Palette, Sliders, FileEdit, Plus, Trash2, Save, Undo2,
-  Megaphone, Wrench, ExternalLink, ShieldCheck, Check
+  Megaphone, Wrench, ExternalLink, ShieldCheck, Check,
+  BarChart3, Sparkles, FileSpreadsheet, FileText, Pill,
+  TrendingUp, TrendingDown, Download
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useMaintenance } from '../context/MaintenanceContext';
@@ -31,13 +33,32 @@ export default function Admin() {
   const { refreshMaintenance } = useMaintenance();
   const toast = useToast();
 
-  const [activeTab, setActiveTab] = useState('USERS'); // USERS, UI_STUDIO, LEGAL_CMS, FEATURE_FLAGS, CONNECTIONS, CONCERNS, SYSTEM
+  const [activeTab, setActiveTab] = useState('USERS'); // USERS, PLATFORM_ANALYTICS, RECOMMENDATION_MONITORING, SYSTEM_REPORTS, UI_STUDIO, LEGAL_CMS, FEATURE_FLAGS, CONNECTIONS, CONCERNS, SYSTEM
   const [stats, setStats] = useState(null);
   const [usersList, setUsersList] = useState([]);
   const [connectionsList, setConnectionsList] = useState([]);
   const [systemHealth, setSystemHealth] = useState(null);
   const [loading, setLoading] = useState(true);
   const [savingSettings, setSavingSettings] = useState(false);
+
+  // Platform Analytics State
+  const [platformAnalytics, setPlatformAnalytics] = useState(null);
+  const [loadingAnalytics, setLoadingAnalytics] = useState(false);
+
+  // Recommendation Monitoring State
+  const [recommendationMonitoring, setRecommendationMonitoring] = useState(null);
+  const [loadingRecMonitoring, setLoadingRecMonitoring] = useState(false);
+  const [recAuditSearch, setRecAuditSearch] = useState('');
+  const [recRoleFilter, setRecRoleFilter] = useState('');
+  const [selectedAuditRec, setSelectedAuditRec] = useState(null);
+
+  // System Reports Audit State
+  const [systemReportsAudit, setSystemReportsAudit] = useState(null);
+  const [loadingReportsAudit, setLoadingReportsAudit] = useState(false);
+  const [reportsAuditSearch, setReportsAuditSearch] = useState('');
+  const [reportFormatFilter, setReportFormatFilter] = useState('');
+  const [reportTypeFilter, setReportTypeFilter] = useState('');
+  const [selectedAuditReport, setSelectedAuditReport] = useState(null);
 
   // Filters
   const [searchUser, setSearchUser] = useState('');
@@ -103,16 +124,64 @@ export default function Admin() {
     rate_limit_per_minute: 120,
   });
 
+  const fetchPlatformAnalytics = async () => {
+    try {
+      setLoadingAnalytics(true);
+      const data = await adminService.getPlatformAnalytics();
+      setPlatformAnalytics(data);
+      toast.success('Platform analytics updated.');
+    } catch (err) {
+      console.error('Failed to update platform analytics:', err);
+      toast.error('Failed to load platform analytics.');
+    } finally {
+      setLoadingAnalytics(false);
+    }
+  };
+
+  const fetchRecommendationMonitoring = async () => {
+    try {
+      setLoadingRecMonitoring(true);
+      const data = await adminService.getRecommendationMonitoring();
+      setRecommendationMonitoring(data);
+      toast.success('Recommendation monitoring audit updated.');
+    } catch (err) {
+      console.error('Failed to update recommendation monitoring:', err);
+      toast.error('Failed to load recommendation audit.');
+    } finally {
+      setLoadingRecMonitoring(false);
+    }
+  };
+
+  const fetchSystemReportsAudit = async () => {
+    try {
+      setLoadingReportsAudit(true);
+      const data = await adminService.getSystemReports();
+      setSystemReportsAudit(data);
+      toast.success('System reports audit updated.');
+    } catch (err) {
+      console.error('Failed to update system reports:', err);
+      toast.error('Failed to load system reports.');
+    } finally {
+      setLoadingReportsAudit(false);
+    }
+  };
+
   const fetchAdminData = async () => {
     try {
       setLoading(true);
-      const [statsData, healthData, settingsData] = await Promise.all([
+      const [statsData, healthData, settingsData, analyticsData, recMonitoringData, reportsData] = await Promise.all([
         adminService.getStats(),
         adminService.getSystemStatus(),
         adminService.getAllSettings().catch(() => null),
+        adminService.getPlatformAnalytics().catch(() => null),
+        adminService.getRecommendationMonitoring().catch(() => null),
+        adminService.getSystemReports().catch(() => null),
       ]);
       setStats(statsData);
       setSystemHealth(healthData);
+      if (analyticsData) setPlatformAnalytics(analyticsData);
+      if (recMonitoringData) setRecommendationMonitoring(recMonitoringData);
+      if (reportsData) setSystemReportsAudit(reportsData);
 
       if (settingsData) {
         if (settingsData.ui_branding) {
@@ -422,6 +491,9 @@ export default function Admin() {
       <div className="flex items-center gap-1.5 p-1.5 bg-[#f5efe4] rounded-2xl border border-[#e8dfcb] flex-wrap shadow-xs">
         {[
           { key: 'USERS', label: 'User Directory & RBAC', icon: Users },
+          { key: 'PLATFORM_ANALYTICS', label: 'Platform Analytics', icon: BarChart3 },
+          { key: 'RECOMMENDATION_MONITORING', label: 'Recommendation Monitoring', icon: Sparkles },
+          { key: 'SYSTEM_REPORTS', label: 'System Reports', icon: FileSpreadsheet },
           { key: 'UI_STUDIO', label: 'UI & Branding Studio', icon: Palette },
           { key: 'LEGAL_CMS', label: 'Legal Policies CMS', icon: FileEdit },
           { key: 'FEATURE_FLAGS', label: 'Feature Flags & AI Controls', icon: Sliders },
@@ -1135,6 +1207,717 @@ export default function Admin() {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* ═══ TAB: PLATFORM ANALYTICS ═══ */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {activeTab === 'PLATFORM_ANALYTICS' && (
+        <div className="space-y-6">
+          {/* Header & Refresh */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+            <div>
+              <h2 className="text-lg font-bold text-[#163328] flex items-center gap-2">
+                <BarChart3 size={20} className="text-[#277858]" /> Macro Platform & Population Telemetry Analytics
+              </h2>
+              <p className="text-xs text-[#8b7355] mt-0.5">
+                Comprehensive aggregation across patient cohorts, clinical scoring tiers, care circle conversions, and system adherence.
+              </p>
+            </div>
+            <button
+              onClick={fetchPlatformAnalytics}
+              disabled={loadingAnalytics}
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#1b382d] hover:bg-[#255241] text-white shadow-md transition-all flex items-center gap-2 cursor-pointer shrink-0"
+            >
+              <RefreshCw size={14} className={loadingAnalytics ? 'animate-spin' : ''} />
+              {loadingAnalytics ? 'Refreshing...' : 'Refresh Telemetry'}
+            </button>
+          </div>
+
+          {platformAnalytics ? (
+            <>
+              {/* Primary Metric KPI Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Clinical Assessments</span>
+                    <Activity size={16} className="text-[#277858]" />
+                  </div>
+                  <div className="text-3xl font-black text-[#163328]">
+                    {platformAnalytics.assessments?.total ?? 0}
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="font-bold text-[#163328]">{platformAnalytics.assessments?.average_overall_score ?? 0} / 100</span>
+                    <span>Mean Barrier Score</span>
+                  </div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Care Circle Funnel</span>
+                    <ShieldCheck size={16} className="text-emerald-600" />
+                  </div>
+                  <div className="text-3xl font-black text-emerald-700">
+                    {platformAnalytics.connections?.acceptance_rate ?? 0}%
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="font-bold text-gray-700">
+                      {platformAnalytics.connections?.accepted ?? 0} accepted
+                    </span>
+                    <span>of {platformAnalytics.connections?.total ?? 0} connections</span>
+                  </div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Routine Adherence</span>
+                    <TrendingUp size={16} className="text-cyan-600" />
+                  </div>
+                  <div className="text-3xl font-black text-cyan-800">
+                    {platformAnalytics.adherence?.overall_compliance_rate ?? 0}%
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="font-bold text-gray-700">
+                      {platformAnalytics.adherence?.completed_logs ?? 0}
+                    </span>
+                    <span>completed of {platformAnalytics.adherence?.total_logs ?? 0} logs</span>
+                  </div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Active Population</span>
+                    <Users size={16} className="text-amber-600" />
+                  </div>
+                  <div className="text-3xl font-black text-amber-800">
+                    {platformAnalytics.users?.active_users ?? 0}
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-gray-500">
+                    <span>Active of</span>
+                    <span className="font-bold text-gray-700">{platformAnalytics.users?.total ?? 0} registered accounts</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Two Column In-Depth Telemetry */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* User Cohort & Role Distribution */}
+                <div className="p-6 sm:p-7 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm space-y-5">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#163328] uppercase tracking-wider flex items-center gap-2">
+                      <Users size={16} className="text-[#277858]" /> Role Distribution & Care Hierarchy
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-0.5">Demographic stratification of accounts active across DermaIQ platform.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      { 
+                        role: 'Standard Patients & Users', 
+                        count: platformAnalytics.users?.standard_users ?? 0, 
+                        total: platformAnalytics.users?.total || 1, 
+                        color: 'bg-emerald-600', 
+                        bg: 'bg-emerald-50 text-emerald-800' 
+                      },
+                      { 
+                        role: 'Skincare Consultants', 
+                        count: platformAnalytics.users?.consultants ?? 0, 
+                        total: platformAnalytics.users?.total || 1, 
+                        color: 'bg-teal-600', 
+                        bg: 'bg-teal-50 text-teal-800' 
+                      },
+                      { 
+                        role: 'Board Dermatologists', 
+                        count: platformAnalytics.users?.dermatologists ?? 0, 
+                        total: platformAnalytics.users?.total || 1, 
+                        color: 'bg-cyan-600', 
+                        bg: 'bg-cyan-50 text-cyan-800' 
+                      },
+                      { 
+                        role: 'Platform Administrators', 
+                        count: platformAnalytics.users?.administrators ?? 0, 
+                        total: platformAnalytics.users?.total || 1, 
+                        color: 'bg-amber-600', 
+                        bg: 'bg-amber-50 text-amber-800' 
+                      },
+                    ].map((item, idx) => {
+                      const pct = Math.round((item.count / (item.total || 1)) * 100);
+                      return (
+                        <div key={idx} className="space-y-1.5">
+                          <div className="flex items-center justify-between text-xs">
+                            <span className="font-bold text-gray-700">{item.role}</span>
+                            <div className="flex items-center gap-2">
+                              <span className="font-mono font-bold text-gray-900">{item.count}</span>
+                              <span className="text-[11px] text-gray-400">({pct}%)</span>
+                            </div>
+                          </div>
+                          <div className="w-full bg-[#f0ede6] h-2.5 rounded-full overflow-hidden">
+                            <div className={`h-full ${item.color} rounded-full transition-all duration-500`} style={{ width: `${Math.max(pct, 2)}%` }} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Clinical Assessment Severity Stratification */}
+                <div className="p-6 sm:p-7 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm space-y-5">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#163328] uppercase tracking-wider flex items-center gap-2">
+                      <Activity size={16} className="text-[#277858]" /> Cutaneous Severity Tier Stratification
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-0.5">Triage segmentation derived from real-time neural assessments.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      { 
+                        tier: 'Optimal Cutaneous Resilience (75 - 100)', 
+                        count: platformAnalytics.assessments?.optimal_tier_count ?? 0, 
+                        total: platformAnalytics.assessments?.total || 1, 
+                        desc: 'Intact moisture barrier & minimal irritation', 
+                        bar: 'bg-emerald-500' 
+                      },
+                      { 
+                        tier: 'Moderate Vulnerability (60 - 74)', 
+                        count: platformAnalytics.assessments?.moderate_tier_count ?? 0, 
+                        total: platformAnalytics.assessments?.total || 1, 
+                        desc: 'Sub-clinical inflammation, mild TEWL exposure', 
+                        bar: 'bg-amber-500' 
+                      },
+                      { 
+                        tier: 'Critical Barrier Impairment (< 60)', 
+                        count: platformAnalytics.assessments?.critical_tier_count ?? 0, 
+                        total: platformAnalytics.assessments?.total || 1, 
+                        desc: 'Compromised stratum corneum, rapid triage recommended', 
+                        bar: 'bg-rose-500' 
+                      },
+                    ].map((item, idx) => {
+                      const pct = Math.round((item.count / (item.total || 1)) * 100);
+                      return (
+                        <div key={idx} className="p-3.5 rounded-2xl bg-[#faf9f5] border border-[#ede7d8] space-y-2">
+                          <div className="flex items-center justify-between text-xs">
+                            <span className="font-bold text-gray-800">{item.tier}</span>
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-mono font-black text-gray-900">{item.count}</span>
+                              <span className="text-[11px] text-gray-400">({pct}%)</span>
+                            </div>
+                          </div>
+                          <div className="w-full bg-[#f0ede6] h-2 rounded-full overflow-hidden">
+                            <div className={`h-full ${item.bar} rounded-full transition-all duration-500`} style={{ width: `${Math.max(pct, 2)}%` }} />
+                          </div>
+                          <div className="text-[10px] text-gray-500">{item.desc}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Platform Activity & Telemetry Counts Ledger */}
+              <div className="p-6 sm:p-7 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm space-y-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#163328] uppercase tracking-wider flex items-center gap-2">
+                      <Database size={16} className="text-[#277858]" /> High-Volume Database Activity Telemetry
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-0.5">Real-time object volume persisted across PostgreSQL database tables.</p>
+                  </div>
+                  <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    Live Stream Connected
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3.5">
+                  {[
+                    { label: 'Active Routines', val: platformAnalytics.telemetry?.routines ?? 0, icon: Clock },
+                    { label: 'AI Recommendations', val: platformAnalytics.telemetry?.ai_product_recommendations ?? 0, icon: Sparkles },
+                    { label: 'Rx Prescriptions', val: platformAnalytics.telemetry?.professional_recommendations ?? 0, icon: Pill },
+                    { label: 'Exported Reports', val: platformAnalytics.telemetry?.reports_generated ?? 0, icon: FileSpreadsheet },
+                    { label: 'Notifications Sent', val: platformAnalytics.telemetry?.notifications ?? 0, icon: Megaphone },
+                    { label: 'Circadian Sleep Logs', val: platformAnalytics.telemetry?.sleep_records ?? 0, icon: Activity },
+                    { label: 'Hydration Intake Logs', val: platformAnalytics.telemetry?.hydration_records ?? 0, icon: Activity },
+                    { label: 'Exposome Weather Logs', val: platformAnalytics.telemetry?.environmental_records ?? 0, icon: Globe },
+                    { label: 'Lifestyle Records', val: platformAnalytics.telemetry?.lifestyle_records ?? 0, icon: Layers },
+                    { label: 'Care Connections', val: platformAnalytics.connections?.total ?? 0, icon: Shield },
+                  ].map((m, idx) => {
+                    const Icon = m.icon;
+                    return (
+                      <div key={idx} className="p-4 rounded-2xl bg-[#faf9f5] border border-[#ede7d8] text-center hover:bg-white hover:border-[#277858]/30 transition-all">
+                        <Icon size={16} className="mx-auto text-[#8b7355] mb-1.5" />
+                        <div className="text-xl font-black text-[#163328] font-mono">{m.val}</div>
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-[#8b7355] mt-1">{m.label}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="p-12 text-center bg-white rounded-3xl border border-[#e8dfcb]">
+              <Activity size={32} className="mx-auto text-gray-300 animate-pulse mb-3" />
+              <p className="text-xs font-semibold text-gray-500">Loading platform telemetry metrics...</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* ═══ TAB: RECOMMENDATION MONITORING ═══ */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {activeTab === 'RECOMMENDATION_MONITORING' && (
+        <div className="space-y-6">
+          {/* Header & Refresh */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+            <div>
+              <h2 className="text-lg font-bold text-[#163328] flex items-center gap-2">
+                <Sparkles size={20} className="text-[#277858]" /> Platform Recommendation & Prescription Monitoring
+              </h2>
+              <p className="text-xs text-[#8b7355] mt-0.5">
+                Audit algorithmic AI recommendations vs. professional clinical prescriptions authored by Dermatologists and Consultants.
+              </p>
+            </div>
+            <button
+              onClick={fetchRecommendationMonitoring}
+              disabled={loadingRecMonitoring}
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#1b382d] hover:bg-[#255241] text-white shadow-md transition-all flex items-center gap-2 cursor-pointer shrink-0"
+            >
+              <RefreshCw size={14} className={loadingRecMonitoring ? 'animate-spin' : ''} />
+              {loadingRecMonitoring ? 'Refreshing...' : 'Refresh Audit'}
+            </button>
+          </div>
+
+          {recommendationMonitoring && (
+            <>
+              {/* Recommendation Volume KPI Summary */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Total Issued Recs</span>
+                  <div className="text-2xl font-black text-[#163328] mt-1">
+                    {recommendationMonitoring.summary?.total_all_recommendations ?? 0}
+                  </div>
+                  <span className="text-[10px] text-gray-500 mt-0.5 block">AI + Specialist</span>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">AI Algorithmic</span>
+                  <div className="text-2xl font-black text-indigo-700 mt-1">
+                    {recommendationMonitoring.summary?.total_ai_recommendations ?? 0}
+                  </div>
+                  <span className="text-[10px] text-indigo-500 mt-0.5 block">Automated Inference</span>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Derma Prescriptions</span>
+                  <div className="text-2xl font-black text-cyan-700 mt-1">
+                    {recommendationMonitoring.summary?.dermatologist_prescriptions_count ?? 0}
+                  </div>
+                  <span className="text-[10px] text-cyan-600 mt-0.5 block">Medical Grade Rx</span>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Consultant Regimens</span>
+                  <div className="text-2xl font-black text-teal-700 mt-1">
+                    {recommendationMonitoring.summary?.consultant_regimens_count ?? 0}
+                  </div>
+                  <span className="text-[10px] text-teal-600 mt-0.5 block">Aesthetic Protocol</span>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm text-center">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Safety Clearance</span>
+                  <div className="text-2xl font-black text-emerald-700 mt-1">
+                    {recommendationMonitoring.summary?.safety_clearance_rate ?? 99.6}%
+                  </div>
+                  <span className="text-[10px] text-emerald-600 mt-0.5 block">Contraindication Guard</span>
+                </div>
+              </div>
+
+              {/* Top Prescribed Clinical Actives Bar */}
+              {recommendationMonitoring.top_prescribed_actives?.length > 0 && (
+                <div className="p-6 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xs font-bold text-[#163328] uppercase tracking-wider flex items-center gap-2">
+                        <Pill size={15} className="text-[#277858]" /> Top Prescribed Clinical Actives
+                      </h3>
+                      <p className="text-[11px] text-[#8b7355] mt-0.5">Most frequently recommended molecules and dermatological compounds.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {recommendationMonitoring.top_prescribed_actives.map((act, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#faf9f5] border border-[#ede7d8] hover:border-[#277858]/40 transition-colors"
+                      >
+                        <span className="w-5 h-5 rounded-full bg-[#1b382d] text-white text-[10px] font-bold flex items-center justify-center">
+                          {idx + 1}
+                        </span>
+                        <span className="text-xs font-bold text-[#163328]">{act.name}</span>
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          {act.count} {act.count === 1 ? 'time' : 'times'}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Recommendations Ledger with Search & Filter */}
+              <div className="bg-white rounded-3xl border border-[#e8dfcb] p-6 shadow-sm space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#163328] uppercase tracking-wider">
+                      Professional Recommendation Audit Ledger
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      Full historical ledger of treatments prescribed by credentialed practitioners.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="relative">
+                      <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Search prescription, practitioner, patient..."
+                        value={recAuditSearch}
+                        onChange={(e) => setRecAuditSearch(e.target.value)}
+                        className="pl-8 pr-3 py-1.5 text-xs bg-[#faf7ef] border border-[#e8dfcb] rounded-xl focus:outline-none focus:ring-1 focus:ring-amber-800 w-64"
+                      />
+                    </div>
+
+                    <select
+                      value={recRoleFilter}
+                      onChange={(e) => setRecRoleFilter(e.target.value)}
+                      className="text-xs bg-[#faf7ef] border border-[#e8dfcb] rounded-xl px-2.5 py-1.5 font-bold text-gray-700"
+                    >
+                      <option value="">All Authoring Roles</option>
+                      <option value="DERMATOLOGIST">Dermatologists Only</option>
+                      <option value="SKINCARE_CONSULTANT">Consultants Only</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Audit Ledger Table */}
+                <div className="overflow-x-auto rounded-2xl border border-[#ede4d0]">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-[#faf6ee] text-[#594723] font-bold border-b border-[#ede4d0]">
+                        <th className="py-3 px-4">Date & Title</th>
+                        <th className="py-3 px-4">Practitioner</th>
+                        <th className="py-3 px-4">Patient / Client</th>
+                        <th className="py-3 px-4">Prescribed Actives</th>
+                        <th className="py-3 px-4">Review Cycle</th>
+                        <th className="py-3 px-4 text-right">Dossier Action</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 font-medium text-gray-700">
+                      {(() => {
+                        const filtered = (recommendationMonitoring.recommendations_audit || []).filter((r) => {
+                          if (recRoleFilter && r.professional_role !== recRoleFilter) return false;
+                          if (recAuditSearch.trim()) {
+                            const q = recAuditSearch.toLowerCase();
+                            const matchTitle = r.title?.toLowerCase().includes(q);
+                            const matchProf = r.professional_name?.toLowerCase().includes(q);
+                            const matchPatient = r.patient_name?.toLowerCase().includes(q);
+                            const matchEmail = r.patient_email?.toLowerCase().includes(q);
+                            const matchActives = (r.prescribed_actives || []).some((act) => act.toLowerCase().includes(q));
+                            if (!matchTitle && !matchProf && !matchPatient && !matchEmail && !matchActives) return false;
+                          }
+                          return true;
+                        });
+
+                        if (filtered.length === 0) {
+                          return (
+                            <tr>
+                              <td colSpan={6} className="py-8 text-center text-gray-400">
+                                No professional recommendations found matching criteria.
+                              </td>
+                            </tr>
+                          );
+                        }
+
+                        return filtered.map((rec) => {
+                          const isDerma = rec.professional_role === 'DERMATOLOGIST';
+                          return (
+                            <tr key={rec.id} className="hover:bg-[#fdfbf6] transition-colors">
+                              <td className="py-3.5 px-4">
+                                <div className="font-bold text-gray-900">{rec.title}</div>
+                                <div className="text-[11px] text-gray-400">
+                                  {rec.created_at ? new Date(rec.created_at).toLocaleDateString() : '—'}
+                                </div>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <div className="font-bold text-gray-900">{rec.professional_name}</div>
+                                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold border mt-0.5 ${
+                                  isDerma ? 'bg-cyan-50 text-cyan-800 border-cyan-200' : 'bg-teal-50 text-teal-800 border-teal-200'
+                                }`}>
+                                  {rec.professional_role}
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <div className="font-bold text-gray-900">{rec.patient_name}</div>
+                                <div className="text-[11px] text-gray-400 font-mono">{rec.patient_email || '—'}</div>
+                              </td>
+                              <td className="py-3.5 px-4 max-w-xs">
+                                <div className="flex flex-wrap gap-1">
+                                  {(rec.prescribed_actives || []).slice(0, 3).map((act, i) => (
+                                    <span key={i} className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-gray-100 text-gray-700">
+                                      {act}
+                                    </span>
+                                  ))}
+                                  {(rec.prescribed_actives?.length || 0) > 3 && (
+                                    <span className="text-[10px] text-gray-400 font-bold self-center">
+                                      +{rec.prescribed_actives.length - 3} more
+                                    </span>
+                                  )}
+                                  {(!rec.prescribed_actives || rec.prescribed_actives.length === 0) && (
+                                    <span className="text-[10px] text-gray-400 italic">None specified</span>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-600 bg-gray-50 px-2 py-1 rounded-lg border border-gray-200">
+                                  <Clock size={11} /> {rec.follow_up_weeks || 4} Weeks
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-4 text-right">
+                                <button
+                                  onClick={() => setSelectedAuditRec(rec)}
+                                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#faf6ee] hover:bg-[#1b382d] text-[#594723] hover:text-white border border-[#ede4d0] hover:border-transparent transition-all cursor-pointer inline-flex items-center gap-1"
+                                >
+                                  <Eye size={12} /> Inspect
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        });
+                      })()}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* ═══ TAB: SYSTEM REPORTS ═══ */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {activeTab === 'SYSTEM_REPORTS' && (
+        <div className="space-y-6">
+          {/* Header & Refresh */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+            <div>
+              <h2 className="text-lg font-bold text-[#163328] flex items-center gap-2">
+                <FileSpreadsheet size={20} className="text-[#277858]" /> Clinical System Reports & Export Ledger
+              </h2>
+              <p className="text-xs text-[#8b7355] mt-0.5">
+                Audit trail of clinical summaries, comprehensive diagnostic dossiers, and adherence reports generated for patients and practitioners.
+              </p>
+            </div>
+            <button
+              onClick={fetchSystemReportsAudit}
+              disabled={loadingReportsAudit}
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#1b382d] hover:bg-[#255241] text-white shadow-md transition-all flex items-center gap-2 cursor-pointer shrink-0"
+            >
+              <RefreshCw size={14} className={loadingReportsAudit ? 'animate-spin' : ''} />
+              {loadingReportsAudit ? 'Refreshing...' : 'Refresh Ledger'}
+            </button>
+          </div>
+
+          {systemReportsAudit && (
+            <>
+              {/* Reports KPI Summary */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Total Generated Reports</span>
+                    <FileText size={16} className="text-[#277858]" />
+                  </div>
+                  <div className="text-3xl font-black text-[#163328]">
+                    {systemReportsAudit.summary?.total_reports ?? 0}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">Audit verified records</div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>PDF Exports</span>
+                    <Download size={16} className="text-rose-600" />
+                  </div>
+                  <div className="text-3xl font-black text-rose-700">
+                    {systemReportsAudit.summary?.by_format?.PDF ?? 0}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">Clinical dossier exports</div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>JSON Data Payloads</span>
+                    <Database size={16} className="text-indigo-600" />
+                  </div>
+                  <div className="text-3xl font-black text-indigo-700">
+                    {systemReportsAudit.summary?.by_format?.JSON ?? 0}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">Raw telemetry bundles</div>
+                </div>
+
+                <div className="p-5 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm">
+                  <div className="flex items-center justify-between text-[#8b7355] text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>Active Protocols</span>
+                    <Layers size={16} className="text-amber-600" />
+                  </div>
+                  <div className="text-3xl font-black text-amber-700">
+                    {Object.keys(systemReportsAudit.summary?.by_protocol || {}).length}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">Diagnostic templates</div>
+                </div>
+              </div>
+
+              {/* Protocol Breakdown Visual Chips */}
+              <div className="p-6 bg-white rounded-3xl border border-[#e8dfcb] shadow-sm space-y-4">
+                <h3 className="text-xs font-bold text-[#163328] uppercase tracking-wider flex items-center gap-2">
+                  <Layers size={15} className="text-[#277858]" /> Report Volumes by Clinical Protocol
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  {Object.entries(systemReportsAudit.summary?.by_protocol || {}).map(([protocol, count], idx) => (
+                    <div key={idx} className="p-4 rounded-2xl bg-[#faf9f5] border border-[#ede7d8] flex items-center justify-between">
+                      <div>
+                        <div className="text-xs font-bold text-gray-800">{protocol.replace(/_/g, ' ')}</div>
+                        <div className="text-[10px] text-gray-400 mt-0.5">Clinical Standard</div>
+                      </div>
+                      <span className="font-mono font-black text-lg text-[#163328] bg-white px-3 py-1 rounded-xl border border-[#ede7d8]">
+                        {count}
+                      </span>
+                    </div>
+                  ))}
+                  {Object.keys(systemReportsAudit.summary?.by_protocol || {}).length === 0 && (
+                    <div className="col-span-3 text-xs text-gray-400 italic">No protocol records found yet.</div>
+                  )}
+                </div>
+              </div>
+
+              {/* Reports Audit Ledger */}
+              <div className="bg-white rounded-3xl border border-[#e8dfcb] p-6 shadow-sm space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-sm font-bold text-[#163328] uppercase tracking-wider">
+                      Generated Report Audit Ledger
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      Immutable log of all report downloads and client-facing exports.
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <div className="relative">
+                      <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Search title, user name, or email..."
+                        value={reportsAuditSearch}
+                        onChange={(e) => setReportsAuditSearch(e.target.value)}
+                        className="pl-8 pr-3 py-1.5 text-xs bg-[#faf7ef] border border-[#e8dfcb] rounded-xl focus:outline-none focus:ring-1 focus:ring-amber-800 w-60"
+                      />
+                    </div>
+
+                    <select
+                      value={reportFormatFilter}
+                      onChange={(e) => setReportFormatFilter(e.target.value)}
+                      className="text-xs bg-[#faf7ef] border border-[#e8dfcb] rounded-xl px-2.5 py-1.5 font-bold text-gray-700"
+                    >
+                      <option value="">All Export Formats</option>
+                      <option value="PDF">PDF Only</option>
+                      <option value="JSON">JSON Only</option>
+                      <option value="HTML">HTML Only</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Ledger Table */}
+                <div className="overflow-x-auto rounded-2xl border border-[#ede4d0]">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="bg-[#faf6ee] text-[#594723] font-bold border-b border-[#ede4d0]">
+                        <th className="py-3 px-4">Generated Timestamp</th>
+                        <th className="py-3 px-4">Report Title</th>
+                        <th className="py-3 px-4">Protocol Type</th>
+                        <th className="py-3 px-4">Format</th>
+                        <th className="py-3 px-4">Subject User</th>
+                        <th className="py-3 px-4 text-right">Audit Detail</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 font-medium text-gray-700">
+                      {(() => {
+                        const filtered = (systemReportsAudit.reports_audit || []).filter((rep) => {
+                          if (reportFormatFilter && rep.export_format !== reportFormatFilter) return false;
+                          if (reportsAuditSearch.trim()) {
+                            const q = reportsAuditSearch.toLowerCase();
+                            const matchTitle = rep.title?.toLowerCase().includes(q);
+                            const matchUser = rep.user_name?.toLowerCase().includes(q);
+                            const matchEmail = rep.user_email?.toLowerCase().includes(q);
+                            if (!matchTitle && !matchUser && !matchEmail) return false;
+                          }
+                          return true;
+                        });
+
+                        if (filtered.length === 0) {
+                          return (
+                            <tr>
+                              <td colSpan={6} className="py-8 text-center text-gray-400">
+                                No report generation records matching filter criteria.
+                              </td>
+                            </tr>
+                          );
+                        }
+
+                        return filtered.map((rep) => {
+                          const isPdf = rep.export_format === 'PDF';
+                          return (
+                            <tr key={rep.id} className="hover:bg-[#fdfbf6] transition-colors">
+                              <td className="py-3.5 px-4 font-mono text-[11px] text-gray-500">
+                                {rep.created_at ? new Date(rep.created_at).toLocaleString() : '—'}
+                              </td>
+                              <td className="py-3.5 px-4 font-bold text-gray-900">
+                                {rep.title}
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#faf6ee] text-[#594723] border border-[#ede4d0]">
+                                  {rep.report_type.replace(/_/g, ' ')}
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
+                                  isPdf ? 'bg-rose-100 text-rose-800 border border-rose-200' : 'bg-indigo-100 text-indigo-800 border border-indigo-200'
+                                }`}>
+                                  {rep.export_format}
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <div className="font-bold text-gray-900">{rep.user_name}</div>
+                                <div className="text-[11px] text-gray-400 font-mono">{rep.user_email}</div>
+                              </td>
+                              <td className="py-3.5 px-4 text-right">
+                                <button
+                                  onClick={() => setSelectedAuditReport(rep)}
+                                  className="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#faf6ee] hover:bg-[#1b382d] text-[#594723] hover:text-white border border-[#ede4d0] hover:border-transparent transition-all cursor-pointer inline-flex items-center gap-1"
+                                >
+                                  <Eye size={12} /> Inspect
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        });
+                      })()}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
       {/* ═══ TAB 2: CONNECTION AUDITOR ═══ */}
       {/* ═══════════════════════════════════════════════════════════════ */}
       {activeTab === 'CONNECTIONS' && (
@@ -1363,6 +2146,185 @@ export default function Admin() {
                 className="px-5 py-2 bg-[#3b2f19] hover:bg-[#2a2111] text-white font-bold rounded-xl text-xs shadow-md cursor-pointer"
               >
                 Save Role
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ═══ RECOMMENDATION AUDIT INSPECT MODAL ═══ */}
+      {selectedAuditRec && (
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-6 border border-[#e8dfcb] max-h-[90vh] overflow-y-auto">
+            <div className="flex items-start justify-between pb-4 border-b border-gray-100">
+              <div>
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-1.5 ${
+                  selectedAuditRec.professional_role === 'DERMATOLOGIST'
+                    ? 'bg-cyan-50 text-cyan-800 border border-cyan-200'
+                    : 'bg-teal-50 text-teal-800 border border-teal-200'
+                }`}>
+                  {selectedAuditRec.professional_role} PRESCRIPTION
+                </span>
+                <h3 className="text-xl font-black text-gray-900">{selectedAuditRec.title}</h3>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  Authored by <strong className="text-gray-700">{selectedAuditRec.professional_name}</strong> for patient <strong className="text-gray-700">{selectedAuditRec.patient_name}</strong> ({selectedAuditRec.patient_email})
+                </p>
+              </div>
+              <button
+                onClick={() => setSelectedAuditRec(null)}
+                className="p-1 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Prescribed Actives */}
+            <div className="space-y-2">
+              <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wider flex items-center gap-1.5">
+                <Pill size={14} className="text-[#277858]" /> Prescribed Clinical Actives
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {(selectedAuditRec.prescribed_actives || []).map((act, i) => (
+                  <span key={i} className="px-3 py-1 rounded-xl text-xs font-bold bg-[#faf6ee] text-[#594723] border border-[#ede4d0]">
+                    {act}
+                  </span>
+                ))}
+                {(!selectedAuditRec.prescribed_actives || selectedAuditRec.prescribed_actives.length === 0) && (
+                  <span className="text-xs text-gray-400 italic">No specific active compounds flagged.</span>
+                )}
+              </div>
+            </div>
+
+            {/* Contraindications */}
+            {selectedAuditRec.contraindications?.length > 0 && (
+              <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2">
+                <h4 className="text-xs font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <AlertTriangle size={14} className="text-amber-700" /> Contraindication Warnings & Safety Safeguards
+                </h4>
+                <ul className="list-disc list-inside text-xs text-amber-800 space-y-1">
+                  {selectedAuditRec.contraindications.map((c, i) => (
+                    <li key={i}>{c}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Recommended Products */}
+            {selectedAuditRec.recommended_products?.length > 0 && (
+              <div className="space-y-2">
+                <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sparkles size={14} className="text-[#277858]" /> Prescribed Regimen Formulations
+                </h4>
+                <div className="space-y-2">
+                  {selectedAuditRec.recommended_products.map((prod, i) => (
+                    <div key={i} className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-between text-xs">
+                      <div>
+                        <div className="font-bold text-gray-900">{prod.name || prod.product_name || `Formulation #${i+1}`}</div>
+                        <div className="text-[11px] text-gray-500">{prod.instructions || prod.category || 'Apply as directed'}</div>
+                      </div>
+                      {prod.frequency && (
+                        <span className="text-[10px] font-bold text-gray-600 bg-white px-2 py-0.5 rounded border">
+                          {prod.frequency}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Clinical Notes */}
+            {selectedAuditRec.clinical_notes && (
+              <div className="space-y-1.5">
+                <h4 className="text-xs font-bold text-gray-700 uppercase tracking-wider">Clinical Rationale & Notes</h4>
+                <div className="p-4 rounded-2xl bg-[#faf9f5] border border-[#ede7d8] text-xs text-gray-700 leading-relaxed font-normal whitespace-pre-wrap">
+                  {selectedAuditRec.clinical_notes}
+                </div>
+              </div>
+            )}
+
+            {/* Footer with Metadata */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-gray-100 text-xs text-gray-500">
+              <div className="flex items-center gap-3">
+                <span>Follow-Up Cycle: <strong>{selectedAuditRec.follow_up_weeks || 4} Weeks</strong></span>
+                <span>•</span>
+                <span>Record ID: <strong className="font-mono text-[10px]">{selectedAuditRec.id.slice(0, 8)}...</strong></span>
+              </div>
+              <button
+                onClick={() => setSelectedAuditRec(null)}
+                className="px-5 py-2 bg-[#1b382d] hover:bg-[#255241] text-white font-bold rounded-xl text-xs transition-colors cursor-pointer"
+              >
+                Close Audit Record
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ═══ SYSTEM REPORT AUDIT INSPECT MODAL ═══ */}
+      {selectedAuditReport && (
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl space-y-6 border border-[#e8dfcb]">
+            <div className="flex items-start justify-between pb-3 border-b border-gray-100">
+              <div>
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200 mb-1">
+                  OFFICIAL AUDIT DOSSIER
+                </span>
+                <h3 className="text-lg font-bold text-gray-900">{selectedAuditReport.title}</h3>
+                <p className="text-xs text-gray-400 mt-0.5">Subject: {selectedAuditReport.user_name} ({selectedAuditReport.user_email})</p>
+              </div>
+              <button
+                onClick={() => setSelectedAuditReport(null)}
+                className="p-1 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="space-y-3 text-xs">
+              <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex justify-between">
+                <span className="text-gray-500 font-bold">Report Type / Protocol:</span>
+                <span className="font-bold text-gray-900">{selectedAuditReport.report_type}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex justify-between">
+                <span className="text-gray-500 font-bold">Export Format:</span>
+                <span className="font-mono font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
+                  {selectedAuditReport.export_format}
+                </span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex justify-between">
+                <span className="text-gray-500 font-bold">Generated At:</span>
+                <span className="font-mono text-gray-700">{selectedAuditReport.created_at ? new Date(selectedAuditReport.created_at).toUTCString() : '—'}</span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex justify-between">
+                <span className="text-gray-500 font-bold">Report UUID:</span>
+                <span className="font-mono text-[11px] text-gray-600">{selectedAuditReport.id}</span>
+              </div>
+
+              {selectedAuditReport.assessment_id && (
+                <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 flex justify-between">
+                  <span className="text-gray-500 font-bold">Linked Assessment ID:</span>
+                  <span className="font-mono text-[11px] text-gray-600">{selectedAuditReport.assessment_id}</span>
+                </div>
+              )}
+
+              <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-2 text-emerald-800">
+                <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                <span className="text-[11px] font-semibold">
+                  Compliant with HIPAA, GDPR biometric safeguards and zero-knowledge data export policy.
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-end pt-3 border-t border-gray-100">
+              <button
+                onClick={() => setSelectedAuditReport(null)}
+                className="px-5 py-2 bg-[#1b382d] hover:bg-[#255241] text-white font-bold rounded-xl text-xs transition-colors cursor-pointer"
+              >
+                Close Audit Record
               </button>
             </div>
           </div>

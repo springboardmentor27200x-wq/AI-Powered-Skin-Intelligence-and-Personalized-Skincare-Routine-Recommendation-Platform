@@ -33,4 +33,16 @@ export const consultantService = {
     });
     return response.data;
   },
+
+  // Consultant: Get all recommendations issued by this consultant
+  getRecommendations: async () => {
+    const response = await apiClient.get('/recommendations/issued');
+    return response.data;
+  },
+
+  // Consultant: Get cohort progress monitoring data
+  getCohortProgress: async () => {
+    const response = await apiClient.get('/consultant/cohort-progress');
+    return response.data;
+  },
 };

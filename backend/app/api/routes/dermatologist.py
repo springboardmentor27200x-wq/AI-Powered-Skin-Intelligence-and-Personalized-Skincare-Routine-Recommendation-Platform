@@ -563,3 +563,169 @@ def _build_patient_detail_response(
         active_routine=active_routine_data,
         past_recommendations=past_recs,
     )
+
+
+@router.get("/cohort-analytics")
+def get_dermatologist_cohort_analytics(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_role(["DERMATOLOGIST", "ADMINISTRATOR"]))
+):
+    """
+    Longitudinal cohort progress analytics endpoint for Dermatologists.
+    Aggregates patient recovery deltas, barrier health restoration rates,
+    TEWL risk stratification, and treatment responsiveness.
+    """
+    from app.models.assessment import SkinAssessment
+    from app.services.progress_service import ProgressService
+
+    connections = db.query(ProfessionalConnection).filter(
+        ProfessionalConnection.professional_id == current_user.id,
+        ProfessionalConnection.status == "ACCEPTED"
+    ).all()
+
+    patient_analytics = []
+    severe_keywords = ["acne", "melasma", "rosacea", "eczema", "psoriasis", "hyperpigmentation", "cystic"]
+
+    for conn in connections:
+        patient = conn.client
+        if not patient:
+            continue
+
+        assessments = (
+            db.query(SkinAssessment)
+            .filter(SkinAssessment.user_id == patient.id)
+            .order_by(SkinAssessment.created_at.asc())
+            .all()
+        )
+
+        baseline_score = None
+        latest_score = None
+        score_delta = 0
+        pct_improvement = 0.0
+        barrier_score = None
+        last_assessment_date = None
+
+        if assessments:
+            baseline_score = assessments[0].overall_score
+            latest = assessments[-1]
+            latest_score = latest.overall_score
+            score_delta = latest_score - baseline_score
+            pct_improvement = (
+                round((score_delta / baseline_score) * 100, 1)
+                if baseline_score and baseline_score > 0
+                else 0.0
+            )
+            barrier_score = getattr(latest, "barrier_score", None)
+            if barrier_score is None and getattr(latest, "scores", None):
+                barrier_score = getattr(latest.scores, "skin_condition_score", None) or getattr(latest.scores, "hydration_score", None)
+            if barrier_score is None:
+                barrier_score = getattr(latest, "overall_score", 70)
+            last_assessment_date = latest.created_at.isoformat() if latest.created_at else None
+
+        adherence_stats = ProgressService.get_adherence_stats(db, patient.id)
+        weekly_adherence = float(getattr(adherence_stats, "week_percent", None) or getattr(adherence_stats, "this_week_pct", None) or 0.0)
+        streak_days = int(getattr(adherence_stats, "streak_days", None) or getattr(adherence_stats, "current_streak", None) or 0)
+
+        skin_prof = db.query(SkinProfile).filter(SkinProfile.user_id == patient.id).first()
+        skin_type = skin_prof.skin_type if skin_prof else "Not specified"
+        concerns_list = [c.name for c in skin_prof.concerns] if skin_prof and skin_prof.concerns else []
+        primary_concern = concerns_list[0] if concerns_list else "General Maintenance"
+
+        has_severe_concern = any(
+            any(k in c.lower() for k in severe_keywords) for c in concerns_list
+        )
+
+        # Triage category
+        if (latest_score is not None and latest_score < 50) or has_severe_concern:
+            triage_category = "CRITICAL"
+        elif latest_score is not None and latest_score >= 75:
+            triage_category = "OPTIMAL"
+        else:
+            triage_category = "MODERATE"
+
+        # TEWL Risk estimation from barrier score
+        b_val = barrier_score if barrier_score is not None else 70
+        if b_val < 50:
+            tewl_risk = "HIGH"
+        elif b_val < 75:
+            tewl_risk = "MODERATE"
+        else:
+            tewl_risk = "LOW"
+
+        # Clinical response evaluation
+        if score_delta >= 10:
+            clinical_response = "SIGNIFICANT_IMPROVEMENT"
+        elif score_delta >= 0:
+            clinical_response = "GRADUAL_RECOVERY"
+        else:
+            clinical_response = "NEEDS_ADJUSTMENT"
+
+        last_lifestyle = (
+            db.query(LifestyleRecord)
+            .filter(LifestyleRecord.user_id == patient.id)
+            .order_by(LifestyleRecord.created_at.desc())
+            .first()
+        )
+        last_activity = (
+            last_lifestyle.created_at.isoformat()
+            if last_lifestyle
+            else (conn.responded_at.isoformat() if conn.responded_at else None)
+        )
+
+        patient_name = patient.profile.name if patient.profile else patient.email.split("@")[0]
+
+        patient_analytics.append({
+            "connection_id": str(conn.id),
+            "user_id": str(patient.id),
+            "name": patient_name,
+            "email": patient.email,
+            "skin_type": skin_type,
+            "primary_concern": primary_concern,
+            "concerns": concerns_list,
+            "has_severe_concern": has_severe_concern,
+            "baseline_score": baseline_score,
+            "latest_score": latest_score,
+            "score_delta": score_delta,
+            "pct_improvement": pct_improvement,
+            "barrier_score": barrier_score,
+            "tewl_risk": tewl_risk,
+            "weekly_adherence_rate": weekly_adherence,
+            "streak_days": streak_days,
+            "triage_category": triage_category,
+            "clinical_response": clinical_response,
+            "last_assessment_date": last_assessment_date,
+            "last_activity": last_activity,
+            "connected_since": conn.responded_at.isoformat() if conn.responded_at else None,
+        })
+
+    cohort_size = len(patient_analytics)
+    deltas = [p["score_delta"] for p in patient_analytics]
+    mean_recovery_delta = round(sum(deltas) / len(deltas), 1) if deltas else 0.0
+
+    barrier_healthy = sum(1 for p in patient_analytics if (p["barrier_score"] or 0) >= 70)
+    barrier_restoration_rate = round((barrier_healthy / cohort_size) * 100, 1) if cohort_size > 0 else 0.0
+
+    critical_count = sum(1 for p in patient_analytics if p["triage_category"] == "CRITICAL")
+    moderate_count = sum(1 for p in patient_analytics if p["triage_category"] == "MODERATE")
+    optimal_count = sum(1 for p in patient_analytics if p["triage_category"] == "OPTIMAL")
+
+    significant_impr = sum(1 for p in patient_analytics if p["clinical_response"] == "SIGNIFICANT_IMPROVEMENT")
+    stabilization_rate = (
+        round(((significant_impr + sum(1 for p in patient_analytics if p["clinical_response"] == "GRADUAL_RECOVERY")) / cohort_size) * 100, 1)
+        if cohort_size > 0
+        else 0.0
+    )
+
+    return {
+        "summary": {
+            "cohort_size": cohort_size,
+            "mean_recovery_delta": mean_recovery_delta,
+            "barrier_restoration_rate": barrier_restoration_rate,
+            "stabilization_rate": stabilization_rate,
+            "critical_count": critical_count,
+            "moderate_count": moderate_count,
+            "optimal_count": optimal_count,
+        },
+        "patient_analytics": patient_analytics,
+    }
+

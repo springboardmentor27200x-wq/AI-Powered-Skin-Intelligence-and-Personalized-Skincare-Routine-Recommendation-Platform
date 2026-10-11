@@ -5,7 +5,8 @@ import {
   Search, Clock, ChevronRight, Droplet, Moon, Sun, X, 
   CheckCircle2, AlertCircle, Sparkles, RefreshCw, FileText, FileSpreadsheet,
   MessageSquare, UserPlus, UserCheck, Compass, CheckCircle, Plus, Send,
-  Filter, Printer, Copy, CheckCheck, Edit3, ShieldAlert
+  Filter, Printer, Copy, CheckCheck, Edit3, ShieldAlert,
+  Flame, TrendingUp, TrendingDown, Award, BarChart2, Pill
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { dermatologistService } from '../services/dermatologist';
@@ -23,13 +24,25 @@ const Dermatologist = () => {
   const [incomingRequests, setIncomingRequests] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [allConsultants, setAllConsultants] = useState([]);
-  const [activeTab, setActiveTab] = useState('all_users'); // 'all_users' | 'all_consultants' | 'my_patients' | 'requests'
+  const [activeTab, setActiveTab] = useState('all_users'); // 'all_users' | 'all_consultants' | 'my_patients' | 'treatment_recommendations' | 'progress_analytics' | 'requests'
   const [approachingId, setApproachingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedPatientDetail, setSelectedPatientDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [processingId, setProcessingId] = useState(null);
+
+  // Treatment Recommendations State
+  const [treatmentsList, setTreatmentsList] = useState([]);
+  const [loadingTreatments, setLoadingTreatments] = useState(false);
+  const [showNewTreatmentModal, setShowNewTreatmentModal] = useState(false);
+  const [selectedPatientForTreatment, setSelectedPatientForTreatment] = useState(null);
+  const [expandedTreatmentId, setExpandedTreatmentId] = useState(null);
+
+  // Progress Analytics State
+  const [cohortAnalytics, setCohortAnalytics] = useState(null);
+  const [loadingAnalytics, setLoadingAnalytics] = useState(false);
+  const [analyticsFilter, setAnalyticsFilter] = useState('all'); // 'all' | 'critical' | 'moderate' | 'optimal' | 'improving'
 
   // Clinical Triage & Risk Stratification Filter State
   const [triageFilter, setTriageFilter] = useState('all'); // 'all' | 'critical' | 'barrier_low' | 'sensitive' | 'referred'
@@ -52,10 +65,34 @@ const Dermatologist = () => {
   const [approachConsultantMessage, setApproachConsultantMessage] = useState('');
   const [submittingApproach, setSubmittingApproach] = useState(false);
 
+  const fetchTreatmentsData = async () => {
+    try {
+      setLoadingTreatments(true);
+      const data = await dermatologistService.getTreatments();
+      setTreatmentsList(data || []);
+    } catch (err) {
+      console.warn('Could not load treatments:', err);
+    } finally {
+      setLoadingTreatments(false);
+    }
+  };
+
+  const fetchCohortAnalyticsData = async () => {
+    try {
+      setLoadingAnalytics(true);
+      const data = await dermatologistService.getCohortAnalytics();
+      setCohortAnalytics(data || null);
+    } catch (err) {
+      console.warn('Could not load cohort analytics:', err);
+    } finally {
+      setLoadingAnalytics(false);
+    }
+  };
+
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
-      const [patientsData, requestsData, usersData, consultantsData] = await Promise.all([
+      const [patientsData, requestsData, usersData, consultantsData, treatsData, analyticsData] = await Promise.all([
         dermatologistService.getPatients(),
         connectionsService.getIncomingRequests(),
         dermatologistService.getAllUsers().catch((e) => {
@@ -66,11 +103,15 @@ const Dermatologist = () => {
           console.warn('Could not load consultant directory for dermatologist:', e);
           return [];
         }),
+        dermatologistService.getTreatments().catch(() => []),
+        dermatologistService.getCohortAnalytics().catch(() => null),
       ]);
       setPatients(patientsData || []);
       setIncomingRequests(requestsData || []);
       setAllUsers(usersData || []);
       setAllConsultants(consultantsData || []);
+      setTreatmentsList(treatsData || []);
+      setCohortAnalytics(analyticsData || null);
     } catch (err) {
       console.error('Failed to load dermatologist dashboard:', err);
       toast.error('Failed to load patient data from database.');
@@ -384,19 +425,23 @@ This medical consultation memo is generated for clinical continuity and record k
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[85px]">
               <div className="text-2xl font-black text-cyan-200">{allUsers.length}</div>
               <div className="text-[10px] font-semibold text-emerald-200 uppercase tracking-wider">All Users</div>
             </div>
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[85px]">
               <div className="text-2xl font-black text-teal-200">{allConsultants.length}</div>
               <div className="text-[10px] font-semibold text-emerald-200 uppercase tracking-wider">Consultants</div>
             </div>
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[85px]">
               <div className="text-2xl font-black text-white">{patients.length}</div>
               <div className="text-[10px] font-semibold text-emerald-200 uppercase tracking-wider">Patients</div>
             </div>
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[85px]">
+              <div className="text-2xl font-black text-emerald-300">{treatmentsList.length}</div>
+              <div className="text-[10px] font-semibold text-emerald-200 uppercase tracking-wider">Treatments</div>
+            </div>
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[85px]">
               <div className="text-2xl font-black text-amber-300">{incomingRequests.length}</div>
               <div className="text-[10px] font-semibold text-emerald-200 uppercase tracking-wider">Requests</div>
             </div>
@@ -460,6 +505,40 @@ This medical consultation memo is generated for clinical continuity and record k
           </button>
 
           <button
+            onClick={() => setActiveTab('treatment_recommendations')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'treatment_recommendations'
+                ? 'bg-[#183a2d] text-white shadow-md'
+                : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+            }`}
+          >
+            <Pill size={15} />
+            <span>Treatment Recommendations</span>
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${
+              activeTab === 'treatment_recommendations' ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+            }`}>
+              {treatmentsList.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('progress_analytics')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'progress_analytics'
+                ? 'bg-[#183a2d] text-white shadow-md'
+                : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+            }`}
+          >
+            <BarChart2 size={15} />
+            <span>Progress Analytics</span>
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${
+              activeTab === 'progress_analytics' ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+            }`}>
+              {patients.length}
+            </span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('requests')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === 'requests'
@@ -493,6 +572,10 @@ This medical consultation memo is generated for clinical continuity and record k
                 ? "Search consultants by name, location..."
                 : activeTab === 'my_patients'
                 ? "Search patient cases..."
+                : activeTab === 'treatment_recommendations'
+                ? "Search prescriptions by patient or active..."
+                : activeTab === 'progress_analytics'
+                ? "Search analytics by patient name or triage..."
                 : "Search requests..."
             }
             className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#dce8e1] rounded-2xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#183a2d] shadow-xs"
@@ -1086,6 +1169,516 @@ This medical consultation memo is generated for clinical continuity and record k
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ═══ TREATMENT RECOMMENDATIONS TAB ═══ */}
+          {activeTab === 'treatment_recommendations' && (
+            <div className="space-y-6">
+              {/* Header Banner */}
+              <div className="p-6 bg-white rounded-3xl border border-[#dce8e1] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-bold text-emerald-800">
+                    <Pill size={13} className="text-emerald-600" />
+                    <span>Clinical Treatment & Prescriptions Desk</span>
+                  </div>
+                  <h2 className="text-xl font-black text-[#143a2d]">Treatment Recommendations</h2>
+                  <p className="text-xs text-gray-500 max-w-xl">
+                    Formulate, audit, and manage medical prescriptions, therapeutic active ingredients, contraindication alerts, and follow-up clinical milestones for your connected patients.
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    if (patients.length > 0) {
+                      setSelectedPatientForTreatment(patients[0]);
+                    }
+                    setShowNewTreatmentModal(true);
+                  }}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#183a2d] hover:bg-[#122e23] text-white rounded-2xl text-xs font-bold shadow-md transition-all cursor-pointer whitespace-nowrap self-start md:self-auto"
+                >
+                  <Plus size={16} />
+                  <span>New Treatment Protocol</span>
+                </button>
+              </div>
+
+              {/* KPI Strip */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Total Prescriptions</span>
+                  <div className="text-2xl font-black text-[#143a2d] mt-1">{treatmentsList.length}</div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Patients Under Treatment</span>
+                  <div className="text-2xl font-black text-emerald-700 mt-1">
+                    {new Set(treatmentsList.map((t) => t.patient_id)).size}
+                  </div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Clinical Actives Monitored</span>
+                  <div className="text-2xl font-black text-cyan-700 mt-1">
+                    {new Set(treatmentsList.flatMap((t) => t.prescribed_actives || [])).size}
+                  </div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Scheduled Clinical Reviews</span>
+                  <div className="text-2xl font-black text-indigo-700 mt-1">
+                    {treatmentsList.filter((t) => (t.follow_up_weeks || 0) > 0).length}
+                  </div>
+                </div>
+              </div>
+
+              {/* Treatments List */}
+              {loadingTreatments ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#dce8e1]">
+                  <RefreshCw className="animate-spin text-emerald-600 mx-auto" size={28} />
+                  <p className="text-xs text-gray-500 mt-3 font-semibold">Loading treatment prescriptions...</p>
+                </div>
+              ) : treatmentsList.length === 0 ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#dce8e1] space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto">
+                    <Pill size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-gray-800">No treatment prescriptions issued yet</h3>
+                    <p className="text-xs text-gray-500 max-w-md mx-auto mt-1">
+                      Prescribe clinical regimens, active therapies (retinoids, azelaic acid, ceramides), and usage instructions for your connected patients.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      if (patients.length > 0) setSelectedPatientForTreatment(patients[0]);
+                      setShowNewTreatmentModal(true);
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#183a2d] text-white rounded-xl text-xs font-bold hover:bg-[#122e23] cursor-pointer"
+                  >
+                    <Plus size={14} />
+                    <span>Create Treatment Protocol</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {treatmentsList
+                    .filter((t) => {
+                      const q = searchTerm.toLowerCase();
+                      return (
+                        (t.title && t.title.toLowerCase().includes(q)) ||
+                        (t.patient_name && t.patient_name.toLowerCase().includes(q)) ||
+                        (t.patient_email && t.patient_email.toLowerCase().includes(q)) ||
+                        (t.clinical_notes && t.clinical_notes.toLowerCase().includes(q)) ||
+                        (t.prescribed_actives && t.prescribed_actives.some((a) => a.toLowerCase().includes(q)))
+                      );
+                    })
+                    .map((item) => {
+                      const isExpanded = expandedTreatmentId === item.id;
+                      return (
+                        <div
+                          key={item.id}
+                          className="p-6 bg-white rounded-3xl border border-[#dce8e1] shadow-sm hover:shadow-md transition-all space-y-4"
+                        >
+                          {/* Top Row */}
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-100">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#183a2d] to-[#255241] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                                {(item.patient_name || 'P').charAt(0).toUpperCase()}
+                              </div>
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <h4 className="text-base font-bold text-[#143a2d]">
+                                    {item.patient_name || 'Connected Patient'}
+                                  </h4>
+                                  <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                                    Patient Chart
+                                  </span>
+                                </div>
+                                <p className="text-xs text-gray-500">{item.patient_email || 'Verified Patient'}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                                <Clock size={12} />
+                                {item.follow_up_weeks ? `${item.follow_up_weeks}w Clinical Review` : '4w Clinical Review'}
+                              </span>
+                              <span className="text-[11px] text-gray-400">
+                                {new Date(item.created_at).toLocaleDateString()}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Protocol Title */}
+                          <div>
+                            <h5 className="text-sm font-black text-gray-900">{item.title}</h5>
+                          </div>
+
+                          {/* Prescribed Actives */}
+                          {item.prescribed_actives && item.prescribed_actives.length > 0 && (
+                            <div className="space-y-1">
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                                Clinical Therapeutics & Actives:
+                              </span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {item.prescribed_actives.map((act, i) => (
+                                  <span
+                                    key={i}
+                                    className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200"
+                                  >
+                                    <ShieldCheck size={12} className="text-emerald-600" />
+                                    {act}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Regimen Products */}
+                          {item.recommended_products && item.recommended_products.length > 0 && (
+                            <div className="space-y-1">
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                                Recommended Product Regimen:
+                              </span>
+                              <div className="flex flex-wrap gap-2">
+                                {item.recommended_products.map((p, i) => (
+                                  <div
+                                    key={i}
+                                    className="px-3 py-1.5 rounded-xl bg-gray-50 border border-gray-200 text-xs font-medium text-gray-800"
+                                  >
+                                    <span className="font-bold">{typeof p === 'string' ? p : p.name}</span>
+                                    {p.timing && <span className="text-[10px] text-gray-500 ml-1.5">({p.timing})</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Contraindications Warning */}
+                          {item.contraindications && item.contraindications.length > 0 && (
+                            <div className="p-3 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
+                              <AlertTriangle size={15} className="text-amber-600 mt-0.5 shrink-0" />
+                              <div>
+                                <span className="font-bold block">Contraindications & Warnings:</span>
+                                <span>{item.contraindications.join('; ')}</span>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Clinical Notes Excerpt */}
+                          <div className="p-3.5 bg-gray-50 rounded-2xl border border-gray-100 text-xs text-gray-700 space-y-1">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                              Attending Clinical Advisory Notes:
+                            </span>
+                            <p className={isExpanded ? 'whitespace-pre-wrap font-normal' : 'line-clamp-2 font-normal'}>
+                              {item.clinical_notes}
+                            </p>
+                            {item.clinical_notes && item.clinical_notes.length > 120 && (
+                              <button
+                                onClick={() => setExpandedTreatmentId(isExpanded ? null : item.id)}
+                                className="text-[11px] font-bold text-emerald-800 hover:underline pt-1 cursor-pointer block"
+                              >
+                                {isExpanded ? 'Show Less ▲' : 'Read Full Clinical Notes ▼'}
+                              </button>
+                            )}
+                          </div>
+
+                          {/* Footer Action Buttons */}
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100">
+                            <button
+                              onClick={() => handleInspectUser(item.patient_id)}
+                              className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-800 hover:text-emerald-950 py-1 cursor-pointer"
+                            >
+                              <FileText size={13} />
+                              <span>Review Patient Chart</span>
+                            </button>
+                            <button
+                              onClick={() => {
+                                const target = patients.find((p) => p.user_id === item.patient_id) || {
+                                  user_id: item.patient_id,
+                                  name: item.patient_name || 'Patient',
+                                };
+                                setSelectedPatientForTreatment(target);
+                                setShowNewTreatmentModal(true);
+                              }}
+                              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                            >
+                              <Edit3 size={13} />
+                              <span>Update Treatment Protocol</span>
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ═══ PROGRESS ANALYTICS TAB ═══ */}
+          {activeTab === 'progress_analytics' && (
+            <div className="space-y-6">
+              {/* Header Banner */}
+              <div className="p-6 bg-white rounded-3xl border border-[#dce8e1] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-50 border border-cyan-200 rounded-full text-xs font-bold text-cyan-800">
+                    <BarChart2 size={13} className="text-cyan-600" />
+                    <span>Longitudinal Cohort Outcomes & Recovery</span>
+                  </div>
+                  <h2 className="text-xl font-black text-[#143a2d]">Progress Analytics</h2>
+                  <p className="text-xs text-gray-500 max-w-xl">
+                    Longitudinal recovery tracking, barrier repair restoration rates, and clinical triage response stratification across your patient panel.
+                  </p>
+                </div>
+                <button
+                  onClick={fetchCohortAnalyticsData}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold transition-colors cursor-pointer self-start md:self-auto"
+                >
+                  <RefreshCw size={14} className={loadingAnalytics ? 'animate-spin' : ''} />
+                  <span>Refresh Analytics</span>
+                </button>
+              </div>
+
+              {/* Clinical Outcomes KPI Strip */}
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Clinical Cohort</span>
+                  <div className="text-2xl font-black text-[#143a2d] mt-1">
+                    {cohortAnalytics?.summary?.cohort_size ?? patients.length}
+                  </div>
+                  <span className="text-[10px] text-gray-500">Connected patients</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Mean Recovery Delta</span>
+                  <div className="text-2xl font-black text-emerald-700 mt-1">
+                    +{(cohortAnalytics?.summary?.mean_recovery_delta ?? 0) > 0 ? cohortAnalytics?.summary?.mean_recovery_delta : (cohortAnalytics?.summary?.mean_recovery_delta ?? 0)} pts
+                  </div>
+                  <span className="text-[10px] text-emerald-600">Cohort skin recovery</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Barrier Restoration</span>
+                  <div className="text-2xl font-black text-teal-700 mt-1">
+                    {cohortAnalytics?.summary?.barrier_restoration_rate ?? 0}%
+                  </div>
+                  <span className="text-[10px] text-teal-600">Barrier score ≥ 70</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Stabilization Rate</span>
+                  <div className="text-2xl font-black text-cyan-700 mt-1">
+                    {cohortAnalytics?.summary?.stabilization_rate ?? 0}%
+                  </div>
+                  <span className="text-[10px] text-cyan-700">Responsive protocols</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#dce8e1] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Critical Triage</span>
+                  <div className="text-2xl font-black text-rose-600 mt-1">
+                    {cohortAnalytics?.summary?.critical_count ?? 0}
+                  </div>
+                  <span className="text-[10px] text-rose-600">Severe / Needs attention</span>
+                </div>
+              </div>
+
+              {/* Stratification Filter Tabs */}
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { key: 'all', label: 'All Patients' },
+                  { key: 'critical', label: 'Critical / Severe Concerns' },
+                  { key: 'moderate', label: 'Moderately Responsive' },
+                  { key: 'optimal', label: 'Optimal / Maintained' },
+                  { key: 'improving', label: 'Significant Improvement' },
+                ].map((f) => (
+                  <button
+                    key={f.key}
+                    onClick={() => setAnalyticsFilter(f.key)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      analyticsFilter === f.key
+                        ? 'bg-[#183a2d] text-white shadow-xs'
+                        : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Patient Response Ledger */}
+              {loadingAnalytics ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#dce8e1]">
+                  <RefreshCw className="animate-spin text-emerald-600 mx-auto" size={28} />
+                  <p className="text-xs text-gray-500 mt-3 font-semibold">Analyzing longitudinal recovery telemetry...</p>
+                </div>
+              ) : (cohortAnalytics?.patient_analytics || []).length === 0 ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#dce8e1] space-y-3">
+                  <BarChart2 size={36} className="text-gray-300 mx-auto" />
+                  <h3 className="text-base font-bold text-gray-800">No longitudinal clinical data available yet</h3>
+                  <p className="text-xs text-gray-500 max-w-md mx-auto">
+                    Patient assessment progressions and recovery deltas will populate here as connected patients log their skin checks.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {(cohortAnalytics?.patient_analytics || [])
+                    .filter((item) => {
+                      if (analyticsFilter === 'critical' && item.triage_category !== 'CRITICAL') return false;
+                      if (analyticsFilter === 'moderate' && item.triage_category !== 'MODERATE') return false;
+                      if (analyticsFilter === 'optimal' && item.triage_category !== 'OPTIMAL') return false;
+                      if (analyticsFilter === 'improving' && item.clinical_response !== 'SIGNIFICANT_IMPROVEMENT') return false;
+
+                      const q = searchTerm.toLowerCase();
+                      return (
+                        (item.name && item.name.toLowerCase().includes(q)) ||
+                        (item.email && item.email.toLowerCase().includes(q)) ||
+                        (item.primary_concern && item.primary_concern.toLowerCase().includes(q)) ||
+                        (item.triage_category && item.triage_category.toLowerCase().includes(q))
+                      );
+                    })
+                    .map((item) => {
+                      const isPositiveDelta = item.score_delta > 0;
+                      const isNegativeDelta = item.score_delta < 0;
+
+                      return (
+                        <div
+                          key={item.user_id}
+                          className="p-6 bg-white rounded-3xl border border-[#dce8e1] shadow-sm hover:shadow-md transition-all space-y-4"
+                        >
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-2xl bg-[#183a2d] text-white flex items-center justify-center font-bold text-sm">
+                                {(item.name || 'P').charAt(0).toUpperCase()}
+                              </div>
+                              <div>
+                                <h4 className="text-base font-bold text-[#143a2d]">{item.name}</h4>
+                                <p className="text-xs text-gray-500">
+                                  {item.skin_type} • Primary Condition: {item.primary_concern}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="flex flex-wrap items-center gap-2">
+                              {/* Triage Category */}
+                              <span
+                                className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                                  item.triage_category === 'CRITICAL'
+                                    ? 'bg-rose-50 text-rose-800 border-rose-200'
+                                    : item.triage_category === 'MODERATE'
+                                    ? 'bg-amber-50 text-amber-800 border-amber-200'
+                                    : 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                                }`}
+                              >
+                                {item.triage_category} Triage
+                              </span>
+
+                              {/* Clinical Response */}
+                              <span
+                                className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                                  item.clinical_response === 'SIGNIFICANT_IMPROVEMENT'
+                                    ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                                    : item.clinical_response === 'GRADUAL_RECOVERY'
+                                    ? 'bg-teal-50 text-teal-800 border-teal-200'
+                                    : 'bg-rose-50 text-rose-800 border-rose-200'
+                                }`}
+                              >
+                                {item.clinical_response.replace('_', ' ')}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Metrics Grid */}
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-gray-100">
+                            {/* Score Delta */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">DermaIQ Score</span>
+                              <div className="flex items-baseline gap-2 mt-0.5">
+                                <span className="text-lg font-black text-gray-900">
+                                  {item.latest_score !== null ? `${item.latest_score}/100` : 'Pending'}
+                                </span>
+                                {item.score_delta !== 0 && (
+                                  <span
+                                    className={`text-xs font-bold inline-flex items-center ${
+                                      isPositiveDelta ? 'text-emerald-600' : 'text-rose-600'
+                                    }`}
+                                  >
+                                    {isPositiveDelta ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
+                                    {isPositiveDelta ? `+${item.score_delta}` : item.score_delta}
+                                    {item.pct_improvement !== 0 && ` (${item.pct_improvement > 0 ? '+' : ''}${item.pct_improvement}%)`}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* TEWL & Barrier Score */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Barrier / TEWL Risk</span>
+                              <div className="flex items-center justify-between mt-0.5">
+                                <span className="text-lg font-black text-emerald-700">
+                                  {item.barrier_score ?? 70}/100
+                                </span>
+                                <span
+                                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                                    item.tewl_risk === 'HIGH'
+                                      ? 'bg-rose-100 text-rose-800'
+                                      : item.tewl_risk === 'MODERATE'
+                                      ? 'bg-amber-100 text-amber-800'
+                                      : 'bg-emerald-100 text-emerald-800'
+                                  }`}
+                                >
+                                  {item.tewl_risk} Risk
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Routine Adherence */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Routine Compliance</span>
+                              <div className="text-lg font-black text-teal-700 mt-0.5">
+                                {item.weekly_adherence_rate}%
+                              </div>
+                              <div className="w-full bg-gray-200 h-1.5 rounded-full mt-1 overflow-hidden">
+                                <div
+                                  className="bg-teal-600 h-full rounded-full transition-all"
+                                  style={{ width: `${Math.min(item.weekly_adherence_rate, 100)}%` }}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Adherence Streak */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Logging Consistency</span>
+                              <div className="text-lg font-black text-amber-600 mt-0.5 flex items-center gap-1">
+                                <Flame size={16} className="text-amber-500" />
+                                <span>{item.streak_days} Days</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Footer Info & Actions */}
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100 text-xs">
+                            <span className="text-gray-400">
+                              Last check-in: {item.last_activity ? new Date(item.last_activity).toLocaleDateString() : 'N/A'}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => handleInspectUser(item.user_id)}
+                                className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold cursor-pointer transition-colors"
+                              >
+                                View Case Chart
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setSelectedPatientForTreatment(item);
+                                  setShowNewTreatmentModal(true);
+                                }}
+                                className="px-3.5 py-1.5 bg-[#183a2d] hover:bg-[#122e23] text-white rounded-xl font-bold shadow-xs cursor-pointer transition-colors"
+                              >
+                                Update Protocol
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               )}
             </div>
@@ -2011,7 +2604,80 @@ This medical consultation memo is generated for clinical continuity and record k
                 Close Memo
               </button>
             </div>
+          </div>
+        </div>
+      )}
 
+      {/* ═══ NEW TREATMENT PROTOCOL PRESCRIPTION MODAL ═══ */}
+      {showNewTreatmentModal && (
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 md:p-8 shadow-2xl space-y-6 border border-[#dce8e1] max-h-[90vh] overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-gray-100">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-bold text-emerald-800">
+                  <Pill size={13} className="text-emerald-600" />
+                  <span>Clinical Prescription Desk</span>
+                </div>
+                <h3 className="text-2xl font-black text-[#143a2d]">Write Treatment Protocol</h3>
+                <p className="text-xs text-gray-500">
+                  Prescribe high-potency clinical actives, regimen products, and contraindication parameters.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowNewTreatmentModal(false)}
+                className="p-2 text-gray-400 hover:text-gray-700 rounded-full hover:bg-gray-100 cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Patient Selector */}
+            {patients.length === 0 ? (
+              <div className="p-8 text-center bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                <Users size={32} className="text-gray-400 mx-auto" />
+                <h4 className="text-sm font-bold text-gray-800">No Connected Patients Available</h4>
+                <p className="text-xs text-gray-500 max-w-md mx-auto">
+                  You must have an accepted care connection with a patient before prescribing medical treatments. Visit the "All Users & Patients" tab to approach candidates.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-gray-700 block">Select Patient Case Chart:</label>
+                  <select
+                    value={selectedPatientForTreatment?.user_id || ''}
+                    onChange={(e) => {
+                      const found = patients.find((p) => p.user_id === e.target.value);
+                      if (found) setSelectedPatientForTreatment(found);
+                    }}
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#183a2d] focus:outline-none"
+                  >
+                    {patients.map((p) => (
+                      <option key={p.user_id} value={p.user_id}>
+                        {p.name} ({p.email}) — {p.skin_type || 'Unknown'}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {selectedPatientForTreatment && (
+                  <div className="pt-2">
+                    <ClinicalPrescriptionForm
+                      patientId={selectedPatientForTreatment.user_id}
+                      patientName={selectedPatientForTreatment.name}
+                      onPrescriptionSubmitted={async () => {
+                        await fetchTreatmentsData();
+                        await fetchCohortAnalyticsData();
+                        setShowNewTreatmentModal(false);
+                        toast.success(`Treatment protocol prescribed for ${selectedPatientForTreatment.name}!`);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}

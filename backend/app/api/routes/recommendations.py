@@ -95,6 +95,9 @@ def create_professional_recommendation(
         action_url="/dashboard",
     )
 
+    pat_profile = db.query(UserProfile).filter(UserProfile.user_id == payload.patient_id).first()
+    pat_name = pat_profile.name if pat_profile and pat_profile.name else patient.email.split("@")[0].capitalize()
+
     return ProfessionalRecommendationResponse(
         id=rec.id,
         connection_id=rec.connection_id,
@@ -102,6 +105,8 @@ def create_professional_recommendation(
         patient_id=rec.patient_id,
         professional_name=prof_name,
         professional_role=current_user.role,
+        patient_name=pat_name,
+        patient_email=patient.email,
         title=rec.title,
         clinical_notes=rec.clinical_notes,
         prescribed_actives=rec.prescribed_actives,
@@ -110,6 +115,103 @@ def create_professional_recommendation(
         follow_up_weeks=rec.follow_up_weeks,
         created_at=rec.created_at,
     )
+
+
+def _format_recommendation_response(r: ProfessionalRecommendation) -> ProfessionalRecommendationResponse:
+    p_name = None
+    p_role = None
+    if r.professional:
+        p_role = r.professional.role
+        if r.professional.profile and r.professional.profile.name:
+            p_name = r.professional.profile.name
+        else:
+            p_name = r.professional.email.split("@")[0].capitalize()
+
+    pat_name = None
+    pat_email = None
+    if r.patient:
+        pat_email = r.patient.email
+        if r.patient.profile and r.patient.profile.name:
+            pat_name = r.patient.profile.name
+        else:
+            pat_name = r.patient.email.split("@")[0].capitalize()
+
+    return ProfessionalRecommendationResponse(
+        id=r.id,
+        connection_id=r.connection_id,
+        professional_id=r.professional_id,
+        patient_id=r.patient_id,
+        professional_name=p_name or "Clinical Specialist",
+        professional_role=p_role or "DERMATOLOGIST",
+        patient_name=pat_name,
+        patient_email=pat_email,
+        title=r.title,
+        clinical_notes=r.clinical_notes,
+        prescribed_actives=r.prescribed_actives or [],
+        recommended_products=r.recommended_products or [],
+        contraindications=r.contraindications or [],
+        follow_up_weeks=r.follow_up_weeks,
+        created_at=r.created_at,
+    )
+
+
+@router.get(
+    "/issued",
+    response_model=List[ProfessionalRecommendationResponse],
+    summary="Get all recommendations issued by the authenticated professional",
+)
+def get_issued_recommendations(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    """
+    Returns clinical recommendations/prescriptions authored by the authenticated
+    consultant or dermatologist.
+    """
+    if current_user.role not in ["DERMATOLOGIST", "SKINCARE_CONSULTANT", "ADMINISTRATOR"]:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Access restricted to professionals.",
+        )
+
+    recs = (
+        db.query(ProfessionalRecommendation)
+        .options(
+            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile),
+            joinedload(ProfessionalRecommendation.patient).joinedload(User.profile),
+        )
+        .filter(ProfessionalRecommendation.professional_id == current_user.id)
+        .order_by(desc(ProfessionalRecommendation.created_at))
+        .all()
+    )
+    return [_format_recommendation_response(r) for r in recs]
+
+
+@router.get(
+    "/all",
+    response_model=List[ProfessionalRecommendationResponse],
+    summary="Admin audit: Get all recommendations across the entire platform",
+)
+def get_all_recommendations(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    if current_user.role != "ADMINISTRATOR":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Administrator access required.",
+        )
+
+    recs = (
+        db.query(ProfessionalRecommendation)
+        .options(
+            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile),
+            joinedload(ProfessionalRecommendation.patient).joinedload(User.profile),
+        )
+        .order_by(desc(ProfessionalRecommendation.created_at))
+        .all()
+    )
+    return [_format_recommendation_response(r) for r in recs]
 
 
 @router.get(
@@ -127,42 +229,14 @@ def get_my_recommendations(
     recs = (
         db.query(ProfessionalRecommendation)
         .options(
-            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile)
+            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile),
+            joinedload(ProfessionalRecommendation.patient).joinedload(User.profile),
         )
         .filter(ProfessionalRecommendation.patient_id == current_user.id)
         .order_by(desc(ProfessionalRecommendation.created_at))
         .all()
     )
-
-    results = []
-    for r in recs:
-        p_name = None
-        p_role = None
-        if r.professional:
-            p_role = r.professional.role
-            if r.professional.profile:
-                p_name = r.professional.profile.name
-            else:
-                p_name = r.professional.email.split("@")[0].capitalize()
-
-        results.append(
-            ProfessionalRecommendationResponse(
-                id=r.id,
-                connection_id=r.connection_id,
-                professional_id=r.professional_id,
-                patient_id=r.patient_id,
-                professional_name=p_name or "Dermatologist Advisory",
-                professional_role=p_role or "DERMATOLOGIST",
-                title=r.title,
-                clinical_notes=r.clinical_notes,
-                prescribed_actives=r.prescribed_actives or [],
-                recommended_products=r.recommended_products or [],
-                contraindications=r.contraindications or [],
-                follow_up_weeks=r.follow_up_weeks,
-                created_at=r.created_at,
-            )
-        )
-    return results
+    return [_format_recommendation_response(r) for r in recs]
 
 
 @router.get(
@@ -187,42 +261,14 @@ def get_patient_recommendations(
     recs = (
         db.query(ProfessionalRecommendation)
         .options(
-            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile)
+            joinedload(ProfessionalRecommendation.professional).joinedload(User.profile),
+            joinedload(ProfessionalRecommendation.patient).joinedload(User.profile),
         )
         .filter(ProfessionalRecommendation.patient_id == patient_id)
         .order_by(desc(ProfessionalRecommendation.created_at))
         .all()
     )
-
-    results = []
-    for r in recs:
-        p_name = None
-        p_role = None
-        if r.professional:
-            p_role = r.professional.role
-            if r.professional.profile:
-                p_name = r.professional.profile.name
-            else:
-                p_name = r.professional.email.split("@")[0].capitalize()
-
-        results.append(
-            ProfessionalRecommendationResponse(
-                id=r.id,
-                connection_id=r.connection_id,
-                professional_id=r.professional_id,
-                patient_id=r.patient_id,
-                professional_name=p_name or "Clinical Consultant",
-                professional_role=p_role or "DERMATOLOGIST",
-                title=r.title,
-                clinical_notes=r.clinical_notes,
-                prescribed_actives=r.prescribed_actives or [],
-                recommended_products=r.recommended_products or [],
-                contraindications=r.contraindications or [],
-                follow_up_weeks=r.follow_up_weeks,
-                created_at=r.created_at,
-            )
-        )
-    return results
+    return [_format_recommendation_response(r) for r in recs]
 
 
 from pydantic import BaseModel as _PydanticBase

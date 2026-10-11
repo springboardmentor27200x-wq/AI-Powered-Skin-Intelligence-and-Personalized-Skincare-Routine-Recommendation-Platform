@@ -48,4 +48,16 @@ export const dermatologistService = {
     });
     return response.data;
   },
+
+  // Dermatologist: Get all clinical treatment recommendations issued by this dermatologist
+  getTreatments: async () => {
+    const response = await apiClient.get('/recommendations/issued');
+    return response.data;
+  },
+
+  // Dermatologist: Get cohort progress analytics data
+  getCohortAnalytics: async () => {
+    const response = await apiClient.get('/dermatologist/cohort-analytics');
+    return response.data;
+  },
 };

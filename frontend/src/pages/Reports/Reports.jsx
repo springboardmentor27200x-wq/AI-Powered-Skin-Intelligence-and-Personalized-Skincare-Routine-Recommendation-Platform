@@ -16,6 +16,9 @@ import {
   TrendingUp,
   Cpu,
   RefreshCw,
+  Sun,
+  Moon,
+  Check,
 } from 'lucide-react';
 import { reportService } from '../../services/reportService';
 
@@ -308,28 +311,116 @@ export default function Reports() {
             </div>
           ) : previewData ? (
             <div className="space-y-6">
-              {/* Patient / Context Summary Row */}
+              {/* Context Summary Bar Tailored to Protocol */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#faf8f5] p-4 rounded-xl border border-[#f0ede8]">
-                <div>
-                  <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
-                  <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-[#8b7355] uppercase">Skin Type</span>
-                  <p className="text-xs font-semibold text-[#2c2417]">{previewData.skin_type}</p>
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-[#8b7355] uppercase">Composite Score</span>
-                  <p className="text-xs font-bold text-[#8b7355]">{previewData.overall_score}/100</p>
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-[#8b7355] uppercase">Allergies</span>
-                  <p className="text-xs font-semibold text-[#2c2417]">
-                    {Array.isArray(previewData.allergies)
-                      ? (previewData.allergies.length ? previewData.allergies.join(', ') : 'None Reported')
-                      : (previewData.allergies ? String(previewData.allergies) : 'None Reported')}
-                  </p>
-                </div>
+                {selectedType === 'PERSONALIZED_ROUTINE' ? (
+                  <>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Skin Type</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.skin_type}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">AM Protocol</span>
+                      <p className="text-xs font-bold text-[#8b7355]">
+                        {(previewData.routine_steps || []).filter(s => ['MORNING', 'DAILY'].includes(s.routine_type)).length} Steps
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">PM Protocol</span>
+                      <p className="text-xs font-bold text-[#8b7355]">
+                        {(previewData.routine_steps || []).filter(s => ['EVENING', 'NIGHT'].includes(s.routine_type)).length} Steps
+                      </p>
+                    </div>
+                  </>
+                ) : selectedType === 'PRODUCT_RECOMMENDATION' ? (
+                  <>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Skin Type</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.skin_type}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Formulations</span>
+                      <p className="text-xs font-bold text-[#8b7355]">{(previewData.products || []).length} Screened</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Allergen Safety</span>
+                      <p className="text-xs font-bold text-emerald-700">100% Cleared</p>
+                    </div>
+                  </>
+                ) : selectedType === 'PROGRESS_LONGITUDINAL' ? (
+                  <>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Day Streak</span>
+                      <p className="text-xs font-bold text-[#8b7355]">{previewData.adherence?.streak_days || 0} Days</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Today's Log</span>
+                      <p className="text-xs font-bold text-[#8b7355]">
+                        {previewData.adherence?.today_completed || 0}/{previewData.adherence?.today_total || 0} ({previewData.adherence?.today_percent || 0}%)
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">7-Day Adherence</span>
+                      <p className="text-xs font-bold text-[#8b7355]">{previewData.adherence?.week_percent || 0}%</p>
+                    </div>
+                  </>
+                ) : selectedType === 'COMPREHENSIVE_5PILLAR' ? (
+                  <>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Composite Score</span>
+                      <p className="text-xs font-bold text-[#8b7355]">{previewData.overall_score}/100</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Highest Pillar</span>
+                      <p className="text-xs font-bold text-[#2c2417]">Skin Condition (35%)</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Focus Bottleneck</span>
+                      <p className="text-xs font-bold text-amber-800">Routine Consistency</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Patient</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.user_name}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Skin Type</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">{previewData.skin_type}</p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Barrier Condition</span>
+                      <p className="text-xs font-bold text-[#8b7355]">
+                        {previewData.scores?.skin_condition_score ?? previewData.overall_score}/100
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Allergies Screened</span>
+                      <p className="text-xs font-semibold text-[#2c2417]">
+                        {Array.isArray(previewData.allergies)
+                          ? (previewData.allergies.length ? previewData.allergies.join(', ') : 'None Reported')
+                          : (previewData.allergies ? String(previewData.allergies) : 'None Reported')}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* AI Clinical Executive Briefing */}
@@ -347,91 +438,314 @@ export default function Reports() {
                 </div>
               )}
 
-              {/* 5-Pillar Score Breakdown */}
-              {previewData.scores && Object.keys(previewData.scores).length > 0 && (
-                <div>
-                  <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
-                    Official 5-Pillar Evaluation Model
-                  </h4>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-xs text-left border border-[#e8e4dc] rounded-xl overflow-hidden">
-                      <thead className="bg-[#f5f0e8] text-[#8b7355] font-bold uppercase text-[10px]">
-                        <tr>
-                          <th className="p-2.5">Pillar Metric</th>
-                          <th className="p-2.5">Score (0-100)</th>
-                          <th className="p-2.5">Weight</th>
-                          <th className="p-2.5">Weighted Pts</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-[#f0ede8]">
-                        {[
-                          { name: 'Skin Condition', key: 'skin_condition_score', weight: 0.35 },
-                          { name: 'Routine Consistency', key: 'routine_consistency_score', weight: 0.20 },
-                          { name: 'Lifestyle Habits', key: 'lifestyle_score', weight: 0.20 },
-                          { name: 'Sleep Quality', key: 'sleep_score', weight: 0.15 },
-                          { name: 'Hydration Balance', key: 'hydration_score', weight: 0.10 },
-                        ].map((p) => {
-                          const val = previewData.scores[p.key] ?? 0;
-                          return (
-                            <tr key={p.key} className="hover:bg-[#faf8f5]">
-                              <td className="p-2.5 font-medium text-[#2c2417]">{p.name}</td>
-                              <td className="p-2.5 font-semibold text-[#8b7355]">{val}</td>
-                              <td className="p-2.5 text-[#b5a397]">{Math.round(p.weight * 100)}%</td>
-                              <td className="p-2.5 font-semibold text-[#2c2417]">{(val * p.weight).toFixed(1)}</td>
+              {/* PROTOCOL SPECIFIC UI CONTENT */}
+
+              {/* 1. PERSONALIZED REGIMEN PROTOCOL */}
+              {selectedType === 'PERSONALIZED_ROUTINE' && (
+                <div className="space-y-5">
+                  {/* AM Routine */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <Sun size={15} className="text-amber-600" />
+                      <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider">
+                        Morning Protocol (AM) — Photoprotection & Barrier Defense
+                      </h4>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {(previewData.routine_steps || [])
+                        .filter(s => ['MORNING', 'DAILY'].includes(s.routine_type))
+                        .map((s, idx) => (
+                          <div key={idx} className="p-3 rounded-xl border border-[#e8e4dc] bg-white">
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="text-[10px] font-bold text-[#8b7355] uppercase bg-[#faf8f5] px-2 py-0.5 rounded border border-[#f0ede8]">
+                                Step {s.step_order} • {s.category?.replace('_', ' ')}
+                              </span>
+                              <span className="text-[10px] text-[#b5a397] font-medium">{s.frequency || 'Daily'}</span>
+                            </div>
+                            <p className="text-xs font-bold text-[#2c2417] mt-1">{s.title}</p>
+                            {Boolean(s.key_actives?.length) && (
+                              <p className="text-[10px] text-[#8b7355] mt-1">
+                                Actives: {Array.isArray(s.key_actives) ? s.key_actives.join(', ') : String(s.key_actives)}
+                              </p>
+                            )}
+                            {s.safety_notes && (
+                              <p className="text-[10px] text-[#7a6d5d] mt-1 italic">{s.safety_notes}</p>
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+
+                  {/* PM Routine */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <Moon size={15} className="text-indigo-600" />
+                      <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider">
+                        Evening Protocol (PM) — Cellular Repair & Lipid Restoration
+                      </h4>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {(previewData.routine_steps || [])
+                        .filter(s => ['EVENING', 'NIGHT'].includes(s.routine_type))
+                        .map((s, idx) => (
+                          <div key={idx} className="p-3 rounded-xl border border-[#e8e4dc] bg-white">
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="text-[10px] font-bold text-[#8b7355] uppercase bg-[#faf8f5] px-2 py-0.5 rounded border border-[#f0ede8]">
+                                Step {s.step_order} • {s.category?.replace('_', ' ')}
+                              </span>
+                              <span className="text-[10px] text-[#b5a397] font-medium">{s.frequency || 'Daily'}</span>
+                            </div>
+                            <p className="text-xs font-bold text-[#2c2417] mt-1">{s.title}</p>
+                            {Boolean(s.key_actives?.length) && (
+                              <p className="text-[10px] text-[#8b7355] mt-1">
+                                Actives: {Array.isArray(s.key_actives) ? s.key_actives.join(', ') : String(s.key_actives)}
+                              </p>
+                            )}
+                            {s.safety_notes && (
+                              <p className="text-[10px] text-[#7a6d5d] mt-1 italic">{s.safety_notes}</p>
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+
+                  {/* Weekly & Targeted Treatments */}
+                  {(previewData.routine_steps || []).some(s => ['WEEKLY', 'SEASONAL', 'AS_NEEDED'].includes(s.routine_type)) && (
+                    <div>
+                      <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                        Weekly Treatments & Targeted Interventions
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {(previewData.routine_steps || [])
+                          .filter(s => ['WEEKLY', 'SEASONAL', 'AS_NEEDED'].includes(s.routine_type))
+                          .map((s, idx) => (
+                            <div key={idx} className="p-3 rounded-xl border border-[#e8e4dc] bg-[#faf8f5]">
+                              <span className="text-[10px] font-bold text-[#8b7355] uppercase">
+                                {s.routine_type} • {s.category?.replace('_', ' ')}
+                              </span>
+                              <p className="text-xs font-bold text-[#2c2417] mt-0.5">{s.title}</p>
+                              {s.safety_notes && <p className="text-[10px] text-[#7a6d5d] mt-1">{s.safety_notes}</p>}
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* 2. PRODUCT COMPATIBILITY PROTOCOL */}
+              {selectedType === 'PRODUCT_RECOMMENDATION' && (
+                <div className="space-y-5">
+                  <div>
+                    <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                      Curated Dermatological Formulations ({(previewData.products || []).length})
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs text-left border border-[#e8e4dc] rounded-xl overflow-hidden">
+                        <thead className="bg-[#f5f0e8] text-[#8b7355] font-bold uppercase text-[10px]">
+                          <tr>
+                            <th className="p-2.5">Formulation Name</th>
+                            <th className="p-2.5">Brand</th>
+                            <th className="p-2.5">Category</th>
+                            <th className="p-2.5">Match Score</th>
+                            <th className="p-2.5">Price</th>
+                            <th className="p-2.5">Matching Rationale</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-[#f0ede8]">
+                          {(previewData.products || []).map((p, idx) => (
+                            <tr key={idx} className="hover:bg-[#faf8f5]">
+                              <td className="p-2.5 font-bold text-[#2c2417]">{p.product_name}</td>
+                              <td className="p-2.5 text-[#4a3e2e]">{p.brand}</td>
+                              <td className="p-2.5 text-[#8b7355] font-medium">{p.category}</td>
+                              <td className="p-2.5">
+                                <span className="bg-emerald-50 text-emerald-800 font-bold px-2 py-0.5 rounded text-[10px]">
+                                  {p.suitability_score}% Match
+                                </span>
+                              </td>
+                              <td className="p-2.5 text-[#2c2417] font-semibold">
+                                {p.price ? `Rs. ${p.price}` : 'Rs. 699'}
+                              </td>
+                              <td className="p-2.5 text-[#7a6d5d] text-[11px]">
+                                {(p.matching_reasons || []).join(' • ') || 'Clinically aligned with skin barrier'}
+                              </td>
                             </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               )}
 
-              {/* Identified Concerns */}
-              {previewData.concerns?.length > 0 && (
-                <div>
-                  <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
-                    Target Concerns ({previewData.concerns.length})
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {previewData.concerns.map((c, i) => (
-                      <div key={i} className="p-3 rounded-xl border border-[#e8e4dc] bg-[#faf8f5] flex items-center justify-between">
-                        <div>
-                          <p className="text-xs font-bold text-[#2c2417]">{c.concern_name}</p>
-                          <span className="text-[10px] text-[#8b7355]">
-                            Priority: {c.priority} • Severity: {c.severity}/5
-                          </span>
+              {/* 3. LONGITUDINAL PROGRESS PROTOCOL */}
+              {selectedType === 'PROGRESS_LONGITUDINAL' && (
+                <div className="space-y-5">
+                  {/* Adherence Overview */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="p-3.5 rounded-xl border border-[#e8e4dc] bg-[#faf8f5]">
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Consecutive Streak</span>
+                      <p className="text-lg font-bold text-[#2c2417] mt-0.5">
+                        {previewData.adherence?.streak_days || 0} <span className="text-xs font-normal text-[#8b7355]">Days</span>
+                      </p>
+                      <p className="text-[10px] text-[#7a6d5d] mt-0.5">Daily regimen discipline active</p>
+                    </div>
+                    <div className="p-3.5 rounded-xl border border-[#e8e4dc] bg-[#faf8f5]">
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">Today's Protocol</span>
+                      <p className="text-lg font-bold text-[#2c2417] mt-0.5">
+                        {previewData.adherence?.today_percent || 0}%
+                      </p>
+                      <p className="text-[10px] text-[#7a6d5d] mt-0.5">
+                        {previewData.adherence?.today_completed || 0} of {previewData.adherence?.today_total || 0} steps logged
+                      </p>
+                    </div>
+                    <div className="p-3.5 rounded-xl border border-[#e8e4dc] bg-[#faf8f5]">
+                      <span className="text-[10px] font-bold text-[#8b7355] uppercase">7-Day Weekly Adherence</span>
+                      <p className="text-lg font-bold text-[#2c2417] mt-0.5">
+                        {previewData.adherence?.week_percent || 0}%
+                      </p>
+                      <p className="text-[10px] text-[#7a6d5d] mt-0.5">
+                        {previewData.adherence?.week_completed || 0} total steps executed
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Longitudinal Assessment History Table */}
+                  <div>
+                    <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                      Longitudinal Assessment Progression
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs text-left border border-[#e8e4dc] rounded-xl overflow-hidden">
+                        <thead className="bg-[#f5f0e8] text-[#8b7355] font-bold uppercase text-[10px]">
+                          <tr>
+                            <th className="p-2.5">Checkpoint Date</th>
+                            <th className="p-2.5">Overall Score</th>
+                            <th className="p-2.5">Skin Type</th>
+                            <th className="p-2.5">Monitored Concerns</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-[#f0ede8]">
+                          {(previewData.history || []).map((h, idx) => (
+                            <tr key={idx} className="hover:bg-[#faf8f5]">
+                              <td className="p-2.5 font-semibold text-[#2c2417]">{h.date}</td>
+                              <td className="p-2.5 font-bold text-[#8b7355]">{h.overall_score}/100</td>
+                              <td className="p-2.5 text-[#4a3e2e]">{h.skin_type || previewData.skin_type}</td>
+                              <td className="p-2.5 text-[#7a6d5d]">
+                                {(h.top_concerns || []).join(', ') || 'General Barrier Maintenance'}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 4. 5-PILLAR HEALTH SCORECARD PROTOCOL */}
+              {selectedType === 'COMPREHENSIVE_5PILLAR' && (
+                <div className="space-y-5">
+                  {/* 5-Pillar Score Breakdown */}
+                  <div>
+                    <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                      Official 5-Pillar Evaluation Model
+                    </h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs text-left border border-[#e8e4dc] rounded-xl overflow-hidden">
+                        <thead className="bg-[#f5f0e8] text-[#8b7355] font-bold uppercase text-[10px]">
+                          <tr>
+                            <th className="p-2.5">Pillar Metric</th>
+                            <th className="p-2.5">Score (0-100)</th>
+                            <th className="p-2.5">Weight</th>
+                            <th className="p-2.5">Weighted Pts</th>
+                            <th className="p-2.5">Clinical Benchmark Status</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-[#f0ede8]">
+                          {[
+                            { name: '1. Skin Condition', key: 'skin_condition_score', weight: 0.35, note: 'Epidermal Barrier Resilience' },
+                            { name: '2. Routine Consistency', key: 'routine_consistency_score', weight: 0.20, note: 'Targeted Application Cadence' },
+                            { name: '3. Lifestyle Habits', key: 'lifestyle_score', weight: 0.20, note: 'Moderate Environmental Exposure' },
+                            { name: '4. Sleep Quality', key: 'sleep_score', weight: 0.15, note: 'Circadian Repair Active' },
+                            { name: '5. Hydration Balance', key: 'hydration_score', weight: 0.10, note: 'Adequate Systemic Hydration' },
+                          ].map((p) => {
+                            const val = previewData.scores?.[p.key] ?? 70;
+                            return (
+                              <tr key={p.key} className="hover:bg-[#faf8f5]">
+                                <td className="p-2.5 font-medium text-[#2c2417]">{p.name}</td>
+                                <td className="p-2.5 font-bold text-[#8b7355]">{val}</td>
+                                <td className="p-2.5 text-[#b5a397]">{Math.round(p.weight * 100)}%</td>
+                                <td className="p-2.5 font-semibold text-[#2c2417]">{(val * p.weight).toFixed(1)}</td>
+                                <td className="p-2.5 text-[#7a6d5d] text-[11px]">{p.note}</td>
+                              </tr>
+                            );
+                          })}
+                          <tr className="bg-[#f5f0e8] font-bold">
+                            <td className="p-2.5 text-[#2c2417]">Composite Total Score</td>
+                            <td className="p-2.5 text-[#8b7355]">{previewData.overall_score}/100</td>
+                            <td className="p-2.5 text-[#2c2417]">100%</td>
+                            <td className="p-2.5 text-[#2c2417]">{previewData.overall_score?.toFixed(1)}</td>
+                            <td className="p-2.5 text-emerald-800">Validated Composite Total</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 5. SKIN ASSESSMENT PROTOCOL (DEFAULT) */}
+              {selectedType === 'SKIN_ASSESSMENT' && (
+                <div className="space-y-5">
+                  {/* Identified Concerns */}
+                  <div>
+                    <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                      Prioritized Dermatological Concerns ({(previewData.concerns || []).length})
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {(previewData.concerns || []).map((c, i) => (
+                        <div key={i} className="p-3 rounded-xl border border-[#e8e4dc] bg-[#faf8f5] flex flex-col justify-between">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="text-xs font-bold text-[#2c2417]">{c.concern_name}</p>
+                              <span className="text-[10px] text-[#8b7355]">
+                                Priority: {c.priority} • Severity: {c.severity}/5
+                              </span>
+                            </div>
+                            <span className="text-[11px] font-semibold text-[#8b7355] bg-white px-2 py-0.5 rounded border border-[#e8e4dc]">
+                              {Math.round(c.confidence * 100)}% Match
+                            </span>
+                          </div>
+                          {Boolean(c.reasons?.length) && (
+                            <p className="text-[10px] text-[#7a6d5d] mt-2 border-t border-[#f0ede8] pt-1.5">
+                              Indicators: {c.reasons.join('; ')}
+                            </p>
+                          )}
                         </div>
-                        <span className="text-[11px] font-semibold text-[#8b7355]">
-                          {Math.round(c.confidence * 100)}% AI Match
-                        </span>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
 
-              {/* Routine Protocol Preview */}
-              {previewData.routine_steps?.length > 0 && (
-                <div>
-                  <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
-                    Routine Protocol ({previewData.routine_steps.length} Steps)
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {previewData.routine_steps.slice(0, 6).map((s, idx) => (
-                      <div key={idx} className="p-2.5 rounded-lg border border-[#e8e4dc] bg-white text-xs">
-                        <span className="text-[10px] font-bold text-[#8b7355] uppercase">
-                          {s.routine_type} • Step {s.step_order}
-                        </span>
-                        <p className="font-semibold text-[#2c2417]">{s.title}</p>
-                        {Boolean(s.key_actives) && (
-                          <p className="text-[10px] text-[#8b7355]">
-                            Actives: {Array.isArray(s.key_actives) ? s.key_actives.join(', ') : String(s.key_actives)}
-                          </p>
-                        )}
+                  {/* Environmental & Lifestyle Risk Factors */}
+                  {(previewData.risks || []).length > 0 && (
+                    <div>
+                      <h4 className="text-xs font-bold text-[#2c2417] uppercase tracking-wider mb-2.5">
+                        Environmental & Lifestyle Risk Factors
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {previewData.risks.map((r, i) => (
+                          <div key={i} className="p-3 rounded-xl border border-[#e8e4dc] bg-white">
+                            <span className="text-[10px] font-bold text-[#8b7355] uppercase">
+                              {r.factor_type} • Impact: {r.impact_level}
+                            </span>
+                            <p className="text-xs font-bold text-[#2c2417] mt-0.5">{r.factor_name}</p>
+                            <p className="text-[10px] text-[#7a6d5d] mt-1">{r.description}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

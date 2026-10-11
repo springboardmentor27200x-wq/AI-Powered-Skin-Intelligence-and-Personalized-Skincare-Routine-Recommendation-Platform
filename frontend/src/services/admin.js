@@ -71,4 +71,22 @@ export const adminService = {
     const response = await apiClient.post(`/admin/settings/reset/${key}`);
     return response.data;
   },
+
+  // Admin-only: Macro Platform Analytics
+  getPlatformAnalytics: async () => {
+    const response = await apiClient.get('/admin/platform-analytics');
+    return response.data;
+  },
+
+  // Admin-only: Recommendation Monitoring & Auditing
+  getRecommendationMonitoring: async () => {
+    const response = await apiClient.get('/admin/recommendation-monitoring');
+    return response.data;
+  },
+
+  // Admin-only: System Reports Ledger & Protocol Breakdown
+  getSystemReports: async () => {
+    const response = await apiClient.get('/admin/system-reports');
+    return response.data;
+  },
 };

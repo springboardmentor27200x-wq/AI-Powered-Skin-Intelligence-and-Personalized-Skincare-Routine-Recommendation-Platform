@@ -1,0 +1,10 @@
+{
+  "name": "ai-skin-dermaiq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DermaIQ - AI Skin Intelligence & Personalized Skincare Planner (Infosys Springboard)",
+  "scripts": {
+    "clean": "node -e \"const fs = require('fs'); const path = require('path'); const targets = ['frontend/node_modules', 'frontend/dist', 'frontend/.vite', '.pytest_cache', 'backend/.pytest_cache']; targets.forEach(t => fs.rmSync(t, { recursive: true, force: true })); function cleanCaches(dir) { if (!fs.existsSync(dir)) return; fs.readdirSync(dir, { withFileTypes: true }).forEach(ent => { const full = path.join(dir, ent.name); if (ent.isDirectory()) { if (ent.name === '__pycache__' || ent.name === '.pytest_cache' || ent.name === '.vite-temp') { fs.rmSync(full, { recursive: true, force: true }); } else if (ent.name !== 'venv' && ent.name !== '.git') { cleanCaches(full); } } }); } cleanCaches('.'); console.log('Clean complete: frontend/node_modules, dist, .vite, and all pycaches removed successfully.');\"",
+    "clean:frontend": "cd frontend && npm run clean"
+  }
+}

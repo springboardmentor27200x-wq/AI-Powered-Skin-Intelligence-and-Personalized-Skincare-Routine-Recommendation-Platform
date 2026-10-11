@@ -20,6 +20,13 @@ depends_on = None
 
 
 def upgrade() -> None:
+    bind = op.get_bind()
+    if bind.dialect.name == 'postgresql':
+        postgresql.ENUM('ROUTINE', 'REPLENISHMENT', 'HYDRATION', 'SLEEP', 'PROGRESS', 'PLATFORM', name='notificationcategory').create(bind, checkfirst=True)
+        postgresql.ENUM('LOW', 'MEDIUM', 'HIGH', name='notificationpriority').create(bind, checkfirst=True)
+        postgresql.ENUM('SKIN_ASSESSMENT', 'PERSONALIZED_ROUTINE', 'PRODUCT_RECOMMENDATION', 'PROGRESS_LONGITUDINAL', 'COMPREHENSIVE_5PILLAR', name='reporttype').create(bind, checkfirst=True)
+        postgresql.ENUM('PDF', 'EXCEL', 'JSON', name='exportformat').create(bind, checkfirst=True)
+
     # ── 1. notifications ──────────────────────────────────────────────────────
     op.create_table(
         'notifications',

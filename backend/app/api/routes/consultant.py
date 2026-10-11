@@ -401,3 +401,129 @@ def _build_user_detail_response(
         active_routine=active_routine_data,
         past_recommendations=past_recs,
     )
+
+
+@router.get("/cohort-progress")
+def get_consultant_cohort_progress(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_role(["SKINCARE_CONSULTANT", "ADMINISTRATOR"]))
+):
+    """
+    Cohort progress monitoring endpoint for Skincare Consultants.
+    Aggregates connected clients' routine adherence, streak days, score deltas,
+    barrier health, and triage status across the professional's care portfolio.
+    """
+    from app.models.assessment import SkinAssessment
+    from app.services.progress_service import ProgressService
+
+    connections = db.query(ProfessionalConnection).filter(
+        ProfessionalConnection.professional_id == current_user.id,
+        ProfessionalConnection.status == "ACCEPTED"
+    ).all()
+
+    clients_progress = []
+    for conn in connections:
+        client = conn.client
+        if not client:
+            continue
+
+        assessments = (
+            db.query(SkinAssessment)
+            .filter(SkinAssessment.user_id == client.id)
+            .order_by(SkinAssessment.created_at.asc())
+            .all()
+        )
+
+        baseline_score = None
+        latest_score = None
+        score_delta = 0
+        barrier_score = None
+        last_assessment_date = None
+
+        if assessments:
+            baseline_score = assessments[0].overall_score
+            latest = assessments[-1]
+            latest_score = latest.overall_score
+            score_delta = latest_score - baseline_score
+            barrier_score = getattr(latest, "barrier_score", None)
+            if barrier_score is None and getattr(latest, "scores", None):
+                barrier_score = getattr(latest.scores, "skin_condition_score", None) or getattr(latest.scores, "hydration_score", None)
+            if barrier_score is None:
+                barrier_score = getattr(latest, "overall_score", 70)
+            last_assessment_date = latest.created_at.isoformat() if latest.created_at else None
+
+        adherence_stats = ProgressService.get_adherence_stats(db, client.id)
+        weekly_adherence = float(getattr(adherence_stats, "week_percent", None) or getattr(adherence_stats, "this_week_pct", None) or 0.0)
+        streak_days = int(getattr(adherence_stats, "streak_days", None) or getattr(adherence_stats, "current_streak", None) or 0)
+
+        skin_prof = db.query(SkinProfile).filter(SkinProfile.user_id == client.id).first()
+        skin_type = skin_prof.skin_type if skin_prof else "Not specified"
+        concerns_list = [c.name for c in skin_prof.concerns] if skin_prof and skin_prof.concerns else []
+        primary_concern = concerns_list[0] if concerns_list else "General Maintenance"
+
+        last_lifestyle = (
+            db.query(LifestyleRecord)
+            .filter(LifestyleRecord.user_id == client.id)
+            .order_by(LifestyleRecord.created_at.desc())
+            .first()
+        )
+        last_activity = (
+            last_lifestyle.created_at.isoformat()
+            if last_lifestyle
+            else (conn.responded_at.isoformat() if conn.responded_at else None)
+        )
+
+        # Classify status
+        if score_delta > 0 or (latest_score is not None and latest_score >= 75):
+            status_val = "IMPROVING"
+        elif score_delta < 0 or (latest_score is not None and latest_score < 50):
+            status_val = "ATTENTION_NEEDED"
+        else:
+            status_val = "STABLE"
+
+        client_name = client.profile.name if client.profile else client.email.split("@")[0]
+
+        clients_progress.append({
+            "connection_id": str(conn.id),
+            "user_id": str(client.id),
+            "name": client_name,
+            "email": client.email,
+            "skin_type": skin_type,
+            "concerns": concerns_list,
+            "primary_concern": primary_concern,
+            "baseline_score": baseline_score,
+            "latest_score": latest_score,
+            "score_delta": score_delta,
+            "barrier_score": barrier_score,
+            "weekly_adherence_rate": weekly_adherence,
+            "streak_days": streak_days,
+            "last_assessment_date": last_assessment_date,
+            "last_activity": last_activity,
+            "status": status_val,
+            "connected_since": conn.responded_at.isoformat() if conn.responded_at else None,
+        })
+
+    cohort_size = len(clients_progress)
+    avg_adherence = (
+        round(sum(c["weekly_adherence_rate"] for c in clients_progress) / cohort_size, 1)
+        if cohort_size > 0
+        else 0
+    )
+    b_scores = [c["barrier_score"] for c in clients_progress if c["barrier_score"] is not None]
+    avg_barrier = round(sum(b_scores) / len(b_scores), 1) if b_scores else 0
+    active_streaks = sum(1 for c in clients_progress if c["streak_days"] > 0)
+    attention_needed = sum(1 for c in clients_progress if c["status"] == "ATTENTION_NEEDED")
+    improving_count = sum(1 for c in clients_progress if c["status"] == "IMPROVING")
+
+    return {
+        "summary": {
+            "cohort_size": cohort_size,
+            "average_adherence_rate": avg_adherence,
+            "average_barrier_score": avg_barrier,
+            "active_streaks_count": active_streaks,
+            "attention_needed_count": attention_needed,
+            "improving_count": improving_count,
+        },
+        "clients_progress": clients_progress,
+    }
+

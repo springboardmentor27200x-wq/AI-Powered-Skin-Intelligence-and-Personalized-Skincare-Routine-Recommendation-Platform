@@ -6,7 +6,8 @@ import {
   Plus, FileText, FileSpreadsheet, Check, ShieldCheck, X, AlertCircle, 
   XCircle, CheckCircle, RefreshCw, Layers, Shield, MessageSquare, Stethoscope,
   UserPlus, UserCheck, Activity, Compass, ArrowUpRight,
-  Filter, Printer, Copy, CheckCheck, Edit3, ShieldAlert
+  Filter, Printer, Copy, CheckCheck, Edit3, ShieldAlert,
+  Flame, TrendingUp, TrendingDown, Award, BarChart2
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { consultantService } from '../services/consultant';
@@ -24,13 +25,25 @@ const Consultant = () => {
   const [clients, setClients] = useState([]);
   const [incomingRequests, setIncomingRequests] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
-  const [activeTab, setActiveTab] = useState('all_users'); // 'all_users' | 'my_clients' | 'requests'
+  const [activeTab, setActiveTab] = useState('all_users'); // 'all_users' | 'my_clients' | 'requests' | 'recommendations' | 'progress_monitoring'
   const [approachingId, setApproachingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedClientDetail, setSelectedClientDetail] = useState(null);
   const [loadingDetail, setLoadingDetail] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [processingId, setProcessingId] = useState(null);
+
+  // Recommendation Management State
+  const [recommendationsList, setRecommendationsList] = useState([]);
+  const [loadingRecs, setLoadingRecs] = useState(false);
+  const [showNewRecModal, setShowNewRecModal] = useState(false);
+  const [selectedClientForRec, setSelectedClientForRec] = useState(null);
+  const [expandedRecId, setExpandedRecId] = useState(null);
+
+  // Progress Monitoring State
+  const [cohortProgress, setCohortProgress] = useState(null);
+  const [loadingProgress, setLoadingProgress] = useState(false);
+  const [progressStatusFilter, setProgressStatusFilter] = useState('all'); // 'all' | 'improving' | 'stable' | 'attention_needed'
 
   // Clinical Triage & Risk Stratification Filter State
   const [triageFilter, setTriageFilter] = useState('all'); // 'all' | 'critical' | 'barrier_low' | 'sensitive' | 'referred'
@@ -60,20 +73,48 @@ const Consultant = () => {
   const [approachIntroMessage, setApproachIntroMessage] = useState('');
   const [submittingApproach, setSubmittingApproach] = useState(false);
 
+  const fetchRecommendationsData = async () => {
+    try {
+      setLoadingRecs(true);
+      const data = await consultantService.getRecommendations();
+      setRecommendationsList(data || []);
+    } catch (err) {
+      console.warn('Could not load recommendations:', err);
+    } finally {
+      setLoadingRecs(false);
+    }
+  };
+
+  const fetchCohortProgressData = async () => {
+    try {
+      setLoadingProgress(true);
+      const data = await consultantService.getCohortProgress();
+      setCohortProgress(data || null);
+    } catch (err) {
+      console.warn('Could not load cohort progress:', err);
+    } finally {
+      setLoadingProgress(false);
+    }
+  };
+
   const fetchDashboardData = async () => {
     try {
       setLoading(true);
-      const [clientsData, requestsData, usersData] = await Promise.all([
+      const [clientsData, requestsData, usersData, recsData, progressData] = await Promise.all([
         consultantService.getClients(),
         connectionsService.getIncomingRequests(),
         consultantService.getAllUsers().catch((e) => {
           console.warn('Could not load user directory:', e);
           return [];
         }),
+        consultantService.getRecommendations().catch(() => []),
+        consultantService.getCohortProgress().catch(() => null),
       ]);
       setClients(clientsData || []);
       setIncomingRequests(requestsData || []);
       setAllUsers(usersData || []);
+      setRecommendationsList(recsData || []);
+      setCohortProgress(progressData || null);
     } catch (err) {
       console.error('Failed to load consultant dashboard:', err);
       toast.error('Failed to load client data from database.');
@@ -377,15 +418,19 @@ This summary is generated for inter-professional care continuity and consultatio
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[100px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
               <div className="text-2xl font-black text-cyan-200">{allUsers.length}</div>
               <div className="text-[10px] font-semibold text-teal-200 uppercase tracking-wider">All Users</div>
             </div>
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[100px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
               <div className="text-2xl font-black text-white">{clients.length}</div>
-              <div className="text-[10px] font-semibold text-teal-200 uppercase tracking-wider">Active Clients</div>
+              <div className="text-[10px] font-semibold text-teal-200 uppercase tracking-wider">Clients</div>
             </div>
-            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[100px]">
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
+              <div className="text-2xl font-black text-emerald-300">{recommendationsList.length}</div>
+              <div className="text-[10px] font-semibold text-teal-200 uppercase tracking-wider">Advised</div>
+            </div>
+            <div className="px-4 py-3 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 text-center min-w-[90px]">
               <div className="text-2xl font-black text-amber-300">{incomingRequests.length}</div>
               <div className="text-[10px] font-semibold text-teal-200 uppercase tracking-wider">Requests</div>
             </div>
@@ -432,6 +477,40 @@ This summary is generated for inter-professional care continuity and consultatio
           </button>
 
           <button
+            onClick={() => setActiveTab('recommendations')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'recommendations'
+                ? 'bg-[#173a3c] text-white shadow-md'
+                : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+            }`}
+          >
+            <Sparkles size={15} />
+            <span>Recommendation Management</span>
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${
+              activeTab === 'recommendations' ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+            }`}>
+              {recommendationsList.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('progress_monitoring')}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'progress_monitoring'
+                ? 'bg-[#173a3c] text-white shadow-md'
+                : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+            }`}
+          >
+            <Activity size={15} />
+            <span>Progress Monitoring</span>
+            <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${
+              activeTab === 'progress_monitoring' ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+            }`}>
+              {clients.length}
+            </span>
+          </button>
+
+          <button
             onClick={() => setActiveTab('requests')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === 'requests'
@@ -463,6 +542,10 @@ This summary is generated for inter-professional care continuity and consultatio
                 ? "Search users by name, skin type, concern..."
                 : activeTab === 'my_clients'
                 ? "Search connected clients..."
+                : activeTab === 'recommendations'
+                ? "Search recommendations by client or active..."
+                : activeTab === 'progress_monitoring'
+                ? "Search progress by client name or concern..."
                 : "Search requests..."
             }
             className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#d6e5e8] rounded-2xl text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#173a3c] shadow-xs"
@@ -887,6 +970,485 @@ This summary is generated for inter-professional care continuity and consultatio
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ═══ RECOMMENDATION MANAGEMENT TAB ═══ */}
+          {activeTab === 'recommendations' && (
+            <div className="space-y-6">
+              {/* Header Banner */}
+              <div className="p-6 bg-white rounded-3xl border border-[#d6e5e8] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 border border-teal-200 rounded-full text-xs font-bold text-teal-800">
+                    <Sparkles size={13} className="text-teal-600" />
+                    <span>Clinical Recommendations Registry</span>
+                  </div>
+                  <h2 className="text-xl font-black text-[#14393d]">Recommendation Management</h2>
+                  <p className="text-xs text-gray-500 max-w-xl">
+                    Review and audit personalized active formulations, treatment guidance, and follow-up schedules prescribed to your connected clients.
+                  </p>
+                </div>
+                <button
+                  onClick={() => {
+                    if (clients.length > 0) {
+                      setSelectedClientForRec(clients[0]);
+                    }
+                    setShowNewRecModal(true);
+                  }}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#173a3c] hover:bg-[#112d2f] text-white rounded-2xl text-xs font-bold shadow-md transition-all cursor-pointer whitespace-nowrap self-start md:self-auto"
+                >
+                  <Plus size={16} />
+                  <span>New Recommendation</span>
+                </button>
+              </div>
+
+              {/* KPI Strip */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Total Issued</span>
+                  <div className="text-2xl font-black text-[#14393d] mt-1">{recommendationsList.length}</div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Clients Advised</span>
+                  <div className="text-2xl font-black text-teal-700 mt-1">
+                    {new Set(recommendationsList.map((r) => r.patient_id)).size}
+                  </div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Actives Formulated</span>
+                  <div className="text-2xl font-black text-emerald-700 mt-1">
+                    {new Set(recommendationsList.flatMap((r) => r.prescribed_actives || [])).size}
+                  </div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Active Follow-Ups</span>
+                  <div className="text-2xl font-black text-indigo-700 mt-1">
+                    {recommendationsList.filter((r) => (r.follow_up_weeks || 0) > 0).length}
+                  </div>
+                </div>
+              </div>
+
+              {/* Recommendations List */}
+              {loadingRecs ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#d6e5e8]">
+                  <RefreshCw className="animate-spin text-teal-600 mx-auto" size={28} />
+                  <p className="text-xs text-gray-500 mt-3 font-semibold">Loading recommendations registry...</p>
+                </div>
+              ) : recommendationsList.length === 0 ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#d6e5e8] space-y-4">
+                  <div className="w-14 h-14 rounded-2xl bg-teal-50 text-teal-700 flex items-center justify-center mx-auto">
+                    <Sparkles size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-gray-800">No recommendations issued yet</h3>
+                    <p className="text-xs text-gray-500 max-w-md mx-auto mt-1">
+                      Start advising your connected clients by prescribing personalized active ingredients, barrier repair regimens, and tailored usage protocols.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      if (clients.length > 0) setSelectedClientForRec(clients[0]);
+                      setShowNewRecModal(true);
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#173a3c] text-white rounded-xl text-xs font-bold hover:bg-[#112d2f] cursor-pointer"
+                  >
+                    <Plus size={14} />
+                    <span>Create First Recommendation</span>
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {recommendationsList
+                    .filter((r) => {
+                      const q = searchTerm.toLowerCase();
+                      return (
+                        (r.title && r.title.toLowerCase().includes(q)) ||
+                        (r.patient_name && r.patient_name.toLowerCase().includes(q)) ||
+                        (r.patient_email && r.patient_email.toLowerCase().includes(q)) ||
+                        (r.clinical_notes && r.clinical_notes.toLowerCase().includes(q)) ||
+                        (r.prescribed_actives && r.prescribed_actives.some((a) => a.toLowerCase().includes(q)))
+                      );
+                    })
+                    .map((rec) => {
+                      const isExpanded = expandedRecId === rec.id;
+                      return (
+                        <div
+                          key={rec.id}
+                          className="p-6 bg-white rounded-3xl border border-[#d6e5e8] shadow-sm hover:shadow-md transition-all space-y-4"
+                        >
+                          {/* Top Row */}
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-100">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#173a3c] to-[#245256] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+                                {(rec.patient_name || 'P').charAt(0).toUpperCase()}
+                              </div>
+                              <div>
+                                <div className="flex items-center gap-2">
+                                  <h4 className="text-base font-bold text-[#14393d]">
+                                    {rec.patient_name || 'Connected Client'}
+                                  </h4>
+                                  <span className="text-[10px] font-bold text-teal-800 bg-teal-50 px-2 py-0.5 rounded-full border border-teal-200">
+                                    Client
+                                  </span>
+                                </div>
+                                <p className="text-xs text-gray-500">{rec.patient_email || 'Verified Account'}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#8b7355] bg-[#faf6ef] px-2.5 py-1 rounded-full border border-[#e8dfcb]">
+                                <Clock size={12} />
+                                {rec.follow_up_weeks ? `${rec.follow_up_weeks}w Review` : '4w Review'}
+                              </span>
+                              <span className="text-[11px] text-gray-400">
+                                {new Date(rec.created_at).toLocaleDateString()}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Recommendation Title */}
+                          <div>
+                            <h5 className="text-sm font-black text-gray-900">{rec.title}</h5>
+                          </div>
+
+                          {/* Prescribed Actives Chips */}
+                          {rec.prescribed_actives && rec.prescribed_actives.length > 0 && (
+                            <div className="space-y-1">
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                                Prescribed Clinical Actives:
+                              </span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {rec.prescribed_actives.map((act, i) => (
+                                  <span
+                                    key={i}
+                                    className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-teal-50 text-teal-800 border border-teal-200"
+                                  >
+                                    <ShieldCheck size={12} className="text-teal-600" />
+                                    {act}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Recommended Products */}
+                          {rec.recommended_products && rec.recommended_products.length > 0 && (
+                            <div className="space-y-1">
+                              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                                Recommended Product Regimen:
+                              </span>
+                              <div className="flex flex-wrap gap-2">
+                                {rec.recommended_products.map((p, i) => (
+                                  <div
+                                    key={i}
+                                    className="px-3 py-1.5 rounded-xl bg-gray-50 border border-gray-200 text-xs font-medium text-gray-800"
+                                  >
+                                    <span className="font-bold">{typeof p === 'string' ? p : p.name}</span>
+                                    {p.timing && <span className="text-[10px] text-gray-500 ml-1.5">({p.timing})</span>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Contraindications Warning */}
+                          {rec.contraindications && rec.contraindications.length > 0 && (
+                            <div className="p-3 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 flex items-start gap-2">
+                              <AlertCircle size={15} className="text-amber-600 mt-0.5 shrink-0" />
+                              <div>
+                                <span className="font-bold block">Contraindications & Cautions:</span>
+                                <span>{rec.contraindications.join('; ')}</span>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Clinical Notes Excerpt */}
+                          <div className="p-3.5 bg-gray-50 rounded-2xl border border-gray-100 text-xs text-gray-700 space-y-1">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">
+                              Clinical Advisory Notes:
+                            </span>
+                            <p className={isExpanded ? 'whitespace-pre-wrap font-normal' : 'line-clamp-2 font-normal'}>
+                              {rec.clinical_notes}
+                            </p>
+                            {rec.clinical_notes && rec.clinical_notes.length > 120 && (
+                              <button
+                                onClick={() => setExpandedRecId(isExpanded ? null : rec.id)}
+                                className="text-[11px] font-bold text-teal-700 hover:underline pt-1 cursor-pointer block"
+                              >
+                                {isExpanded ? 'Show Less ▲' : 'Read Full Notes ▼'}
+                              </button>
+                            )}
+                          </div>
+
+                          {/* Footer Action Buttons */}
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100">
+                            <button
+                              onClick={() => handleInspectUser(rec.patient_id)}
+                              className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 hover:text-teal-950 py-1 cursor-pointer"
+                            >
+                              <FileText size={13} />
+                              <span>Inspect Client Dossier</span>
+                            </button>
+                            <button
+                              onClick={() => {
+                                const target = clients.find((c) => c.user_id === rec.patient_id) || {
+                                  user_id: rec.patient_id,
+                                  name: rec.patient_name || 'Client',
+                                };
+                                setSelectedClientForRec(target);
+                                setShowNewRecModal(true);
+                              }}
+                              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                            >
+                              <Edit3 size={13} />
+                              <span>Update Regimen</span>
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ═══ PROGRESS MONITORING TAB ═══ */}
+          {activeTab === 'progress_monitoring' && (
+            <div className="space-y-6">
+              {/* Header Banner */}
+              <div className="p-6 bg-white rounded-3xl border border-[#d6e5e8] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-xs font-bold text-emerald-800">
+                    <Activity size={13} className="text-emerald-600" />
+                    <span>Longitudinal Cohort Tracker</span>
+                  </div>
+                  <h2 className="text-xl font-black text-[#14393d]">Progress Monitoring Desk</h2>
+                  <p className="text-xs text-gray-500 max-w-xl">
+                    Track client adherence streaks, barrier recovery trajectories, and score improvement deltas across your care circle portfolio.
+                  </p>
+                </div>
+                <button
+                  onClick={fetchCohortProgressData}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl text-xs font-bold transition-colors cursor-pointer self-start md:self-auto"
+                >
+                  <RefreshCw size={14} className={loadingProgress ? 'animate-spin' : ''} />
+                  <span>Refresh Metrics</span>
+                </button>
+              </div>
+
+              {/* Cohort Performance KPI Strip */}
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Active Cohort</span>
+                  <div className="text-2xl font-black text-[#14393d] mt-1">
+                    {cohortProgress?.summary?.cohort_size ?? clients.length}
+                  </div>
+                  <span className="text-[10px] text-gray-500">Connected clients</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Avg Adherence</span>
+                  <div className="text-2xl font-black text-teal-700 mt-1">
+                    {cohortProgress?.summary?.average_adherence_rate ?? 0}%
+                  </div>
+                  <span className="text-[10px] text-teal-600">Weekly completion</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Mean Barrier Score</span>
+                  <div className="text-2xl font-black text-emerald-700 mt-1">
+                    {cohortProgress?.summary?.average_barrier_score ?? 70}/100
+                  </div>
+                  <span className="text-[10px] text-emerald-600">Optimal baseline</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Active Streaks</span>
+                  <div className="text-2xl font-black text-amber-600 mt-1 flex items-center gap-1">
+                    <Flame size={20} className="text-amber-500" />
+                    <span>{cohortProgress?.summary?.active_streaks_count ?? 0}</span>
+                  </div>
+                  <span className="text-[10px] text-amber-700">Consistent loggers</span>
+                </div>
+
+                <div className="p-4 bg-white rounded-2xl border border-[#d6e5e8] shadow-xs">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block">Attention Cases</span>
+                  <div className="text-2xl font-black text-rose-600 mt-1">
+                    {cohortProgress?.summary?.attention_needed_count ?? 0}
+                  </div>
+                  <span className="text-[10px] text-rose-600">Declining / Low</span>
+                </div>
+              </div>
+
+              {/* Status Filter Tabs */}
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { key: 'all', label: 'All Monitored Clients' },
+                  { key: 'improving', label: 'Improving (+Score)' },
+                  { key: 'stable', label: 'Stable' },
+                  { key: 'attention_needed', label: 'Attention Needed' },
+                ].map((f) => (
+                  <button
+                    key={f.key}
+                    onClick={() => setProgressStatusFilter(f.key)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      progressStatusFilter === f.key
+                        ? 'bg-[#173a3c] text-white shadow-xs'
+                        : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Client Progress Table / Cards */}
+              {loadingProgress ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#d6e5e8]">
+                  <RefreshCw className="animate-spin text-teal-600 mx-auto" size={28} />
+                  <p className="text-xs text-gray-500 mt-3 font-semibold">Analyzing cohort adherence & telemetry...</p>
+                </div>
+              ) : (cohortProgress?.clients_progress || []).length === 0 ? (
+                <div className="p-12 text-center bg-white rounded-3xl border border-[#d6e5e8] space-y-3">
+                  <Activity size={36} className="text-gray-300 mx-auto" />
+                  <h3 className="text-base font-bold text-gray-800">No client progress data available yet</h3>
+                  <p className="text-xs text-gray-500 max-w-md mx-auto">
+                    Once your connected clients complete skin assessments and log their daily routine steps, longitudinal recovery metrics will appear here.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {(cohortProgress?.clients_progress || [])
+                    .filter((p) => {
+                      if (progressStatusFilter !== 'all' && p.status !== progressStatusFilter.toUpperCase()) {
+                        return false;
+                      }
+                      const q = searchTerm.toLowerCase();
+                      return (
+                        (p.name && p.name.toLowerCase().includes(q)) ||
+                        (p.email && p.email.toLowerCase().includes(q)) ||
+                        (p.skin_type && p.skin_type.toLowerCase().includes(q)) ||
+                        (p.primary_concern && p.primary_concern.toLowerCase().includes(q))
+                      );
+                    })
+                    .map((item) => {
+                      const isPositiveDelta = item.score_delta > 0;
+                      const isNegativeDelta = item.score_delta < 0;
+
+                      return (
+                        <div
+                          key={item.user_id}
+                          className="p-6 bg-white rounded-3xl border border-[#d6e5e8] shadow-sm hover:shadow-md transition-all space-y-4"
+                        >
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 rounded-2xl bg-[#173a3c] text-white flex items-center justify-center font-bold text-sm">
+                                {(item.name || 'C').charAt(0).toUpperCase()}
+                              </div>
+                              <div>
+                                <h4 className="text-base font-bold text-[#14393d]">{item.name}</h4>
+                                <p className="text-xs text-gray-500">
+                                  {item.skin_type} • Concern: {item.primary_concern}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Status Pill */}
+                            <span
+                              className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full self-start sm:self-auto border ${
+                                item.status === 'IMPROVING'
+                                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                                  : item.status === 'ATTENTION_NEEDED'
+                                  ? 'bg-rose-50 text-rose-800 border-rose-200'
+                                  : 'bg-teal-50 text-teal-800 border-teal-200'
+                              }`}
+                            >
+                              {item.status.replace('_', ' ')}
+                            </span>
+                          </div>
+
+                          {/* Metrics Grid */}
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-gray-100">
+                            {/* Score Delta */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">DermaIQ Score</span>
+                              <div className="flex items-baseline gap-2 mt-0.5">
+                                <span className="text-lg font-black text-gray-900">
+                                  {item.latest_score !== null ? `${item.latest_score}/100` : 'Pending'}
+                                </span>
+                                {item.score_delta !== 0 && (
+                                  <span
+                                    className={`text-xs font-bold inline-flex items-center ${
+                                      isPositiveDelta ? 'text-emerald-600' : 'text-rose-600'
+                                    }`}
+                                  >
+                                    {isPositiveDelta ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
+                                    {isPositiveDelta ? `+${item.score_delta}` : item.score_delta}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Routine Adherence */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Weekly Adherence</span>
+                              <div className="text-lg font-black text-teal-700 mt-0.5">
+                                {item.weekly_adherence_rate}%
+                              </div>
+                              <div className="w-full bg-gray-200 h-1.5 rounded-full mt-1 overflow-hidden">
+                                <div
+                                  className="bg-teal-600 h-full rounded-full transition-all"
+                                  style={{ width: `${Math.min(item.weekly_adherence_rate, 100)}%` }}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Streak Days */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Logging Streak</span>
+                              <div className="text-lg font-black text-amber-600 mt-0.5 flex items-center gap-1">
+                                <Flame size={16} className="text-amber-500" />
+                                <span>{item.streak_days} Days</span>
+                              </div>
+                            </div>
+
+                            {/* Barrier Score */}
+                            <div className="p-3 bg-gray-50 rounded-2xl border border-gray-100">
+                              <span className="text-[10px] font-bold uppercase text-gray-400 block">Barrier Health</span>
+                              <div className="text-lg font-black text-emerald-700 mt-0.5">
+                                {item.barrier_score ?? 70}/100
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Footer Info & Actions */}
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100 text-xs">
+                            <span className="text-gray-400">
+                              Last check-in: {item.last_activity ? new Date(item.last_activity).toLocaleDateString() : 'N/A'}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={() => handleInspectUser(item.user_id)}
+                                className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold cursor-pointer transition-colors"
+                              >
+                                View Dossier
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setSelectedClientForRec(item);
+                                  setShowNewRecModal(true);
+                                }}
+                                className="px-3.5 py-1.5 bg-[#173a3c] hover:bg-[#112d2f] text-white rounded-xl font-bold shadow-xs cursor-pointer transition-colors"
+                              >
+                                Prescribe Routine
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               )}
             </div>
@@ -1888,7 +2450,80 @@ This summary is generated for inter-professional care continuity and consultatio
                 Close Memo
               </button>
             </div>
+          </div>
+        </div>
+      )}
 
+      {/* ═══ NEW CLINICAL RECOMMENDATION MODAL ═══ */}
+      {showNewRecModal && (
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl max-w-2xl w-full p-6 md:p-8 shadow-2xl space-y-6 border border-[#d6e5e8] max-h-[90vh] overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-gray-100">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal-50 border border-teal-200 rounded-full text-xs font-bold text-teal-800">
+                  <Sparkles size={13} className="text-teal-600" />
+                  <span>Clinical Formulation Desk</span>
+                </div>
+                <h3 className="text-2xl font-black text-[#14393d]">Prescribe Regimen Recommendation</h3>
+                <p className="text-xs text-gray-500">
+                  Select a connected client and formulate targeted actives, instructions, and review intervals.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowNewRecModal(false)}
+                className="p-2 text-gray-400 hover:text-gray-700 rounded-full hover:bg-gray-100 cursor-pointer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Client Selector */}
+            {clients.length === 0 ? (
+              <div className="p-8 text-center bg-gray-50 rounded-2xl border border-gray-200 space-y-2">
+                <Users size={32} className="text-gray-400 mx-auto" />
+                <h4 className="text-sm font-bold text-gray-800">No Connected Clients Available</h4>
+                <p className="text-xs text-gray-500 max-w-md mx-auto">
+                  You must have an active connection with a platform client before issuing clinical recommendations. Visit the "All Platform Users" tab to approach clients.
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-gray-700 block">Select Target Client:</label>
+                  <select
+                    value={selectedClientForRec?.user_id || ''}
+                    onChange={(e) => {
+                      const found = clients.find((c) => c.user_id === e.target.value);
+                      if (found) setSelectedClientForRec(found);
+                    }}
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#173a3c] focus:outline-none"
+                  >
+                    {clients.map((c) => (
+                      <option key={c.user_id} value={c.user_id}>
+                        {c.name} ({c.email}) — {c.skin_type || 'Unknown'}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {selectedClientForRec && (
+                  <div className="pt-2">
+                    <ClinicalPrescriptionForm
+                      patientId={selectedClientForRec.user_id}
+                      patientName={selectedClientForRec.name}
+                      onPrescriptionSubmitted={async () => {
+                        await fetchRecommendationsData();
+                        await fetchCohortProgressData();
+                        setShowNewRecModal(false);
+                        toast.success(`Recommendation prescribed for ${selectedClientForRec.name}!`);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}

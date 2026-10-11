@@ -61,6 +61,8 @@ class ProfessionalRecommendationResponse(BaseModel):
     patient_id: uuid.UUID
     professional_name: Optional[str] = None
     professional_role: Optional[str] = None
+    patient_name: Optional[str] = None
+    patient_email: Optional[str] = None
     title: str
     clinical_notes: str
     prescribed_actives: Optional[List[str]] = None
