@@ -118,9 +118,10 @@ def get_patient_detail(
     )
     assessment_out = None
     if latest_assessment:
+        concerns_val = (profile.skin_concerns if profile else None) or latest_assessment.concern_priorities or "[]"
         assessment_out = LatestAssessmentOut(
             overall_score=latest_assessment.overall_score,
-            skin_concerns=latest_assessment.skin_concerns,
+            skin_concerns=concerns_val,
             assessment_date=latest_assessment.created_at,
         )
 
