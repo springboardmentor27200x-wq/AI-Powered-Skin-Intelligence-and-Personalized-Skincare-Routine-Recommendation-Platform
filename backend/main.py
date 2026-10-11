@@ -17,6 +17,7 @@ from routes.notifications import router as notifications_router
 from routes.dermatologist import router as dermatologist_router
 from routes.reports import router as reports_router
 
+import models
 Base.metadata.create_all(bind=engine)
 ensure_schema()
 seed_default_accounts()

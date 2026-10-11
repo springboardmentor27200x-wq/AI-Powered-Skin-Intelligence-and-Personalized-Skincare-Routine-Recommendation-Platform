@@ -10,6 +10,16 @@ const getApiBaseUrl = () => {
     const clean = envUrl.trim().replace(/\/+$/, "");
     return clean.endsWith("/api") ? clean : `${clean}/api`;
   }
+
+  // When deployed on Render or any public web domain
+  if (
+    typeof window !== "undefined" &&
+    window.location.hostname !== "localhost" &&
+    window.location.hostname !== "127.0.0.1"
+  ) {
+    return "https://ai-powered-skin-intelligence-and.onrender.com/api";
+  }
+
   return "http://127.0.0.1:8000/api";
 };
 
