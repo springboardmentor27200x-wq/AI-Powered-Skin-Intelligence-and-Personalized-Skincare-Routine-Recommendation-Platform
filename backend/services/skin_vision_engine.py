@@ -249,16 +249,31 @@ def analyze_facial_skin(image: Image.Image) -> Dict[str, Any]:
         all_actives.extend(c.get("recommended_actives", []))
     unique_actives = list(dict.fromkeys(all_actives))[:6]
 
-    return {
+    def _to_native(obj):
+        if isinstance(obj, (np.integer, np.int64, np.int32)):
+            return int(obj)
+        elif isinstance(obj, (np.floating, np.float32, np.float64)):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, (np.bool_, bool)):
+            return bool(obj)
+        elif isinstance(obj, dict):
+            return {k: _to_native(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [_to_native(i) for i in obj]
+        return obj
+
+    raw_result = {
         "face_detected": bool(face_detected),
-        "overall_skin_score": overall_score,
+        "overall_skin_score": float(overall_score),
         "skin_health_rating": "Optimal" if overall_score >= 80 else "Good" if overall_score >= 65 else "Needs Care",
         "metrics": {
-            "dark_spots_severity": dark_spot_severity,
-            "acne_blemishes_severity": acne_severity,
-            "redness_sensitivity_severity": redness_severity,
-            "wrinkles_texture_severity": wrinkle_severity,
-            "oiliness_sebum_severity": oiliness_severity,
+            "dark_spots_severity": float(dark_spot_severity),
+            "acne_blemishes_severity": float(acne_severity),
+            "redness_sensitivity_severity": float(redness_severity),
+            "wrinkles_texture_severity": float(wrinkle_severity),
+            "oiliness_sebum_severity": float(oiliness_severity),
         },
         "detected_concerns": concerns_detected,
         "spot_markers": spot_markers,
@@ -270,3 +285,5 @@ def analyze_facial_skin(image: Image.Image) -> Dict[str, Any]:
             f"{concerns_detected[0]['concern']} ({concerns_detected[0]['level']} level)."
         ),
     }
+
+    return _to_native(raw_result)
