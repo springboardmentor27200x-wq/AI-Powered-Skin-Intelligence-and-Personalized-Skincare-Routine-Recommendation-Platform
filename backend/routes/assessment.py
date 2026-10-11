@@ -33,6 +33,13 @@ def evaluate_assessment(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
+    profile = db.query(SkinProfile).filter(SkinProfile.user_id == user.id).first()
+    if not profile:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No skin profile found. Please create your skin profile first."
+        )
+
     result = calculate_skin_assessment(db, user.id)
 
     assessment = (
@@ -77,6 +84,13 @@ def get_assessment(
     user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
+    profile = db.query(SkinProfile).filter(SkinProfile.user_id == user.id).first()
+    if not profile:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No skin profile found. Please create your skin profile first."
+        )
+
     assessment = (
         db.query(SkinAssessment)
         .filter(SkinAssessment.user_id == user.id)
@@ -122,12 +136,16 @@ def apply_scan_to_profile(
     and automatically re-evaluates their skin routine and assessment.
     """
     profile = db.query(SkinProfile).filter(SkinProfile.user_id == user.id).first()
-    if profile:
-        existing_concerns = json.loads(profile.skin_concerns or "[]")
-        # Merge detected concerns
-        merged = list(dict.fromkeys(existing_concerns + payload.detected_concerns))
-        profile.skin_concerns = json.dumps(merged)
-        db.commit()
+    if not profile:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No skin profile found. Please create your skin profile first."
+        )
+    existing_concerns = json.loads(profile.skin_concerns or "[]")
+    # Merge detected concerns
+    merged = list(dict.fromkeys(existing_concerns + payload.detected_concerns))
+    profile.skin_concerns = json.dumps(merged)
+    db.commit()
 
     # Re-evaluate assessment
     updated_assessment = calculate_skin_assessment(db, user.id)
