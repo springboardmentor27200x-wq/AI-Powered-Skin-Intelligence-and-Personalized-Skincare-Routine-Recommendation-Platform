@@ -36,7 +36,12 @@ export default function DermatologistDashboard() {
 
   useEffect(() => {
     getDermatologistPatients()
-      .then((r) => setPatients(r.data))
+      .then((r) => {
+        setPatients(r.data);
+        if (r.data && r.data.length > 0) {
+          selectPatient(r.data[0]);
+        }
+      })
       .catch(() => setError("Failed to load patients"))
       .finally(() => setLoading(false));
     getDermatologistReports()
