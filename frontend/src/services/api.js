@@ -1,7 +1,21 @@
 import axios from "axios";
 
+const getApiBaseUrl = () => {
+  const envUrl =
+    import.meta.env.VITE_API_BASE_URL ||
+    import.meta.env.VITE_API_URL ||
+    import.meta.env.VITE_BACKEND_URL;
+
+  if (envUrl && typeof envUrl === "string" && envUrl.trim() !== "") {
+    const clean = envUrl.trim().replace(/\/+$/, "");
+    return clean.endsWith("/api") ? clean : `${clean}/api`;
+  }
+  return "http://127.0.0.1:8000/api";
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api",
+  baseURL: getApiBaseUrl(),
+  timeout: 60000,
 });
 
 api.interceptors.request.use((config) => {

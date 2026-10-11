@@ -12,7 +12,11 @@ export default function Register() {
     if(form.password!==form.confirmPassword) return setError("Passwords do not match.");
     setLoading(true);
     try { await register({name:form.name,email:form.email,password:form.password,age:Number(form.age),gender:form.gender}); nav("/login"); }
-    catch(err){ setError(err.response?.data?.detail || "Registration failed."); }
+    catch(err){
+      const msg = err.response?.data?.detail 
+        || (err.message === "Network Error" ? "Cannot connect to server. The backend may be spinning up (please wait 30 seconds) or API URL is incorrect." : "Registration failed.");
+      setError(msg);
+    }
     finally{setLoading(false);}
   };
   return <Form title="Create your account" error={error} onSubmit={submit} loading={loading}>
