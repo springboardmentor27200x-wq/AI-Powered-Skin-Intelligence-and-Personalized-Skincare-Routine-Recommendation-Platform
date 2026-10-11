@@ -56,6 +56,29 @@ export default function SkinAssessment() {
     return <div className="card" style={{ textAlign: "center", padding: 40 }}>Calculating skin assessment score…</div>;
   }
 
+  if (!assessment) {
+    return (
+      <section>
+        <div className="dashboard-head">
+          <div>
+            <p className="eyebrow">Skin Intelligence</p>
+            <h1>Skin Health Assessment Report</h1>
+          </div>
+        </div>
+        <div className="card empty" style={{ textAlign: "center", padding: "60px 24px", maxWidth: 640, margin: "40px auto" }}>
+          <div style={{ fontSize: "3rem", marginBottom: 16 }}>📋</div>
+          <h2 style={{ fontSize: 24, marginBottom: 10, color: "var(--text-main)" }}>No Skin Profile Found</h2>
+          <p style={{ color: "var(--text-muted)", fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>
+            Please create your skin profile first. Our clinical assessment engine calculates your multi-factorial skin health score based on your unique skin type, concerns, sleep, and hydration.
+          </p>
+          <Link to="/profile" className="primary" style={{ display: "inline-block", padding: "10px 24px", fontSize: 15, textDecoration: "none" }}>
+            👉 Create Skin Profile
+          </Link>
+        </div>
+      </section>
+    );
+  }
+
   const overall = assessment?.overall_score ?? 0;
   const getScoreBadgeClass = (score) => {
     if (score >= 80) return { color: "#15803d", bg: "#dcfce7", label: "Optimal Health" };
