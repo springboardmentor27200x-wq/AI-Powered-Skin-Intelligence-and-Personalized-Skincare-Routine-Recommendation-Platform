@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getProductRecommendations, compareProducts } from "../services/api";
 
 const CATEGORIES = ["All", "Face Wash", "Moisturizer", "Sunscreen", "Serum", "Toner", "Face Masks"];
@@ -6,6 +7,7 @@ const BUDGET_TIERS = ["All", "Budget", "Mid-range", "Premium"];
 
 export default function ProductRecommendations() {
   const [products, setProducts] = useState([]);
+  const [hasProfile, setHasProfile] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedBudget, setSelectedBudget] = useState("All");
   const [selectedCompareIds, setSelectedCompareIds] = useState([]);
@@ -16,8 +18,16 @@ export default function ProductRecommendations() {
   const fetchProducts = () => {
     setLoading(true);
     getProductRecommendations(selectedCategory, selectedBudget)
-      .then((r) => setProducts(r.data))
-      .catch(() => {})
+      .then((r) => {
+        setProducts(r.data);
+        setHasProfile(true);
+      })
+      .catch((err) => {
+        if (err.response?.status === 404) {
+          setHasProfile(false);
+          setProducts([]);
+        }
+      })
       .finally(() => setLoading(false));
   };
 
@@ -52,6 +62,29 @@ export default function ProductRecommendations() {
       setComparing(false);
     }
   };
+
+  if (!hasProfile) {
+    return (
+      <section>
+        <div className="dashboard-head">
+          <div>
+            <p className="eyebrow">Product Intelligence</p>
+            <h1>Personalized Product Recommendations</h1>
+          </div>
+        </div>
+        <div className="card empty" style={{ textAlign: "center", padding: "60px 24px", maxWidth: 640, margin: "40px auto" }}>
+          <div style={{ fontSize: "3rem", marginBottom: 16 }}>🧴</div>
+          <h2 style={{ fontSize: 24, marginBottom: 10, color: "var(--text-main)" }}>No Skin Profile Found</h2>
+          <p style={{ color: "var(--text-muted)", fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>
+            Please create your skin profile first. Our recommendation engine matches products and ingredients specifically to your skin type, allergies, budget, and skin goals.
+          </p>
+          <Link to="/profile" className="primary" style={{ display: "inline-block", padding: "10px 24px", fontSize: 15, textDecoration: "none" }}>
+            👉 Create Skin Profile
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>
