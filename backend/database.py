@@ -3,14 +3,23 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    DATABASE_URL: str
-    JWT_SECRET: str
+    DATABASE_URL: str = "sqlite:///./skin_intelligence.db"
+    JWT_SECRET: str = "skincare_ai_super_secret_jwt_key_2026_xyz"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 settings = Settings()
-engine = create_engine(settings.DATABASE_URL, pool_pre_ping=True)
+
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+
+if db_url.startswith("sqlite"):
+    engine = create_engine(db_url, connect_args={"check_same_thread": False}, pool_pre_ping=True)
+else:
+    engine = create_engine(db_url, pool_pre_ping=True)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
