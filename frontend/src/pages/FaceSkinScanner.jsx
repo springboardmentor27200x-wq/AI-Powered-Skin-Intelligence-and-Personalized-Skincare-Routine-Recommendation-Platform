@@ -27,10 +27,22 @@ export default function FaceSkinScanner() {
   const startCamera = async () => {
     setCameraError("");
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" },
-        audio: false,
-      });
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error("MediaDevices API not supported in this browser");
+      }
+
+      let stream;
+      try {
+        // Try user-facing camera first
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: "user" },
+          audio: false,
+        });
+      } catch (e1) {
+        // Fallback to basic video without constraints (laptop webcams, virtual cams)
+        stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+      }
+
       streamRef.current = stream;
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
@@ -41,9 +53,12 @@ export default function FaceSkinScanner() {
       setScanResult(null);
       setAppliedMsg("");
     } catch (err) {
-      setCameraError(
-        "Camera access denied or unavailable. You can upload a photo instead!"
-      );
+      console.warn("Camera error:", err);
+      const isBlocked = err.name === "NotAllowedError" || err.name === "PermissionDeniedError";
+      const msg = isBlocked
+        ? "🔒 Camera permission was denied in your browser. Click the lock/camera icon in your address bar to allow camera access, or upload a photo / use the demo face below!"
+        : "📷 No webcam detected or camera is in use by another app. You can click 'Upload Photo' or 'Use Demo Face' below to test the AI scanner!";
+      setCameraError(msg);
       setCameraActive(false);
     }
   };
@@ -66,6 +81,84 @@ export default function FaceSkinScanner() {
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
     const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
     stopCamera();
+    setImagePreview(dataUrl);
+    analyzeImage(dataUrl);
+  };
+
+  const handleUseDemoFace = () => {
+    stopCamera();
+    setCameraError("");
+    const canvas = document.createElement("canvas");
+    canvas.width = 480;
+    canvas.height = 560;
+    const ctx = canvas.getContext("2d");
+
+    // Background gradient
+    const bg = ctx.createLinearGradient(0, 0, 480, 560);
+    bg.addColorStop(0, "#e2e8f0");
+    bg.addColorStop(1, "#cbd5e1");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, 480, 560);
+
+    // Face oval
+    ctx.fillStyle = "#f3c7a6";
+    ctx.beginPath();
+    ctx.ellipse(240, 260, 140, 180, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Forehead highlight
+    ctx.fillStyle = "#ebd0b5";
+    ctx.beginPath();
+    ctx.ellipse(240, 180, 110, 60, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Eyebrows
+    ctx.fillStyle = "#5c4033";
+    ctx.fillRect(170, 195, 45, 6);
+    ctx.fillRect(265, 195, 45, 6);
+
+    // Eyes
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.ellipse(190, 220, 22, 12, 0, 0, Math.PI * 2);
+    ctx.ellipse(290, 220, 22, 12, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#3b2f2f";
+    ctx.beginPath();
+    ctx.arc(190, 220, 9, 0, Math.PI * 2);
+    ctx.arc(290, 220, 9, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Nose
+    ctx.fillStyle = "#e0b08b";
+    ctx.beginPath();
+    ctx.moveTo(240, 230);
+    ctx.lineTo(230, 290);
+    ctx.lineTo(250, 290);
+    ctx.closePath();
+    ctx.fill();
+
+    // Lips
+    ctx.fillStyle = "#d87d7b";
+    ctx.beginPath();
+    ctx.ellipse(240, 340, 42, 15, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Redness on cheeks
+    ctx.fillStyle = "rgba(225, 90, 90, 0.22)";
+    ctx.beginPath();
+    ctx.ellipse(180, 290, 35, 25, 0, 0, Math.PI * 2);
+    ctx.ellipse(300, 290, 35, 25, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Dark spots
+    ctx.fillStyle = "rgba(110, 70, 50, 0.4)";
+    ctx.beginPath();
+    ctx.arc(210, 270, 5, 0, Math.PI * 2);
+    ctx.arc(280, 310, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
     setImagePreview(dataUrl);
     analyzeImage(dataUrl);
   };
@@ -310,6 +403,16 @@ export default function FaceSkinScanner() {
                   }}
                 >
                   📁 Upload Photo
+                </button>
+                <button
+                  onClick={handleUseDemoFace}
+                  style={{
+                    background: "linear-gradient(135deg, #0284c7, #0369a1)", color: "white", border: "none", padding: "12px 20px", borderRadius: 12,
+                    fontWeight: 600, fontSize: "0.95rem", cursor: "pointer", display: "flex", alignItems: "center", gap: 8
+                  }}
+                  title="Test the AI Face Scanner immediately without a camera"
+                >
+                  🖼️ Try Demo Face
                 </button>
                 <input
                   ref={fileInputRef}
