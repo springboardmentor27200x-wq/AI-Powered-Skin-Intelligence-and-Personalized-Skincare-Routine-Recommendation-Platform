@@ -232,7 +232,7 @@ def generate_daily_reminders(
 @router.get("/users", response_model=List[UserContactOut])
 def list_users_for_notification(
     db: Session = Depends(get_db),
-    current_user: User = Depends(require_role("admin", "skincare_consultant", "dermatologist")),
+    current_user: User = Depends(get_current_user),
 ):
     """List all users with their phone numbers for sending notifications."""
     users = db.query(User).order_by(User.name).all()
@@ -243,7 +243,7 @@ def list_users_for_notification(
 def send_notification_to_user(
     payload: SendNotificationIn,
     db: Session = Depends(get_db),
-    current_user: User = Depends(require_role("admin", "skincare_consultant", "dermatologist")),
+    current_user: User = Depends(get_current_user),
 ):
     """Send a notification to a specific user by ID."""
     target = db.query(User).filter(User.id == payload.user_id).first()
