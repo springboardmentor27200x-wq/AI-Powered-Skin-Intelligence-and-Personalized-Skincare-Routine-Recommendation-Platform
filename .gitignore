@@ -1,7 +1,58 @@
+# ── Python ───────────────────────────────
 __pycache__/
 *.py[cod]
-venv/
-.env
-node_modules/
+*.pyo
+*.pyd
+*.egg-info/
 dist/
+build/
+.eggs/
+*.egg
+
+# ── Virtual Environments ─────────────────
+venv/
+env/
+.venv/
+ENV/
+
+# ── Environment & Secrets ────────────────
+.env
+.env.*
+*.env
+backend/.env
+secrets.json
+config.local.*
+
+# ── Database ─────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Node / Frontend ───────────────────────
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.cache/
+.parcel-cache/
+
+# ── IDE & Editor ─────────────────────────
 .vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# ── Logs ─────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+
+# ── Reports (generated files) ────────────
+*.docx
+*.html
+AI_Skin_Intelligence_Major_Project_Report.*
