@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getSkinHealthReport, exportProgressCsv } from "../services/api";
 
 const scoreColor = (score) => {
@@ -82,6 +83,29 @@ export default function ReportsExport() {
   };
 
   if (loading) return <div className="card" style={{ textAlign: "center", padding: 60 }}>Loading your skin health report...</div>;
+
+  if (!report) {
+    return (
+      <div id="reports-page">
+        <div className="dashboard-head">
+          <div>
+            <p className="eyebrow">Reports & Intelligence</p>
+            <h1>Skin Health Comprehensive Report</h1>
+          </div>
+        </div>
+        <div className="card empty" style={{ textAlign: "center", padding: "60px 24px", maxWidth: 640, margin: "40px auto" }}>
+          <div style={{ fontSize: "3rem", marginBottom: 16 }}>📊</div>
+          <h2 style={{ fontSize: 24, marginBottom: 10, color: "var(--text-main)" }}>No Skin Profile Found</h2>
+          <p style={{ color: "var(--text-muted)", fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>
+            Please create your skin profile first to generate your comprehensive clinical skin health report and analytics.
+          </p>
+          <Link to="/profile" className="primary" style={{ display: "inline-block", padding: "10px 24px", fontSize: 15, textDecoration: "none" }}>
+            👉 Create Skin Profile
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div id="reports-page">
