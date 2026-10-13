@@ -1,0 +1,6 @@
+{
+  "name": "SkinIntel - AI Skincare Planner",
+  "description": "AI Skin Intelligence platform with predictive assessment scoring on a 1,200-record clinical dataset, dynamic routine formulation, INCI ingredient scanner, and product recommendation engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
