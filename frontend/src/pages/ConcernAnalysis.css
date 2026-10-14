@@ -1,0 +1,37 @@
+/* Skin concern prioritization and risk-analysis styles */
+.concern-analysis-panel { margin: 22px 0; padding: 22px; border: 1px solid #dcece7; border-radius: 18px; background: linear-gradient(135deg, #fbfffd 0%, #f4faf8 100%); }
+.concern-analysis-heading h3 { margin: 5px 0 6px; color: #173c36; font-size: 1.2rem; }
+.concern-analysis-heading p, .prioritized-concern-name p { margin: 0; color: #647873; font-size: .9rem; line-height: 1.5; }
+.concern-analysis-eyebrow { color: #168575; font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
+.prioritized-concern-list { display: grid; gap: 12px; margin-top: 18px; }
+.prioritized-concern-item { padding: 15px; background: #fff; border: 1px solid #e4eeea; border-radius: 13px; }
+.prioritized-concern-topline, .risk-analysis-header, .risk-detail-title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.prioritized-concern-topline { justify-content: flex-start; }
+.concern-rank { display: grid; place-items: center; flex: 0 0 30px; width: 30px; height: 30px; border-radius: 10px; color: #126e61; background: #e0f4ee; font-weight: 800; }
+.prioritized-concern-name { flex: 1; min-width: 0; }
+.prioritized-concern-name strong { color: #213c36; }
+.prioritized-concern-name p { margin-top: 4px; }
+.concern-priority-badge, .overall-risk-badge, .risk-level-pill { display: inline-flex; align-items: center; white-space: nowrap; padding: 5px 9px; border-radius: 999px; font-size: .75rem; font-weight: 750; }
+.priority-high, .risk-high { color: #a52d35; background: #ffebeb; }
+.priority-medium, .risk-moderate { color: #8a5b00; background: #fff3d4; }
+.priority-low, .risk-low { color: #167451; background: #e4f7ed; }
+.priority-detected { color: #3d5b7a; background: #eaf2fb; }
+.concern-severity-wrap { display: flex; align-items: center; gap: 12px; margin: 12px 0 0 42px; color: #506760; font-size: .8rem; font-weight: 700; }
+.concern-severity-track { flex: 1; height: 7px; overflow: hidden; background: #e7efec; border-radius: 99px; }
+.concern-severity-fill { height: 100%; border-radius: 99px; background: #399878; }
+.priority-fill-high { background: #d66a6a; }
+.priority-fill-medium { background: #d5a23a; }
+.priority-fill-low { background: #399878; }
+.risk-analysis-box { margin-top: 18px; }
+.risk-analysis-header { align-items: flex-start; margin-bottom: 14px; }
+.risk-analysis-header h4 { margin: 0 0 5px; }
+.risk-analysis-header p { margin: 0; color: #647873; font-size: .88rem; }
+.risk-detail-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.risk-detail-item { padding: 14px; border: 1px solid #e4eeea; border-radius: 12px; background: #fff; min-width: 0; }
+.risk-detail-title-row strong { color: #24433c; }
+.risk-detail-item p { margin: 9px 0 0; color: #5b706a; font-size: .88rem; line-height: 1.55; overflow-wrap: anywhere; }
+.risk-detail-item .risk-recommendation { padding-top: 9px; border-top: 1px solid #edf2ef; }
+.risk-disclaimer { margin: 14px 0 0; color: #788780; font-size: .78rem; line-height: 1.5; }
+.risk-factor-list { margin: 10px 0 0; padding-left: 20px; color: #5b706a; }
+.risk-factor-list li { margin: 7px 0; }
+@media (max-width: 700px) { .concern-analysis-panel { padding: 16px; } .risk-detail-list { grid-template-columns: 1fr; } .risk-analysis-header { flex-direction: column; } .concern-priority-badge { font-size: .7rem; } }
