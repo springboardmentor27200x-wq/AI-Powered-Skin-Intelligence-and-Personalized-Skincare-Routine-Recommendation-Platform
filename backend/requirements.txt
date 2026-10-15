@@ -35,3 +35,7 @@ typing-inspection==0.4.4
 typing_extensions==4.16.0
 uvicorn==0.52.4
 Werkzeug==3.1.8
+email-validator
+google-genai
+openpyxl==3.1.5
+reportlab==5.0.1
