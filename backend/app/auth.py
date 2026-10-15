@@ -1,9 +1,9 @@
 import os
-import secrets
+
 from datetime import datetime, timedelta, timezone
 
 import bcrypt
-from jose import JWTError, jwt
+from jose import jwt
 
 
 # =========================
@@ -37,7 +37,13 @@ def verify_password(password: str, hashed_password: str) -> bool:
 # but it should always be overridden via SECRET_KEY in .env.
 # Configure a stable SECRET_KEY in .env for persistent sessions. The random
 # fallback lets the API start without embedding a signing secret in source.
-SECRET_KEY = os.getenv("SECRET_KEY") or secrets.token_urlsafe(48)
+SECRET_KEY = os.getenv("SECRET_KEY")
+if not SECRET_KEY:
+    raise RuntimeError(
+        "SECRET_KEY environment variable is required. "
+        "Set it before starting the application."
+    )
+
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 24 hours
 

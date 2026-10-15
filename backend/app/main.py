@@ -35,20 +35,24 @@ Base.metadata.create_all(bind=engine)
 # =========================================================
 # ADDITIVE DATABASE MIGRATION
 # =========================================================
-
 from sqlalchemy import inspect, text
 
-if "budget_inr" not in {
-    column["name"]
-    for column in inspect(engine).get_columns("skin_profiles")
-}:
-    with engine.begin() as connection:
-        connection.execute(
-            text(
-                "ALTER TABLE skin_profiles "
-                "ADD COLUMN budget_inr FLOAT"
+inspector = inspect(engine)
+
+if "skin_profiles" in inspector.get_table_names():
+    existing_columns = {
+        column["name"]
+        for column in inspector.get_columns("skin_profiles")
+    }
+
+    if "budget_inr" not in existing_columns:
+        with engine.begin() as connection:
+            connection.execute(
+                text(
+                    "ALTER TABLE skin_profiles "
+                    "ADD COLUMN budget_inr FLOAT"
+                )
             )
-        )
 
 
 # =========================================================
@@ -68,7 +72,8 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173",
+                   "http://127.0.0.1:5173",],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

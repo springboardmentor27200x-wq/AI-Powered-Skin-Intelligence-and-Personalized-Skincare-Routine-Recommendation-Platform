@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./IngredientIntelligence.css";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 function getIngredientName(item) {
   if (typeof item === "string") return item;
@@ -381,7 +381,7 @@ function IngredientIntelligence() {
         }
 
         const response = await fetch(
-          `${API_BASE}/api/ingredients/${encodeURIComponent(userId)}`,
+          `${API_URL}/api/ingredients/${encodeURIComponent(userId)}`,
           {
             headers: {
               Authorization: `Bearer ${authToken}`,
@@ -480,7 +480,7 @@ function IngredientIntelligence() {
       const authToken = localStorage.getItem("token");
 
       const response = await fetch(
-        `${API_BASE}/api/ingredients/education/${encodeURIComponent(name)}`,
+        `${API_URL}/api/ingredients/education/${encodeURIComponent(name)}`,
         {
           headers: authToken
             ? { Authorization: `Bearer ${authToken}` }
@@ -538,7 +538,7 @@ function IngredientIntelligence() {
       }
 
       const response = await fetch(
-        `${API_BASE}/api/ingredients/interactions`,
+        `${API_URL}/api/ingredients/interactions`,
         {
           method: "POST",
           headers: {
