@@ -1,0 +1,10 @@
+[33m468607b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mjanaki-ai-skin-intelligence[m[33m, [m[1;31morigin/janaki-ai-skin-intelligence[m[33m)[m feat: add AI Skin Intelligence project
+[33m3703708[m[33m ([m[1;31mmam/Anusuyadevi[m[33m)[m Add comprehensive README for skincare planner project
+[33mf9487f1[m Add files via upload
+[33m22a2bf0[m[33m ([m[1;31mmam/marla_deepika[m[33m)[m fix(auth): replace passlib with direct bcrypt to resolve passlib 72-byte password bug
+[33m9d1046c[m fix(backend): add global exception handler with dynamic CORS headers to reveal backend errors
+[33m125ed60[m fix: import models in main.py to create all database tables and add auto production backend fallback in frontend
+[33mdd2cc48[m fix(frontend): add _redirects file for SPA client-side routing on Render
+[33m25d1ce3[m fix(frontend): normalize API baseURL with timeout and improve network error handling
+[33m780dace[m fix(auth): ensure safe password truncation for passlib bcrypt 5.0 compatibility
+[33m95a5abe[m fix(backend): add numpy and pillow dependencies for skin vision engine
