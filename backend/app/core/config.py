@@ -20,6 +20,15 @@ class Settings(BaseSettings):
     GOOGLE_CLIENT_SECRET: str = ""
     GOOGLE_REDIRECT_URI: str = "http://localhost:8000/api/v1/auth/google/callback"
 
+    # SMTP / Email Configuration (Optional - falls back gracefully to console / dev log)
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_TLS: bool = True
+    EMAILS_FROM_EMAIL: str = "noreply@dermaiq.com"
+    EMAILS_FROM_NAME: str = "DermaIQ Skin Intelligence"
+
     CORS_ORIGINS: Union[str, List[str]] = ["http://localhost:5173", "http://127.0.0.1:5173"]
 
     @field_validator("CORS_ORIGINS", mode="before")

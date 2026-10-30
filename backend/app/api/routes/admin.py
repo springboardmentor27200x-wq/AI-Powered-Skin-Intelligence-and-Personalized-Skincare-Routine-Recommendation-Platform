@@ -138,6 +138,7 @@ def update_user_status(
             detail="User not found"
         )
 
+    # pyrefly: ignore [unnecessary-type-conversion]
     setattr(target_user, "is_active", bool(status_in.is_active))
     db.commit()
     db.refresh(target_user)
@@ -181,6 +182,7 @@ def update_user_role(
                 detail="Security violation: Cannot remove the last active platform administrator"
             )
 
+    # pyrefly: ignore [unnecessary-type-conversion]
     setattr(target_user, "role", str(role_in.role))
     db.commit()
     db.refresh(target_user)

@@ -22,3 +22,26 @@ class TokenResponse(BaseModel):
 
 class GoogleAuthInput(BaseModel):
     credential: str
+
+
+class ForgotPasswordInput(BaseModel):
+    email: EmailStr
+
+
+class VerifyOTPInput(BaseModel):
+    email: EmailStr
+    otp: str = Field(..., min_length=6, max_length=6, description="6-digit numeric verification code")
+
+
+class ResetPasswordInput(BaseModel):
+    email: EmailStr
+    otp: str = Field(..., min_length=6, max_length=6, description="6-digit numeric verification code")
+    new_password: str = Field(..., min_length=8, description="Password must be at least 8 characters long")
+    confirm_password: str
+
+
+class PasswordResetResponse(BaseModel):
+    success: bool = True
+    message: str
+    dev_otp: Optional[str] = None
+

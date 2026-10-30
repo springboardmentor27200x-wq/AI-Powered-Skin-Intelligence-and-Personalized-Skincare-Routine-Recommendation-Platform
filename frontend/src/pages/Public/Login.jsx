@@ -7,6 +7,7 @@ import { Sparkles, Eye, EyeOff, ArrowRight, Brain, Shield, TrendingUp, AlertCirc
 import { Spinner } from '../../components/ui/LoadingState';
 import BrandLogo from '../../components/BrandLogo';
 import { useMaintenance } from '../../context/MaintenanceContext';
+import ResetPasswordModal from '../../components/ResetPasswordModal';
 
 // ─── Brand Panel (left side on desktop) ────────────────────────────────────
 
@@ -55,6 +56,7 @@ const Login = () => {
   const [password, setPassword]     = useState('');
   const [showPwd, setShowPwd]       = useState(false);
   const [loading, setLoading]       = useState(false);
+  const [showResetModal, setShowResetModal] = useState(false);
   const [fieldErrors, setFieldErrors] = useState({});
   const [serverError, setServerError] = useState('');
 
@@ -168,7 +170,11 @@ const Login = () => {
                 <label htmlFor="password" className="text-xs font-semibold text-[var(--color-text-secondary)]">
                   Password
                 </label>
-                <button type="button" className="text-[10px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] transition-colors">
+                <button 
+                  type="button" 
+                  onClick={() => setShowResetModal(true)}
+                  className="text-[10px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] hover:underline transition-colors"
+                >
                   Forgot password?
                 </button>
               </div>
@@ -278,6 +284,18 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      {/* Password Reset via Email OTP Modal */}
+      <ResetPasswordModal
+        isOpen={showResetModal}
+        onClose={() => setShowResetModal(false)}
+        initialEmail={email}
+        onResetSuccess={(resetEmail) => {
+          setEmail(resetEmail);
+          setPassword('');
+          toast.success('Password successfully reset! Please sign in with your new password.');
+        }}
+      />
     </div>
   );
 };

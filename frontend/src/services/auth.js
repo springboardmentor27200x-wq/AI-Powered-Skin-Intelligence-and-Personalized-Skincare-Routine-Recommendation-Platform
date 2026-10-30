@@ -43,6 +43,26 @@ export const authService = {
     return response.data;
   },
 
+  async forgotPassword(email) {
+    const response = await apiClient.post('/auth/forgot-password', { email });
+    return response.data;
+  },
+
+  async verifyOTP(email, otp) {
+    const response = await apiClient.post('/auth/verify-otp', { email, otp });
+    return response.data;
+  },
+
+  async resetPassword(email, otp, newPassword, confirmPassword) {
+    const response = await apiClient.post('/auth/reset-password', {
+      email,
+      otp,
+      new_password: newPassword,
+      confirm_password: confirmPassword,
+    });
+    return response.data;
+  },
+
   logout() {
     localStorage.removeItem('token');
   },

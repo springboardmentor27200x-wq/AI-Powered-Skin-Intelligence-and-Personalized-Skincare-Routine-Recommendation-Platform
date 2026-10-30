@@ -41,10 +41,13 @@ from threading import Lock
 from app.db.base import Base
 from app.db.database import engine
 
-# Ensure newly declared tables exist
-Base.metadata.create_all(bind=engine)
-
 logger = logging.getLogger(__name__)
+
+# Ensure newly declared tables exist
+try:
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    logger.warning(f"Database auto table creation skipped or deferred: {e}")
 
 # CORS Middleware Configuration (Must be registered first to handle all origins and preflight requests)
 cors_origins = list(settings.CORS_ORIGINS) if settings.CORS_ORIGINS else ["http://localhost:5173", "http://127.0.0.1:5173"]

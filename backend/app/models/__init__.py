@@ -20,6 +20,8 @@ from app.models.report import ReportRecord, ReportType, ExportFormat
 from app.models.chat import ChatMessage
 # Platform Settings & Legal CMS Policies
 from app.models.system_setting import SystemSetting
+# Password Reset OTP
+from app.models.password_reset import PasswordResetOTP
 
 __all__ = [
     "User",
@@ -56,4 +58,5 @@ __all__ = [
     "ExportFormat",
     "ChatMessage",
     "SystemSetting",
+    "PasswordResetOTP",
 ]

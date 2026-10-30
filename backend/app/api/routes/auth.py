@@ -5,9 +5,16 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from app.core.dependencies import get_current_user, get_db
 from app.core.security import hash_password, verify_password, create_access_token
+from app.core.config import settings
 from app.models.user import User, UserProfile
-from app.schemas.auth import RegisterInput, TokenResponse, GoogleAuthInput
+from app.schemas.auth import (
+    RegisterInput, TokenResponse, GoogleAuthInput,
+    ForgotPasswordInput, VerifyOTPInput, ResetPasswordInput, PasswordResetResponse
+)
 from app.schemas.user import UserResponse
+from app.services.email_service import (
+    create_and_send_reset_otp, verify_reset_otp, execute_password_reset
+)
 
 router = APIRouter()
 
@@ -144,3 +151,87 @@ def google_auth(auth_in: GoogleAuthInput, db: Session = Depends(get_db)):
 
     access_token = create_access_token(data={"sub": user.email, "role": user.role})
     return {"access_token": access_token, "token_type": "bearer"}
+
+
+# ── Password Reset with Email OTP ──────────────────────────────────────────
+
+@router.post("/forgot-password", response_model=PasswordResetResponse, response_model_exclude_none=True)
+def forgot_password(req: ForgotPasswordInput, db: Session = Depends(get_db)):
+    """
+    Initiates password reset by verifying email existence, generating a 6-digit OTP,
+    and dispatching an OTP email (or logging to console in dev mode).
+    """
+    email_clean = (req.email or "").strip().lower()
+    user = db.query(User).filter(User.email == email_clean).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No account found with this email address. Please verify your email or register."
+        )
+
+    if not user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="This account is currently deactivated. Please contact support."
+        )
+
+    _, otp_code = create_and_send_reset_otp(db, email_clean, user)
+    resp = {
+        "success": True,
+        "message": "A 6-digit verification code has been sent to your email address.",
+    }
+    # Only supply dev_otp in local offline testing when no SMTP host is configured
+    if not settings.SMTP_HOST:
+        resp["dev_otp"] = otp_code
+    return resp
+
+
+@router.post("/verify-otp", response_model=PasswordResetResponse)
+def verify_otp_endpoint(req: VerifyOTPInput, db: Session = Depends(get_db)):
+    """
+    Validates a 6-digit OTP without resetting the password yet.
+    Allows frontend to confirm OTP before prompting for new password.
+    """
+    email_clean = (req.email or "").strip().lower()
+    is_valid, msg, _ = verify_reset_otp(db, email_clean, req.otp)
+    if not is_valid:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=msg
+        )
+    return {
+        "success": True,
+        "message": msg
+    }
+
+
+@router.post("/reset-password", response_model=PasswordResetResponse)
+def reset_password(req: ResetPasswordInput, db: Session = Depends(get_db)):
+    """
+    Verifies OTP and resets user password to the new password.
+    """
+    if req.new_password != req.confirm_password:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="New password and confirmation password do not match."
+        )
+
+    if len(req.new_password) < 8:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Password must be at least 8 characters long."
+        )
+
+    email_clean = (req.email or "").strip().lower()
+    success, msg = execute_password_reset(db, email_clean, req.otp, req.new_password)
+    if not success:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=msg
+        )
+
+    return {
+        "success": True,
+        "message": msg
+    }
+

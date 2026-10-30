@@ -14,3 +14,4 @@ from app.models.routine import Routine, RoutineStep  # noqa
 from app.models.routine_adherence import RoutineAdherenceRecord  # noqa
 from app.models.professional_recommendation import ProfessionalRecommendation  # noqa
 from app.models.system_setting import SystemSetting  # noqa
+from app.models.password_reset import PasswordResetOTP  # noqa

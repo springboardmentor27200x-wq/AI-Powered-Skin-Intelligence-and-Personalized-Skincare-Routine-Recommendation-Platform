@@ -68,6 +68,44 @@ const BrandPanel = () => (
   </div>
 );
 
+// ─── Form Subcomponents (defined outside to prevent unmount on keystroke) ──
+
+const Field = ({ id, label, type = 'text', value, onChange, error, placeholder, autoComplete, rightEl }) => (
+  <div>
+    <label htmlFor={id} className="block text-xs font-semibold text-[var(--color-text-secondary)] mb-1.5">
+      {label}
+    </label>
+    <div className="relative">
+      <input
+        id={id}
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        className={`w-full px-4 py-3 ${rightEl ? 'pr-11' : ''} bg-white border rounded-[var(--radius-lg)] text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:border-[var(--color-brand)] ${
+          error ? 'border-red-400 bg-red-50' : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)]'
+        }`}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${id}-error` : undefined}
+      />
+      {rightEl}
+    </div>
+    {error && <p id={`${id}-error`} className="mt-1 text-xs text-red-600">{error}</p>}
+  </div>
+);
+
+const PwdToggle = ({ show, onToggle, fieldId }) => (
+  <button
+    type="button"
+    onClick={onToggle}
+    className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+    aria-label={show ? `Hide ${fieldId}` : `Show ${fieldId}`}
+  >
+    {show ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
+  </button>
+);
+
 // ─── Register ───────────────────────────────────────────────────────────────
 
 const Register = () => {
@@ -124,41 +162,7 @@ const Register = () => {
     }
   };
 
-  const Field = ({ id, label, type = 'text', value, onChange, error, placeholder, autoComplete, rightEl }) => (
-    <div>
-      <label htmlFor={id} className="block text-xs font-semibold text-[var(--color-text-secondary)] mb-1.5">
-        {label}
-      </label>
-      <div className="relative">
-        <input
-          id={id}
-          type={type}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          autoComplete={autoComplete}
-          className={`w-full px-4 py-3 ${rightEl ? 'pr-11' : ''} bg-white border rounded-[var(--radius-lg)] text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-muted)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand)] focus-visible:border-[var(--color-brand)] ${
-            error ? 'border-red-400 bg-red-50' : 'border-[var(--color-border)] hover:border-[var(--color-border-strong)]'
-          }`}
-          aria-invalid={!!error}
-          aria-describedby={error ? `${id}-error` : undefined}
-        />
-        {rightEl}
-      </div>
-      {error && <p id={`${id}-error`} className="mt-1 text-xs text-red-600">{error}</p>}
-    </div>
-  );
 
-  const PwdToggle = ({ show, onToggle, fieldId }) => (
-    <button
-      type="button"
-      onClick={onToggle}
-      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-      aria-label={show ? `Hide ${fieldId}` : `Show ${fieldId}`}
-    >
-      {show ? <EyeOff size={16} aria-hidden="true" /> : <Eye size={16} aria-hidden="true" />}
-    </button>
-  );
 
   return (
     <div className="min-h-screen flex" style={{ backgroundColor: 'var(--color-bg)' }}>
