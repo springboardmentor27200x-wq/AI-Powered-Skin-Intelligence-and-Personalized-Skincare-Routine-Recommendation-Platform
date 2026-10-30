@@ -172,8 +172,11 @@ const Login = () => {
                 </label>
                 <button 
                   type="button" 
-                  onClick={() => setShowResetModal(true)}
-                  className="text-[10px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] hover:underline transition-colors"
+                  onClick={() => {
+                    console.log('[DermaIQ] Opening Reset Password Modal');
+                    setShowResetModal(true);
+                  }}
+                  className="text-[10px] font-semibold text-[var(--color-brand)] hover:text-[var(--color-brand-hover)] hover:underline transition-colors cursor-pointer"
                 >
                   Forgot password?
                 </button>

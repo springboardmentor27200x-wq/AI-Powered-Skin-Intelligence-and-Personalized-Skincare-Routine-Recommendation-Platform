@@ -111,14 +111,17 @@ export default function ResetPasswordModal({ isOpen, onClose, initialEmail = '',
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
-      onClick={onClose}
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
       role="dialog"
       aria-modal="true"
     >
       <div 
         className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-[var(--color-border)] overflow-hidden"
-        onClick={e => e.stopPropagation()}
       >
         {/* Modal Top Header with Brand Pattern */}
         <div className="bg-[#162822] text-white p-6 relative border-b-2 border-[#c89b27]">
