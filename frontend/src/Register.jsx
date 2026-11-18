@@ -4,100 +4,104 @@ function Register({ onLogin }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("User");
+  const [role, setRole] = useState("user");
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
-      alert("Please fill all required fields.");
-      return;
-    }
-
     try {
-      const response = await fetch("http://127.0.0.1:8000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
-          role: role,
-        }),
-      });
+      const response = await fetch(
+        "https://skinai-backend-xbgd.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password,
+            role: role,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (data.success) {
-        alert("Registration successful! You can now login.");
-        onLogin();
+        alert("Registration successful! Please login.");
+        if (onLogin) {
+          onLogin();
+        }
       } else {
-        alert(data.message);
+        alert(data.message || "Registration failed.");
       }
     } catch (error) {
-      alert("Backend is not connected. Please make sure the backend is running.");
-      console.error(error);
+      console.error("Registration Error:", error);
+      alert(
+        "Backend is not connected. Please make sure the backend is running."
+      );
     }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-logo">✦ SkinAI</div>
-
+    <div className="login-page">
+      <div className="login-card">
         <h1>Create Account</h1>
 
-        <p className="auth-subtitle">
-          Create your account and start your personalized skincare journey.
-        </p>
+        <p>Register to start your SkinAI journey.</p>
 
         <form onSubmit={handleRegister}>
-          <label>Full Name</label>
+          <label>Name</label>
+
           <input
             type="text"
-            placeholder="Enter your full name"
+            placeholder="Enter your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
 
-          <label>Email Address</label>
+          <label>Email</label>
+
           <input
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
 
           <label>Password</label>
+
           <input
             type="password"
-            placeholder="Create a password"
+            placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
 
-          <label>Select Role</label>
+          <label>Role</label>
+
           <select
             value={role}
             onChange={(e) => setRole(e.target.value)}
           >
-            <option value="User">User</option>
-            <option value="Consultant">Consultant</option>
-            <option value="Dermatologist">Dermatologist</option>
+            <option value="user">User</option>
+            <option value="consultant">Consultant</option>
+            <option value="dermatologist">Dermatologist</option>
           </select>
 
-          <button type="submit" className="auth-button">
-            Create Account
-          </button>
+          <button type="submit">Register</button>
         </form>
 
         <p className="register-text">
           Already have an account?{" "}
+
           <button
             type="button"
-            className="text-button"
+            className="register-btn"
             onClick={onLogin}
           >
             Login
