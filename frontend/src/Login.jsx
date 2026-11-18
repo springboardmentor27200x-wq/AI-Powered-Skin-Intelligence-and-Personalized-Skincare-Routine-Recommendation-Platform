@@ -15,7 +15,7 @@ function Login({ onRegister }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/login",
+        "https://skinai-backend-xbgd.onrender.com/login",
         {
           method: "POST",
           headers: {
