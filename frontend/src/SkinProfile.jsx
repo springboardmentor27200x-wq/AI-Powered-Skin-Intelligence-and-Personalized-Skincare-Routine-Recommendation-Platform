@@ -38,7 +38,7 @@ function SkinProfile({ onBack = () => {} }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/skin-profile",
+        "https://skinai-backend-xbgd.onrender.com/skin-profile",
         {
           method: "POST",
           headers: {
